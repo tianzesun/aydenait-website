@@ -1,0 +1,6 @@
+<svg width="82" height="34" viewBox="0 0 82 34" xmlns="http://www.w3.org/2000/svg">
+  <rect width="82" height="34" rx="7" fill="#22252A"/>
+  <text x="17" y="20" fill="#FF9900" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="900">AWS</text>
+  <rect x="46" y="10" width="27" height="14" rx="3" fill="#fff"/>
+  <text x="59.5" y="21" text-anchor="middle" font-family="Arial" fill="#22252A" font-size="10" font-weight="bold">Partner</text>
+</svg>

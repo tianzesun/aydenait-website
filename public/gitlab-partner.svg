@@ -1,0 +1,7 @@
+<svg width="60" height="26" viewBox="0 0 60 26" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="11,21 15,8 19,21" fill="#FC6D26"/>
+  <polygon points="15,8 13,2 17,2 19,8" fill="#FCA326"/>
+  <polygon points="21,21 25,8 29,21" fill="#FC6D26"/>
+  <rect x="32" y="8" width="22" height="10" rx="2" fill="#fff"/>
+  <text x="43" y="18" text-anchor="middle" font-family="Arial" fill="#6B4FBB" font-size="10" font-weight="bold">GitLab</text>
+</svg>

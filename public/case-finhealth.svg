@@ -1,0 +1,13 @@
+<svg width="260" height="90" viewBox="0 0 260 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="18" y="40" width="55" height="16" rx="8" fill="#3B82F6"/>
+  <rect x="83" y="29" width="60" height="38" rx="11" fill="#06B6D4"/>
+  <rect x="153" y="18" width="60" height="60" rx="16" fill="#22D3EE"/>
+  <rect x="223" y="38" width="30" height="20" rx="8" fill="#1E40AF"/>
+  <text x="25" y="52" fill="#fff" font-size="11">Source</text>
+  <text x="90" y="45" fill="#fff" font-size="11">AI Test</text>
+  <text x="164" y="38" fill="#fff" font-size="11">Release</text>
+  <text x="227" y="52" fill="#fff" font-size="11">Prod</text>
+  <path d="M73 48L83 48" stroke="#fff" stroke-width="2" />
+  <path d="M143 48L153 48" stroke="#fff" stroke-width="2" />
+  <path d="M213 48L223 48" stroke="#fff" stroke-width="2" />
+</svg>
