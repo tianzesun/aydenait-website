@@ -1,5 +1,4 @@
 import CaseAccordion from "../components/CaseAccordion";
-import CaseStudiesGrid from "../components/CaseStudiesGrid";
 
 const Home = () => (
   <>
