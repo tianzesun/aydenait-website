@@ -1,7 +1,17 @@
+import SEO from "../components/SEO";
+
 const Privacy = () => (
-  <section className="py-12 bg-gradient-to-b from-blue-950 to-[#10172a] min-h-screen">
-    <div className="max-w-3xl mx-auto px-6 text-blue-100">
-      <h1 className="text-3xl font-bold mb-6 text-blue-200">Privacy Policy</h1>
+  <>
+    <SEO
+      title="Privacy Policy - AydenAIT Solution"
+      description="Learn how AydenAIT Solution collects, uses, and protects your personal information. Our commitment to data privacy and security."
+      keywords="privacy policy, data protection, information security, GDPR compliance"
+      ogUrl="https://aydenait.com/privacy"
+      canonical="https://aydenait.com/privacy"
+    />
+    <section className="py-12 bg-gradient-to-b from-blue-950 to-[#10172a] min-h-screen">
+      <div className="max-w-3xl mx-auto px-6 text-blue-100">
+        <h1 className="text-3xl font-bold mb-6 text-blue-200">Privacy Policy</h1>
       <p className="mb-4 text-blue-200">
         Your privacy is important to us at <span className="font-bold">AydenAIT Solution</span>. This policy outlines what information we collect and how we use, store, and protect it.
       </p>
@@ -32,5 +42,6 @@ const Privacy = () => (
       <p className="text-xs mt-8 text-blue-400">Last updated: September 2025</p>
     </div>
   </section>
+  </>
 );
 export default Privacy;

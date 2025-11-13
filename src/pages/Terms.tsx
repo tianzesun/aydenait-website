@@ -1,7 +1,17 @@
+import SEO from "../components/SEO";
+
 const Terms = () => (
-  <section className="py-12 bg-gradient-to-b from-blue-950 to-[#10172a] min-h-screen">
-    <div className="max-w-3xl mx-auto px-6 text-blue-100">
-      <h1 className="text-3xl font-bold mb-6 text-blue-200">Terms of Service</h1>
+  <>
+    <SEO
+      title="Terms of Service - AydenAIT Solution"
+      description="Read the terms and conditions for using AydenAIT Solution's website and services. Understand your rights and responsibilities."
+      keywords="terms of service, terms and conditions, service agreement, legal terms"
+      ogUrl="https://aydenait.com/terms"
+      canonical="https://aydenait.com/terms"
+    />
+    <section className="py-12 bg-gradient-to-b from-blue-950 to-[#10172a] min-h-screen">
+      <div className="max-w-3xl mx-auto px-6 text-blue-100">
+        <h1 className="text-3xl font-bold mb-6 text-blue-200">Terms of Service</h1>
       <p className="mb-4">
         Welcome to <span className="font-bold">AydenAIT Solution</span>. By using our site and services, you agree to the following terms:
       </p>
@@ -34,5 +44,6 @@ const Terms = () => (
       <p className="text-xs mt-8 text-blue-400">Last updated: September 2025</p>
     </div>
   </section>
+  </>
 );
 export default Terms;

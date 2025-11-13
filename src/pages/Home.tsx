@@ -29,6 +29,49 @@ const Home = () => (
       </div>
     </section>
 
+    {/* Stats Section - UPDATE WITH YOUR REAL NUMBERS */}
+    <section className="py-16 bg-white">
+      <div className="max-w-6xl mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Trusted by Companies Worldwide</h2>
+        <div className="grid md:grid-cols-4 gap-8 text-center">
+          <div className="p-6">
+            <div className="text-5xl font-extrabold text-blue-600 mb-2">50+</div>
+            <p className="text-gray-600 font-medium">Projects Delivered</p>
+            <p className="text-sm text-gray-500 mt-1">[UPDATE: Your actual number]</p>
+          </div>
+          <div className="p-6">
+            <div className="text-5xl font-extrabold text-blue-600 mb-2">99.9%</div>
+            <p className="text-gray-600 font-medium">Uptime Achieved</p>
+            <p className="text-sm text-gray-500 mt-1">[UPDATE: Your SLA metric]</p>
+          </div>
+          <div className="p-6">
+            <div className="text-5xl font-extrabold text-blue-600 mb-2">40%</div>
+            <p className="text-gray-600 font-medium">Cost Reduction</p>
+            <p className="text-sm text-gray-500 mt-1">[UPDATE: Avg. savings %]</p>
+          </div>
+          <div className="p-6">
+            <div className="text-5xl font-extrabold text-blue-600 mb-2">5+</div>
+            <p className="text-gray-600 font-medium">Years Experience</p>
+            <p className="text-sm text-gray-500 mt-1">[UPDATE: Your years]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Trusted By Section - ADD YOUR CLIENT LOGOS */}
+    <section className="py-12 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4 text-center">
+        <p className="text-gray-600 font-semibold mb-8 uppercase tracking-wide text-sm">Trusted By Leading Companies</p>
+        <div className="flex flex-wrap justify-center items-center gap-12 opacity-60 grayscale">
+          {/* [UPDATE: Replace with your actual client logos] */}
+          <div className="h-12 w-32 bg-gray-300 rounded flex items-center justify-center text-xs text-gray-600">Client Logo 1</div>
+          <div className="h-12 w-32 bg-gray-300 rounded flex items-center justify-center text-xs text-gray-600">Client Logo 2</div>
+          <div className="h-12 w-32 bg-gray-300 rounded flex items-center justify-center text-xs text-gray-600">Client Logo 3</div>
+          <div className="h-12 w-32 bg-gray-300 rounded flex items-center justify-center text-xs text-gray-600">Client Logo 4</div>
+        </div>
+      </div>
+    </section>
+
     <section className="py-16 bg-gradient-to-b from-gray-950 to-blue-950">
       <div className="max-w-5xl mx-auto px-4 grid md:grid-cols-3 gap-8">
         {[
@@ -45,7 +88,95 @@ const Home = () => (
         ))}
       </div>
     </section>
+
+    {/* Testimonials Section - UPDATE WITH YOUR REAL TESTIMONIALS */}
+    <section className="py-16 bg-white">
+      <div className="max-w-6xl mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">What Our Clients Say</h2>
+        <p className="text-center text-gray-600 mb-12">Don't just take our word for it</p>
+        <div className="grid md:grid-cols-3 gap-8">
+          {/* Testimonial 1 - [UPDATE WITH REAL CLIENT FEEDBACK] */}
+          <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+            <div className="flex mb-4">
+              <span className="text-yellow-400">★★★★★</span>
+            </div>
+            <p className="text-gray-700 mb-4 italic">
+              "Working with AydenAIT transformed our deployment process. We went from weekly releases to daily deployments with zero downtime."
+            </p>
+            <p className="text-sm text-gray-500">[UPDATE: Add real testimonial]</p>
+            <div className="mt-4 flex items-center gap-3">
+              <div className="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-blue-600 font-bold">JD</div>
+              <div>
+                <p className="font-bold text-gray-800">John Doe</p>
+                <p className="text-sm text-gray-600">CTO, TechCorp</p>
+                <p className="text-xs text-gray-500">[UPDATE: Real name & company]</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Testimonial 2 */}
+          <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+            <div className="flex mb-4">
+              <span className="text-yellow-400">★★★★★</span>
+            </div>
+            <p className="text-gray-700 mb-4 italic">
+              "The AI-driven monitoring they implemented caught issues before our customers even noticed. Game changer for our SaaS platform."
+            </p>
+            <p className="text-sm text-gray-500">[UPDATE: Add real testimonial]</p>
+            <div className="mt-4 flex items-center gap-3">
+              <div className="w-12 h-12 bg-green-200 rounded-full flex items-center justify-center text-green-600 font-bold">SM</div>
+              <div>
+                <p className="font-bold text-gray-800">Sarah Miller</p>
+                <p className="text-sm text-gray-600">VP Engineering, CloudStart</p>
+                <p className="text-xs text-gray-500">[UPDATE: Real name & company]</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Testimonial 3 */}
+          <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+            <div className="flex mb-4">
+              <span className="text-yellow-400">★★★★★</span>
+            </div>
+            <p className="text-gray-700 mb-4 italic">
+              "Cut our AWS costs by 35% while improving performance. Their infrastructure optimization was worth every penny."
+            </p>
+            <p className="text-sm text-gray-500">[UPDATE: Add real testimonial]</p>
+            <div className="mt-4 flex items-center gap-3">
+              <div className="w-12 h-12 bg-purple-200 rounded-full flex items-center justify-center text-purple-600 font-bold">MK</div>
+              <div>
+                <p className="font-bold text-gray-800">Michael Kim</p>
+                <p className="text-sm text-gray-600">Director of Ops, FinanceAI</p>
+                <p className="text-xs text-gray-500">[UPDATE: Real name & company]</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <CaseAccordion />
+
+    {/* Final CTA Section */}
+    <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-500">
+      <div className="max-w-4xl mx-auto px-4 text-center">
+        <h2 className="text-4xl font-bold text-white mb-4">Ready to Transform Your DevOps?</h2>
+        <p className="text-xl text-blue-50 mb-8">
+          Schedule a free 30-minute consultation to discuss your challenges and goals
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link to="/contact" className="px-8 py-4 rounded-full bg-white text-blue-600 font-bold shadow-lg hover:scale-105 transition text-lg">
+            Schedule Free Consultation
+          </Link>
+          <Link to="/services" className="px-8 py-4 rounded-full border-2 border-white text-white font-bold hover:bg-white hover:text-blue-600 transition text-lg">
+            View Our Services
+          </Link>
+        </div>
+        <p className="mt-6 text-blue-100 text-sm">
+          ✓ No commitment required  ✓ NDA available  ✓ Response within 24 hours
+        </p>
+      </div>
+    </section>
   </>
 );
 
