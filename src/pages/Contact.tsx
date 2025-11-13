@@ -9,17 +9,44 @@ const Contact = () => {
     message: ""
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    // In a real application, you would send this data to your backend/API
-    console.log("Contact form submitted:", formData);
-    setSubmitted(true);
-    // Reset form after 3 seconds
-    setTimeout(() => {
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      // Call the serverless function
+      const response = await fetch("/.netlify/functions/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to send message");
+      }
+
+      // Success
+      setSubmitted(true);
       setFormData({ name: "", email: "", phone: "", message: "" });
-      setSubmitted(false);
-    }, 3000);
+
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to send message. Please try emailing us directly.");
+      console.error("Contact form error:", err);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -43,7 +70,12 @@ const Contact = () => {
           <p className="text-blue-200 mb-7">Let's connect—our experts respond within 1 business day. Info is 100% confidential.</p>
           {submitted && (
             <div className="mb-4 p-3 bg-green-500/20 border border-green-500 rounded text-green-100">
-              Thank you! We'll be in touch soon.
+              ✓ Thank you! We'll be in touch within 1 business day.
+            </div>
+          )}
+          {error && (
+            <div className="mb-4 p-3 bg-red-500/20 border border-red-500 rounded text-red-100">
+              ✗ {error}
             </div>
           )}
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -86,8 +118,12 @@ const Contact = () => {
                 required
                 className="w-full border-b bg-transparent px-3 py-2 text-blue-100 border-blue-400 rounded focus:outline-none focus:border-cyan-400 transition"></textarea>
             </div>
-            <button type="submit" className="mt-3 py-3 bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-bold rounded-lg hover:bg-blue-700 transition text-lg">
-              Send Message
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="mt-3 py-3 bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-bold rounded-lg hover:bg-blue-700 transition text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isSubmitting ? "Sending..." : "Send Message"}
             </button>
           </form>
           <p className="mt-7 text-xs text-blue-300">We never share your info. NDA always available.</p>
