@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Services = () => (
   <section className="pt-16 pb-8 bg-gradient-to-b from-blue-950 to-[#10172a] min-h-screen">
     <div className="max-w-4xl mx-auto px-4">
@@ -88,9 +90,9 @@ const Services = () => (
       
       {/* CALL TO ACTION */}
       <div className="text-center mt-10">
-        <a href="/contact" className="inline-block px-8 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold shadow-lg hover:scale-105 transition">
+        <Link to="/contact" className="inline-block px-8 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold shadow-lg hover:scale-105 transition">
           Get My Free DevOps Assessment →
-        </a>
+        </Link>
         <div className="mt-2 text-blue-200 text-xs">NDA & confidentiality always included.</div>
       </div>
     </div>

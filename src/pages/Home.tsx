@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CaseAccordion from "../components/CaseAccordion";
 
 const Home = () => (
@@ -11,8 +12,8 @@ const Home = () => (
         </h1>
         <p className="mt-5 text-xl text-blue-100">Unlock reliability, automation, and security with intelligence engineered for real teams.</p>
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact" className="px-8 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold shadow-lg hover:scale-105 transition">Get in Touch</a>
-          <a href="/services" className="px-8 py-3 rounded-full text-blue-100 border border-blue-200 font-semibold hover:bg-white/10 transition">Our Services</a>
+          <Link to="/contact" className="px-8 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold shadow-lg hover:scale-105 transition">Get in Touch</Link>
+          <Link to="/services" className="px-8 py-3 rounded-full text-blue-100 border border-blue-200 font-semibold hover:bg-white/10 transition">Our Services</Link>
         </div>
       </div>
     </section>

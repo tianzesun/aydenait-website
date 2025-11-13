@@ -1,3 +1,5 @@
+import { useState, type FormEvent } from "react";
+
 const openJobs = [
   {
     title: "Senior DevOps Engineer",
@@ -13,9 +15,34 @@ const openJobs = [
   }
 ];
 
-const Careers = () => (
-  <section className="pt-16 pb-16 bg-white min-h-screen">
-    <div className="max-w-5xl mx-auto px-4">
+const Careers = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    portfolio: "",
+    position: "",
+    coverLetter: ""
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    // In a real application, you would send this to your backend/API
+    console.log("Job application submitted:", formData);
+    setSubmitted(true);
+    setTimeout(() => {
+      setFormData({ name: "", email: "", portfolio: "", position: "", coverLetter: "" });
+      setSubmitted(false);
+    }, 3000);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  return (
+    <section className="pt-16 pb-16 bg-white min-h-screen">
+      <div className="max-w-5xl mx-auto px-4">
       {/* Page Header */}
       <h1 className="text-4xl font-extrabold text-blue-800 mb-3 text-center">Careers at AydenAIT</h1>
       <p className="text-gray-800 text-lg text-center mb-10">
@@ -62,23 +89,61 @@ const Careers = () => (
       {/* Application Form */}
       <div className="bg-gray-50 rounded-2xl p-8 shadow mt-10 max-w-lg mx-auto">
         <h3 className="text-blue-800 font-bold mb-3 text-xl">Apply Now</h3>
-        <form className="flex flex-col gap-4">
-          <input required type="text" placeholder="Your Name" className="w-full border-b px-3 py-2 bg-white text-gray-800 border-blue-100 rounded focus:outline-none focus:border-blue-400"/>
-          <input required type="email" placeholder="Your Email" className="w-full border-b px-3 py-2 bg-white text-gray-800 border-blue-100 rounded focus:outline-none focus:border-blue-400"/>
-          <input type="text" placeholder="LinkedIn or Portfolio" className="w-full border-b px-3 py-2 bg-white text-gray-800 border-blue-100 rounded focus:outline-none focus:border-blue-400"/>
-          <select required className="border-b px-3 py-2 bg-white text-gray-800 border-blue-100 rounded focus:outline-none focus:border-blue-400">
-            <option disabled selected value="">Select Position</option>
+        {submitted && (
+          <div className="mb-4 p-3 bg-green-500/20 border border-green-500 rounded text-green-700">
+            Application submitted! We'll review it shortly.
+          </div>
+        )}
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <input
+            required
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Your Name"
+            className="w-full border-b px-3 py-2 bg-white text-gray-800 border-blue-100 rounded focus:outline-none focus:border-blue-400"/>
+          <input
+            required
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Your Email"
+            className="w-full border-b px-3 py-2 bg-white text-gray-800 border-blue-100 rounded focus:outline-none focus:border-blue-400"/>
+          <input
+            type="text"
+            name="portfolio"
+            value={formData.portfolio}
+            onChange={handleChange}
+            placeholder="LinkedIn or Portfolio"
+            className="w-full border-b px-3 py-2 bg-white text-gray-800 border-blue-100 rounded focus:outline-none focus:border-blue-400"/>
+          <select
+            required
+            name="position"
+            value={formData.position}
+            onChange={handleChange}
+            className="border-b px-3 py-2 bg-white text-gray-800 border-blue-100 rounded focus:outline-none focus:border-blue-400">
+            <option disabled value="">Select Position</option>
             {openJobs.map((job, i) => (
-              <option key={i}>{job.title}</option>
+              <option key={i} value={job.title}>{job.title}</option>
             ))}
           </select>
-          <textarea rows={5} required placeholder="Message / Cover Letter" className="w-full border-b px-3 py-2 bg-white text-gray-800 border-blue-100 rounded focus:outline-none focus:border-blue-400"></textarea>
+          <textarea
+            rows={5}
+            required
+            name="coverLetter"
+            value={formData.coverLetter}
+            onChange={handleChange}
+            placeholder="Message / Cover Letter"
+            className="w-full border-b px-3 py-2 bg-white text-gray-800 border-blue-100 rounded focus:outline-none focus:border-blue-400"></textarea>
           <button type="submit" className="mt-3 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded transition text-lg">Submit Application</button>
         </form>
         <p className="mt-5 text-xs text-blue-700">All applications are confidential. We reply to every qualified applicant.</p>
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default Careers;
