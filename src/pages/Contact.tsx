@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from "react";
+import SEO from "../components/SEO";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -26,7 +27,15 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-16 min-h-screen bg-gradient-to-bl from-blue-950 via-[#232d47] to-blue-900">
+    <>
+      <SEO
+        title="Contact Us - AydenAIT Solution"
+        description="Get in touch with our DevOps and AI engineering experts. Free consultation, NDA standard, response within 1 business day. Email: hello@aydenait.com"
+        keywords="contact DevOps consultant, AI engineering contact, free DevOps assessment, DevOps consultation"
+        ogUrl="https://aydenait.com/contact"
+        canonical="https://aydenait.com/contact"
+      />
+      <section className="py-16 min-h-screen bg-gradient-to-bl from-blue-950 via-[#232d47] to-blue-900">
       <div className="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-12">
         {/* Contact Form */}
         <div className="bg-white/10 rounded-2xl p-8 shadow-lg flex flex-col justify-center">
@@ -103,6 +112,7 @@ const Contact = () => {
       </div>
     </div>
   </section>
+    </>
   );
 };
 export default Contact;

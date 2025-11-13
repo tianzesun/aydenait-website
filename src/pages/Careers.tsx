@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from "react";
+import SEO from "../components/SEO";
 
 const openJobs = [
   {
@@ -41,7 +42,15 @@ const Careers = () => {
   };
 
   return (
-    <section className="pt-16 pb-16 bg-white min-h-screen">
+    <>
+      <SEO
+        title="Careers - Join AydenAIT Solution"
+        description="Join our team of senior DevOps and AI engineers. Remote-friendly, learning budget, transparent management. Open positions: DevOps Engineer, AI/ML Engineer."
+        keywords="DevOps careers, AI engineer jobs, remote DevOps jobs, cloud engineer careers, Kubernetes jobs, Toronto tech jobs"
+        ogUrl="https://aydenait.com/careers"
+        canonical="https://aydenait.com/careers"
+      />
+      <section className="pt-16 pb-16 bg-white min-h-screen">
       <div className="max-w-5xl mx-auto px-4">
       {/* Page Header */}
       <h1 className="text-4xl font-extrabold text-blue-800 mb-3 text-center">Careers at AydenAIT</h1>
@@ -143,6 +152,7 @@ const Careers = () => {
       </div>
     </div>
   </section>
+    </>
   );
 };
 

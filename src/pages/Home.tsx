@@ -1,8 +1,19 @@
 import { Link } from "react-router-dom";
 import CaseAccordion from "../components/CaseAccordion";
+import SEO from "../components/SEO";
+import StructuredData, { organizationSchema, websiteSchema } from "../components/StructuredData";
 
 const Home = () => (
   <>
+    <SEO
+      title="AydenAIT Solution - AI-Driven DevOps Consulting"
+      description="Unlock reliability, automation, and security with intelligence engineered for real teams. Expert DevOps, AI automation, cloud migration, and CI/CD services."
+      keywords="DevOps consulting, AI automation, cloud migration, CI/CD, Kubernetes, AWS, Azure, DevSecOps, infrastructure as code, AIOps"
+      ogUrl="https://aydenait.com"
+      canonical="https://aydenait.com"
+    />
+    <StructuredData data={organizationSchema} />
+    <StructuredData data={websiteSchema} />
     <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-950 via-blue-900 to-indigo-900">
       <div className="absolute -top-32 -left-40 w-96 h-96 bg-blue-500 rounded-full filter blur-2xl opacity-40 animate-pulse" />
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyan-400 rounded-full filter blur-2xl opacity-30 animate-pulse delay-500" />

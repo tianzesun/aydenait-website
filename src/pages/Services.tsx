@@ -1,7 +1,18 @@
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
+import StructuredData, { serviceSchema } from "../components/StructuredData";
 
 const Services = () => (
-  <section className="pt-16 pb-8 bg-gradient-to-b from-blue-950 to-[#10172a] min-h-screen">
+  <>
+    <SEO
+      title="DevOps & AI Engineering Services - AydenAIT Solution"
+      description="Expert DevOps consulting, AI automation, cloud migration, CI/CD, Kubernetes, and DevSecOps services. Accelerate software delivery with AI-powered automation."
+      keywords="DevOps services, AI engineering, cloud migration, CI/CD automation, Kubernetes consulting, DevSecOps, infrastructure as code, Terraform, AWS consulting, Azure consulting"
+      ogUrl="https://aydenait.com/services"
+      canonical="https://aydenait.com/services"
+    />
+    <StructuredData data={serviceSchema} />
+    <section className="pt-16 pb-8 bg-gradient-to-b from-blue-950 to-[#10172a] min-h-screen">
     <div className="max-w-4xl mx-auto px-4">
       {/* HERO */}
       <h1 className="text-4xl font-extrabold text-blue-100 mb-2 text-center">
@@ -97,6 +108,7 @@ const Services = () => (
       </div>
     </div>
   </section>
+  </>
 );
 
 export default Services;
