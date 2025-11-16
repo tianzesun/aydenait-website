@@ -3,9 +3,9 @@ import SEO from "../components/SEO";
 const About = () => (
   <>
     <SEO
-      title="About Us - AydenAIT Solution"
-      description="Transform businesses with intelligent AI solutions and custom software development. Expert AI engineers and software developers delivering innovative, results-driven solutions."
-      keywords="about AydenAIT, AI software company, AI engineering firm, software development company, AI solutions provider, custom software development"
+      title="About AydenAIT - Enterprise AI & IT Consulting Experts"
+      description="Leading provider of AI consulting, IT solutions, and AIOps services. Our team of experts helps enterprises navigate digital transformation and achieve operational excellence."
+      keywords="about AydenAIT, AI consulting firm, IT consulting company, enterprise AI, technology consulting, AIOps provider, digital transformation experts"
       ogUrl="https://aydenait.com/about"
       canonical="https://aydenait.com/about"
     />
@@ -15,11 +15,12 @@ const About = () => (
       <div className="max-w-4xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
         <div>
           <h1 className="text-4xl font-bold text-white mb-3">About AydenAIT</h1>
-          <p className="text-xl text-blue-100 mb-4">Our mission: Empower businesses with intelligent AI solutions and custom software that drives real results.</p>
+          <p className="text-xl text-blue-100 mb-4">Empowering enterprises through intelligent technology consulting and operational excellence.</p>
           <ul className="list-disc text-blue-200 ml-6 mb-2">
-            <li>Expert AI engineers and software developers</li>
-            <li>Custom solutions tailored to your needs</li>
-            <li>Real AI implementation, not just theory</li>
+            <li>Enterprise AI & IT consulting experts</li>
+            <li>Strategic technology transformation partners</li>
+            <li>Proven track record in digital innovation</li>
+            <li>Industry-leading AIOps solutions</li>
           </ul>
         </div>
         <div className="bg-gray-300 w-80 h-80 mx-auto rounded-2xl flex items-center justify-center text-gray-600 text-sm p-4">
@@ -34,13 +35,13 @@ const About = () => (
         <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Our Story</h2>
         <div className="prose prose-lg max-w-none text-gray-700">
           <p className="mb-4">
-            Founded in [YEAR], AydenAIT Solution emerged from a simple observation: businesses needed AI solutions that actually worked, not just theoretical concepts and buzzwords.
+            Founded in [YEAR], AydenAIT emerged from a vision to bridge the gap between enterprise technology challenges and intelligent solutions. We recognized that organizations needed more than just technology—they needed strategic partners who understood both business objectives and technical implementation.
           </p>
           <p className="mb-4">
-            Our founders, veterans of [COMPANIES/INDUSTRIES], saw firsthand how companies struggled to implement AI and build intelligent software systems. They needed partners who could deliver real, working solutions—from custom AI models to complete software applications.
+            Our leadership team, with backgrounds from [COMPANIES/INDUSTRIES], brings deep expertise in AI consulting, IT solutions, and operational intelligence. We've witnessed the transformation that occurs when organizations successfully leverage AI and modern IT practices to drive business value.
           </p>
           <p className="mb-4">
-            Today, we've helped over [NUMBER] companies transform their operations with AI solutions and custom software, improving efficiency by [%], reducing costs by [%], and unlocking new capabilities they never thought possible.
+            Today, we serve enterprises across [INDUSTRIES], delivering AI consulting, IT solutions, custom AI development, and AIOps services that generate measurable business outcomes. Our clients report [X%] improvement in operational efficiency, [Y%] reduction in incident response time, and [Z%] cost optimization through our solutions.
           </p>
           <p className="text-sm text-gray-500 italic mt-6 bg-yellow-50 p-4 rounded">
             [UPDATE: Replace with your real founding story, key milestones, and growth journey]

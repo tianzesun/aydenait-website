@@ -5,9 +5,9 @@ import StructuredData, { serviceSchema } from "../components/StructuredData";
 const Services = () => (
   <>
     <SEO
-      title="AI Solutions & Software Development Services - AydenAIT Solution"
-      description="Expert AI software development, machine learning solutions, custom AI engineering, and DevOps automation services. Transform your business with intelligent software systems."
-      keywords="AI solutions, AI software development, machine learning, custom AI development, AI engineering, intelligent systems, DevOps automation, cloud solutions, software consulting"
+      title="Enterprise Services - AI Consulting, IT Solutions & AIOps | AydenAIT"
+      description="Comprehensive AI consulting, IT solutions, AI software development, and AIOps services. Expert technology consulting for digital transformation and intelligent automation."
+      keywords="AI consulting services, IT consulting, AIOps solutions, AI software development, enterprise AI, technology consulting, digital transformation, IT solutions, intelligent automation"
       ogUrl="https://aydenait.com/services"
       canonical="https://aydenait.com/services"
     />
@@ -16,10 +16,10 @@ const Services = () => (
     <div className="max-w-4xl mx-auto px-4">
       {/* HERO */}
       <h1 className="text-4xl font-extrabold text-blue-100 mb-2 text-center">
-        AI Solutions & Custom Software Development
+        Enterprise Technology Services
       </h1>
       <p className="text-blue-200 text-xl text-center mb-10">
-        Transform your business with intelligent AI solutions, custom software development, and cutting-edge automation. From machine learning models to enterprise systems—results-driven solutions trusted by innovative companies worldwide.
+        Delivering expert AI consulting, comprehensive IT solutions, custom AI development, and AIOps excellence. Partner with us to drive digital transformation and operational intelligence across your organization.
       </p>
 
       {/* WHY CHOOSE US */}
@@ -43,21 +43,59 @@ const Services = () => (
       </div>
 
       {/* CORE SERVICES */}
-      <h2 className="text-2xl font-bold text-blue-200 mt-12 mb-5 text-center">What We Do</h2>
-      <ul className="grid md:grid-cols-2 gap-6 text-blue-100 mb-8">
-        <li>• Custom AI Software Development & Machine Learning Solutions</li>
-        <li>• AI Model Training, Fine-tuning & Deployment (LLMs, Computer Vision, NLP)</li>
-        <li>• Intelligent Automation & AI-Powered Workflows</li>
-        <li>• Custom Web & Mobile Application Development</li>
-        <li>• API Development & System Integration</li>
-        <li>• Cloud-Native Application Architecture (AWS, Azure, GCP)</li>
-        <li>• DevOps & CI/CD Pipeline Automation</li>
-        <li>• Containerization & Orchestration (Kubernetes, Docker)</li>
-        <li>• Infrastructure as Code (Terraform, Ansible, CloudFormation)</li>
-        <li>• AI Consulting & Digital Transformation Strategy</li>
-        <li>• Data Engineering & Analytics Solutions</li>
-        <li>• Enterprise Software Development & Legacy Modernization</li>
-      </ul>
+      <h2 className="text-2xl font-bold text-blue-200 mt-12 mb-5 text-center">Our Service Offerings</h2>
+
+      {/* AI Consulting */}
+      <div className="mb-8 bg-white/5 rounded-xl p-6 border border-blue-800">
+        <h3 className="text-xl font-bold text-cyan-300 mb-3">🎯 AI Consulting & Strategy</h3>
+        <ul className="grid md:grid-cols-2 gap-3 text-blue-100 text-sm">
+          <li>• AI Readiness Assessment & Maturity Analysis</li>
+          <li>• AI Strategy Development & Roadmap Planning</li>
+          <li>• Use Case Identification & Feasibility Studies</li>
+          <li>• AI Governance & Ethics Framework</li>
+          <li>• ROI Analysis & Business Case Development</li>
+          <li>• Technology Stack Selection & Architecture Design</li>
+        </ul>
+      </div>
+
+      {/* IT Solutions */}
+      <div className="mb-8 bg-white/5 rounded-xl p-6 border border-blue-800">
+        <h3 className="text-xl font-bold text-cyan-300 mb-3">💼 IT Consulting & Solutions</h3>
+        <ul className="grid md:grid-cols-2 gap-3 text-blue-100 text-sm">
+          <li>• IT Infrastructure Assessment & Optimization</li>
+          <li>• Cloud Migration & Modernization (AWS, Azure, GCP)</li>
+          <li>• Enterprise Architecture Design & Implementation</li>
+          <li>• Technology Stack Evaluation & Selection</li>
+          <li>• Digital Transformation Consulting</li>
+          <li>• IT Security & Compliance Solutions</li>
+        </ul>
+      </div>
+
+      {/* AI Development */}
+      <div className="mb-8 bg-white/5 rounded-xl p-6 border border-blue-800">
+        <h3 className="text-xl font-bold text-cyan-300 mb-3">🤖 AI Software Development</h3>
+        <ul className="grid md:grid-cols-2 gap-3 text-blue-100 text-sm">
+          <li>• Custom AI Application Development</li>
+          <li>• Machine Learning Model Development & Training</li>
+          <li>• LLM Integration & Fine-tuning</li>
+          <li>• Computer Vision & NLP Solutions</li>
+          <li>• Intelligent Automation & Workflow Optimization</li>
+          <li>• AI-Powered Analytics & Decision Support Systems</li>
+        </ul>
+      </div>
+
+      {/* AIOps */}
+      <div className="mb-8 bg-white/5 rounded-xl p-6 border border-blue-800">
+        <h3 className="text-xl font-bold text-cyan-300 mb-3">⚡ AIOps & Intelligent Operations</h3>
+        <ul className="grid md:grid-cols-2 gap-3 text-blue-100 text-sm">
+          <li>• AI-Driven Monitoring & Observability</li>
+          <li>• Predictive Incident Management</li>
+          <li>• Intelligent Alerting & Anomaly Detection</li>
+          <li>• Automated Root Cause Analysis</li>
+          <li>• Self-Healing Infrastructure & Auto-Remediation</li>
+          <li>• Performance Optimization & Capacity Planning</li>
+        </ul>
+      </div>
 
       {/* TOOL STACK */}
       <h2 className="text-xl font-bold text-blue-200 mt-12 mb-3">Our Technology Stack</h2>
@@ -108,9 +146,9 @@ const Services = () => (
       {/* CALL TO ACTION */}
       <div className="text-center mt-10">
         <Link to="/contact" className="inline-block px-8 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold shadow-lg hover:scale-105 transition">
-          Get Your Free Consultation →
+          Request Enterprise Consultation →
         </Link>
-        <div className="mt-2 text-blue-200 text-xs">NDA & confidentiality always included.</div>
+        <div className="mt-2 text-blue-200 text-xs">Confidential consultation • NDA provided • Enterprise-grade solutions</div>
       </div>
     </div>
   </section>

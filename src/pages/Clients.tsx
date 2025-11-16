@@ -3,9 +3,9 @@ import SEO from "../components/SEO";
 const Clients = () => (
   <>
     <SEO
-      title="Our Clients & Success Stories - AydenAIT Solution"
-      description="See how we've helped companies transform their businesses with AI solutions and custom software development. Real results, proven success stories."
-      keywords="AI success stories, software development case studies, AI implementation results, client testimonials, AI solutions portfolio"
+      title="Client Success Stories - AI Consulting & IT Solutions | AydenAIT"
+      description="Discover how enterprises achieve digital transformation through our AI consulting, IT solutions, and AIOps services. Real results, measurable outcomes."
+      keywords="AI consulting case studies, enterprise transformation, AIOps success stories, IT consulting results, digital transformation examples"
       ogUrl="https://aydenait.com/clients"
       canonical="https://aydenait.com/clients"
     />
