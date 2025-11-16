@@ -57,8 +57,8 @@ const Contact = () => {
     <>
       <SEO
         title="Contact Us - AydenAIT Solution"
-        description="Get in touch with our DevOps and AI engineering experts. Free consultation, NDA standard, response within 1 business day. Email: hello@aydenait.com"
-        keywords="contact DevOps consultant, AI engineering contact, free DevOps assessment, DevOps consultation"
+        description="Get in touch with our AI solutions and software development experts. Free consultation, NDA standard, response within 1 business day. Email: hello@aydenait.com"
+        keywords="contact AI developer, AI software consulting, custom AI development, software development consultation, AI engineering contact"
         ogUrl="https://aydenait.com/contact"
         canonical="https://aydenait.com/contact"
       />

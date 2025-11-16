@@ -45,8 +45,8 @@ const Careers = () => {
     <>
       <SEO
         title="Careers - Join AydenAIT Solution"
-        description="Join our team of senior DevOps and AI engineers. Remote-friendly, learning budget, transparent management. Open positions: DevOps Engineer, AI/ML Engineer."
-        keywords="DevOps careers, AI engineer jobs, remote DevOps jobs, cloud engineer careers, Kubernetes jobs, Toronto tech jobs"
+        description="Join our team of AI engineers and software developers. Remote-friendly, learning budget, transparent management. Open positions: AI/ML Engineer, Software Developer."
+        keywords="AI engineer jobs, software developer careers, machine learning jobs, remote AI jobs, software engineering careers, Toronto tech jobs"
         ogUrl="https://aydenait.com/careers"
         canonical="https://aydenait.com/careers"
       />

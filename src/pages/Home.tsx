@@ -6,9 +6,9 @@ import StructuredData, { organizationSchema, websiteSchema } from "../components
 const Home = () => (
   <>
     <SEO
-      title="AydenAIT Solution - AI-Driven DevOps Consulting"
-      description="Unlock reliability, automation, and security with intelligence engineered for real teams. Expert DevOps, AI automation, cloud migration, and CI/CD services."
-      keywords="DevOps consulting, AI automation, cloud migration, CI/CD, Kubernetes, AWS, Azure, DevSecOps, infrastructure as code, AIOps"
+      title="AydenAIT Solution - AI Solutions & Software Development"
+      description="Transform your business with cutting-edge AI solutions and custom software development. Expert AI engineering, machine learning, DevOps automation, and intelligent software systems."
+      keywords="AI solutions, AI software development, machine learning, artificial intelligence, AI engineering, custom AI development, DevOps automation, intelligent systems, AI consulting"
       ogUrl="https://aydenait.com"
       canonical="https://aydenait.com"
     />
@@ -19,9 +19,9 @@ const Home = () => (
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyan-400 rounded-full filter blur-2xl opacity-30 animate-pulse delay-500" />
       <div className="relative z-10 max-w-2xl mx-auto px-4 text-center">
         <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4">
-          <span className="text-blue-400">AI-Driven</span> <span className="text-white">DevOps Consulting</span>
+          <span className="text-blue-400">AI Solutions</span> <span className="text-white">&</span> <span className="text-cyan-300">Software Development</span>
         </h1>
-        <p className="mt-5 text-xl text-blue-100">Unlock reliability, automation, and security with intelligence engineered for real teams.</p>
+        <p className="mt-5 text-xl text-blue-100">Transform your business with intelligent software solutions, AI engineering, and cutting-edge automation.</p>
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
           <Link to="/contact" className="px-8 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold shadow-lg hover:scale-105 transition">Get in Touch</Link>
           <Link to="/services" className="px-8 py-3 rounded-full text-blue-100 border border-blue-200 font-semibold hover:bg-white/10 transition">Our Services</Link>
@@ -75,9 +75,9 @@ const Home = () => (
     <section className="py-16 bg-gradient-to-b from-gray-950 to-blue-950">
       <div className="max-w-5xl mx-auto px-4 grid md:grid-cols-3 gap-8">
         {[
-          {title:'AI Automation', icon:'🤖', desc:'Accelerate DevOps pipelines and workflows with event-driven agents.'},
-          {title:'Predictive Monitoring', icon:'📊', desc:'Real-time insight, anomaly alerting, and auto-tuning from AIOps.'},
-          {title:'Zero-Trust Security', icon:'🛡️', desc:'AI-based risk scoring and always-on compliance controls.'}
+          {title:'AI Software Development', icon:'🤖', desc:'Custom AI solutions, machine learning models, and intelligent software systems tailored to your business needs.'},
+          {title:'DevOps & Automation', icon:'⚙️', desc:'Streamline operations with CI/CD pipelines, cloud infrastructure, and intelligent automation workflows.'},
+          {title:'AI Consulting & Strategy', icon:'💡', desc:'Expert guidance on AI implementation, technology selection, and digital transformation roadmaps.'}
         ].map(card => (
           <div key={card.title}
                className="rounded-2xl p-8 shadow-2xl backdrop-blur-2xl bg-white/10 border border-blue-700 text-center hover:scale-105 hover:bg-blue-600/10 transition">
@@ -160,9 +160,9 @@ const Home = () => (
     {/* Final CTA Section */}
     <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-500">
       <div className="max-w-4xl mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold text-white mb-4">Ready to Transform Your DevOps?</h2>
+        <h2 className="text-4xl font-bold text-white mb-4">Ready to Transform Your Business with AI?</h2>
         <p className="text-xl text-blue-50 mb-8">
-          Schedule a free 30-minute consultation to discuss your challenges and goals
+          Schedule a free 30-minute consultation to discuss your AI and software development needs
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link to="/contact" className="px-8 py-4 rounded-full bg-white text-blue-600 font-bold shadow-lg hover:scale-105 transition text-lg">
