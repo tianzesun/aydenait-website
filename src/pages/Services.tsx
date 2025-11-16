@@ -271,10 +271,24 @@ const Services = () => (
       
       {/* CALL TO ACTION */}
       <div className="text-center mt-10">
-        <Link to="/contact" className="inline-block px-8 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold shadow-lg hover:scale-105 transition">
-          Request Enterprise Consultation →
-        </Link>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+          <a
+            href="https://calendly.com/YOUR-CALENDLY-LINK"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-bold shadow-lg hover:scale-105 transition"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            Schedule Free Consultation →
+          </a>
+          <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full border-2 border-cyan-400 text-cyan-200 font-bold hover:bg-cyan-400/20 transition">
+            Or Send Message →
+          </Link>
+        </div>
         <div className="mt-2 text-blue-200 text-xs">Confidential consultation • NDA provided • Enterprise-grade solutions</div>
+        <div className="mt-2 text-blue-300 text-xs">💡 Replace "YOUR-CALENDLY-LINK" with your Calendly URL</div>
       </div>
     </div>
   </section>
