@@ -211,7 +211,9 @@ const Careers = () => {
     email: "",
     portfolio: "",
     position: "",
-    coverLetter: ""
+    coverLetter: "",
+    resume: null as File | null,
+    coverLetterFile: null as File | null
   });
   const [submitted, setSubmitted] = useState(false);
   const [expandedJob, setExpandedJob] = useState<number | null>(null);
@@ -222,13 +224,18 @@ const Careers = () => {
     console.log("Job application submitted:", formData);
     setSubmitted(true);
     setTimeout(() => {
-      setFormData({ name: "", email: "", portfolio: "", position: "", coverLetter: "" });
+      setFormData({ name: "", email: "", portfolio: "", position: "", coverLetter: "", resume: null, coverLetterFile: null });
       setSubmitted(false);
     }, 3000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] || null;
+    setFormData({ ...formData, [e.target.name]: file });
   };
 
   return (
@@ -449,7 +456,7 @@ const Careers = () => {
           {/* Application Form */}
           <div id="apply" className="bg-gradient-to-br from-blue-900 to-cyan-800 rounded-2xl p-8 md:p-12 shadow-2xl max-w-2xl mx-auto">
             <h3 className="text-white font-bold mb-2 text-3xl text-center">Ready to Join Us?</h3>
-            <p className="text-blue-100 text-center mb-8">Submit your application and we'll get back to you within 2-3 business days.</p>
+            <p className="text-blue-100 text-center mb-8">Submit your application with your resume and we'll get back to you within 2-3 business days.</p>
 
             {submitted && (
               <div className="mb-6 p-4 bg-green-500/20 border-2 border-green-400 rounded-xl text-green-100 text-center font-semibold">
@@ -496,13 +503,82 @@ const Careers = () => {
                   <option key={i} value={job.title}>{job.title}</option>
                 ))}
               </select>
+
+              {/* Resume Upload */}
+              <div>
+                <label className="block text-blue-100 font-semibold mb-2 text-sm">
+                  Resume / CV *
+                </label>
+                <div className="relative">
+                  <input
+                    required
+                    type="file"
+                    name="resume"
+                    onChange={handleFileChange}
+                    accept=".pdf,.doc,.docx"
+                    className="hidden"
+                    id="resume-upload"
+                  />
+                  <label
+                    htmlFor="resume-upload"
+                    className="flex items-center justify-between w-full px-4 py-3 bg-white/95 text-gray-800 rounded-lg cursor-pointer hover:bg-white transition font-medium border-2 border-transparent hover:border-cyan-400"
+                  >
+                    <span className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      <span className="text-gray-700">
+                        {formData.resume ? formData.resume.name : 'Choose file (PDF, DOC, DOCX)'}
+                      </span>
+                    </span>
+                    {formData.resume && (
+                      <span className="text-xs text-green-600 font-semibold">✓ Uploaded</span>
+                    )}
+                  </label>
+                </div>
+                <p className="text-blue-200 text-xs mt-1">Maximum file size: 5MB</p>
+              </div>
+
+              {/* Cover Letter File Upload (Optional) */}
+              <div>
+                <label className="block text-blue-100 font-semibold mb-2 text-sm">
+                  Cover Letter File (Optional)
+                </label>
+                <div className="relative">
+                  <input
+                    type="file"
+                    name="coverLetterFile"
+                    onChange={handleFileChange}
+                    accept=".pdf,.doc,.docx"
+                    className="hidden"
+                    id="cover-letter-upload"
+                  />
+                  <label
+                    htmlFor="cover-letter-upload"
+                    className="flex items-center justify-between w-full px-4 py-3 bg-white/95 text-gray-800 rounded-lg cursor-pointer hover:bg-white transition font-medium border-2 border-transparent hover:border-cyan-400"
+                  >
+                    <span className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                      <span className="text-gray-700">
+                        {formData.coverLetterFile ? formData.coverLetterFile.name : 'Choose file (PDF, DOC, DOCX)'}
+                      </span>
+                    </span>
+                    {formData.coverLetterFile && (
+                      <span className="text-xs text-green-600 font-semibold">✓ Uploaded</span>
+                    )}
+                  </label>
+                </div>
+                <p className="text-blue-200 text-xs mt-1">Or use the text field below</p>
+              </div>
+
               <textarea
-                rows={6}
-                required
+                rows={5}
                 name="coverLetter"
                 value={formData.coverLetter}
                 onChange={handleChange}
-                placeholder="Tell us about yourself and why you're interested in this position... *"
+                placeholder="Or write your cover letter here..."
                 className="w-full px-4 py-3 bg-white/95 text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 font-medium resize-none"
               ></textarea>
               <button
