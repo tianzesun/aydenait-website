@@ -13,6 +13,36 @@ const openJobs = [
     location: "Remote",
     type: "Full-time",
     desc: "Integrate AI models into cloud pipelines. Strong Python and ML background, with production experience."
+  },
+  {
+    title: "AI Software Development Intern",
+    location: "Remote",
+    type: "Internship",
+    desc: "Build AI-powered applications using LLMs, RAG, and modern frameworks. Work on real client projects with mentorship. Strong Python, React/TypeScript skills required. Experience with OpenAI API, LangChain, or similar tools preferred."
+  },
+  {
+    title: "Machine Learning Engineering Intern",
+    location: "Remote",
+    type: "Internship",
+    desc: "Develop and deploy ML models for classification, prediction, and NLP tasks. Hands-on experience with PyTorch/TensorFlow, model optimization, and MLOps. Computer Science or related major preferred."
+  },
+  {
+    title: "Full-Stack Software Development Intern",
+    location: "Remote",
+    type: "Internship",
+    desc: "Build modern web applications with React, TypeScript, Node.js, and cloud platforms. Contribute to enterprise client projects. Strong foundation in JavaScript/TypeScript, REST APIs, and Git required."
+  },
+  {
+    title: "AI Solutions Consulting Intern",
+    location: "Remote",
+    type: "Internship",
+    desc: "Support AI consulting projects: research use cases, analyze requirements, create technical documentation, and assist with client presentations. Interest in AI strategy and business applications required."
+  },
+  {
+    title: "AIOps & DevOps Intern",
+    location: "Remote",
+    type: "Internship",
+    desc: "Learn AI-powered IT operations, infrastructure automation, and monitoring systems. Work with Kubernetes, CI/CD pipelines, and observability tools. Basic scripting (Python/Bash) and cloud platform knowledge helpful."
   }
 ];
 
@@ -45,8 +75,8 @@ const Careers = () => {
     <>
       <SEO
         title="Careers at AydenAIT - Join Our Consulting Team"
-        description="Join our team of AI consultants, IT experts, and technology professionals. Remote-friendly, competitive compensation, growth opportunities. Open positions: AI Consultant, IT Solutions Architect."
-        keywords="AI consultant jobs, IT consulting careers, technology consulting jobs, AIOps engineer, remote consulting jobs, enterprise technology careers"
+        description="Join our team of AI consultants, IT experts, and technology professionals. Full-time positions and remote internships in AI development, software engineering, and AIOps. Mentorship, real projects, competitive compensation."
+        keywords="AI consultant jobs, IT consulting careers, AI internships, software development internship, ML engineering intern, remote tech internships, AIOps jobs, AI software developer"
         ogUrl="https://aydenait.com/careers"
         canonical="https://aydenait.com/careers"
       />
@@ -55,7 +85,7 @@ const Careers = () => {
       {/* Page Header */}
       <h1 className="text-4xl font-extrabold text-blue-800 mb-3 text-center">Careers at AydenAIT</h1>
       <p className="text-gray-800 text-lg text-center mb-10">
-        Shape the future of DevOps & AI. Work remotely, flexibly, and with a team that actually cares.
+        Shape the future of AI & technology. Join our team as a full-time professional or remote intern. Work flexibly with mentorship and real-world projects.
       </p>
       {/* Team/Culture */}
       <div className="md:flex gap-12 items-center mb-12">
