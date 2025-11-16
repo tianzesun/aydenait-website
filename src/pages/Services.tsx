@@ -117,27 +117,153 @@ const Services = () => (
       </div>
 
       {/* PROJECT PROCESS */}
-      <h2 className="text-2xl font-bold text-blue-200 mt-12 mb-6 text-center">Our Engagement Process</h2>
-      <div className="grid md:grid-cols-4 gap-5 mb-6">
-        <div className="bg-blue-900/60 rounded-xl p-5 text-center border border-cyan-800 shadow">
-          <div className="text-3xl text-cyan-400 mb-1">1</div>
-          <b>Consult</b>
-          <div className="text-blue-100 text-xs mt-2">Free intro call, NDA signed, goal alignment</div>
+      <h2 className="text-3xl font-bold text-blue-100 mt-16 mb-4 text-center">Our Proven Engagement Process</h2>
+      <p className="text-blue-300 text-center mb-10 max-w-2xl mx-auto">
+        A structured, transparent approach from initial consultation to ongoing success. We partner with you at every stage to ensure measurable results and lasting impact.
+      </p>
+
+      <div className="relative">
+        {/* Connection Line */}
+        <div className="hidden md:block absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-cyan-600 via-blue-500 to-purple-600 opacity-30" style={{width: 'calc(100% - 8rem)', margin: '0 4rem'}}></div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 relative">
+          {/* Phase 1: Discovery & Consultation */}
+          <div className="bg-gradient-to-br from-blue-900/80 to-blue-800/60 rounded-2xl p-6 border-2 border-cyan-700/50 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                1
+              </div>
+              <div>
+                <h3 className="text-cyan-300 font-bold text-lg">Discovery</h3>
+                <p className="text-blue-300 text-xs">1-2 weeks</p>
+              </div>
+            </div>
+            <div className="text-blue-100 text-sm space-y-2">
+              <p className="font-semibold text-white mb-2">Initial Consultation & Alignment</p>
+              <ul className="space-y-1.5">
+                <li>• Free introductory consultation call</li>
+                <li>• NDA execution for confidentiality</li>
+                <li>• Business goals & pain points analysis</li>
+                <li>• Stakeholder interviews</li>
+                <li>• Current state assessment</li>
+                <li>• Success criteria definition</li>
+              </ul>
+            </div>
+            <div className="mt-4 pt-4 border-t border-cyan-700/30">
+              <span className="inline-block px-3 py-1 bg-cyan-600/30 rounded-full text-xs text-cyan-200 font-semibold">
+                No Cost • No Obligation
+              </span>
+            </div>
+          </div>
+
+          {/* Phase 2: Strategic Planning */}
+          <div className="bg-gradient-to-br from-blue-900/80 to-blue-800/60 rounded-2xl p-6 border-2 border-blue-600/50 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                2
+              </div>
+              <div>
+                <h3 className="text-blue-300 font-bold text-lg">Strategy</h3>
+                <p className="text-blue-300 text-xs">2-4 weeks</p>
+              </div>
+            </div>
+            <div className="text-blue-100 text-sm space-y-2">
+              <p className="font-semibold text-white mb-2">Roadmap & Architecture</p>
+              <ul className="space-y-1.5">
+                <li>• Comprehensive technical audit</li>
+                <li>• AI/IT readiness assessment</li>
+                <li>• Technology stack evaluation</li>
+                <li>• Architecture design & planning</li>
+                <li>• ROI analysis & business case</li>
+                <li>• Quick wins identification</li>
+              </ul>
+            </div>
+            <div className="mt-4 pt-4 border-t border-blue-600/30">
+              <span className="inline-block px-3 py-1 bg-blue-600/30 rounded-full text-xs text-blue-200 font-semibold">
+                Deliverable: Strategic Roadmap
+              </span>
+            </div>
+          </div>
+
+          {/* Phase 3: Implementation */}
+          <div className="bg-gradient-to-br from-blue-900/80 to-blue-800/60 rounded-2xl p-6 border-2 border-indigo-600/50 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                3
+              </div>
+              <div>
+                <h3 className="text-indigo-300 font-bold text-lg">Build</h3>
+                <p className="text-blue-300 text-xs">4-12 weeks</p>
+              </div>
+            </div>
+            <div className="text-blue-100 text-sm space-y-2">
+              <p className="font-semibold text-white mb-2">Execution & Delivery</p>
+              <ul className="space-y-1.5">
+                <li>• Agile implementation sprints</li>
+                <li>• Continuous stakeholder updates</li>
+                <li>• Code/infrastructure deployment</li>
+                <li>• Comprehensive documentation</li>
+                <li>• Testing & quality assurance</li>
+                <li>• User acceptance testing (UAT)</li>
+              </ul>
+            </div>
+            <div className="mt-4 pt-4 border-t border-indigo-600/30">
+              <span className="inline-block px-3 py-1 bg-indigo-600/30 rounded-full text-xs text-indigo-200 font-semibold">
+                Iterative • Transparent
+              </span>
+            </div>
+          </div>
+
+          {/* Phase 4: Optimization & Support */}
+          <div className="bg-gradient-to-br from-blue-900/80 to-blue-800/60 rounded-2xl p-6 border-2 border-purple-600/50 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                4
+              </div>
+              <div>
+                <h3 className="text-purple-300 font-bold text-lg">Optimize</h3>
+                <p className="text-blue-300 text-xs">Ongoing</p>
+              </div>
+            </div>
+            <div className="text-blue-100 text-sm space-y-2">
+              <p className="font-semibold text-white mb-2">Growth & Continuous Improvement</p>
+              <ul className="space-y-1.5">
+                <li>• Team training & knowledge transfer</li>
+                <li>• Performance monitoring & tuning</li>
+                <li>• Post-launch support & maintenance</li>
+                <li>• Feature enhancements</li>
+                <li>• Best practices & optimization</li>
+                <li>• Strategic consulting & advising</li>
+              </ul>
+            </div>
+            <div className="mt-4 pt-4 border-t border-purple-600/30">
+              <span className="inline-block px-3 py-1 bg-purple-600/30 rounded-full text-xs text-purple-200 font-semibold">
+                Flexible Support Models
+              </span>
+            </div>
+          </div>
         </div>
-        <div className="bg-blue-900/60 rounded-xl p-5 text-center border border-cyan-800 shadow">
-          <div className="text-3xl text-cyan-400 mb-1">2</div>
-          <b>Roadmap</b>
-          <div className="text-blue-100 text-xs mt-2">Audit, assessment, tech/tool selection, quick wins</div>
-        </div>
-        <div className="bg-blue-900/60 rounded-xl p-5 text-center border border-cyan-800 shadow">
-          <div className="text-3xl text-cyan-400 mb-1">3</div>
-          <b>Build</b>
-          <div className="text-blue-100 text-xs mt-2">Implementation, documentation, iterative delivery</div>
-        </div>
-        <div className="bg-blue-900/60 rounded-xl p-5 text-center border border-cyan-800 shadow">
-          <div className="text-3xl text-cyan-400 mb-1">4</div>
-          <b>Grow</b>
-          <div className="text-blue-100 text-xs mt-2">Upskilling, support, and ongoing optimizations</div>
+      </div>
+
+      {/* Process Benefits */}
+      <div className="mt-8 bg-gradient-to-br from-cyan-900/40 to-blue-900/40 rounded-2xl p-6 border border-cyan-700/30">
+        <h3 className="text-xl font-bold text-cyan-300 mb-4 text-center">Why Our Process Works</h3>
+        <div className="grid md:grid-cols-3 gap-6 text-blue-100">
+          <div className="text-center">
+            <div className="text-3xl mb-2">🎯</div>
+            <h4 className="font-bold text-white mb-2">Clear Milestones</h4>
+            <p className="text-sm">Every phase has defined deliverables and success metrics so you always know progress.</p>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl mb-2">🔄</div>
+            <h4 className="font-bold text-white mb-2">Flexible & Agile</h4>
+            <p className="text-sm">We adapt to changing requirements and business priorities throughout the engagement.</p>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl mb-2">🤝</div>
+            <h4 className="font-bold text-white mb-2">True Partnership</h4>
+            <p className="text-sm">We work collaboratively with your team, ensuring knowledge transfer and lasting capability.</p>
+          </div>
         </div>
       </div>
 
