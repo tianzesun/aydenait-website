@@ -4,8 +4,8 @@ const About = () => (
   <>
     <SEO
       title="About Us - AydenAIT Solution"
-      description="Accelerate tech teams with actionable, pragmatic AI. Senior cloud and DevOps engineers delivering clarity, trust, and maximum impact."
-      keywords="about AydenAIT, DevOps company, AI engineering firm, cloud consulting team, DevOps expertise"
+      description="Transform businesses with intelligent AI solutions and custom software development. Expert AI engineers and software developers delivering innovative, results-driven solutions."
+      keywords="about AydenAIT, AI software company, AI engineering firm, software development company, AI solutions provider, custom software development"
       ogUrl="https://aydenait.com/about"
       canonical="https://aydenait.com/about"
     />
@@ -15,11 +15,11 @@ const About = () => (
       <div className="max-w-4xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
         <div>
           <h1 className="text-4xl font-bold text-white mb-3">About AydenAIT</h1>
-          <p className="text-xl text-blue-100 mb-4">Our mission: Accelerate tech teams everywhere with actionable, pragmatic AI.</p>
+          <p className="text-xl text-blue-100 mb-4">Our mission: Empower businesses with intelligent AI solutions and custom software that drives real results.</p>
           <ul className="list-disc text-blue-200 ml-6 mb-2">
-            <li>Senior cloud and DevOps engineers only</li>
-            <li>Clarity, trust, and maximum impact</li>
-            <li>AI solutions, not just buzzwords</li>
+            <li>Expert AI engineers and software developers</li>
+            <li>Custom solutions tailored to your needs</li>
+            <li>Real AI implementation, not just theory</li>
           </ul>
         </div>
         <div className="bg-gray-300 w-80 h-80 mx-auto rounded-2xl flex items-center justify-center text-gray-600 text-sm p-4">
@@ -34,13 +34,13 @@ const About = () => (
         <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Our Story</h2>
         <div className="prose prose-lg max-w-none text-gray-700">
           <p className="mb-4">
-            Founded in [YEAR], AydenAIT Solution emerged from a simple observation: too many companies were struggling with DevOps complexity while AI solutions remained theoretical rather than practical.
+            Founded in [YEAR], AydenAIT Solution emerged from a simple observation: businesses needed AI solutions that actually worked, not just theoretical concepts and buzzwords.
           </p>
           <p className="mb-4">
-            Our founders, veterans of [COMPANIES/INDUSTRIES], saw firsthand how teams wasted time on manual deployments, reactive monitoring, and security patches. We knew there had to be a better way.
+            Our founders, veterans of [COMPANIES/INDUSTRIES], saw firsthand how companies struggled to implement AI and build intelligent software systems. They needed partners who could deliver real, working solutions—from custom AI models to complete software applications.
           </p>
           <p className="mb-4">
-            Today, we've helped over [NUMBER] companies transform their DevOps practices with AI-driven automation, reducing deployment times by up to [%], cutting costs by [%], and virtually eliminating downtime.
+            Today, we've helped over [NUMBER] companies transform their operations with AI solutions and custom software, improving efficiency by [%], reducing costs by [%], and unlocking new capabilities they never thought possible.
           </p>
           <p className="text-sm text-gray-500 italic mt-6 bg-yellow-50 p-4 rounded">
             [UPDATE: Replace with your real founding story, key milestones, and growth journey]

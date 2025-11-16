@@ -5,9 +5,9 @@ import StructuredData, { serviceSchema } from "../components/StructuredData";
 const Services = () => (
   <>
     <SEO
-      title="DevOps & AI Engineering Services - AydenAIT Solution"
-      description="Expert DevOps consulting, AI automation, cloud migration, CI/CD, Kubernetes, and DevSecOps services. Accelerate software delivery with AI-powered automation."
-      keywords="DevOps services, AI engineering, cloud migration, CI/CD automation, Kubernetes consulting, DevSecOps, infrastructure as code, Terraform, AWS consulting, Azure consulting"
+      title="AI Solutions & Software Development Services - AydenAIT Solution"
+      description="Expert AI software development, machine learning solutions, custom AI engineering, and DevOps automation services. Transform your business with intelligent software systems."
+      keywords="AI solutions, AI software development, machine learning, custom AI development, AI engineering, intelligent systems, DevOps automation, cloud solutions, software consulting"
       ogUrl="https://aydenait.com/services"
       canonical="https://aydenait.com/services"
     />
@@ -16,10 +16,10 @@ const Services = () => (
     <div className="max-w-4xl mx-auto px-4">
       {/* HERO */}
       <h1 className="text-4xl font-extrabold text-blue-100 mb-2 text-center">
-        Expert DevOps & AI Engineering Services
+        AI Solutions & Custom Software Development
       </h1>
       <p className="text-blue-200 text-xl text-center mb-10">
-        Accelerate your software delivery with AI-powered automation, cloud-native transformation, and security-first consulting. Results, not buzzwords—trusted by startups, unicorns, and enterprises globally.
+        Transform your business with intelligent AI solutions, custom software development, and cutting-edge automation. From machine learning models to enterprise systems—results-driven solutions trusted by innovative companies worldwide.
       </p>
 
       {/* WHY CHOOSE US */}
@@ -45,31 +45,37 @@ const Services = () => (
       {/* CORE SERVICES */}
       <h2 className="text-2xl font-bold text-blue-200 mt-12 mb-5 text-center">What We Do</h2>
       <ul className="grid md:grid-cols-2 gap-6 text-blue-100 mb-8">
-        <li>• DevOps Assessment, Maturity Audit & Rapid Roadmap</li>
-        <li>• Cloud Migration & Automation (AWS, Azure, GCP, Hybrid, On-Prem)</li>
-        <li>• End-to-End CI/CD, Automated Delivery, Blue/Green + Canary Deployments</li>
-        <li>• Containerization (Kubernetes, Docker, ECS, Fargate, EKS, AKS)</li>
-        <li>• Infrastructure as Code (Terraform, Ansible, Helm, Pulumi, CloudFormation)</li>
-        <li>• Automated Rollback, Disaster Recovery, High Availability Setups</li>
-        <li>• Advanced Monitoring & AI-Driven Observability (Prometheus, Datadog, Grafana, Splunk)</li>
-        <li>• DevSecOps & Compliance (IAM, SSO, HashiCorp Vault, CIS Benchmarks, audits)</li>
-        <li>• Platform Engineering (IDPs, self-service, developer autonomy)</li>
-        <li>• Staff Augmentation & Managed DevOps Teams</li>
+        <li>• Custom AI Software Development & Machine Learning Solutions</li>
+        <li>• AI Model Training, Fine-tuning & Deployment (LLMs, Computer Vision, NLP)</li>
+        <li>• Intelligent Automation & AI-Powered Workflows</li>
+        <li>• Custom Web & Mobile Application Development</li>
+        <li>• API Development & System Integration</li>
+        <li>• Cloud-Native Application Architecture (AWS, Azure, GCP)</li>
+        <li>• DevOps & CI/CD Pipeline Automation</li>
+        <li>• Containerization & Orchestration (Kubernetes, Docker)</li>
+        <li>• Infrastructure as Code (Terraform, Ansible, CloudFormation)</li>
+        <li>• AI Consulting & Digital Transformation Strategy</li>
+        <li>• Data Engineering & Analytics Solutions</li>
+        <li>• Enterprise Software Development & Legacy Modernization</li>
       </ul>
 
       {/* TOOL STACK */}
-      <h2 className="text-xl font-bold text-blue-200 mt-12 mb-3">Our Toolchains</h2>
+      <h2 className="text-xl font-bold text-blue-200 mt-12 mb-3">Our Technology Stack</h2>
       <div className="flex flex-wrap gap-3 mb-8 text-blue-100 text-lg">
-        <span className="px-3 py-1 bg-blue-600/20 rounded">GitHub</span>
-        <span className="px-3 py-1 bg-indigo-600/20 rounded">GitLab</span>
-        <span className="px-3 py-1 bg-sky-700/20 rounded">AWS</span>
-        <span className="px-3 py-1 bg-green-700/20 rounded">Terraform</span>
+        <span className="px-3 py-1 bg-purple-600/20 rounded">Python</span>
+        <span className="px-3 py-1 bg-blue-600/20 rounded">TensorFlow</span>
+        <span className="px-3 py-1 bg-orange-600/20 rounded">PyTorch</span>
+        <span className="px-3 py-1 bg-green-600/20 rounded">OpenAI</span>
+        <span className="px-3 py-1 bg-sky-700/20 rounded">React</span>
+        <span className="px-3 py-1 bg-indigo-600/20 rounded">Node.js</span>
+        <span className="px-3 py-1 bg-yellow-700/20 rounded">AWS</span>
+        <span className="px-3 py-1 bg-blue-500/20 rounded">Azure</span>
         <span className="px-3 py-1 bg-violet-500/20 rounded">Kubernetes</span>
-        <span className="px-3 py-1 bg-yellow-700/20 rounded">Jenkins</span>
-        <span className="px-3 py-1 bg-pink-700/20 rounded">Prometheus</span>
-        <span className="px-3 py-1 bg-teal-700/20 rounded">Ansible</span>
+        <span className="px-3 py-1 bg-green-700/20 rounded">Terraform</span>
         <span className="px-3 py-1 bg-fuchsia-800/20 rounded">Docker</span>
-        <span className="px-3 py-1 bg-orange-600/20 rounded">Slack</span>
+        <span className="px-3 py-1 bg-pink-700/20 rounded">PostgreSQL</span>
+        <span className="px-3 py-1 bg-teal-700/20 rounded">MongoDB</span>
+        <span className="px-3 py-1 bg-cyan-700/20 rounded">GitHub</span>
       </div>
 
       {/* PROJECT PROCESS */}
@@ -102,7 +108,7 @@ const Services = () => (
       {/* CALL TO ACTION */}
       <div className="text-center mt-10">
         <Link to="/contact" className="inline-block px-8 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold shadow-lg hover:scale-105 transition">
-          Get My Free DevOps Assessment →
+          Get Your Free Consultation →
         </Link>
         <div className="mt-2 text-blue-200 text-xs">NDA & confidentiality always included.</div>
       </div>

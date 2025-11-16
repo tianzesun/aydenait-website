@@ -4,8 +4,8 @@ const Clients = () => (
   <>
     <SEO
       title="Our Clients & Success Stories - AydenAIT Solution"
-      description="See how we've helped companies achieve faster deployments, reduced costs, and improved reliability with AI-driven DevOps solutions."
-      keywords="DevOps case studies, client success stories, DevOps testimonials, cloud migration results"
+      description="See how we've helped companies transform their businesses with AI solutions and custom software development. Real results, proven success stories."
+      keywords="AI success stories, software development case studies, AI implementation results, client testimonials, AI solutions portfolio"
       ogUrl="https://aydenait.com/clients"
       canonical="https://aydenait.com/clients"
     />

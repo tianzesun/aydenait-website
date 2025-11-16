@@ -5,8 +5,8 @@ const FAQ = () => (
   <>
     <SEO
       title="FAQ - Frequently Asked Questions - AydenAIT Solution"
-      description="Get answers to common questions about our AI-driven DevOps consulting services, pricing, implementation timelines, and support options."
-      keywords="DevOps FAQ, AI automation questions, cloud migration FAQ, DevOps consulting questions, CI/CD questions"
+      description="Get answers to common questions about our AI solutions, software development services, pricing, implementation timelines, and support options."
+      keywords="AI solutions FAQ, software development questions, AI implementation FAQ, custom development questions, AI consulting FAQ"
       ogUrl="https://aydenait.com/faq"
       canonical="https://aydenait.com/faq"
     />
