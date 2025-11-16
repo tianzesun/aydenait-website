@@ -94,66 +94,106 @@ const Home = () => (
     </section>
 
     {/* Testimonials Section - UPDATE WITH YOUR REAL TESTIMONIALS */}
-    <section className="py-16 bg-white">
+    <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">What Our Clients Say</h2>
-        <p className="text-center text-gray-600 mb-12">Don't just take our word for it</p>
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Testimonial 1 - [UPDATE WITH REAL CLIENT FEEDBACK] */}
-          <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-900 mb-3">What Our Clients Say</h2>
+          <p className="text-xl text-gray-600">Trusted by leading enterprises worldwide</p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
+          {/* Testimonial 1 - [REPLACE WITH YOUR REAL CLIENT] */}
+          <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border-t-4 border-blue-600">
             <div className="flex mb-4">
-              <span className="text-yellow-400">★★★★★</span>
+              <span className="text-yellow-400 text-xl">★★★★★</span>
             </div>
-            <p className="text-gray-700 mb-4 italic">
-              "Working with AydenAIT transformed our deployment process. We went from weekly releases to daily deployments with zero downtime."
+            <p className="text-gray-700 mb-6 italic leading-relaxed">
+              "AydenAIT transformed our deployment pipeline completely. We went from weekly releases with frequent rollbacks to daily deployments with 99.9% uptime. Their expertise in AI-powered DevOps is unmatched."
             </p>
-            <p className="text-sm text-gray-500">[UPDATE: Add real testimonial]</p>
-            <div className="mt-4 flex items-center gap-3">
-              <div className="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-blue-600 font-bold">JD</div>
-              <div>
-                <p className="font-bold text-gray-800">John Doe</p>
-                <p className="text-sm text-gray-600">CTO, TechCorp</p>
-                <p className="text-xs text-gray-500">[UPDATE: Real name & company]</p>
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-md">
+                JD
               </div>
+              <div>
+                <p className="font-bold text-gray-900">John Doe</p>
+                <p className="text-sm text-gray-600">CTO, TechCorp Inc.</p>
+                <p className="text-xs text-blue-600 mt-1">E-commerce • Series B</p>
+              </div>
+            </div>
+            <div className="mt-6 pt-4 border-t border-gray-100">
+              <p className="text-xs text-gray-500">💡 Replace with your real client testimonial</p>
             </div>
           </div>
 
-          {/* Testimonial 2 */}
-          <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+          {/* Testimonial 2 - [REPLACE WITH YOUR REAL CLIENT] */}
+          <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border-t-4 border-cyan-600">
             <div className="flex mb-4">
-              <span className="text-yellow-400">★★★★★</span>
+              <span className="text-yellow-400 text-xl">★★★★★</span>
             </div>
-            <p className="text-gray-700 mb-4 italic">
-              "The AI-driven monitoring they implemented caught issues before our customers even noticed. Game changer for our SaaS platform."
+            <p className="text-gray-700 mb-6 italic leading-relaxed">
+              "The AI-driven monitoring solution they built for us identifies and resolves issues before they impact customers. Our incident response time dropped by 80%, and customer satisfaction is at an all-time high."
             </p>
-            <p className="text-sm text-gray-500">[UPDATE: Add real testimonial]</p>
-            <div className="mt-4 flex items-center gap-3">
-              <div className="w-12 h-12 bg-green-200 rounded-full flex items-center justify-center text-green-600 font-bold">SM</div>
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-md">
+                SM
+              </div>
               <div>
-                <p className="font-bold text-gray-800">Sarah Miller</p>
+                <p className="font-bold text-gray-900">Sarah Miller</p>
                 <p className="text-sm text-gray-600">VP Engineering, CloudStart</p>
-                <p className="text-xs text-gray-500">[UPDATE: Real name & company]</p>
+                <p className="text-xs text-cyan-600 mt-1">SaaS • 200+ employees</p>
               </div>
+            </div>
+            <div className="mt-6 pt-4 border-t border-gray-100">
+              <p className="text-xs text-gray-500">💡 Replace with your real client testimonial</p>
             </div>
           </div>
 
-          {/* Testimonial 3 */}
-          <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+          {/* Testimonial 3 - [REPLACE WITH YOUR REAL CLIENT] */}
+          <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border-t-4 border-purple-600">
             <div className="flex mb-4">
-              <span className="text-yellow-400">★★★★★</span>
+              <span className="text-yellow-400 text-xl">★★★★★</span>
             </div>
-            <p className="text-gray-700 mb-4 italic">
-              "Cut our AWS costs by 35% while improving performance. Their infrastructure optimization was worth every penny."
+            <p className="text-gray-700 mb-6 italic leading-relaxed">
+              "They reduced our cloud costs by 40% through intelligent infrastructure optimization while actually improving performance. The ROI was evident within the first month. Exceptional team to work with."
             </p>
-            <p className="text-sm text-gray-500">[UPDATE: Add real testimonial]</p>
-            <div className="mt-4 flex items-center gap-3">
-              <div className="w-12 h-12 bg-purple-200 rounded-full flex items-center justify-center text-purple-600 font-bold">MK</div>
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-md">
+                MK
+              </div>
               <div>
-                <p className="font-bold text-gray-800">Michael Kim</p>
-                <p className="text-sm text-gray-600">Director of Ops, FinanceAI</p>
-                <p className="text-xs text-gray-500">[UPDATE: Real name & company]</p>
+                <p className="font-bold text-gray-900">Michael Kim</p>
+                <p className="text-sm text-gray-600">Director of Operations, FinanceAI</p>
+                <p className="text-xs text-purple-600 mt-1">FinTech • Enterprise</p>
               </div>
             </div>
+            <div className="mt-6 pt-4 border-t border-gray-100">
+              <p className="text-xs text-gray-500">💡 Replace with your real client testimonial</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Trust Indicators */}
+        <div className="bg-white rounded-2xl p-8 shadow-lg">
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">50+</div>
+              <p className="text-gray-600">Projects Delivered</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-cyan-600 mb-2">95%</div>
+              <p className="text-gray-600">Client Retention</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-purple-600 mb-2">10+</div>
+              <p className="text-gray-600">Industries Served</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-green-600 mb-2">24/7</div>
+              <p className="text-gray-600">Support Available</p>
+            </div>
+          </div>
+          <div className="mt-6 pt-6 border-t border-gray-100 text-center">
+            <p className="text-sm text-gray-500">💡 Update these metrics with your actual numbers</p>
           </div>
         </div>
       </div>
@@ -161,7 +201,7 @@ const Home = () => (
 
     <CaseAccordion />
 
-    {/* Final CTA Section */}
+    {/* Final CTA Section with Calendly */}
     <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-500">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-white mb-4">Ready to Transform Your Enterprise?</h2>
@@ -169,15 +209,26 @@ const Home = () => (
           Partner with our experts to accelerate your digital transformation and AI initiatives
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to="/contact" className="px-8 py-4 rounded-full bg-white text-blue-600 font-bold shadow-lg hover:scale-105 transition text-lg">
-            Request Consultation
-          </Link>
-          <Link to="/services" className="px-8 py-4 rounded-full border-2 border-white text-white font-bold hover:bg-white hover:text-blue-600 transition text-lg">
-            Explore Our Services
+          <a
+            href="https://calendly.com/YOUR-CALENDLY-LINK"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-4 rounded-full bg-white text-blue-600 font-bold shadow-lg hover:scale-105 transition text-lg inline-flex items-center justify-center gap-2"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            Schedule Free Consultation
+          </a>
+          <Link to="/contact" className="px-8 py-4 rounded-full border-2 border-white text-white font-bold hover:bg-white hover:text-blue-600 transition text-lg">
+            Send Us a Message
           </Link>
         </div>
         <p className="mt-6 text-blue-100 text-sm">
-          ✓ Confidential consultation  ✓ NDA provided  ✓ Enterprise-grade solutions
+          ✓ 30-minute free consultation  ✓ No commitment required  ✓ NDA provided
+        </p>
+        <p className="mt-3 text-blue-200 text-xs">
+          💡 Replace "YOUR-CALENDLY-LINK" with your actual Calendly URL (e.g., calendly.com/your-name/30min)
         </p>
       </div>
     </section>
