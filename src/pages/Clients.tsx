@@ -189,67 +189,6 @@ const Clients = () => (
             </p>
           </div>
         </div>
-
-        {/* More Testimonials */}
-        <h2 className="text-3xl font-bold text-blue-100 mb-8 text-center">What Our Clients Say</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="bg-white/10 rounded-xl p-6 border border-blue-700/30">
-            <div className="flex mb-3">
-              <span className="text-yellow-400">★★★★★</span>
-            </div>
-            <p className="text-blue-100 italic mb-4">
-              "Best DevOps consulting we've worked with. They actually understand both the tech and business sides."
-            </p>
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                DM
-              </div>
-              <div>
-                <p className="text-white font-semibold text-sm">David Martinez</p>
-                <p className="text-blue-300 text-xs">CTO, TechCorp</p>
-              </div>
-            </div>
-            <p className="text-xs text-blue-400 mt-2 bg-yellow-900/20 p-1 rounded">[UPDATE]</p>
-          </div>
-
-          <div className="bg-white/10 rounded-xl p-6 border border-blue-700/30">
-            <div className="flex mb-3">
-              <span className="text-yellow-400">★★★★★</span>
-            </div>
-            <p className="text-blue-100 italic mb-4">
-              "Transformed our deployment process. We're now shipping 10x faster with better quality."
-            </p>
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-green-400 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                LT
-              </div>
-              <div>
-                <p className="text-white font-semibold text-sm">Lisa Thompson</p>
-                <p className="text-blue-300 text-xs">VP Eng, StartupXYZ</p>
-              </div>
-            </div>
-            <p className="text-xs text-blue-400 mt-2 bg-yellow-900/20 p-1 rounded">[UPDATE]</p>
-          </div>
-
-          <div className="bg-white/10 rounded-xl p-6 border border-blue-700/30">
-            <div className="flex mb-3">
-              <span className="text-yellow-400">★★★★★</span>
-            </div>
-            <p className="text-blue-100 italic mb-4">
-              "The AI monitoring caught issues we didn't even know we had. Saved us from multiple outages."
-            </p>
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-purple-400 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                RK
-              </div>
-              <div>
-                <p className="text-white font-semibold text-sm">Robert Kim</p>
-                <p className="text-blue-300 text-xs">Dir Ops, CloudCo</p>
-              </div>
-            </div>
-            <p className="text-xs text-blue-400 mt-2 bg-yellow-900/20 p-1 rounded">[UPDATE]</p>
-          </div>
-        </div>
       </div>
     </section>
   </>
