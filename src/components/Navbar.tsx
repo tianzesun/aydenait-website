@@ -19,6 +19,7 @@ const Navbar = () => {
           <li><Link to="/clients" className="relative hover:text-blue-600 text-gray-800 transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-200 hover:after:w-full">Clients</Link></li>
           <li><Link to="/about" className="relative hover:text-blue-600 text-gray-800 transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-200 hover:after:w-full">About</Link></li>
           <li><Link to="/careers" className="relative hover:text-blue-600 text-gray-800 transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-200 hover:after:w-full">Careers</Link></li>
+          <li><Link to="/resources" className="relative hover:text-blue-600 text-gray-800 transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-200 hover:after:w-full">Resources</Link></li>
           <li><Link to="/contact" className="relative hover:text-blue-600 text-gray-800 transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-200 hover:after:w-full">Contact</Link></li>
         </ul>
 
@@ -49,6 +50,7 @@ const Navbar = () => {
             <li><Link to="/clients" className="block hover:text-blue-600 text-gray-800 font-semibold text-base transition-all hover:translate-x-2 hover:bg-blue-50 p-2 rounded-lg" onClick={() => setIsMenuOpen(false)}>Clients</Link></li>
             <li><Link to="/about" className="block hover:text-blue-600 text-gray-800 font-semibold text-base transition-all hover:translate-x-2 hover:bg-blue-50 p-2 rounded-lg" onClick={() => setIsMenuOpen(false)}>About</Link></li>
             <li><Link to="/careers" className="block hover:text-blue-600 text-gray-800 font-semibold text-base transition-all hover:translate-x-2 hover:bg-blue-50 p-2 rounded-lg" onClick={() => setIsMenuOpen(false)}>Careers</Link></li>
+            <li><Link to="/resources" className="block hover:text-blue-600 text-gray-800 font-semibold text-base transition-all hover:translate-x-2 hover:bg-blue-50 p-2 rounded-lg" onClick={() => setIsMenuOpen(false)}>Resources</Link></li>
             <li><Link to="/contact" className="block hover:text-blue-600 text-gray-800 font-semibold text-base transition-all hover:translate-x-2 hover:bg-blue-50 p-2 rounded-lg" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
             <li><Link to="/contact" className="block px-6 py-2.5 rounded-full bg-blue-600 text-white font-bold text-center hover:bg-blue-700 transition-all text-base shadow-lg hover:shadow-xl hover:scale-105" onClick={() => setIsMenuOpen(false)}>Get in Touch</Link></li>
           </ul>
