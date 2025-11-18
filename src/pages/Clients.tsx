@@ -3,11 +3,11 @@ import SEO from "../components/SEO";
 const Clients = () => (
   <>
     <SEO
-      title="Client Success Stories - AI Consulting & IT Solutions | AydenAIT"
+      title="Portfolio - AI Consulting & IT Solutions Success Stories | AydenAIT"
       description="Discover how enterprises achieve digital transformation through our AI consulting, IT solutions, and AIOps services. Real results, measurable outcomes."
-      keywords="AI consulting case studies, enterprise transformation, AIOps success stories, IT consulting results, digital transformation examples"
-      ogUrl="https://aydenait.com/clients"
-      canonical="https://aydenait.com/clients"
+      keywords="AI consulting case studies, enterprise transformation, AIOps success stories, IT consulting results, digital transformation examples, AI portfolio"
+      ogUrl="https://aydenait.com/portfolio"
+      canonical="https://aydenait.com/portfolio"
     />
 
     <section className="py-16 bg-gradient-to-t from-blue-950 to-[#10172a] min-h-screen">
