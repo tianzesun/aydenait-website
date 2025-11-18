@@ -16,10 +16,10 @@ const Navbar = () => {
         <ul className="hidden md:flex gap-8 font-semibold items-center text-base">
           <li><Link to="/" className="relative hover:text-blue-600 text-gray-800 transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-200 hover:after:w-full">Home</Link></li>
           <li><Link to="/services" className="relative hover:text-blue-600 text-gray-800 transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-200 hover:after:w-full">Services</Link></li>
-          <li><Link to="/clients" className="relative hover:text-blue-600 text-gray-800 transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-200 hover:after:w-full">Clients</Link></li>
           <li><Link to="/about" className="relative hover:text-blue-600 text-gray-800 transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-200 hover:after:w-full">About</Link></li>
-          <li><Link to="/careers" className="relative hover:text-blue-600 text-gray-800 transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-200 hover:after:w-full">Careers</Link></li>
+          <li><Link to="/portfolio" className="relative hover:text-blue-600 text-gray-800 transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-200 hover:after:w-full">Portfolio</Link></li>
           <li><Link to="/resources" className="relative hover:text-blue-600 text-gray-800 transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-200 hover:after:w-full">Resources</Link></li>
+          <li><Link to="/careers" className="relative hover:text-blue-600 text-gray-800 transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-200 hover:after:w-full">Careers</Link></li>
         </ul>
 
         <Link to="/contact" className="hidden md:block px-6 py-2.5 rounded-full bg-blue-600 text-white font-bold shadow-lg hover:bg-blue-700 hover:shadow-xl transition text-base">Get in Touch</Link>
@@ -46,10 +46,10 @@ const Navbar = () => {
           <ul className="flex flex-col py-5 px-4 space-y-4">
             <li><Link to="/" className="block hover:text-blue-600 text-gray-800 font-semibold text-base transition-all hover:translate-x-2 hover:bg-blue-50 p-2 rounded-lg" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
             <li><Link to="/services" className="block hover:text-blue-600 text-gray-800 font-semibold text-base transition-all hover:translate-x-2 hover:bg-blue-50 p-2 rounded-lg" onClick={() => setIsMenuOpen(false)}>Services</Link></li>
-            <li><Link to="/clients" className="block hover:text-blue-600 text-gray-800 font-semibold text-base transition-all hover:translate-x-2 hover:bg-blue-50 p-2 rounded-lg" onClick={() => setIsMenuOpen(false)}>Clients</Link></li>
             <li><Link to="/about" className="block hover:text-blue-600 text-gray-800 font-semibold text-base transition-all hover:translate-x-2 hover:bg-blue-50 p-2 rounded-lg" onClick={() => setIsMenuOpen(false)}>About</Link></li>
-            <li><Link to="/careers" className="block hover:text-blue-600 text-gray-800 font-semibold text-base transition-all hover:translate-x-2 hover:bg-blue-50 p-2 rounded-lg" onClick={() => setIsMenuOpen(false)}>Careers</Link></li>
+            <li><Link to="/portfolio" className="block hover:text-blue-600 text-gray-800 font-semibold text-base transition-all hover:translate-x-2 hover:bg-blue-50 p-2 rounded-lg" onClick={() => setIsMenuOpen(false)}>Portfolio</Link></li>
             <li><Link to="/resources" className="block hover:text-blue-600 text-gray-800 font-semibold text-base transition-all hover:translate-x-2 hover:bg-blue-50 p-2 rounded-lg" onClick={() => setIsMenuOpen(false)}>Resources</Link></li>
+            <li><Link to="/careers" className="block hover:text-blue-600 text-gray-800 font-semibold text-base transition-all hover:translate-x-2 hover:bg-blue-50 p-2 rounded-lg" onClick={() => setIsMenuOpen(false)}>Careers</Link></li>
             <li><Link to="/contact" className="block px-6 py-2.5 rounded-full bg-blue-600 text-white font-bold text-center hover:bg-blue-700 transition-all text-base shadow-lg hover:shadow-xl hover:scale-105" onClick={() => setIsMenuOpen(false)}>Get in Touch</Link></li>
           </ul>
         </div>
