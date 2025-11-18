@@ -11,7 +11,6 @@ import Careers from "./pages/Careers";
 import Resources from "./pages/Resources";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
-import WhyUs from "./pages/WhyUs";
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -25,7 +24,6 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/clients" element={<Clients />} />
             <Route path="/about" element={<About />} />
-            <Route path="/why-us" element={<WhyUs />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/faq" element={<FAQ />} />
