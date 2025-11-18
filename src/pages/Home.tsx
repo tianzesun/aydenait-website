@@ -53,31 +53,46 @@ const Home = () => {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6">
-            Transform Your Enterprise with
+            Enterprise AI Consulting
             <br />
-            <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 bg-clip-text text-transparent">AI-Powered Solutions</span>
+            <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 bg-clip-text text-transparent">Without the Enterprise Overhead</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-8 leading-relaxed">
-            We help enterprises <span className="text-cyan-300 font-bold">reduce costs by 40%</span>,
-            <span className="text-cyan-300 font-bold"> deploy 5x faster</span>, and
-            <span className="text-cyan-300 font-bold"> achieve 99.9% uptime</span> through intelligent automation and expert consulting.
+          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-4 leading-relaxed">
+            Senior AI experts deploying production solutions in <span className="text-cyan-300 font-bold">weeks, not months</span> — at <span className="text-cyan-300 font-bold">40-60% less</span> than Big 4 consultancies.
+          </p>
+
+          <p className="text-lg text-blue-200 max-w-2xl mx-auto mb-8">
+            No junior consultants. No lengthy discovery phases. Just results-driven AI implementation from practitioners who've shipped at scale.
           </p>
 
           {/* Value Propositions Grid */}
-          <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-10">
+          <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-8">
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4">
-              <div className="text-cyan-400 font-bold text-3xl mb-1">40%</div>
-              <div className="text-blue-100 text-sm font-semibold">Average Cost Reduction</div>
+              <div className="text-cyan-400 font-bold text-3xl mb-1">40-60%</div>
+              <div className="text-blue-100 text-sm font-semibold">Lower Cost vs. Big 4</div>
             </div>
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4">
-              <div className="text-cyan-400 font-bold text-3xl mb-1">5x</div>
-              <div className="text-blue-100 text-sm font-semibold">Faster Deployment Speed</div>
+              <div className="text-cyan-400 font-bold text-3xl mb-1">4-8 Weeks</div>
+              <div className="text-blue-100 text-sm font-semibold">To Initial Deployment</div>
             </div>
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4">
-              <div className="text-cyan-400 font-bold text-3xl mb-1">99.9%</div>
-              <div className="text-blue-100 text-sm font-semibold">Uptime Guaranteed</div>
+              <div className="text-cyan-400 font-bold text-3xl mb-1">100%</div>
+              <div className="text-blue-100 text-sm font-semibold">Senior Practitioners</div>
             </div>
+          </div>
+
+          {/* Why Us Link */}
+          <div className="mb-10">
+            <Link
+              to="/why-us"
+              className="inline-flex items-center gap-2 text-cyan-300 hover:text-cyan-200 font-semibold transition-all hover:gap-3"
+            >
+              <span>Why choose us over enterprise consultancies?</span>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
           </div>
 
           {/* CTAs */}
