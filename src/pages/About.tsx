@@ -29,8 +29,190 @@ const About = () => (
       </div>
     </section>
 
-    {/* Our Story Section - [UPDATE WITH YOUR REAL STORY] */}
+    {/* Why Choose AydenAIT Section */}
     <section className="py-16 bg-white">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">Why Choose AydenAIT?</h2>
+          <p className="text-xl text-gray-600 mb-4 max-w-3xl mx-auto">
+            The agility and expertise of a specialized startup, without the overhead and rigidity of enterprise consultancies
+          </p>
+          <p className="text-gray-600 max-w-4xl mx-auto">
+            You have options: IBM, Accenture, Deloitte, or the big tech giants. They're excellent companies. But ask yourself: Do you need a 200-person engagement, 18-month timeline, and $5M budget? Or do you need results?
+          </p>
+        </div>
+
+        <h3 className="text-2xl font-bold text-center text-gray-800 mb-10">The AydenAIT Advantage</h3>
+
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          {/* Senior Experts */}
+          <div className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0">
+                <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="text-lg font-bold text-gray-800 mb-2">Senior Experts, Not Junior Consultants</h4>
+                <p className="text-gray-600 text-sm mb-3">
+                  You work directly with senior AI engineers and strategists who have deployed production systems at scale.
+                </p>
+                <div className="bg-blue-50 p-3 rounded text-xs">
+                  <p className="text-blue-900 font-semibold">Enterprise: 80% junior staff at senior rates</p>
+                  <p className="text-green-700 font-semibold mt-1">AydenAIT: 100% senior practitioners</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Speed & Agility */}
+          <div className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0">
+                <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="text-lg font-bold text-gray-800 mb-2">Weeks, Not Months</h4>
+                <p className="text-gray-600 text-sm mb-3">
+                  Streamlined decision-making means we start delivering value in weeks, not quarters.
+                </p>
+                <div className="bg-blue-50 p-3 rounded text-xs">
+                  <p className="text-blue-900 font-semibold">Enterprise: 3-6 months to production</p>
+                  <p className="text-green-700 font-semibold mt-1">AydenAIT: 4-8 weeks to deployment</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Cost Effectiveness */}
+          <div className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0">
+                <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="text-lg font-bold text-gray-800 mb-2">40-60% Cost Savings</h4>
+                <p className="text-gray-600 text-sm mb-3">
+                  No enterprise markup, luxury office overhead, or layers of management. You pay for expertise and results.
+                </p>
+                <div className="bg-blue-50 p-3 rounded text-xs">
+                  <p className="text-blue-900 font-semibold">Enterprise: $500K+ for 6-month project</p>
+                  <p className="text-green-700 font-semibold mt-1">AydenAIT: $200-250K comparable delivery</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* AI Specialization */}
+          <div className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0">
+                <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="text-lg font-bold text-gray-800 mb-2">100% AI-Focused Expertise</h4>
+                <p className="text-gray-600 text-sm mb-3">
+                  We live and breathe AI—LLMs, computer vision, ML ops, vector databases. It's not a service line. It's our entire business.
+                </p>
+                <div className="bg-blue-50 p-3 rounded text-xs">
+                  <p className="text-blue-900 font-semibold">Enterprise: Generalists with AI practice areas</p>
+                  <p className="text-green-700 font-semibold mt-1">AydenAIT: Deep AI/ML specialists only</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Partnership Model */}
+          <div className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0">
+                <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="text-lg font-bold text-gray-800 mb-2">True Partnership, Not Transactional</h4>
+                <p className="text-gray-600 text-sm mb-3">
+                  Flexible pricing, success-based models, knowledge transfer, and building internal capabilities—not creating dependency.
+                </p>
+                <div className="bg-blue-50 p-3 rounded text-xs">
+                  <p className="text-blue-900 font-semibold">Enterprise: Fixed scope, change orders</p>
+                  <p className="text-green-700 font-semibold mt-1">AydenAIT: Flexible, value-based pricing</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Founders Involved */}
+          <div className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0">
+                <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="text-lg font-bold text-gray-800 mb-2">Founders Personally Engaged</h4>
+                <p className="text-gray-600 text-sm mb-3">
+                  Our founders are hands-on in every engagement. Your success is our reputation.
+                </p>
+                <div className="bg-blue-50 p-3 rounded text-xs">
+                  <p className="text-blue-900 font-semibold">Enterprise: Partners sell, juniors deliver</p>
+                  <p className="text-green-700 font-semibold mt-1">AydenAIT: Founders involved throughout</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* When Enterprise Firms Make Sense */}
+        <div className="bg-blue-50 p-8 rounded-xl border border-blue-200">
+          <h3 className="text-xl font-bold text-gray-800 mb-4">When Should You Choose Enterprise Consultancies?</h3>
+          <p className="text-gray-700 mb-4">
+            We're not the right fit for everyone. Enterprise consultancies excel when you need:
+          </p>
+          <ul className="space-y-2 text-gray-700 text-sm">
+            <li className="flex items-start gap-2">
+              <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span><strong>Global presence:</strong> Coordinated delivery across 50+ countries</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span><strong>Enterprise transformation:</strong> 200+ consultants across multiple business units</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span><strong>Brand validation:</strong> Board requires a "safe choice" name</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span><strong>Multi-discipline needs:</strong> AI + cybersecurity + SAP + change management in one engagement</span>
+            </li>
+          </ul>
+          <p className="text-gray-700 mt-4">
+            But if you need a focused AI solution delivered quickly and cost-effectively by senior experts who care about your outcomes? That's where we excel.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* Our Story Section - [UPDATE WITH YOUR REAL STORY] */}
+    <section className="py-16 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Our Story</h2>
         <div className="prose prose-lg max-w-none text-gray-700">

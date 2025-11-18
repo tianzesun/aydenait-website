@@ -85,7 +85,7 @@ const Home = () => {
           {/* Why Us Link */}
           <div className="mb-10">
             <Link
-              to="/why-us"
+              to="/about"
               className="inline-flex items-center gap-2 text-cyan-300 hover:text-cyan-200 font-semibold transition-all hover:gap-3"
             >
               <span>Why choose us over enterprise consultancies?</span>
