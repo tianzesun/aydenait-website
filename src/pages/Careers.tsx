@@ -210,6 +210,7 @@ const Careers = () => {
   });
   const [submitted, setSubmitted] = useState(false);
   const [expandedJob, setExpandedJob] = useState<number | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -230,6 +231,25 @@ const Careers = () => {
     const file = e.target.files?.[0] || null;
     setFormData({ ...formData, [e.target.name]: file });
   };
+
+  // Filter jobs based on search query
+  const filteredJobs = openJobs.filter(job => {
+    if (!searchQuery.trim()) return true;
+
+    const query = searchQuery.toLowerCase();
+    const searchableText = [
+      job.title,
+      job.location,
+      job.type,
+      job.summary,
+      ...job.responsibilities,
+      ...job.requirements,
+      ...(job.niceToHave || []),
+      ...(job.whatYouWillLearn || [])
+    ].join(' ').toLowerCase();
+
+    return searchableText.includes(query);
+  });
 
   return (
     <>
@@ -343,12 +363,48 @@ const Careers = () => {
           {/* Open Positions */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-blue-900 mb-3 text-center">Open Positions</h2>
-            <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+            <p className="text-gray-600 text-center mb-6 max-w-2xl mx-auto">
               We're looking for talented individuals who are passionate about AI and technology. Click any position to see full details.
             </p>
 
-            <div className="space-y-6">
-              {openJobs.map((job, i) => (
+            {/* Search Bar */}
+            <div className="max-w-2xl mx-auto mb-10">
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </div>
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search by job title, skills, location, or keywords..."
+                  className="w-full pl-12 pr-4 py-4 text-gray-900 border-2 border-gray-300 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all shadow-sm"
+                />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery("")}
+                    className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600"
+                    aria-label="Clear search"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                )}
+              </div>
+              {searchQuery && (
+                <p className="mt-2 text-sm text-gray-600 text-center">
+                  Found {filteredJobs.length} position{filteredJobs.length !== 1 ? 's' : ''} matching "{searchQuery}"
+                </p>
+              )}
+            </div>
+
+            {/* Job Listings */}
+            {filteredJobs.length > 0 ? (
+              <div className="space-y-6">
+                {filteredJobs.map((job, i) => (
                 <div
                   key={i}
                   className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow"
@@ -480,7 +536,24 @@ const Careers = () => {
                   )}
                 </div>
               ))}
-            </div>
+              </div>
+            ) : (
+              <div className="text-center py-16 px-4">
+                <svg className="w-20 h-20 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <h3 className="text-xl font-bold text-gray-700 mb-2">No positions found</h3>
+                <p className="text-gray-600 mb-4">
+                  We couldn't find any positions matching "{searchQuery}"
+                </p>
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
+                >
+                  Clear search and view all positions
+                </button>
+              </div>
+            )}
           </div>
 
           {/* Application Form */}
