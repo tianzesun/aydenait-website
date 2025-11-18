@@ -1,9 +1,35 @@
 import { Link } from "react-router-dom";
+import { useState, type FormEvent } from "react";
 import CaseAccordion from "../components/CaseAccordion";
 import SEO from "../components/SEO";
 import StructuredData, { organizationSchema, websiteSchema } from "../components/StructuredData";
 
-const Home = () => (
+const Home = () => {
+  const [leadFormData, setLeadFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    industry: ""
+  });
+  const [leadSubmitted, setLeadSubmitted] = useState(false);
+
+  const handleLeadFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    setLeadFormData({ ...leadFormData, [e.target.name]: e.target.value });
+  };
+
+  const handleLeadFormSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    // In production, this would send to your CRM/backend
+    console.log("Lead captured:", leadFormData);
+    setLeadSubmitted(true);
+    // Reset form after 5 seconds
+    setTimeout(() => {
+      setLeadFormData({ name: "", email: "", company: "", industry: "" });
+      setLeadSubmitted(false);
+    }, 5000);
+  };
+
+  return (
   <>
     <SEO
       title="AydenAIT - Enterprise AI Consulting & IT Solutions"
@@ -94,6 +120,158 @@ const Home = () => (
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
               <span>NDA & confidentiality guaranteed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Lead Capture Form - Free AI Readiness Assessment */}
+    <section className="py-20 bg-gradient-to-br from-blue-900 via-indigo-900 to-blue-800 relative overflow-hidden">
+      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:30px_30px]"></div>
+      <div className="relative max-w-5xl mx-auto px-4">
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 md:p-12 shadow-2xl">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            {/* Left: Value Proposition */}
+            <div className="text-white">
+              <div className="inline-flex items-center gap-2 bg-cyan-500/20 border border-cyan-400/50 rounded-full px-4 py-2 mb-4">
+                <svg className="w-5 h-5 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span className="text-sm font-semibold text-cyan-300">100% Free • No Obligation</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-4 leading-tight">
+                Get Your Free
+                <br />
+                <span className="bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent">AI Readiness Assessment</span>
+              </h2>
+              <p className="text-blue-100 text-lg mb-6 leading-relaxed">
+                Discover how AI can transform your business. We'll analyze your infrastructure and provide a custom roadmap—completely free.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <svg className="w-6 h-6 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span className="text-blue-100">Custom AI opportunity analysis for your industry</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg className="w-6 h-6 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span className="text-blue-100">ROI projections and cost savings estimate</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg className="w-6 h-6 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span className="text-blue-100">Personalized implementation roadmap</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Right: Form */}
+            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-2xl">
+              {leadSubmitted ? (
+                <div className="text-center py-12">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
+                  <p className="text-gray-600 mb-4">
+                    We've received your request for a free AI readiness assessment.
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    Our team will contact you within 24 hours to schedule your personalized consultation.
+                  </p>
+                </div>
+              ) : (
+                <>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">Start Your Free Assessment</h3>
+                  <p className="text-gray-600 text-center mb-6 text-sm">Takes less than 60 seconds</p>
+                  <form onSubmit={handleLeadFormSubmit} className="space-y-4">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-1">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        value={leadFormData.name}
+                        onChange={handleLeadFormChange}
+                        placeholder="John Smith"
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-900"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-1">
+                        Work Email *
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        value={leadFormData.email}
+                        onChange={handleLeadFormChange}
+                        placeholder="john@company.com"
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-900"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-1">
+                        Company Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="company"
+                        name="company"
+                        required
+                        value={leadFormData.company}
+                        onChange={handleLeadFormChange}
+                        placeholder="Acme Corp"
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-900"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="industry" className="block text-sm font-semibold text-gray-700 mb-1">
+                        Industry *
+                      </label>
+                      <select
+                        id="industry"
+                        name="industry"
+                        required
+                        value={leadFormData.industry}
+                        onChange={handleLeadFormChange}
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-900 bg-white"
+                      >
+                        <option value="">Select your industry</option>
+                        <option value="technology">Technology & Software</option>
+                        <option value="finance">Financial Services</option>
+                        <option value="healthcare">Healthcare & Life Sciences</option>
+                        <option value="retail">Retail & E-commerce</option>
+                        <option value="manufacturing">Manufacturing</option>
+                        <option value="professional-services">Professional Services</option>
+                        <option value="education">Education</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    <button
+                      type="submit"
+                      className="w-full py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold rounded-lg hover:from-blue-700 hover:to-cyan-600 transition-all shadow-lg hover:shadow-xl transform hover:scale-[1.02] text-lg"
+                    >
+                      Get My Free Assessment →
+                    </button>
+                    <p className="text-xs text-gray-500 text-center mt-3">
+                      By submitting, you agree to our NDA and privacy policy. We respect your confidentiality.
+                    </p>
+                  </form>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -318,6 +496,7 @@ const Home = () => (
       </div>
     </section>
   </>
-);
+  );
+};
 
 export default Home;
