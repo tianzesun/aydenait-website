@@ -6,7 +6,6 @@ const openJobs = [
     title: "Senior DevOps Engineer",
     location: "Remote / Toronto, ON",
     type: "Full-time",
-    icon: "⚙️",
     summary: "Lead automation, CI/CD, and cloud operations for enterprise SaaS customers. Drive infrastructure excellence and operational efficiency.",
     responsibilities: [
       "Design and implement CI/CD pipelines for multi-cloud environments",
@@ -34,7 +33,6 @@ const openJobs = [
     title: "AI / ML Engineer",
     location: "Remote",
     type: "Full-time",
-    icon: "🤖",
     summary: "Build and deploy production-grade AI/ML solutions for enterprise clients. Integrate cutting-edge models into scalable cloud architectures.",
     responsibilities: [
       "Design and develop machine learning models for business applications",
@@ -62,7 +60,6 @@ const openJobs = [
     title: "AI Software Development Intern",
     location: "Remote",
     type: "Internship",
-    icon: "💡",
     summary: "Build AI-powered applications using LLMs, RAG systems, and modern frameworks. Work on real client projects with experienced mentors.",
     responsibilities: [
       "Develop AI chatbots and intelligent automation systems",
@@ -91,7 +88,6 @@ const openJobs = [
     title: "Machine Learning Engineering Intern",
     location: "Remote",
     type: "Internship",
-    icon: "📊",
     summary: "Develop and deploy ML models for classification, prediction, and NLP tasks. Gain hands-on experience with modern ML tools and production systems.",
     responsibilities: [
       "Train and evaluate ML models using PyTorch or TensorFlow",
@@ -120,7 +116,6 @@ const openJobs = [
     title: "Full-Stack Software Development Intern",
     location: "Remote",
     type: "Internship",
-    icon: "🌐",
     summary: "Build modern web applications with React, TypeScript, Node.js, and cloud platforms. Contribute to enterprise client projects and learn industry best practices.",
     responsibilities: [
       "Develop responsive web applications using React and TypeScript",
@@ -149,7 +144,6 @@ const openJobs = [
     title: "AI Solutions Consulting Intern",
     location: "Remote",
     type: "Internship",
-    icon: "🎯",
     summary: "Support AI consulting projects from research to implementation. Learn how to identify AI opportunities and create business value for enterprise clients.",
     responsibilities: [
       "Research AI use cases and feasibility for client projects",
@@ -178,7 +172,6 @@ const openJobs = [
     title: "AIOps & DevOps Intern",
     location: "Remote",
     type: "Internship",
-    icon: "⚡",
     summary: "Learn AI-powered IT operations, infrastructure automation, and cloud technologies. Work with Kubernetes, CI/CD pipelines, and observability tools.",
     responsibilities: [
       "Assist in building CI/CD pipelines for client projects",
@@ -258,17 +251,23 @@ const Careers = () => {
           <p className="text-xl text-blue-100 mb-6 max-w-3xl mx-auto">
             Shape the future of AI & technology. Work on cutting-edge projects with enterprise clients. Full-time positions and remote internships available.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-blue-100">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-blue-100">
             <div className="flex items-center gap-2">
-              <span className="text-2xl">🌍</span>
+              <svg className="w-6 h-6 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
               <span className="font-semibold">Remote-First Culture</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-2xl">🚀</span>
+              <svg className="w-6 h-6 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
               <span className="font-semibold">Real Enterprise Projects</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-2xl">📈</span>
+              <svg className="w-6 h-6 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>
               <span className="font-semibold">Career Growth</span>
             </div>
           </div>
@@ -284,7 +283,10 @@ const Careers = () => {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white rounded-xl p-6 shadow-sm">
                 <h3 className="text-lg font-bold text-blue-800 mb-3 flex items-center gap-2">
-                  <span className="text-2xl">💼</span> Professional Growth
+                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span>Professional Growth</span>
                 </h3>
                 <ul className="text-gray-700 space-y-2">
                   <li>• Work with Fortune 500 clients and cutting-edge AI technologies</li>
@@ -295,7 +297,10 @@ const Careers = () => {
               </div>
               <div className="bg-white rounded-xl p-6 shadow-sm">
                 <h3 className="text-lg font-bold text-blue-800 mb-3 flex items-center gap-2">
-                  <span className="text-2xl">🏖️</span> Work-Life Balance
+                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>Work-Life Balance</span>
                 </h3>
                 <ul className="text-gray-700 space-y-2">
                   <li>• Flexible remote work or hybrid options (Toronto office available)</li>
@@ -306,7 +311,10 @@ const Careers = () => {
               </div>
               <div className="bg-white rounded-xl p-6 shadow-sm">
                 <h3 className="text-lg font-bold text-blue-800 mb-3 flex items-center gap-2">
-                  <span className="text-2xl">🎯</span> Impactful Work
+                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>Impactful Work</span>
                 </h3>
                 <ul className="text-gray-700 space-y-2">
                   <li>• Build real AI solutions that transform enterprise operations</li>
@@ -317,7 +325,10 @@ const Careers = () => {
               </div>
               <div className="bg-white rounded-xl p-6 shadow-sm">
                 <h3 className="text-lg font-bold text-blue-800 mb-3 flex items-center gap-2">
-                  <span className="text-2xl">🤝</span> Team Culture
+                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                  <span>Team Culture</span>
                 </h3>
                 <ul className="text-gray-700 space-y-2">
                   <li>• Collaborative, transparent management with open communication</li>
@@ -348,19 +359,26 @@ const Careers = () => {
                     className="w-full text-left p-6 hover:bg-gray-50 transition-colors"
                   >
                     <div className="flex items-start justify-between gap-4">
-                      <div className="flex items-start gap-4 flex-1">
-                        <span className="text-4xl">{job.icon}</span>
-                        <div className="flex-1">
-                          <h3 className="text-xl font-bold text-gray-900 mb-2">{job.title}</h3>
-                          <p className="text-gray-600 mb-3">{job.summary}</p>
-                          <div className="flex flex-wrap gap-3">
-                            <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">
-                              {job.type}
-                            </span>
-                            <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
-                              📍 {job.location}
-                            </span>
-                          </div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-3">
+                          <span className={`px-4 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wide ${
+                            job.type === 'Full-time'
+                              ? 'bg-blue-600 text-white'
+                              : 'bg-purple-600 text-white'
+                          }`}>
+                            {job.type}
+                          </span>
+                        </div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">{job.title}</h3>
+                        <p className="text-gray-600 mb-3">{job.summary}</p>
+                        <div className="flex flex-wrap gap-3">
+                          <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium flex items-center gap-1.5">
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            {job.location}
+                          </span>
                         </div>
                       </div>
                       <span className="text-2xl text-blue-600 flex-shrink-0">
@@ -376,7 +394,10 @@ const Careers = () => {
                         {/* Responsibilities */}
                         <div>
                           <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                            <span className="text-blue-600">📋</span> Responsibilities
+                            <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                            </svg>
+                            <span>Responsibilities</span>
                           </h4>
                           <ul className="space-y-2 text-gray-700">
                             {job.responsibilities.map((resp, idx) => (
@@ -391,7 +412,10 @@ const Careers = () => {
                         {/* Requirements */}
                         <div>
                           <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                            <span className="text-blue-600">✓</span> Requirements
+                            <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Requirements</span>
                           </h4>
                           <ul className="space-y-2 text-gray-700">
                             {job.requirements.map((req, idx) => (
@@ -407,7 +431,10 @@ const Careers = () => {
                         {job.niceToHave && (
                           <div className="md:col-span-2">
                             <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                              <span className="text-blue-600">⭐</span> Nice to Have
+                              <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                              </svg>
+                              <span>Nice to Have</span>
                             </h4>
                             <ul className="grid md:grid-cols-2 gap-2 text-gray-700">
                               {job.niceToHave.map((item, idx) => (
@@ -423,7 +450,10 @@ const Careers = () => {
                         {job.whatYouWillLearn && (
                           <div className="md:col-span-2">
                             <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                              <span className="text-blue-600">🎓</span> What You'll Learn
+                              <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                              </svg>
+                              <span>What You'll Learn</span>
                             </h4>
                             <ul className="grid md:grid-cols-2 gap-2 text-gray-700">
                               {job.whatYouWillLearn.map((item, idx) => (
@@ -590,7 +620,12 @@ const Careers = () => {
             </form>
 
             <div className="mt-6 text-center">
-              <p className="text-blue-100 text-sm">🔒 All applications are confidential. We review every application and respond to qualified candidates within 2-3 business days.</p>
+              <p className="text-blue-100 text-sm flex items-center justify-center gap-2">
+                <svg className="w-4 h-4 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+                <span>All applications are confidential. We review every application and respond to qualified candidates within 2-3 business days.</span>
+              </p>
             </div>
           </div>
         </div>
