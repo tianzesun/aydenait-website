@@ -137,23 +137,6 @@ const CaseAccordion = () => {
             </div>
           ))}
         </div>
-
-        <div className="mt-12 text-center bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl p-8 text-white">
-          <h3 className="text-2xl font-bold mb-3">Ready to start your AI project?</h3>
-          <p className="text-blue-50 mb-6">Let's discuss how we can help solve your business challenges with AI</p>
-          <a
-            href="/contact"
-            className="inline-block px-8 py-3 bg-white text-blue-600 font-bold rounded-lg hover:scale-105 transition"
-          >
-            Schedule Consultation
-          </a>
-        </div>
-
-        <div className="mt-8 text-center">
-          <p className="text-sm text-gray-500 bg-yellow-50 p-4 rounded-lg inline-block">
-            [UPDATE: Replace the example projects above with your actual AI projects. Follow the same format for consistency.]
-          </p>
-        </div>
       </div>
     </section>
   );
