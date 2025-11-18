@@ -25,18 +25,30 @@ const Services = () => (
       {/* WHY CHOOSE US */}
       <h2 className="text-2xl font-bold text-blue-200 mt-10 mb-6 text-center">Why Choose AydenAIT?</h2>
       <div className="grid md:grid-cols-3 gap-8 mb-10">
-        <div className="bg-white/10 rounded-xl border border-blue-900 p-6 text-center shadow">
-          <div className="text-3xl mb-2">🤝</div>
+        <div className="bg-white/10 rounded-xl border border-blue-900 p-6 text-center shadow hover:bg-white/15 transition-colors">
+          <div className="flex justify-center mb-3">
+            <svg className="w-10 h-10 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
           <b>Transparent, Flexible Partnership</b>
           <p className="text-blue-100 text-sm mt-2">NDA standard. Enterprise/SMB clients. Project, team or long-term models. You always control your roadmap.</p>
         </div>
-        <div className="bg-white/10 rounded-xl border border-blue-900 p-6 text-center shadow">
-          <div className="text-3xl mb-2">🛡️</div>
+        <div className="bg-white/10 rounded-xl border border-blue-900 p-6 text-center shadow hover:bg-white/15 transition-colors">
+          <div className="flex justify-center mb-3">
+            <svg className="w-10 h-10 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
           <b>Security & Compliance Leadership</b>
           <p className="text-blue-100 text-sm mt-2">ISO-Inspired, DevSecOps/Zero-Trust by design, documented processes for regulated industries.</p>
         </div>
-        <div className="bg-white/10 rounded-xl border border-blue-900 p-6 text-center shadow">
-          <div className="text-3xl mb-2">✔️</div>
+        <div className="bg-white/10 rounded-xl border border-blue-900 p-6 text-center shadow hover:bg-white/15 transition-colors">
+          <div className="flex justify-center mb-3">
+            <svg className="w-10 h-10 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
           <b>Results, Not Just Deliverables</b>
           <p className="text-blue-100 text-sm mt-2">Faster release cycles, reduced costs, lower incident rates—and real upskilling for your team.</p>
         </div>
@@ -46,8 +58,13 @@ const Services = () => (
       <h2 className="text-2xl font-bold text-blue-200 mt-12 mb-5 text-center">Our Service Offerings</h2>
 
       {/* AI Consulting */}
-      <div className="mb-8 bg-white/5 rounded-xl p-6 border border-blue-800">
-        <h3 className="text-xl font-bold text-cyan-300 mb-3">🎯 AI Consulting & Strategy</h3>
+      <div className="mb-8 bg-white/5 rounded-xl p-6 border border-blue-800 hover:border-cyan-600/50 transition-colors">
+        <div className="flex items-center gap-3 mb-4">
+          <svg className="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+          </svg>
+          <h3 className="text-xl font-bold text-cyan-300">AI Consulting & Strategy</h3>
+        </div>
         <ul className="grid md:grid-cols-2 gap-3 text-blue-100 text-sm">
           <li>• AI Readiness Assessment & Maturity Analysis</li>
           <li>• AI Strategy Development & Roadmap Planning</li>
@@ -59,8 +76,13 @@ const Services = () => (
       </div>
 
       {/* IT Solutions */}
-      <div className="mb-8 bg-white/5 rounded-xl p-6 border border-blue-800">
-        <h3 className="text-xl font-bold text-cyan-300 mb-3">💼 IT Consulting & Solutions</h3>
+      <div className="mb-8 bg-white/5 rounded-xl p-6 border border-blue-800 hover:border-cyan-600/50 transition-colors">
+        <div className="flex items-center gap-3 mb-4">
+          <svg className="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <h3 className="text-xl font-bold text-cyan-300">IT Consulting & Solutions</h3>
+        </div>
         <ul className="grid md:grid-cols-2 gap-3 text-blue-100 text-sm">
           <li>• IT Infrastructure Assessment & Optimization</li>
           <li>• Cloud Migration & Modernization (AWS, Azure, GCP)</li>
@@ -72,8 +94,13 @@ const Services = () => (
       </div>
 
       {/* AI Development */}
-      <div className="mb-8 bg-white/5 rounded-xl p-6 border border-blue-800">
-        <h3 className="text-xl font-bold text-cyan-300 mb-3">🤖 AI Software Development</h3>
+      <div className="mb-8 bg-white/5 rounded-xl p-6 border border-blue-800 hover:border-cyan-600/50 transition-colors">
+        <div className="flex items-center gap-3 mb-4">
+          <svg className="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+          <h3 className="text-xl font-bold text-cyan-300">AI Software Development</h3>
+        </div>
         <ul className="grid md:grid-cols-2 gap-3 text-blue-100 text-sm">
           <li>• Custom AI Application Development</li>
           <li>• Machine Learning Model Development & Training</li>
@@ -85,8 +112,13 @@ const Services = () => (
       </div>
 
       {/* AIOps */}
-      <div className="mb-8 bg-white/5 rounded-xl p-6 border border-blue-800">
-        <h3 className="text-xl font-bold text-cyan-300 mb-3">⚡ AIOps & Intelligent Operations</h3>
+      <div className="mb-8 bg-white/5 rounded-xl p-6 border border-blue-800 hover:border-cyan-600/50 transition-colors">
+        <div className="flex items-center gap-3 mb-4">
+          <svg className="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          <h3 className="text-xl font-bold text-cyan-300">AIOps & Intelligent Operations</h3>
+        </div>
         <ul className="grid md:grid-cols-2 gap-3 text-blue-100 text-sm">
           <li>• AI-Driven Monitoring & Observability</li>
           <li>• Predictive Incident Management</li>
@@ -117,153 +149,92 @@ const Services = () => (
       </div>
 
       {/* PROJECT PROCESS */}
-      <h2 className="text-3xl font-bold text-blue-100 mt-16 mb-4 text-center">Our Proven Engagement Process</h2>
-      <p className="text-blue-300 text-center mb-10 max-w-2xl mx-auto">
-        A structured, transparent approach from initial consultation to ongoing success. We partner with you at every stage to ensure measurable results and lasting impact.
+      <h2 className="text-3xl font-bold text-blue-100 mt-16 mb-3 text-center">How We Work Together</h2>
+      <p className="text-blue-300 text-center mb-12 max-w-xl mx-auto text-sm">
+        Simple, transparent process from discovery to launch
       </p>
 
-      <div className="relative">
-        {/* Connection Line */}
-        <div className="hidden md:block absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-cyan-600 via-blue-500 to-purple-600 opacity-30" style={{width: 'calc(100% - 8rem)', margin: '0 4rem'}}></div>
+      <div className="relative max-w-5xl mx-auto">
+        {/* Progress Bar */}
+        <div className="hidden lg:block absolute top-16 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 opacity-20" style={{width: 'calc(100% - 12rem)', margin: '0 6rem'}}></div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 relative">
-          {/* Phase 1: Discovery & Consultation */}
-          <div className="bg-gradient-to-br from-blue-900/80 to-blue-800/60 rounded-2xl p-6 border-2 border-cyan-700/50 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
-                1
-              </div>
-              <div>
-                <h3 className="text-cyan-300 font-bold text-lg">Discovery</h3>
-                <p className="text-blue-300 text-xs">1-2 weeks</p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+          {/* Phase 1 */}
+          <div className="group text-center">
+            <div className="relative mb-4 flex justify-center">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-white font-bold text-2xl shadow-lg group-hover:scale-110 transition-transform duration-300 relative z-10">
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
               </div>
             </div>
-            <div className="text-blue-100 text-sm space-y-2">
-              <p className="font-semibold text-white mb-2">Initial Consultation & Alignment</p>
-              <ul className="space-y-1.5">
-                <li>• Free introductory consultation call</li>
-                <li>• NDA execution for confidentiality</li>
-                <li>• Business goals & pain points analysis</li>
-                <li>• Stakeholder interviews</li>
-                <li>• Current state assessment</li>
-                <li>• Success criteria definition</li>
-              </ul>
-            </div>
-            <div className="mt-4 pt-4 border-t border-cyan-700/30">
-              <span className="inline-block px-3 py-1 bg-cyan-600/30 rounded-full text-xs text-cyan-200 font-semibold">
-                No Cost • No Obligation
-              </span>
-            </div>
+            <h3 className="text-xl font-bold text-cyan-300 mb-2">Discovery</h3>
+            <p className="text-blue-400 text-xs font-semibold mb-3">1-2 weeks • Free</p>
+            <ul className="text-blue-200 text-sm space-y-1.5">
+              <li>Consultation call</li>
+              <li>Requirements analysis</li>
+              <li>Success criteria</li>
+            </ul>
           </div>
 
-          {/* Phase 2: Strategic Planning */}
-          <div className="bg-gradient-to-br from-blue-900/80 to-blue-800/60 rounded-2xl p-6 border-2 border-blue-600/50 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
-                2
-              </div>
-              <div>
-                <h3 className="text-blue-300 font-bold text-lg">Strategy</h3>
-                <p className="text-blue-300 text-xs">2-4 weeks</p>
+          {/* Phase 2 */}
+          <div className="group text-center">
+            <div className="relative mb-4 flex justify-center">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-white font-bold text-2xl shadow-lg group-hover:scale-110 transition-transform duration-300 relative z-10">
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                </svg>
               </div>
             </div>
-            <div className="text-blue-100 text-sm space-y-2">
-              <p className="font-semibold text-white mb-2">Roadmap & Architecture</p>
-              <ul className="space-y-1.5">
-                <li>• Comprehensive technical audit</li>
-                <li>• AI/IT readiness assessment</li>
-                <li>• Technology stack evaluation</li>
-                <li>• Architecture design & planning</li>
-                <li>• ROI analysis & business case</li>
-                <li>• Quick wins identification</li>
-              </ul>
-            </div>
-            <div className="mt-4 pt-4 border-t border-blue-600/30">
-              <span className="inline-block px-3 py-1 bg-blue-600/30 rounded-full text-xs text-blue-200 font-semibold">
-                Deliverable: Strategic Roadmap
-              </span>
-            </div>
+            <h3 className="text-xl font-bold text-blue-300 mb-2">Strategy</h3>
+            <p className="text-blue-400 text-xs font-semibold mb-3">2-4 weeks</p>
+            <ul className="text-blue-200 text-sm space-y-1.5">
+              <li>Technical roadmap</li>
+              <li>Architecture design</li>
+              <li>ROI analysis</li>
+            </ul>
           </div>
 
-          {/* Phase 3: Implementation */}
-          <div className="bg-gradient-to-br from-blue-900/80 to-blue-800/60 rounded-2xl p-6 border-2 border-indigo-600/50 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
-                3
-              </div>
-              <div>
-                <h3 className="text-indigo-300 font-bold text-lg">Build</h3>
-                <p className="text-blue-300 text-xs">4-12 weeks</p>
+          {/* Phase 3 */}
+          <div className="group text-center">
+            <div className="relative mb-4 flex justify-center">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-white font-bold text-2xl shadow-lg group-hover:scale-110 transition-transform duration-300 relative z-10">
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
               </div>
             </div>
-            <div className="text-blue-100 text-sm space-y-2">
-              <p className="font-semibold text-white mb-2">Execution & Delivery</p>
-              <ul className="space-y-1.5">
-                <li>• Agile implementation sprints</li>
-                <li>• Continuous stakeholder updates</li>
-                <li>• Code/infrastructure deployment</li>
-                <li>• Comprehensive documentation</li>
-                <li>• Testing & quality assurance</li>
-                <li>• User acceptance testing (UAT)</li>
-              </ul>
-            </div>
-            <div className="mt-4 pt-4 border-t border-indigo-600/30">
-              <span className="inline-block px-3 py-1 bg-indigo-600/30 rounded-full text-xs text-indigo-200 font-semibold">
-                Iterative • Transparent
-              </span>
-            </div>
+            <h3 className="text-xl font-bold text-indigo-300 mb-2">Build</h3>
+            <p className="text-blue-400 text-xs font-semibold mb-3">4-12 weeks</p>
+            <ul className="text-blue-200 text-sm space-y-1.5">
+              <li>Agile development</li>
+              <li>Testing & QA</li>
+              <li>Documentation</li>
+            </ul>
           </div>
 
-          {/* Phase 4: Optimization & Support */}
-          <div className="bg-gradient-to-br from-blue-900/80 to-blue-800/60 rounded-2xl p-6 border-2 border-purple-600/50 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
-                4
-              </div>
-              <div>
-                <h3 className="text-purple-300 font-bold text-lg">Optimize</h3>
-                <p className="text-blue-300 text-xs">Ongoing</p>
+          {/* Phase 4 */}
+          <div className="group text-center">
+            <div className="relative mb-4 flex justify-center">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center text-white font-bold text-2xl shadow-lg group-hover:scale-110 transition-transform duration-300 relative z-10">
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
               </div>
             </div>
-            <div className="text-blue-100 text-sm space-y-2">
-              <p className="font-semibold text-white mb-2">Growth & Continuous Improvement</p>
-              <ul className="space-y-1.5">
-                <li>• Team training & knowledge transfer</li>
-                <li>• Performance monitoring & tuning</li>
-                <li>• Post-launch support & maintenance</li>
-                <li>• Feature enhancements</li>
-                <li>• Best practices & optimization</li>
-                <li>• Strategic consulting & advising</li>
-              </ul>
-            </div>
-            <div className="mt-4 pt-4 border-t border-purple-600/30">
-              <span className="inline-block px-3 py-1 bg-purple-600/30 rounded-full text-xs text-purple-200 font-semibold">
-                Flexible Support Models
-              </span>
-            </div>
+            <h3 className="text-xl font-bold text-purple-300 mb-2">Launch</h3>
+            <p className="text-blue-400 text-xs font-semibold mb-3">Ongoing</p>
+            <ul className="text-blue-200 text-sm space-y-1.5">
+              <li>Deployment</li>
+              <li>Team training</li>
+              <li>Support & optimization</li>
+            </ul>
           </div>
         </div>
-      </div>
 
-      {/* Process Benefits */}
-      <div className="mt-8 bg-gradient-to-br from-cyan-900/40 to-blue-900/40 rounded-2xl p-6 border border-cyan-700/30">
-        <h3 className="text-xl font-bold text-cyan-300 mb-4 text-center">Why Our Process Works</h3>
-        <div className="grid md:grid-cols-3 gap-6 text-blue-100">
-          <div className="text-center">
-            <div className="text-3xl mb-2">🎯</div>
-            <h4 className="font-bold text-white mb-2">Clear Milestones</h4>
-            <p className="text-sm">Every phase has defined deliverables and success metrics so you always know progress.</p>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl mb-2">🔄</div>
-            <h4 className="font-bold text-white mb-2">Flexible & Agile</h4>
-            <p className="text-sm">We adapt to changing requirements and business priorities throughout the engagement.</p>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl mb-2">🤝</div>
-            <h4 className="font-bold text-white mb-2">True Partnership</h4>
-            <p className="text-sm">We work collaboratively with your team, ensuring knowledge transfer and lasting capability.</p>
-          </div>
+        {/* Simple CTA */}
+        <div className="mt-12 text-center bg-gradient-to-r from-cyan-900/30 to-blue-900/30 rounded-2xl p-6 border border-cyan-700/20">
+          <p className="text-cyan-300 font-semibold mb-2">Transparent pricing • Flexible engagement models • NDA standard</p>
         </div>
       </div>
 
