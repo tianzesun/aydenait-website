@@ -19,25 +19,25 @@ const Navbar = () => {
       : 'bg-transparent border-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between py-5 px-4">
         <Link to="/" className="flex items-center gap-3">
-          <img src="/logo.svg" className="h-10 w-10" alt="AydenAIT Logo" />
-          <span className="font-bold text-xl tracking-tight text-blue-800">AydenAIT Solution</span>
+            <img src="/logo.svg" className="h-10 w-10" alt="AydenAIT Logo" />
+          <span className={`font-bold text-xl tracking-tight transition-colors duration-300 ${isScrolled ? 'text-blue-800' : 'text-white'}`}>AydenAIT Solution</span>
         </Link>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 font-semibold items-center text-base">
-          <li><Link to="/" className="relative hover:text-blue-600 text-gray-800 transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-200 hover:after:w-full">Home</Link></li>
-          <li><Link to="/services" className="relative hover:text-blue-600 text-gray-800 transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-200 hover:after:w-full">Services</Link></li>
-          <li><Link to="/about" className="relative hover:text-blue-600 text-gray-800 transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-200 hover:after:w-full">About</Link></li>
-          <li><Link to="/portfolio" className="relative hover:text-blue-600 text-gray-800 transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-200 hover:after:w-full">Portfolio</Link></li>
-          <li><Link to="/resources" className="relative hover:text-blue-600 text-gray-800 transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-200 hover:after:w-full">Resources</Link></li>
-          <li><Link to="/careers" className="relative hover:text-blue-600 text-gray-800 transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-200 hover:after:w-full">Careers</Link></li>
+          <li><Link to="/" className={`relative transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:transition-all after:duration-200 hover:after:w-full ${isScrolled ? 'text-gray-800 hover:text-blue-600 after:bg-blue-600' : 'text-white hover:text-cyan-300 after:bg-cyan-300'}`}>Home</Link></li>
+          <li><Link to="/services" className={`relative transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:transition-all after:duration-200 hover:after:w-full ${isScrolled ? 'text-gray-800 hover:text-blue-600 after:bg-blue-600' : 'text-white hover:text-cyan-300 after:bg-cyan-300'}`}>Services</Link></li>
+          <li><Link to="/about" className={`relative transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:transition-all after:duration-200 hover:after:w-full ${isScrolled ? 'text-gray-800 hover:text-blue-600 after:bg-blue-600' : 'text-white hover:text-cyan-300 after:bg-cyan-300'}`}>About</Link></li>
+          <li><Link to="/portfolio" className={`relative transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:transition-all after:duration-200 hover:after:w-full ${isScrolled ? 'text-gray-800 hover:text-blue-600 after:bg-blue-600' : 'text-white hover:text-cyan-300 after:bg-cyan-300'}`}>Portfolio</Link></li>
+          <li><Link to="/resources" className={`relative transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:transition-all after:duration-200 hover:after:w-full ${isScrolled ? 'text-gray-800 hover:text-blue-600 after:bg-blue-600' : 'text-white hover:text-cyan-300 after:bg-cyan-300'}`}>Resources</Link></li>
+          <li><Link to="/careers" className={`relative transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:transition-all after:duration-200 hover:after:w-full ${isScrolled ? 'text-gray-800 hover:text-blue-600 after:bg-blue-600' : 'text-white hover:text-cyan-300 after:bg-cyan-300'}`}>Careers</Link></li>
         </ul>
 
         <Link to="/contact" className="hidden md:block px-6 py-2.5 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold shadow-lg hover:shadow-xl hover:shadow-cyan-500/25 transition-all duration-300 text-base hover:scale-105 active:scale-95">Get in Touch</Link>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-gray-800 focus:outline-none"
+          className={`md:hidden focus:outline-none transition-colors duration-300 ${isScrolled ? 'text-gray-800' : 'text-white'}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
