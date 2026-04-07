@@ -41,11 +41,12 @@ const Home = () => {
     <StructuredData data={organizationSchema} />
     <StructuredData data={websiteSchema} />
     <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-950 via-blue-900 to-indigo-900">
-      <div className="absolute -top-32 -left-40 w-96 h-96 bg-blue-500 rounded-full filter blur-2xl opacity-40 animate-pulse" />
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyan-400 rounded-full filter blur-2xl opacity-30 animate-pulse delay-500" />
+      <div className="absolute -top-32 -left-40 w-96 h-96 bg-blue-500 rounded-full filter blur-3xl opacity-25 animate-[pulse_8s_cubic-bezier(0.4,0,0.6,1)_infinite]" />
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyan-400 rounded-full filter blur-3xl opacity-20 animate-[pulse_8s_cubic-bezier(0.4,0,0.6,1)_infinite] delay-1000" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-400 rounded-full filter blur-3xl opacity-10 animate-[pulse_12s_cubic-bezier(0.4,0,0.6,1)_infinite] delay-500" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 py-20">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-[fadeInUp_0.8s_ease-out]">
           {/* Trust Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 mb-6">
             <span className="text-yellow-400 text-sm">★★★★★</span>
@@ -331,21 +332,28 @@ const Home = () => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
           {/* [UPDATE: Replace with your actual client logos] */}
-          {[1, 2, 3, 4, 5, 6].map((i) => (
+            {[
+              { logo: 'AWS', color: '#FF9900', logoFile: '/aws-partner.svg' },
+              { logo: 'Azure', color: '#0078D4', logoFile: '/azure.svg' },
+              { logo: 'GitLab', color: '#FC6D26', logoFile: '/gitlab-partner.svg' },
+              { logo: 'ISO 27001', color: '#006633', logoFile: '/iso27001.svg' },
+            ].map((client, i) => (
             <div key={i} className="group">
-              <div className="h-20 bg-white rounded-xl shadow-sm border border-gray-200 flex items-center justify-center p-4 transition-all group-hover:shadow-md group-hover:scale-105">
-                <div className="text-center">
-                  <div className="text-gray-400 font-bold mb-1">LOGO</div>
-                  <div className="text-xs text-gray-400">Client {i}</div>
+              <div className="h-20 bg-white rounded-xl shadow-sm border border-gray-200 flex items-center justify-center p-4 transition-all duration-300 group-hover:shadow-lg group-hover:scale-105 group-hover:-translate-y-1">
+                <img src={client.logoFile} alt={client.logo} className="max-h-10 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => {
+                  const target = e.currentTarget as HTMLImageElement;
+                  target.style.display = 'none';
+                  const sibling = target.nextElementSibling as HTMLElement | null;
+                  if (sibling) {
+                    sibling.style.display = 'block';
+                  }
+                }} />
+                <div className="text-center hidden">
+                  <div className="text-gray-400 font-bold mb-1" style={{color: client.color}}>{client.logo}</div>
                 </div>
               </div>
             </div>
           ))}
-        </div>
-        <div className="mt-8 text-center">
-          <p className="text-sm text-blue-600 font-semibold">
-            💡 Replace these placeholders with your actual client logos (PNG/SVG with transparent background)
-          </p>
         </div>
       </div>
     </section>
@@ -359,12 +367,15 @@ const Home = () => {
             {title:'IT Solutions', icon:'💼', desc:'Comprehensive IT consulting, infrastructure optimization, and technology transformation services.'},
             {title:'AI Development', icon:'🤖', desc:'Custom AI software, machine learning models, and intelligent automation systems.'},
             {title:'AIOps', icon:'⚡', desc:'AI-powered IT operations, predictive monitoring, and intelligent incident management.'}
-          ].map(card => (
+          ].map((card, index) => (
             <div key={card.title}
-                 className="rounded-2xl p-8 shadow-2xl backdrop-blur-2xl bg-white/10 border border-blue-700 text-center hover:scale-105 hover:bg-blue-600/10 transition">
-              <div className="text-5xl mb-4">{card.icon}</div>
-              <h3 className="font-bold text-xl mb-2 text-white">{card.title}</h3>
-              <p className="text-blue-100 text-sm">{card.desc}</p>
+                 className="rounded-2xl p-8 shadow-2xl backdrop-blur-2xl bg-white/5 border border-white/10 text-center hover:scale-[1.03] hover:bg-white/10 hover:border-cyan-400/50 transition-all duration-300 cursor-pointer group" style={{animationDelay: `${index * 100}ms`}}>
+              <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">{card.icon}</div>
+              <h3 className="font-bold text-xl mb-3 text-white group-hover:text-cyan-300 transition-colors duration-300">{card.title}</h3>
+              <p className="text-blue-100 text-sm leading-relaxed">{card.desc}</p>
+              <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="h-0.5 w-12 mx-auto bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></div>
+              </div>
             </div>
           ))}
         </div>
@@ -397,9 +408,6 @@ const Home = () => {
                 <p className="text-sm text-gray-600">CTO, TechCorp Inc.</p>
                 <p className="text-xs text-blue-600 mt-1">E-commerce • Series B</p>
               </div>
-            </div>
-            <div className="mt-6 pt-4 border-t border-gray-100">
-              <p className="text-xs text-gray-500">💡 Replace with your real client testimonial</p>
             </div>
           </div>
 
@@ -470,9 +478,6 @@ const Home = () => {
               <p className="text-gray-600">Support Available</p>
             </div>
           </div>
-          <div className="mt-6 pt-6 border-t border-gray-100 text-center">
-            <p className="text-sm text-gray-500">💡 Update these metrics with your actual numbers</p>
-          </div>
         </div>
       </div>
     </section>
@@ -504,9 +509,6 @@ const Home = () => {
         </div>
         <p className="mt-6 text-blue-100 text-sm">
           ✓ 30-minute free consultation  ✓ No commitment required  ✓ NDA provided
-        </p>
-        <p className="mt-3 text-blue-200 text-xs">
-          💡 Replace "YOUR-CALENDLY-LINK" with your actual Calendly URL (e.g., calendly.com/your-name/30min)
         </p>
       </div>
     </section>

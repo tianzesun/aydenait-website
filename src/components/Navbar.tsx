@@ -1,11 +1,22 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <nav className="sticky top-0 z-40 bg-white border-b shadow-md">
+    <nav className={`sticky top-0 z-50 transition-all duration-500 ${isScrolled 
+      ? 'bg-white/95 backdrop-blur-xl shadow-lg shadow-blue-500/10 border-b border-blue-100/50 py-3' 
+      : 'bg-transparent border-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between py-5 px-4">
         <Link to="/" className="flex items-center gap-3">
           <img src="/logo.svg" className="h-10 w-10" alt="AydenAIT Logo" />
@@ -22,7 +33,7 @@ const Navbar = () => {
           <li><Link to="/careers" className="relative hover:text-blue-600 text-gray-800 transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-200 hover:after:w-full">Careers</Link></li>
         </ul>
 
-        <Link to="/contact" className="hidden md:block px-6 py-2.5 rounded-full bg-blue-600 text-white font-bold shadow-lg hover:bg-blue-700 hover:shadow-xl transition text-base">Get in Touch</Link>
+        <Link to="/contact" className="hidden md:block px-6 py-2.5 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold shadow-lg hover:shadow-xl hover:shadow-cyan-500/25 transition-all duration-300 text-base hover:scale-105 active:scale-95">Get in Touch</Link>
 
         {/* Mobile Menu Button */}
         <button
