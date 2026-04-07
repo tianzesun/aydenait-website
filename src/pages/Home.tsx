@@ -482,6 +482,34 @@ const Home = () => {
       </div>
     </section>
 
+    {/* Technical Stack Section */}
+    <section className="py-20 bg-[#0c1222] border-y border-blue-900/50">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-2">Technology Stack</h2>
+          <p className="text-3xl font-bold text-white mb-4">Built With Production Grade AI Tools</p>
+          <p className="text-blue-200 max-w-2xl mx-auto">We don't experiment with unproven tools. Every solution we deliver uses the same enterprise grade infrastructure trusted by companies like OpenAI and Google.</p>
+        </div>
+        
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-6 items-center">
+          {[
+            { name: 'OpenAI', color: '#10a37f' },
+            { name: 'Anthropic', color: '#d8a756' },
+            { name: 'LangChain', color: '#00c7b7' },
+            { name: 'Pinecone', color: '#786ffb' },
+            { name: 'AWS', color: '#ff9900' },
+            { name: 'Vercel', color: '#ffffff' },
+          ].map((tech) => (
+            <div key={tech.name} className="group">
+              <div className="h-20 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover:scale-105 hover:-translate-y-1">
+                <span className="font-bold text-lg opacity-70 group-hover:opacity-100 transition-opacity" style={{color: tech.color}}>{tech.name}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <CaseAccordion />
 
     {/* Final CTA Section with Calendly */}
