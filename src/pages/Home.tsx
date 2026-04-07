@@ -491,14 +491,14 @@ const Home = () => {
           <p className="text-blue-200 max-w-2xl mx-auto">We don't experiment with unproven tools. Every solution we deliver uses the same enterprise grade infrastructure trusted by companies like OpenAI and Google.</p>
         </div>
         
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-6 items-center">
+        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center">
           {[
             { name: 'OpenAI', color: '#10a37f' },
             { name: 'Anthropic', color: '#d8a756' },
             { name: 'LangChain', color: '#00c7b7' },
             { name: 'Pinecone', color: '#786ffb' },
-            { name: 'AWS', color: '#ff9900' },
-            { name: 'Vercel', color: '#ffffff' },
+            { name: 'PyTorch', color: '#ee4c2c' },
+            { name: 'TensorFlow', color: '#ff6f00' },
           ].map((tech) => (
             <div key={tech.name} className="group">
               <div className="h-20 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover:scale-105 hover:-translate-y-1">
