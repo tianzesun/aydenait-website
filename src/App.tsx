@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import CursorGlow from "./components/CursorGlow";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Clients from "./pages/Clients";
@@ -49,6 +50,7 @@ function App() {
     <BrowserRouter>
       <div className="min-h-screen flex flex-col bg-[#10172a] text-white">
         <div className="bg-noise" />
+        <CursorGlow />
         <Navbar />
         <main className="flex-1 relative z-10">
           <AnimatedRoutes />
