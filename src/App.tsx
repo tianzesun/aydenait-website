@@ -48,8 +48,9 @@ function App() {
   return (
     <BrowserRouter>
       <div className="min-h-screen flex flex-col bg-[#10172a] text-white">
+        <div className="bg-noise" />
         <Navbar />
-        <main className="flex-1">
+        <main className="flex-1 relative z-10">
           <AnimatedRoutes />
         </main>
         <Footer />
