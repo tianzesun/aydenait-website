@@ -41,7 +41,7 @@ export const organizationSchema = {
   "name": "AydenAIT Solution",
   "url": "https://aydenait.com",
   "logo": "https://aydenait.com/logo.svg",
-  "description": "Enterprise AI consulting, IT solutions, AI software development, and AIOps services",
+  "description": "AI solutions for education, civic services, finance and business: AI consulting, custom AI development, IT solutions and AIOps",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Toronto",
@@ -71,7 +71,7 @@ export const serviceSchema = {
   "@type": "ProfessionalService",
   "name": "AydenAIT Solution",
   "image": "https://aydenait.com/logo.svg",
-  "description": "Enterprise AI consulting, IT solutions, AI software development, and AIOps services",
+  "description": "AI solutions for education, civic services, finance and business: AI consulting, custom AI development, IT solutions and AIOps",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Toronto",

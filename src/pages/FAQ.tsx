@@ -4,7 +4,7 @@ import SEO from "../components/SEO";
 const FAQ = () => (
   <>
     <SEO
-      title="FAQ - Enterprise AI & IT Consulting Questions | AydenAIT"
+      title="FAQ - AI Solutions for Education and Business | AydenAIT"
       description="Common questions about our AI consulting, IT solutions, AIOps services, pricing, implementation approach, and enterprise support options."
       keywords="AI consulting FAQ, IT consulting questions, AIOps FAQ, enterprise consulting questions, technology consulting FAQ"
       ogUrl="https://aydenait.com/faq"

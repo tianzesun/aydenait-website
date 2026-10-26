@@ -14,7 +14,7 @@ interface SEOProps {
 
 const SEO = ({
   title = "AydenAIT - Enterprise AI Consulting & IT Solutions",
-  description = "AI consulting, IT solutions, AI software development, and AIOps services for enterprises.",
+  description = "AI solutions for education and beyond: grading, academic integrity and workload platforms, plus AI consulting and development for civic services, finance and business.",
   keywords = "AI consulting, IT consulting, AIOps, enterprise AI, AI software development",
   ogType = "website",
   ogImage = "https://aydenait.com/og-image.png",

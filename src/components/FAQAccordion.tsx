@@ -15,12 +15,12 @@ const faqs = [
     a: "We offer flexible engagement models: (1) Project-based - fixed scope and price for defined deliverables, (2) Time & Materials - for evolving requirements with monthly billing, (3) Retainer - ongoing support and consulting at a monthly rate, and (4) Staff Augmentation - dedicated resources integrated with your team. Pricing varies based on project complexity, timeline, and team composition. We provide detailed estimates after our initial consultation and always work within your budget constraints."
   },
   {
-    q: "Do you work with companies of all sizes?",
-    a: "Yes, we work with organizations ranging from growth-stage startups to Fortune 500 enterprises. Our services are designed to scale - whether you're a 20-person startup looking to implement your first AI solution or a 10,000+ employee enterprise optimizing global IT operations. We adapt our approach, methodology, and team size to match your organization's needs and maturity level."
+    q: "Do you work with organizations of all sizes?",
+    a: "Yes. We work with university departments, public-sector teams and businesses of different sizes. Many engagements start small, with one department or one process, and grow once the first system proves useful. We size the team and the scope to what you actually need."
   },
   {
     q: "What industries do you specialize in?",
-    a: "We have deep experience across multiple industries including Financial Services, Healthcare, Retail & E-commerce, Manufacturing, Technology/SaaS, and Professional Services. While we're industry-agnostic in our technical capabilities, we understand that each sector has unique compliance requirements (HIPAA, SOC 2, PCI-DSS, etc.) and business challenges. We customize our solutions to address your industry-specific needs."
+    a: "Education is our main focus: our grading, academic-integrity and faculty workload platforms are in use at the University of Toronto. We also build for civic services (an AI assistant built on the City of Markham's official data) and financial services (an options-strategy analysis platform), and we consult for businesses that want AI working inside their existing systems."
   },
   {
     q: "How quickly can we start?",
@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     q: "How do you ensure data security and confidentiality?",
-    a: "Security is paramount. We implement: (1) NDA signing before any detailed discussions, (2) SOC 2 Type II compliant processes for data handling, (3) Role-based access controls - team members only access what they need, (4) Encrypted communications and data transfer, (5) Secure development practices following OWASP guidelines, and (6) Regular security audits. We can also work within your existing security frameworks and comply with industry-specific regulations (HIPAA, PCI-DSS, GDPR, etc.)."
+    a: "Security is paramount. We implement: (1) NDA signing before any detailed discussions, (2) Data handling designed around your privacy and retention requirements, (3) Role-based access controls - team members only access what they need, (4) Encrypted communications and data transfer, (5) Secure development practices following OWASP guidelines, and (6) Human review and audit trails for AI-assisted decisions. We can also work within your existing security frameworks and your institution's privacy and policy requirements."
   },
   {
     q: "Do you offer remote or on-site services?",

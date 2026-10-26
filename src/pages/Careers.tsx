@@ -284,7 +284,7 @@ const Careers = () => {
                   <span>Professional Growth</span>
                 </h3>
                 <ul className="text-gray-700 space-y-2">
-                  <li>• Work with Fortune 500 clients and cutting-edge AI technologies</li>
+                  <li>• Build AI used by real universities, public services and businesses</li>
                   <li>• Annual learning budget for courses, certifications, and conferences</li>
                   <li>• Clear career progression paths with regular feedback and reviews</li>
                   <li>• Mentorship from experienced AI consultants and engineers</li>

@@ -14,7 +14,7 @@ const Footer = () => {
               <span className="text-xl font-bold text-white">AydenAIT Solution</span>
             </div>
             <p className="text-sm text-gray-400 mb-4 leading-relaxed">
-              Enterprise AI consulting and implementation services. Delivering measurable business value through artificial intelligence.
+              AI solutions for education and beyond. Platforms in use at the University of Toronto, built in Toronto.
             </p>
             <div className="flex gap-4">
               <a
