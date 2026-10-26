@@ -3,7 +3,6 @@
 export type Project = {
   title: string;
   sector: "Higher Education" | "Civic Services" | "Financial Services";
-  status?: string;
   summary: string;
   desc: string;
   highlights: string[];
@@ -15,7 +14,6 @@ export const projects: Project[] = [
   {
     title: "Faculty Workload Management System",
     sector: "Higher Education",
-    status: "In use at the University of Toronto",
     summary: "Course assignments, workload tracking and term planning for academic departments.",
     desc: "A workload management platform for a department at the University of Toronto Scarborough, covering Computer Science, Mathematics, and Statistics.",
     highlights: ["Course assignments and term planning", "Faculty workload and service-role tracking", "Policy-based workload calculations"],
@@ -23,7 +21,6 @@ export const projects: Project[] = [
   {
     title: "CodeProvenance",
     sector: "Higher Education",
-    status: "In use at the University of Toronto",
     summary: "Code similarity and AI-authorship detection that produces evidence, not just a score.",
     desc: "Code similarity and AI-authorship detection for schools and universities. The output isn't just a score: it's evidence a faculty member can act on and a committee can defend.",
     highlights: ["Multiple similarity engines combined by a learned fusion model", "AI-generated code detector", "Professor-facing review workspace"],
@@ -31,7 +28,6 @@ export const projects: Project[] = [
   {
     title: "DeepRubric",
     sector: "Higher Education",
-    status: "In use at the University of Toronto",
     summary: "AI-assisted, rubric-based grading for programming courses, with a human in the loop.",
     desc: "An AI-assisted grading platform for programming courses. Professors build rubrics, students submit code, and an AI pipeline scores each submission against the rubric criteria.",
     highlights: ["Human-in-the-loop review of every score", "Academic-integrity checks", "Course and rubric analytics"],

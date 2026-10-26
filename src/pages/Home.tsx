@@ -162,9 +162,6 @@ const Home = () => {
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           {educationProjects.map((project) => (
             <div key={project.title} className="flex flex-col bg-white/10 rounded-2xl p-7 border border-blue-700/50 hover:border-cyan-400 transition">
-              <span className="self-start text-xs font-semibold px-2.5 py-1 rounded-full bg-green-500/15 border border-green-400/40 text-green-200 mb-4">
-                {project.status}
-              </span>
               <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
               <p className="text-blue-100 text-sm leading-relaxed">{project.summary}</p>
             </div>
