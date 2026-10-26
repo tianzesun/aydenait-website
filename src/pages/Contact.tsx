@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
 import SEO from "../components/SEO";
+import { sendContact } from "../lib/sendContact";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -18,32 +19,11 @@ const Contact = () => {
     setError(null);
 
     try {
-      // Call the serverless function
-      const response = await fetch("/.netlify/functions/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.error || "Failed to send message");
-      }
-
-      // Success
+      await sendContact(formData);
       setSubmitted(true);
       setFormData({ name: "", email: "", phone: "", message: "" });
-
-      // Hide success message after 5 seconds
-      setTimeout(() => {
-        setSubmitted(false);
-      }, 5000);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to send message. Please try emailing us directly.");
-      console.error("Contact form error:", err);
     } finally {
       setIsSubmitting(false);
     }
@@ -57,7 +37,7 @@ const Contact = () => {
     <>
       <SEO
         title="Contact AydenAIT - Enterprise AI & IT Consulting"
-        description="Connect with our enterprise technology consulting experts. Specializing in AI consulting, IT solutions, AI development, and AIOps. Confidential consultation, NDA provided. Email: hello@aydenait.com"
+        description="Connect with our enterprise technology consulting experts. Specializing in AI consulting, IT solutions, AI development, and AIOps. Confidential consultation, NDA provided. Email: contact@aydenait.com"
         keywords="contact AI consultant, enterprise IT consulting, AIOps consultation, AI consulting inquiry, technology consulting contact"
         ogUrl="https://aydenait.com/contact"
         canonical="https://aydenait.com/contact"
@@ -69,54 +49,62 @@ const Contact = () => {
           <h1 className="text-3xl font-bold text-white mb-2">Contact Us</h1>
           <p className="text-blue-200 mb-7">Let's connect—our experts respond within 1 business day. Info is 100% confidential.</p>
           {submitted && (
-            <div className="mb-4 p-3 bg-green-500/20 border border-green-500 rounded text-green-100">
+            <div role="status" className="mb-4 p-3 bg-green-500/20 border border-green-500 rounded text-green-100">
               ✓ Thank you! We'll be in touch within 1 business day.
             </div>
           )}
           {error && (
-            <div className="mb-4 p-3 bg-red-500/20 border border-red-500 rounded text-red-100">
+            <div role="alert" className="mb-4 p-3 bg-red-500/20 border border-red-500 rounded text-red-100">
               ✗ {error}
             </div>
           )}
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div>
-              <label className="block mb-1 font-semibold text-blue-200">Name<span className="text-red-500">*</span></label>
+              <label htmlFor="contact-name" className="block mb-1 font-semibold text-blue-200">Name<span className="text-red-500">*</span></label>
               <input
                 type="text"
+                id="contact-name"
                 name="name"
+                autoComplete="name"
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full border-b bg-transparent px-3 py-2 text-blue-100 border-blue-400 rounded focus:outline-none focus:border-cyan-400 transition"/>
+                className="w-full border bg-white/5 px-3 py-2 text-blue-50 placeholder-blue-300/60 border-blue-400/60 rounded-lg focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/30 transition"/>
             </div>
             <div>
-              <label className="block mb-1 font-semibold text-blue-200">Email<span className="text-red-500">*</span></label>
+              <label htmlFor="contact-email" className="block mb-1 font-semibold text-blue-200">Email<span className="text-red-500">*</span></label>
               <input
                 type="email"
+                id="contact-email"
                 name="email"
+                autoComplete="email"
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full border-b bg-transparent px-3 py-2 text-blue-100 border-blue-400 rounded focus:outline-none focus:border-cyan-400 transition"/>
+                className="w-full border bg-white/5 px-3 py-2 text-blue-50 placeholder-blue-300/60 border-blue-400/60 rounded-lg focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/30 transition"/>
             </div>
             <div>
-              <label className="block mb-1 font-semibold text-blue-200">Phone</label>
+              <label htmlFor="contact-phone" className="block mb-1 font-semibold text-blue-200">Phone</label>
               <input
                 type="tel"
+                id="contact-phone"
                 name="phone"
+                autoComplete="tel"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full border-b bg-transparent px-3 py-2 text-blue-100 border-blue-400 rounded focus:outline-none focus:border-cyan-400 transition"/>
+                className="w-full border bg-white/5 px-3 py-2 text-blue-50 placeholder-blue-300/60 border-blue-400/60 rounded-lg focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/30 transition"/>
             </div>
             <div>
-              <label className="block mb-1 font-semibold text-blue-200">Message</label>
+              <label htmlFor="contact-message" className="block mb-1 font-semibold text-blue-200">Message<span className="text-red-500">*</span></label>
               <textarea
+                id="contact-message"
                 rows={5}
                 name="message"
+                maxLength={5000}
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="w-full border-b bg-transparent px-3 py-2 text-blue-100 border-blue-400 rounded focus:outline-none focus:border-cyan-400 transition"></textarea>
+                className="w-full border bg-white/5 px-3 py-2 text-blue-50 placeholder-blue-300/60 border-blue-400/60 rounded-lg focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/30 transition"></textarea>
             </div>
             <button
               type="submit"
@@ -132,16 +120,14 @@ const Contact = () => {
       <div className="flex flex-col gap-8 justify-center">
         <div className="bg-white/5 rounded-xl px-6 py-7 text-blue-100">
           <h2 className="font-bold text-blue-200 mb-2">Contact Direct</h2>
-          <div className="mb-1"><b>Email:</b> <a className="text-cyan-300 underline" href="mailto:hello@aydenait.com">hello@aydenait.com</a></div>
-          <div className="mb-1"><b>Phone:</b> <a className="text-cyan-300 underline" href="tel:+1234567890">(123) 456-7890</a></div>
-          <div className="mb-1"><b>Business Hours:</b> 8am – 6pm EST, Mon–Fri</div>
-          <div className="mb-1"><b>Address:</b> 123 Tech Lane, Toronto, ON</div>
+          <div className="mb-1"><b>Email:</b> <a className="text-cyan-300 underline" href="mailto:contact@aydenait.com">contact@aydenait.com</a></div>
+          <div className="mb-1"><b>Business Hours:</b> 8am – 6pm ET, Mon–Fri</div>
+          <div className="mb-1"><b>Location:</b> Toronto, ON, Canada</div>
         </div>
         <div className="bg-white/5 rounded-xl px-6 py-6 text-blue-100">
           <h3 className="font-bold text-blue-200 mb-2">Connect Socially</h3>
           <div className="flex gap-4 mb-3">
-            <a href="https://linkedin.com/" className="hover:text-cyan-300 underline" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://twitter.com/" className="hover:text-cyan-300 underline" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="https://linkedin.com/company/aydenait" className="hover:text-cyan-300 underline" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
           <div className="text-xs">Prefer a direct call? Leave your number—we'll contact you!</div>
         </div>

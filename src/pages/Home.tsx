@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState, type FormEvent } from "react";
-import CaseAccordion from "../components/CaseAccordion";
 import SEO from "../components/SEO";
 import StructuredData, { organizationSchema, websiteSchema } from "../components/StructuredData";
+import { sendContact } from "../lib/sendContact";
 
 const Home = () => {
   const [leadFormData, setLeadFormData] = useState({
@@ -12,21 +12,30 @@ const Home = () => {
     industry: ""
   });
   const [leadSubmitted, setLeadSubmitted] = useState(false);
+  const [leadSubmitting, setLeadSubmitting] = useState(false);
+  const [leadError, setLeadError] = useState<string | null>(null);
 
   const handleLeadFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setLeadFormData({ ...leadFormData, [e.target.name]: e.target.value });
   };
 
-  const handleLeadFormSubmit = (e: FormEvent) => {
+  const handleLeadFormSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    // In production, this would send to your CRM/backend
-    console.log("Lead captured:", leadFormData);
-    setLeadSubmitted(true);
-    // Reset form after 5 seconds
-    setTimeout(() => {
+    setLeadSubmitting(true);
+    setLeadError(null);
+    try {
+      await sendContact({
+        name: leadFormData.name,
+        email: leadFormData.email,
+        message: `AI Readiness Assessment request\nCompany: ${leadFormData.company}\nIndustry: ${leadFormData.industry}`,
+      });
+      setLeadSubmitted(true);
       setLeadFormData({ name: "", email: "", company: "", industry: "" });
-      setLeadSubmitted(false);
-    }, 5000);
+    } catch (err) {
+      setLeadError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setLeadSubmitting(false);
+    }
   };
 
   return (
@@ -47,12 +56,6 @@ const Home = () => {
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 py-20">
         <div className="text-center mb-12 animate-[fadeInUp_0.8s_ease-out]">
-          {/* Trust Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 mb-6">
-            <span className="text-yellow-400 text-sm">★★★★★</span>
-            <span className="text-blue-100 text-sm font-semibold">Trusted by 50+ Enterprises</span>
-          </div>
-
           <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6">
             Enterprise AI Consulting
             <br />
@@ -98,17 +101,15 @@ const Home = () => {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <a
-              href="https://calendly.com/YOUR-CALENDLY-LINK"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/contact"
               className="group px-8 py-4 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-blue-900 font-bold shadow-2xl hover:shadow-cyan-400/50 hover:scale-105 transition-all text-lg inline-flex items-center justify-center gap-2"
             >
               <svg className="w-5 h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
               Book Free Consultation
-            </a>
+            </Link>
             <Link
               to="/services"
               className="px-8 py-4 rounded-full text-white border-2 border-white/30 font-bold hover:bg-white/10 hover:border-white transition-all text-lg backdrop-blur-sm"
@@ -143,7 +144,7 @@ const Home = () => {
     </section>
 
     {/* Lead Capture Form - Free AI Readiness Assessment */}
-    <section className="py-20 bg-gradient-to-br from-blue-900 via-indigo-900 to-blue-800 relative overflow-hidden">
+    <section id="lead-capture" className="scroll-mt-24 py-20 bg-gradient-to-br from-blue-900 via-indigo-900 to-blue-800 relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:30px_30px]"></div>
       <div className="relative max-w-5xl mx-auto px-4">
         <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 md:p-12 shadow-2xl">
@@ -207,6 +208,11 @@ const Home = () => {
                 <>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">Start Your Free Assessment</h3>
                   <p className="text-gray-600 text-center mb-6 text-sm">Takes less than 60 seconds</p>
+                  {leadError && (
+                    <div role="alert" className="mb-4 p-3 bg-red-50 border border-red-300 rounded-lg text-sm text-red-700">
+                      {leadError}
+                    </div>
+                  )}
                   <form onSubmit={handleLeadFormSubmit} className="space-y-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-1">
@@ -278,82 +284,19 @@ const Home = () => {
                     </div>
                     <button
                       type="submit"
-                      className="w-full py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold rounded-lg hover:from-blue-700 hover:to-cyan-600 transition-all shadow-lg hover:shadow-xl transform hover:scale-[1.02] text-lg"
+                      disabled={leadSubmitting}
+                      className="w-full py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold rounded-lg hover:from-blue-700 hover:to-cyan-600 transition-all shadow-lg hover:shadow-xl transform hover:scale-[1.02] text-lg disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
                     >
-                      Get My Free Assessment →
+                      {leadSubmitting ? "Sending..." : "Get My Free Assessment →"}
                     </button>
                     <p className="text-xs text-gray-500 text-center mt-3">
-                      By submitting, you agree to our NDA and privacy policy. We respect your confidentiality.
+                      By submitting, you agree to our <Link to="/privacy" className="underline hover:text-gray-700">privacy policy</Link>. We respect your confidentiality.
                     </p>
                   </form>
                 </>
               )}
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    {/* Stats Section - UPDATE WITH YOUR REAL NUMBERS */}
-    <section className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Trusted by Companies Worldwide</h2>
-        <div className="grid md:grid-cols-4 gap-8 text-center">
-          <div className="p-6">
-            <div className="text-5xl font-extrabold text-blue-600 mb-2">50+</div>
-            <p className="text-gray-600 font-medium">Projects Delivered</p>
-            <p className="text-sm text-gray-500 mt-1">[UPDATE: Your actual number]</p>
-          </div>
-          <div className="p-6">
-            <div className="text-5xl font-extrabold text-blue-600 mb-2">99.9%</div>
-            <p className="text-gray-600 font-medium">Uptime Achieved</p>
-            <p className="text-sm text-gray-500 mt-1">[UPDATE: Your SLA metric]</p>
-          </div>
-          <div className="p-6">
-            <div className="text-5xl font-extrabold text-blue-600 mb-2">40%</div>
-            <p className="text-gray-600 font-medium">Cost Reduction</p>
-            <p className="text-sm text-gray-500 mt-1">[UPDATE: Avg. savings %]</p>
-          </div>
-          <div className="p-6">
-            <div className="text-5xl font-extrabold text-blue-600 mb-2">5+</div>
-            <p className="text-gray-600 font-medium">Years Experience</p>
-            <p className="text-sm text-gray-500 mt-1">[UPDATE: Your years]</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {/* Trusted By Section - ADD YOUR CLIENT LOGOS */}
-    <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50 border-y border-gray-200">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-10">
-          <h2 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-2">Trusted By Industry Leaders</h2>
-          <p className="text-gray-600">Join 50+ companies transforming with AI</p>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
-          {/* [UPDATE: Replace with your actual client logos] */}
-            {[
-              { logo: 'AWS', color: '#FF9900', logoFile: '/aws-partner.svg' },
-              { logo: 'Azure', color: '#0078D4', logoFile: '/azure.svg' },
-              { logo: 'GitLab', color: '#FC6D26', logoFile: '/gitlab-partner.svg' },
-              { logo: 'ISO 27001', color: '#006633', logoFile: '/iso27001.svg' },
-            ].map((client, i) => (
-            <div key={i} className="group">
-              <div className="h-20 bg-white rounded-xl shadow-sm border border-gray-200 flex items-center justify-center p-4 transition-all duration-300 group-hover:shadow-lg group-hover:scale-105 group-hover:-translate-y-1">
-                <img src={client.logoFile} alt={client.logo} className="max-h-10 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => {
-                  const target = e.currentTarget as HTMLImageElement;
-                  target.style.display = 'none';
-                  const sibling = target.nextElementSibling as HTMLElement | null;
-                  if (sibling) {
-                    sibling.style.display = 'block';
-                  }
-                }} />
-                <div className="text-center hidden">
-                  <div className="text-gray-400 font-bold mb-1" style={{color: client.color}}>{client.logo}</div>
-                </div>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>
@@ -378,106 +321,6 @@ const Home = () => {
               </div>
             </div>
           ))}
-        </div>
-      </div>
-    </section>
-
-    {/* Testimonials Section - UPDATE WITH YOUR REAL TESTIMONIALS */}
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-3">What Our Clients Say</h2>
-          <p className="text-xl text-gray-600">Trusted by leading enterprises worldwide</p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {/* Testimonial 1 - [REPLACE WITH YOUR REAL CLIENT] */}
-          <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border-t-4 border-blue-600">
-            <div className="flex mb-4">
-              <span className="text-yellow-400 text-xl">★★★★★</span>
-            </div>
-            <p className="text-gray-700 mb-6 italic leading-relaxed">
-              "AydenAIT transformed our deployment pipeline completely. We went from weekly releases with frequent rollbacks to daily deployments with 99.9% uptime. Their expertise in AI-powered DevOps is unmatched."
-            </p>
-            <div className="flex items-center gap-4">
-              <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-md">
-                JD
-              </div>
-              <div>
-                <p className="font-bold text-gray-900">John Doe</p>
-                <p className="text-sm text-gray-600">CTO, TechCorp Inc.</p>
-                <p className="text-xs text-blue-600 mt-1">E-commerce • Series B</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Testimonial 2 - [REPLACE WITH YOUR REAL CLIENT] */}
-          <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border-t-4 border-cyan-600">
-            <div className="flex mb-4">
-              <span className="text-yellow-400 text-xl">★★★★★</span>
-            </div>
-            <p className="text-gray-700 mb-6 italic leading-relaxed">
-              "The AI-driven monitoring solution they built for us identifies and resolves issues before they impact customers. Our incident response time dropped by 80%, and customer satisfaction is at an all-time high."
-            </p>
-            <div className="flex items-center gap-4">
-              <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-md">
-                SM
-              </div>
-              <div>
-                <p className="font-bold text-gray-900">Sarah Miller</p>
-                <p className="text-sm text-gray-600">VP Engineering, CloudStart</p>
-                <p className="text-xs text-cyan-600 mt-1">SaaS • 200+ employees</p>
-              </div>
-            </div>
-            <div className="mt-6 pt-4 border-t border-gray-100">
-              <p className="text-xs text-gray-500">💡 Replace with your real client testimonial</p>
-            </div>
-          </div>
-
-          {/* Testimonial 3 - [REPLACE WITH YOUR REAL CLIENT] */}
-          <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border-t-4 border-purple-600">
-            <div className="flex mb-4">
-              <span className="text-yellow-400 text-xl">★★★★★</span>
-            </div>
-            <p className="text-gray-700 mb-6 italic leading-relaxed">
-              "They reduced our cloud costs by 40% through intelligent infrastructure optimization while actually improving performance. The ROI was evident within the first month. Exceptional team to work with."
-            </p>
-            <div className="flex items-center gap-4">
-              <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-md">
-                MK
-              </div>
-              <div>
-                <p className="font-bold text-gray-900">Michael Kim</p>
-                <p className="text-sm text-gray-600">Director of Operations, FinanceAI</p>
-                <p className="text-xs text-purple-600 mt-1">FinTech • Enterprise</p>
-              </div>
-            </div>
-            <div className="mt-6 pt-4 border-t border-gray-100">
-              <p className="text-xs text-gray-500">💡 Replace with your real client testimonial</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Trust Indicators */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">50+</div>
-              <p className="text-gray-600">Projects Delivered</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-cyan-600 mb-2">95%</div>
-              <p className="text-gray-600">Client Retention</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-purple-600 mb-2">10+</div>
-              <p className="text-gray-600">Industries Served</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-green-600 mb-2">24/7</div>
-              <p className="text-gray-600">Support Available</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -510,9 +353,7 @@ const Home = () => {
       </div>
     </section>
 
-    <CaseAccordion />
-
-    {/* Final CTA Section with Calendly */}
+    {/* Final CTA Section */}
     <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-500">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-white mb-4">Ready to Transform Your Enterprise?</h2>
@@ -520,20 +361,18 @@ const Home = () => {
           Partner with our experts to accelerate your digital transformation and AI initiatives
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="https://calendly.com/YOUR-CALENDLY-LINK"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/contact"
             className="px-8 py-4 rounded-full bg-white text-blue-600 font-bold shadow-lg hover:scale-105 transition text-lg inline-flex items-center justify-center gap-2"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
             Schedule Free Consultation
-          </a>
-          <Link to="/contact" className="px-8 py-4 rounded-full border-2 border-white text-white font-bold hover:bg-white hover:text-blue-600 transition text-lg">
-            Send Us a Message
           </Link>
+          <a href="mailto:contact@aydenait.com" className="px-8 py-4 rounded-full border-2 border-white text-white font-bold hover:bg-white hover:text-blue-600 transition text-lg">
+            Email Us
+          </a>
         </div>
         <p className="mt-6 text-blue-100 text-sm">
           ✓ 30-minute free consultation  ✓ No commitment required  ✓ NDA provided

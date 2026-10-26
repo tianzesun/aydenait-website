@@ -1,21 +1,23 @@
-import { useEffect } from "react";
+import { useEffect, useId } from "react";
 
 interface StructuredDataProps {
   data: object;
 }
 
 const StructuredData = ({ data }: StructuredDataProps) => {
+  // Unique per instance so multiple schemas on one page don't overwrite each other
+  const scriptId = `structured-data-${useId().replace(/:/g, "")}`;
+
   useEffect(() => {
-    const scriptId = "structured-data";
     let script = document.getElementById(scriptId) as HTMLScriptElement;
 
     if (script) {
-      script.innerHTML = JSON.stringify(data);
+      script.textContent = JSON.stringify(data);
     } else {
       script = document.createElement("script");
       script.id = scriptId;
       script.type = "application/ld+json";
-      script.innerHTML = JSON.stringify(data);
+      script.textContent = JSON.stringify(data);
       document.head.appendChild(script);
     }
 
@@ -25,7 +27,7 @@ const StructuredData = ({ data }: StructuredDataProps) => {
         existingScript.remove();
       }
     };
-  }, [data]);
+  }, [data, scriptId]);
 
   return null;
 };
@@ -39,24 +41,21 @@ export const organizationSchema = {
   "name": "AydenAIT Solution",
   "url": "https://aydenait.com",
   "logo": "https://aydenait.com/logo.svg",
-  "description": "AI-Driven DevOps Consulting - Expert DevOps & AI Engineering Services",
+  "description": "Enterprise AI consulting, IT solutions, AI software development, and AIOps services",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "123 Tech Lane",
     "addressLocality": "Toronto",
     "addressRegion": "ON",
     "addressCountry": "CA"
   },
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+1-234-567-890",
     "contactType": "customer service",
-    "email": "hello@aydenait.com",
+    "email": "contact@aydenait.com",
     "availableLanguage": "English"
   },
   "sameAs": [
-    "https://linkedin.com/company/aydenait",
-    "https://twitter.com/aydenait"
+    "https://linkedin.com/company/aydenait"
   ]
 };
 
@@ -64,12 +63,7 @@ export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "AydenAIT Solution",
-  "url": "https://aydenait.com",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://aydenait.com/search?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
+  "url": "https://aydenait.com"
 };
 
 export const serviceSchema = {
@@ -77,16 +71,15 @@ export const serviceSchema = {
   "@type": "ProfessionalService",
   "name": "AydenAIT Solution",
   "image": "https://aydenait.com/logo.svg",
-  "description": "Expert DevOps & AI Engineering Services including cloud migration, CI/CD automation, Kubernetes, and DevSecOps",
+  "description": "Enterprise AI consulting, IT solutions, AI software development, and AIOps services",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "123 Tech Lane",
     "addressLocality": "Toronto",
     "addressRegion": "ON",
     "addressCountry": "CA"
   },
-  "telephone": "+1-234-567-890",
+  "email": "contact@aydenait.com",
   "url": "https://aydenait.com",
   "priceRange": "$$",
-  "serviceType": ["DevOps Consulting", "AI Engineering", "Cloud Migration", "CI/CD Automation", "Kubernetes Management", "DevSecOps"]
+  "serviceType": ["AI Consulting", "IT Consulting", "AI Software Development", "AIOps"]
 };

@@ -13,11 +13,11 @@ interface SEOProps {
 }
 
 const SEO = ({
-  title = "AydenAIT Solution - AI-Driven DevOps Consulting",
-  description = "Unlock reliability, automation, and security with intelligence engineered for real teams. Expert DevOps & AI Engineering Services.",
-  keywords = "DevOps, AI, automation, cloud computing, CI/CD, Kubernetes, AWS, Azure, infrastructure as code, DevSecOps",
+  title = "AydenAIT - Enterprise AI Consulting & IT Solutions",
+  description = "AI consulting, IT solutions, AI software development, and AIOps services for enterprises.",
+  keywords = "AI consulting, IT consulting, AIOps, enterprise AI, AI software development",
   ogType = "website",
-  ogImage = "https://aydenait.com/og-image.jpg",
+  ogImage = "https://aydenait.com/og-image.png",
   ogUrl = "https://aydenait.com",
   twitterCard = "summary_large_image",
   canonical,

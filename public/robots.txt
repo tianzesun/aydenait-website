@@ -1,3 +1,3 @@
 User-agent: *
-Disallow:
-Sitemap: https://www.aydenait.com/sitemap.xml
+Allow: /
+Sitemap: https://aydenait.com/sitemap.xml

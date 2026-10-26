@@ -1,0 +1,22 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+// BrowserRouter keeps the old scroll position between pages and ignores #hash targets.
+const ScrollToTop = () => {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const target = document.getElementById(hash.slice(1));
+      if (target) {
+        target.scrollIntoView();
+        return;
+      }
+    }
+    window.scrollTo(0, 0);
+  }, [pathname, hash]);
+
+  return null;
+};
+
+export default ScrollToTop;

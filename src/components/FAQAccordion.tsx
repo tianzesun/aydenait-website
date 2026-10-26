@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const faqs = [
   {
@@ -68,12 +69,13 @@ const FAQAccordion = () => {
   return (
     <section className="py-12 bg-gradient-to-b from-blue-950 to-[#10172a]">
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-white mb-3 text-center">Frequently Asked Questions</h2>
+        <h1 className="text-3xl md:text-4xl font-bold text-white mb-3 text-center">Frequently Asked Questions</h1>
         <p className="text-blue-200 text-center mb-8">Everything you need to know about working with AydenAIT</p>
         {faqs.map((f, idx) => (
           <div key={f.q} className="mb-3">
             <button
-              className="w-full bg-white/10 px-6 py-4 rounded-xl text-left text-blue-100 font-semibold hover:bg-white/15 focus:outline-none transition flex justify-between items-center"
+              className="w-full bg-white/10 px-6 py-4 rounded-xl text-left text-blue-100 font-semibold hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 transition flex justify-between items-center"
+              aria-expanded={open === idx}
               onClick={() => setOpen(open === idx ? null : idx)}
             >
               <span>{f.q}</span>
@@ -89,10 +91,10 @@ const FAQAccordion = () => {
           <h3 className="text-xl font-bold text-white mb-3">Still have questions?</h3>
           <p className="text-blue-200 mb-6">We're here to help. Schedule a free consultation or send us a message.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/contact" className="px-6 py-3 bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold rounded-lg hover:scale-105 transition">
+            <Link to="/contact" className="px-6 py-3 bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold rounded-lg hover:scale-105 transition">
               Contact Us
-            </a>
-            <a href="mailto:hello@aydenait.com" className="px-6 py-3 border-2 border-blue-400 text-blue-100 font-semibold rounded-lg hover:bg-white/10 transition">
+            </Link>
+            <a href="mailto:contact@aydenait.com" className="px-6 py-3 border-2 border-blue-400 text-blue-100 font-semibold rounded-lg hover:bg-white/10 transition">
               Email Us Directly
             </a>
           </div>
