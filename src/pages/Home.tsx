@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import { useState, type FormEvent } from "react";
 import SEO from "../components/SEO";
 import StructuredData, { organizationSchema, websiteSchema } from "../components/StructuredData";
-import { sendContact } from "../lib/sendContact";
+import ContactForm from "../components/ContactForm";
 import { projects } from "../data/projects";
 
 const educationNeeds = [
@@ -43,40 +42,6 @@ const principles = [
 const educationProjects = projects.filter((p) => p.sector === "Higher Education");
 
 const Home = () => {
-  const [leadFormData, setLeadFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    industry: ""
-  });
-  const [leadSubmitted, setLeadSubmitted] = useState(false);
-  const [leadSubmitting, setLeadSubmitting] = useState(false);
-  const [leadError, setLeadError] = useState<string | null>(null);
-
-  const handleLeadFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    setLeadFormData({ ...leadFormData, [e.target.name]: e.target.value });
-  };
-
-  const handleLeadFormSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    setLeadSubmitting(true);
-    setLeadError(null);
-    try {
-      await sendContact({
-        name: leadFormData.name,
-        email: leadFormData.email,
-        message: `AI Readiness Assessment request\nOrganization: ${leadFormData.company}\nIndustry: ${leadFormData.industry}`,
-      });
-      setLeadSubmitted(true);
-      setLeadFormData({ name: "", email: "", company: "", industry: "" });
-    } catch (err) {
-      setLeadError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
-    } finally {
-      setLeadSubmitting(false);
-    }
-  };
-
-
   return (
   <>
     <SEO
@@ -236,11 +201,11 @@ const Home = () => {
     {/* Lead Capture Form - Free AI Readiness Assessment */}
     <section id="lead-capture" className="scroll-mt-24 py-20 bg-gradient-to-br from-blue-900 via-indigo-900 to-blue-800 relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:30px_30px]"></div>
-      <div className="relative max-w-5xl mx-auto px-4">
+      <div className="relative max-w-6xl mx-auto px-4">
         <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 md:p-12 shadow-2xl">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="grid lg:grid-cols-5 gap-8 items-center">
             {/* Left: Value Proposition */}
-            <div className="text-white">
+            <div className="lg:col-span-2 text-white">
               <div className="inline-flex items-center gap-2 bg-cyan-500/20 border border-cyan-400/50 rounded-full px-4 py-2 mb-4">
                 <svg className="w-5 h-5 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -278,111 +243,12 @@ const Home = () => {
             </div>
 
             {/* Right: Form */}
-            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-2xl">
-              {leadSubmitted ? (
-                <div className="text-center py-12">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
-                  <p className="text-gray-600 mb-4">
-                    We've received your request for a free AI readiness assessment.
-                  </p>
-                  <p className="text-sm text-gray-500">
-                    We'll be in touch within 1 business day to schedule a conversation.
-                  </p>
-                </div>
-              ) : (
-                <>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">Start Your Free Assessment</h3>
-                  <p className="text-gray-600 text-center mb-6 text-sm">Takes less than 60 seconds</p>
-                  {leadError && (
-                    <div role="alert" className="mb-4 p-3 bg-red-50 border border-red-300 rounded-lg text-sm text-red-700">
-                      {leadError}
-                    </div>
-                  )}
-                  <form onSubmit={handleLeadFormSubmit} className="space-y-4">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-1">
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        value={leadFormData.name}
-                        onChange={handleLeadFormChange}
-                        placeholder="John Smith"
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-900"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-1">
-                        Work Email *
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        value={leadFormData.email}
-                        onChange={handleLeadFormChange}
-                        placeholder="john@company.com"
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-900"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-1">
-                        Organization *
-                      </label>
-                      <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        required
-                        value={leadFormData.company}
-                        onChange={handleLeadFormChange}
-                        placeholder="University, city or company"
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-900"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="industry" className="block text-sm font-semibold text-gray-700 mb-1">
-                        Industry *
-                      </label>
-                      <select
-                        id="industry"
-                        name="industry"
-                        required
-                        value={leadFormData.industry}
-                        onChange={handleLeadFormChange}
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-900 bg-white"
-                      >
-                        <option value="">Select your industry</option>
-                        <option value="education">Education (university, college or school)</option>
-                        <option value="public-sector">Public Sector & Municipal</option>
-                        <option value="finance">Financial Services</option>
-                        <option value="technology">Technology & Software</option>
-                        <option value="professional-services">Professional Services</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
-                    <button
-                      type="submit"
-                      disabled={leadSubmitting}
-                      className="w-full py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold rounded-lg hover:from-blue-700 hover:to-cyan-600 transition-all shadow-lg hover:shadow-xl transform hover:scale-[1.02] text-lg disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
-                    >
-                      {leadSubmitting ? "Sending..." : "Get My Free Assessment →"}
-                    </button>
-                    <p className="text-xs text-gray-500 text-center mt-3">
-                      By submitting, you agree to our <Link to="/privacy" className="underline hover:text-gray-700">privacy policy</Link>. We respect your confidentiality.
-                    </p>
-                  </form>
-                </>
-              )}
+            <div className="lg:col-span-3 bg-[#10172a]/60 border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl">
+              <ContactForm
+                source="assessment"
+                submitLabel="Request Assessment"
+                messagePlaceholder="What would you like AI to help with? For example, grading, integrity reviews, scheduling or answering questions."
+              />
             </div>
           </div>
         </div>

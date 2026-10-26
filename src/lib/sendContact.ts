@@ -1,8 +1,12 @@
+export type ContactSource = "contact" | "assessment";
+
 export interface ContactPayload {
   name: string;
   email: string;
+  organization?: string;
   phone?: string;
   message: string;
+  source: ContactSource;
 }
 
 const FALLBACK_ERROR = "We couldn't send your message. Please try again or email contact@aydenait.com.";

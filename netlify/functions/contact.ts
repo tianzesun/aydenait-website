@@ -4,11 +4,19 @@ import { randomUUID } from "node:crypto";
 interface ContactFormData {
   name: string;
   email: string;
+  organization?: string;
   phone?: string;
   message: string;
+  source?: string;
 }
 
-const MAX_LENGTHS = { name: 200, email: 254, phone: 50, message: 5000 };
+const MAX_LENGTHS = { name: 200, email: 254, organization: 200, phone: 50, message: 5000 };
+
+// Which form the enquiry came from; shown in the email subject
+const SOURCES: Record<string, string> = {
+  contact: "Contact Form",
+  assessment: "AI Readiness Assessment Request",
+};
 
 const escapeHtml = (value: string) =>
   value
@@ -44,11 +52,18 @@ const handler: Handler = async (event: HandlerEvent) => {
   }
 
   // Validate required fields
-  const fields = { name: data?.name, email: data?.email, phone: data?.phone ?? "", message: data?.message };
+  const fields = {
+    name: data?.name,
+    email: data?.email,
+    organization: data?.organization ?? "",
+    phone: data?.phone ?? "",
+    message: data?.message,
+  };
   if (
     typeof fields.name !== "string" || !fields.name.trim() ||
     typeof fields.email !== "string" || !fields.email.trim() ||
     typeof fields.message !== "string" || !fields.message.trim() ||
+    typeof fields.organization !== "string" ||
     typeof fields.phone !== "string"
   ) {
     return {
@@ -80,15 +95,18 @@ const handler: Handler = async (event: HandlerEvent) => {
 
   const name = fields.name.trim();
   const email = fields.email.trim();
+  const organization = fields.organization.trim() || "Not provided";
   const phone = fields.phone.trim() || "Not provided";
   const message = fields.message.trim();
+  const formName = SOURCES[typeof data.source === "string" ? data.source : ""] ?? SOURCES.contact;
   // Header-safe subject: no line breaks from user input
-  const subject = `New Contact Form Submission from ${name.replace(/[\r\n]+/g, " ")}`;
-  const text = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}\n`;
+  const subject = `New ${formName} from ${name.replace(/[\r\n]+/g, " ")}`;
+  const text = `Form: ${formName}\nName: ${name}\nEmail: ${email}\nOrganization: ${organization}\nPhone: ${phone}\n\nMessage:\n${message}\n`;
   const html = `
-          <h2>New Contact Form Submission</h2>
+          <h2>New ${formName}</h2>
           <p><strong>Name:</strong> ${escapeHtml(name)}</p>
           <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+          <p><strong>Organization:</strong> ${escapeHtml(organization)}</p>
           <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
           <p><strong>Message:</strong></p>
           <p>${escapeHtml(message).replace(/\n/g, "<br>")}</p>

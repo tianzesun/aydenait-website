@@ -43,7 +43,7 @@ Routes are defined in `src/App.tsx`. The Portfolio page lives in `src/pages/Clie
 
 ## Contact form email
 
-The Contact page and the Home page assessment form both post to `netlify/functions/contact.ts`. The function validates input, escapes it before building the email, and sends it to `ADMIN_EMAIL` using the first provider that is configured:
+The Contact page and the Home page assessment section use the same form component (`src/components/ContactForm.tsx`) and post to `netlify/functions/contact.ts`. The email subject says which form was used. The function validates input, escapes it before building the email, and sends it to `ADMIN_EMAIL` using the first provider that is configured:
 
 | Provider | Required variables | Optional |
 |----------|--------------------|----------|
