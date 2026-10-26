@@ -45,8 +45,7 @@ const Contact = () => {
       <section className="py-16 md:py-24 min-h-screen bg-gradient-to-bl from-blue-950 via-[#232d47] to-blue-900">
         <div className="max-w-3xl mx-auto px-4">
           <div className="text-center mb-10">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Contact Us</h1>
-            <p className="text-lg text-blue-200">Tell us about your project. Our experts respond within 1 business day, and everything you share stays confidential.</p>
+            <h1 className="text-4xl md:text-5xl font-bold text-white">Contact Us</h1>
           </div>
 
           {/* Contact Form */}
@@ -124,10 +123,8 @@ const Contact = () => {
           </div>
 
           {/* Direct contact details */}
-          <div className="mt-8 flex flex-col md:flex-row md:justify-center gap-2 md:gap-8 text-center text-sm text-blue-200">
-            <div>Email: <a className="text-cyan-300 underline" href="mailto:contact@aydenait.com">contact@aydenait.com</a></div>
-            <div>Mon–Fri, 8am – 6pm ET</div>
-            <div>Toronto, ON, Canada</div>
+          <div className="mt-8 text-center text-sm text-blue-200">
+            Email: <a className="text-cyan-300 underline" href="mailto:contact@aydenait.com">contact@aydenait.com</a>
           </div>
         </div>
       </section>
