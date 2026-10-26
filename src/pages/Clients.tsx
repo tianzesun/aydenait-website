@@ -53,17 +53,36 @@ const Clients = () => (
               key={project.title}
               className="flex flex-col bg-white/10 rounded-2xl p-8 border border-blue-700/50 hover:border-cyan-400 transition"
             >
-              <div className="flex flex-wrap items-center gap-2 mb-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-cyan-300">{project.sector}</span>
-                {project.status && (
-                  <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-green-500/15 border border-green-400/40 text-green-200">
-                    {project.status}
-                  </span>
-                )}
-              </div>
+              {project.screenshots && project.screenshots.length > 0 && (
+                <div className="mb-6">
+                  <a href={project.screenshots[0].src} target="_blank" rel="noopener noreferrer" className="block">
+                    <img
+                      src={project.screenshots[0].src}
+                      alt={project.screenshots[0].alt}
+                      loading="lazy"
+                      className="w-full aspect-[16/10] object-cover object-top rounded-xl border border-white/10 bg-white/5"
+                    />
+                  </a>
+                  {project.screenshots.length > 1 && (
+                    <div className="grid grid-cols-4 gap-2 mt-2">
+                      {project.screenshots.slice(1).map((shot) => (
+                        <a key={shot.src} href={shot.src} target="_blank" rel="noopener noreferrer">
+                          <img
+                            src={shot.src}
+                            alt={shot.alt}
+                            loading="lazy"
+                            className="w-full aspect-[16/10] object-cover object-top rounded-lg border border-white/10 bg-white/5 hover:border-cyan-400 transition"
+                          />
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+              <span className="text-xs font-bold uppercase tracking-wider text-cyan-300 mb-3">{project.sector}</span>
               <h2 className="text-2xl font-bold text-white mb-3">{project.title}</h2>
               <p className="text-blue-100 mb-5">{project.desc}</p>
-              <ul className="space-y-2 text-sm text-blue-200 mb-6">
+              <ul className="space-y-2 text-sm text-blue-200">
                 {project.highlights.map((h) => (
                   <li key={h} className="flex gap-2">
                     <span className="text-cyan-400" aria-hidden="true">✓</span>
@@ -71,16 +90,6 @@ const Clients = () => (
                   </li>
                 ))}
               </ul>
-              {project.link && (
-                <a
-                  href={project.link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-auto self-start text-cyan-300 font-semibold hover:text-cyan-200 underline underline-offset-4"
-                >
-                  {project.link.label} →
-                </a>
-              )}
             </article>
           ))}
         </div>

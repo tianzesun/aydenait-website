@@ -7,7 +7,8 @@ export type Project = {
   summary: string;
   desc: string;
   highlights: string[];
-  link?: { href: string; label: string };
+  // Images live in public/projects/. Use demo data only: no real student, staff or client details.
+  screenshots?: { src: string; alt: string }[];
 };
 
 export const projects: Project[] = [
@@ -26,7 +27,6 @@ export const projects: Project[] = [
     summary: "Code similarity and AI-authorship detection that produces evidence, not just a score.",
     desc: "Code similarity and AI-authorship detection for schools and universities. The output isn't just a score: it's evidence a faculty member can act on and a committee can defend.",
     highlights: ["Multiple similarity engines combined by a learned fusion model", "AI-generated code detector", "Professor-facing review workspace"],
-    link: { href: "https://github.com/tianzesun/CodeProvenance", label: "View on GitHub" },
   },
   {
     title: "DeepRubric",
