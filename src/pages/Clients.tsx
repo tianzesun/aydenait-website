@@ -7,8 +7,8 @@ const projects = [
     title: "Faculty Workload Management System",
     sector: "Higher Education",
     status: "In use at the University of Toronto",
-    desc: "A system that helps academic departments plan, balance and track faculty teaching and service workloads in one place.",
-    highlights: ["Department-wide workload planning", "Clear, shared view of assignments", "Built with and for university staff"],
+    desc: "A workload management platform for a department at the University of Toronto Scarborough, covering Computer Science, Mathematics, and Statistics.",
+    highlights: ["Course assignments and term planning", "Faculty workload and service-role tracking", "Policy-based workload calculations"],
   },
   {
     title: "CodeProvenance",
