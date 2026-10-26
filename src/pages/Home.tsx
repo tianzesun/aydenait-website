@@ -2,52 +2,98 @@ import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 import StructuredData, { organizationSchema, websiteSchema } from "../components/StructuredData";
 import ContactForm from "../components/ContactForm";
+import Icon, { type IconName } from "../components/Icon";
 import { projects } from "../data/projects";
 
-const educationNeeds = [
-  { icon: "📝", title: "Grading & Feedback", desc: "Rubric-based, AI-assisted scoring that keeps instructors in charge of every final mark." },
-  { icon: "🔍", title: "Academic Integrity", desc: "Similarity and AI-authorship analysis that produces evidence a committee can review." },
-  { icon: "📅", title: "Workload & Planning", desc: "Course assignments, service roles and term planning driven by your own policies." },
-  { icon: "💬", title: "Student & Staff Assistants", desc: "Assistants that answer from your official documents and show where each answer came from." },
+const solutions: { icon: IconName; title: string; desc: string; proof: string }[] = [
+  {
+    icon: "chat",
+    title: "AI Assistants & Chatbots",
+    desc: "Assistants that answer questions from your documents, policies or data, and show the source for every answer.",
+    proof: "Hey Markham answers residents' questions from official city data.",
+  },
+  {
+    icon: "clipboardCheck",
+    title: "AI-Assisted Review & Scoring",
+    desc: "Score, grade or triage submissions against your own criteria, with a person approving every result.",
+    proof: "DeepRubric grades programming assignments against professors' rubrics.",
+  },
+  {
+    icon: "search",
+    title: "Detection & Risk Analysis",
+    desc: "Find similarities, anomalies and risks hidden in large volumes of documents, code or records.",
+    proof: "CodeProvenance detects code similarity and AI-written code.",
+  },
+  {
+    icon: "automation",
+    title: "Planning & Workflow Automation",
+    desc: "Replace spreadsheets and manual steps with rule-driven systems your staff can trust.",
+    proof: "Our workload platform runs course assignments and term planning.",
+  },
+  {
+    icon: "chartBar",
+    title: "Analytics & Decision Support",
+    desc: "Turn data, news and signals into analysis your team can act on, with the reasoning visible.",
+    proof: "AlphOpt combines market data, news and sentiment for strategy analysis.",
+  },
+  {
+    icon: "puzzle",
+    title: "AI Inside Your Existing Systems",
+    desc: "Add AI to the tools you already use, such as your website, learning platform, CRM or internal apps.",
+    proof: "Cloud or on-premises, built to fit your stack and your policies.",
+  },
 ];
 
-const sectors = [
+const educationNeeds: { icon: IconName; title: string; desc: string }[] = [
+  { icon: "clipboardCheck", title: "Grading & Feedback", desc: "Rubric-based, AI-assisted scoring that keeps instructors in charge of every final mark." },
+  { icon: "search", title: "Academic Integrity", desc: "Similarity and AI-authorship analysis that produces evidence a committee can review." },
+  { icon: "calendar", title: "Workload & Planning", desc: "Course assignments, service roles and term planning driven by your own policies." },
+  { icon: "chat", title: "Student & Staff Assistants", desc: "Assistants that answer from your official documents and show where each answer came from." },
+];
+
+const sectors: { icon: IconName; title: string; desc: string; example: string }[] = [
   {
-    icon: "🏛️",
+    icon: "library",
     title: "Public Sector & Civic Services",
     desc: "Help residents find accurate information quickly, without replacing the official sources they rely on.",
     example: "Hey Markham: an AI assistant built on the City of Markham's official data.",
   },
   {
-    icon: "📊",
+    icon: "presentationChart",
     title: "Financial Services",
     desc: "Turn news, market data and sentiment into analysis that supports decisions, with risk visible at every step.",
     example: "AlphOpt: options-strategy analysis with news and sentiment AI.",
   },
   {
-    icon: "🏢",
+    icon: "office",
     title: "Businesses & Organizations",
     desc: "AI strategy, custom development and integration with the systems your team already uses.",
     example: "From a first assessment to a production system and ongoing support.",
   },
 ];
 
+const steps = [
+  { title: "Free Consultation", desc: "A 30-minute call about your goal, your data and your constraints. No sales pitch." },
+  { title: "Assessment & Proposal", desc: "A clear recommendation: what to build, how long it will take, what it will cost and the risks." },
+  { title: "Pilot", desc: "A working prototype on your real use case, so you can judge the results before committing further." },
+  { title: "Launch & Support", desc: "Production deployment, training for your team, and ongoing monitoring and improvement." },
+];
+
 const principles = [
-  { title: "Built with the people who use it", desc: "Our education tools were shaped by working alongside faculty and staff, not designed in isolation." },
-  { title: "People stay in control", desc: "AI suggests, people decide. Every system we build has a clear point where a human reviews the result." },
+  { title: "Proven in production", desc: "Our own platforms are used every day at the University of Toronto. We know what it takes to keep AI working after launch." },
+  { title: "People stay in control", desc: "AI suggests, people decide. Every system we build has a clear point where a person reviews the result." },
   { title: "Evidence, not black boxes", desc: "Scores come with reasons and answers come with sources, so results can be checked and defended." },
-  { title: "Privacy and policy first", desc: "We design around your institution's privacy, security and policy requirements from day one." },
+  { title: "Privacy and policy first", desc: "We design around your organization's privacy, security and policy requirements from day one." },
 ];
 
 const educationProjects = projects.filter((p) => p.sector === "Higher Education");
 
-const Home = () => {
-  return (
+const Home = () => (
   <>
     <SEO
-      title="AydenAIT - AI Solutions for Education and Beyond"
-      description="AydenAIT builds AI systems for education, including grading, academic-integrity and faculty workload platforms in use at the University of Toronto, plus AI solutions for civic services, finance and business."
-      keywords="AI in education, AI grading, academic integrity software, AI code similarity detection, faculty workload management, AI consulting Toronto, AI for municipalities, AI solutions"
+      title="AydenAIT - Custom AI Solutions, From Idea to Production"
+      description="AydenAIT designs, builds and supports custom AI solutions: assistants, AI-assisted review, automation and analytics. Our platforms are in use at the University of Toronto. Book a free consultation."
+      keywords="custom AI solutions, AI development company Toronto, AI consulting, AI chatbot development, AI in education, AI grading, academic integrity software, AI automation, AI for municipalities"
       ogUrl="https://aydenait.com"
       canonical="https://aydenait.com"
     />
@@ -61,17 +107,18 @@ const Home = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-4 py-20">
         <div className="text-center mb-12 animate-[fadeInUp_0.8s_ease-out]">
           <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6">
-            AI Solutions for Education
+            Turn Your AI Idea
             <br />
-            <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 bg-clip-text text-transparent">and Beyond</span>
+            <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 bg-clip-text text-transparent">Into a Working Solution</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-4 leading-relaxed">
-            We design, build and support AI systems that people rely on every day, from grading and academic integrity at the <span className="text-cyan-300 font-bold">University of Toronto</span> to city services and financial analysis.
+            AydenAIT designs, builds and supports custom AI solutions, from assistants and automation to analytics and
+            complete AI platforms. Our systems are already used every day at the <span className="text-cyan-300 font-bold">University of Toronto</span>.
           </p>
 
           <p className="text-lg text-blue-200 max-w-2xl mx-auto mb-8">
-            A Toronto-based team that ships working software and consults on what to build next.
+            Bring us the problem. We'll show you what AI can realistically do about it, then build it with you.
           </p>
 
           {/* Facts */}
@@ -99,7 +146,7 @@ const Home = () => {
               <svg className="w-5 h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              Book Free Consultation
+              Start Your AI Project
             </Link>
             <Link
               to="/portfolio"
@@ -112,12 +159,44 @@ const Home = () => {
       </div>
     </section>
 
+    {/* What we can build */}
+    <section className="py-20 bg-[#10172a]">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-2">AI Solutions</h2>
+          <p className="text-3xl md:text-4xl font-bold text-white mb-4">What We Can Build for You</p>
+          <p className="text-blue-200 max-w-3xl mx-auto">
+            Each solution below is based on systems we have already built, and can be adapted to your organization.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+          {solutions.map((item) => (
+            <div key={item.title} className="flex flex-col rounded-2xl p-7 bg-white/5 border border-white/10 hover:border-cyan-400/50 hover:bg-white/10 transition-all duration-300">
+              <div className="w-12 h-12 mb-5 rounded-xl bg-cyan-400/10 border border-cyan-400/30 flex items-center justify-center">
+                <Icon name={item.icon} className="w-6 h-6 text-cyan-300" />
+              </div>
+              <h3 className="font-bold text-xl mb-3 text-white">{item.title}</h3>
+              <p className="text-blue-100 text-sm leading-relaxed mb-5">{item.desc}</p>
+              <p className="mt-auto pt-4 border-t border-white/10 text-sm text-cyan-200">{item.proof}</p>
+            </div>
+          ))}
+        </div>
+        <p className="text-center text-blue-100">
+          Don't see your idea here?{" "}
+          <a href="#lead-capture" className="text-cyan-300 font-semibold hover:text-cyan-200 underline underline-offset-4">
+            Tell us about it
+          </a>{" "}
+          and we'll tell you honestly whether AI is the right fit.
+        </p>
+      </div>
+    </section>
+
     {/* Education */}
     <section className="py-20 bg-gradient-to-b from-[#10172a] to-blue-950">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-2">Education</h2>
-          <p className="text-3xl md:text-4xl font-bold text-white mb-4">Built for Teaching, Learning and Academic Operations</p>
+          <h2 className="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-2">Our Strongest Track Record</h2>
+          <p className="text-3xl md:text-4xl font-bold text-white mb-4">AI for Teaching, Learning and Academic Operations</p>
           <p className="text-blue-200 max-w-3xl mx-auto">
             Universities face growing classes, AI-written assignments and complex workload rules. We build tools that take
             the repetitive work off faculty and staff while leaving the judgement with them.
@@ -137,7 +216,7 @@ const Home = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
           {educationNeeds.map((need) => (
             <div key={need.title} className="rounded-xl p-6 bg-white/5 border border-white/10">
-              <div className="text-3xl mb-3" aria-hidden="true">{need.icon}</div>
+              <Icon name={need.icon} className="w-7 h-7 text-cyan-300 mb-3" />
               <h4 className="font-bold text-white mb-2">{need.title}</h4>
               <p className="text-blue-200 text-sm leading-relaxed">{need.desc}</p>
             </div>
@@ -168,7 +247,9 @@ const Home = () => {
         <div className="grid md:grid-cols-3 gap-6">
           {sectors.map((sector) => (
             <div key={sector.title} className="flex flex-col rounded-2xl p-8 bg-white/5 border border-white/10 hover:border-cyan-400/50 transition-all duration-300">
-              <div className="text-4xl mb-4" aria-hidden="true">{sector.icon}</div>
+              <div className="w-12 h-12 mb-5 rounded-xl bg-cyan-400/10 border border-cyan-400/30 flex items-center justify-center">
+                <Icon name={sector.icon} className="w-6 h-6 text-cyan-300" />
+              </div>
               <h3 className="font-bold text-xl mb-3 text-white">{sector.title}</h3>
               <p className="text-blue-100 text-sm leading-relaxed mb-5">{sector.desc}</p>
               <p className="mt-auto pt-4 border-t border-white/10 text-sm text-cyan-200">{sector.example}</p>
@@ -178,10 +259,34 @@ const Home = () => {
       </div>
     </section>
 
-    {/* How we work */}
+    {/* How a project works */}
+    <section className="py-20 bg-blue-950">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-2">Getting Started</h2>
+          <p className="text-3xl md:text-4xl font-bold text-white mb-4">How a Project Works</p>
+          <p className="text-blue-200 max-w-3xl mx-auto">
+            You don't need an AI team or a detailed specification. You need a problem worth solving.
+          </p>
+        </div>
+        <ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {steps.map((step, index) => (
+            <li key={step.title} className="rounded-2xl p-6 bg-white/5 border border-white/10">
+              <div className="w-10 h-10 mb-4 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center font-bold text-blue-950">
+                {index + 1}
+              </div>
+              <h3 className="font-bold text-lg text-white mb-2">{step.title}</h3>
+              <p className="text-blue-200 text-sm leading-relaxed">{step.desc}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    {/* Why clients choose us */}
     <section className="py-20 bg-gradient-to-b from-blue-950 to-[#10172a]">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">How We Build</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">Why Clients Choose AydenAIT</h2>
         <div className="grid md:grid-cols-2 gap-6">
           {principles.map((item) => (
             <div key={item.title} className="flex gap-4 rounded-2xl p-6 bg-white/5 border border-white/10">
@@ -258,9 +363,9 @@ const Home = () => {
     {/* Final CTA Section */}
     <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-500">
       <div className="max-w-4xl mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold text-white mb-4">Have a Problem AI Could Solve?</h2>
+        <h2 className="text-4xl font-bold text-white mb-4">Ready to Start Your AI Project?</h2>
         <p className="text-xl text-blue-50 mb-8">
-          Whether you run a department, a city service or a business, tell us what's slowing your team down.
+          Whether you run a department, a city service or a business, tell us what you want to achieve. The first conversation is free.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
@@ -282,7 +387,6 @@ const Home = () => {
       </div>
     </section>
   </>
-  );
-};
+);
 
 export default Home;

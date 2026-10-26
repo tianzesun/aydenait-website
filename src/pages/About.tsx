@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
+import Icon from "../components/Icon";
 
 const About = () => (
   <>
@@ -110,7 +111,9 @@ const About = () => (
         <h2 className="text-3xl font-bold text-gray-800 mb-12 text-center">Our Core Values</h2>
         <div className="grid md:grid-cols-3 gap-8">
           <div className="bg-white p-8 rounded-xl shadow-md text-center">
-            <div className="text-5xl mb-4">🎯</div>
+            <div className="w-14 h-14 mx-auto mb-5 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center">
+              <Icon name="flag" className="w-7 h-7 text-blue-600" />
+            </div>
             <h3 className="text-xl font-bold text-gray-800 mb-3">Results-Driven</h3>
             <p className="text-gray-600">
               We measure success by whether people actually use what we build, and whether it makes their work easier.
@@ -118,7 +121,9 @@ const About = () => (
           </div>
 
           <div className="bg-white p-8 rounded-xl shadow-md text-center">
-            <div className="text-5xl mb-4">🤝</div>
+            <div className="w-14 h-14 mx-auto mb-5 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center">
+              <Icon name="eye" className="w-7 h-7 text-blue-600" />
+            </div>
             <h3 className="text-xl font-bold text-gray-800 mb-3">Transparency First</h3>
             <p className="text-gray-600">
               No hidden fees, no buzzword bingo. We explain what we're doing, why it matters, and what you can expect.
@@ -126,7 +131,9 @@ const About = () => (
           </div>
 
           <div className="bg-white p-8 rounded-xl shadow-md text-center">
-            <div className="text-5xl mb-4">🚀</div>
+            <div className="w-14 h-14 mx-auto mb-5 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center">
+              <Icon name="lightBulb" className="w-7 h-7 text-blue-600" />
+            </div>
             <h3 className="text-xl font-bold text-gray-800 mb-3">Continuous Innovation</h3>
             <p className="text-gray-600">
               We follow AI closely and adopt new techniques when they work, but we stay pragmatic about what belongs in production.

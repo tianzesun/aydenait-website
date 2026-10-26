@@ -19,7 +19,7 @@ const Services = () => (
         Services & Solutions
       </h1>
       <p className="text-blue-200 text-xl text-center mb-10">
-        We help institutions and businesses find where AI is genuinely useful, then build, launch and support it. Most of
+        Whatever AI project you have in mind, we can help you scope it, build it, launch it and keep it running. Most of
         our work today is in education, and we bring the same approach to civic services, finance and business.
       </p>
 
@@ -61,6 +61,26 @@ const Services = () => (
         ].map(([title, desc]) => (
           <div key={title} className="bg-white/10 rounded-xl border border-blue-900 p-6 shadow hover:bg-white/15 transition-colors">
             <h3 className="font-bold text-white mb-2">{title}</h3>
+            <p className="text-blue-100 text-sm">{desc}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* ENGAGEMENT OPTIONS */}
+      <h2 className="text-2xl font-bold text-blue-200 mt-4 mb-2 text-center">Ways to Work With Us</h2>
+      <p className="text-blue-300 text-center mb-6 text-sm">Start small, see results, then decide how far to go.</p>
+      <div className="grid md:grid-cols-2 gap-6 mb-12">
+        {[
+          ["AI Readiness Assessment", "Free", "We review your goals, processes and data, and recommend where AI can help, with realistic effort, cost and risk for each option."],
+          ["Pilot / Proof of Concept", "Typically 4–8 weeks", "A working prototype on one real use case, so you can measure the results before a larger investment."],
+          ["Full Solution Build", "Scoped to your project", "Design, development, integration with your systems, testing and launch, with your team involved throughout."],
+          ["Ongoing Support", "Monthly", "Monitoring, improvements, new features and help for your staff once the system is live."],
+        ].map(([title, tag, desc]) => (
+          <div key={title} className="bg-white/10 rounded-xl border border-blue-900 p-6 shadow hover:bg-white/15 transition-colors">
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <h3 className="font-bold text-white">{title}</h3>
+              <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/30 text-cyan-200">{tag}</span>
+            </div>
             <p className="text-blue-100 text-sm">{desc}</p>
           </div>
         ))}

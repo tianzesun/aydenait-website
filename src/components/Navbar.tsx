@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 const navLinks = [
   { to: "/", label: "Home" },
   { to: "/services", label: "Services" },
-  { to: "/about", label: "About" },
   { to: "/portfolio", label: "Portfolio" },
   { to: "/careers", label: "Careers" },
+  { to: "/about", label: "About" },
 ];
 
 const desktopLinkClass = (isScrolled: boolean) => ({ isActive }: { isActive: boolean }) => {
