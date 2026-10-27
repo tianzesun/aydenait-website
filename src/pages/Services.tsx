@@ -139,22 +139,13 @@ const Services = () => (
       </div>
 
       {/* TOOL STACK */}
-      <h2 className="text-xl font-bold text-blue-200 mt-12 mb-3">Our Technology Stack</h2>
-      <div className="flex flex-wrap gap-3 mb-8 text-blue-100 text-lg">
-        <span className="px-3 py-1 bg-purple-600/20 rounded">Python</span>
-        <span className="px-3 py-1 bg-blue-600/20 rounded">TensorFlow</span>
-        <span className="px-3 py-1 bg-orange-600/20 rounded">PyTorch</span>
-        <span className="px-3 py-1 bg-green-600/20 rounded">OpenAI</span>
-        <span className="px-3 py-1 bg-sky-700/20 rounded">React</span>
-        <span className="px-3 py-1 bg-indigo-600/20 rounded">Node.js</span>
-        <span className="px-3 py-1 bg-yellow-700/20 rounded">AWS</span>
-        <span className="px-3 py-1 bg-blue-500/20 rounded">Azure</span>
-        <span className="px-3 py-1 bg-violet-500/20 rounded">Kubernetes</span>
-        <span className="px-3 py-1 bg-green-700/20 rounded">Terraform</span>
-        <span className="px-3 py-1 bg-fuchsia-800/20 rounded">Docker</span>
-        <span className="px-3 py-1 bg-pink-700/20 rounded">PostgreSQL</span>
-        <span className="px-3 py-1 bg-teal-700/20 rounded">MongoDB</span>
-        <span className="px-3 py-1 bg-cyan-700/20 rounded">GitHub</span>
+      <h2 className="text-2xl font-bold text-blue-200 mt-12 mb-6 text-center">Our Technology Stack</h2>
+      <div className="flex flex-wrap justify-center gap-3 mb-8">
+        {["Python", "TensorFlow", "PyTorch", "OpenAI", "React", "Node.js", "AWS", "Azure", "Kubernetes", "Terraform", "Docker", "PostgreSQL", "MongoDB", "GitHub"].map((tool) => (
+          <span key={tool} className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-blue-100 text-sm font-medium">
+            {tool}
+          </span>
+        ))}
       </div>
 
       {/* PROJECT PROCESS */}
