@@ -80,7 +80,7 @@ const FAQAccordion = () => {
         ))}
 
         <div className="mt-12 text-center bg-blue-900/40 rounded-2xl p-8 border border-blue-700">
-          <h3 className="text-xl font-bold text-white mb-3">Still have questions?</h3>
+          <h2 className="text-xl font-bold text-white mb-3">Still have questions?</h2>
           <p className="text-blue-200 mb-6">Schedule a complimentary consultation or send us a message.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact" className="px-6 py-3 bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold rounded-lg hover:scale-105 transition">

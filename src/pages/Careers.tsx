@@ -387,6 +387,7 @@ const Careers = () => {
                   {/* Job Header */}
                   <button
                     onClick={() => setExpandedJob(expandedJob === i ? null : i)}
+                    aria-expanded={expandedJob === i}
                     className="w-full text-left p-6 hover:bg-gray-50 transition-colors"
                   >
                     <div className="flex items-start justify-between gap-4">

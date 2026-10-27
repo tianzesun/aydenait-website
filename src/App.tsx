@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
@@ -47,17 +47,24 @@ const AnimatedRoutes = () => {
 // The router is supplied by main.tsx (BrowserRouter) or entry-server.tsx (StaticRouter)
 function App() {
   return (
-    <>
+    // reducedMotion="user": skip movement for visitors who set "reduce motion" in their OS
+    <MotionConfig reducedMotion="user">
       <ScrollToTop />
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-white focus:text-blue-900 focus:font-semibold"
+      >
+        Skip to main content
+      </a>
       <div className="min-h-screen flex flex-col bg-[#10172a] text-white">
         <div className="bg-noise" />
         <Navbar />
-        <main className="flex-1 relative z-10">
+        <main id="main-content" tabIndex={-1} className="flex-1 relative z-10 focus:outline-none">
           <AnimatedRoutes />
         </main>
         <Footer />
       </div>
-    </>
+    </MotionConfig>
   );
 }
 export default App;
