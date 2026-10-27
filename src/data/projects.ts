@@ -8,6 +8,20 @@ export type Project = {
   highlights: string[];
   // Images live in public/projects/. Use demo data only: no real student, staff or client details.
   screenshots?: { src: string; alt: string }[];
+  // Optional detail page at /portfolio/<slug> (also add the URL to public/sitemap.xml).
+  // Sections left out are not shown, so only fill in what has been approved for publication.
+  caseStudy?: {
+    slug: string;
+    challenge: string[];
+    approach: { title: string; text: string }[];
+    humanReview: string;
+    // Where it runs, e.g. "In use at ..." — only with the client's approval
+    deployment?: string;
+    // Measured outcomes only, e.g. { value: "40%", label: "less time per review" }
+    results?: { value: string; label: string }[];
+    // Only with the person's written approval
+    quote?: { text: string; name: string; role: string };
+  };
 };
 
 export const projects: Project[] = [
@@ -24,6 +38,19 @@ export const projects: Project[] = [
     summary: "Code similarity and AI-authorship detection that produces evidence, not just a score.",
     desc: "Code similarity and AI-authorship detection for schools and universities. The output isn't just a score: it's evidence a faculty member can act on and a committee can defend.",
     highlights: ["Multiple similarity engines combined by a learned fusion model", "AI-generated code detector", "Professor-facing review workspace"],
+    caseStudy: {
+      slug: "codeprovenance",
+      challenge: [
+        "Programming courses now face two integrity questions at once: whether submissions were copied from each other, and whether they were written by AI.",
+        "A similarity score on its own doesn't answer either question. Faculty need evidence they can act on, and an academic-integrity committee needs a case it can defend.",
+      ],
+      approach: [
+        { title: "Several similarity engines, one result", text: "Multiple similarity engines compare each submission, and a learned fusion model combines their signals into a single result." },
+        { title: "AI-authorship detection", text: "A dedicated detector flags code that is likely to be AI-generated, alongside the similarity results." },
+        { title: "A review workspace for professors", text: "Professors work through flagged cases in a review workspace built for faculty, with the evidence behind each result in front of them." },
+      ],
+      humanReview: "CodeProvenance flags cases; people decide them. A faculty member reviews the evidence before anything goes further, and the outcome rests with the instructor and the institution's own integrity process.",
+    },
   },
   {
     title: "DeepRubric",

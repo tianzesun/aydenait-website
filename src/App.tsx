@@ -6,6 +6,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Clients from "./pages/Clients";
+import CaseStudy from "./pages/CaseStudy";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import About from "./pages/About";
@@ -32,6 +33,7 @@ const AnimatedRoutes = () => {
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/portfolio" element={<Clients />} />
+          <Route path="/portfolio/:slug" element={<CaseStudy />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />

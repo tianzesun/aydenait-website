@@ -66,6 +66,14 @@ const Clients = () => (
                   </li>
                 ))}
               </ul>
+              {project.caseStudy && (
+                <Link
+                  to={`/portfolio/${project.caseStudy.slug}`}
+                  className="mt-6 self-start py-1 font-semibold text-cyan-300 hover:text-white transition-colors"
+                >
+                  Read the case study <span aria-hidden="true">→</span>
+                </Link>
+              )}
             </article>
           ))}
         </div>
