@@ -19,7 +19,7 @@ const sectors: { icon: IconName; title: string; desc: string; example: string }[
     icon: "library",
     title: "Public Sector & Civic Services",
     desc: "Help residents find accurate information quickly, without replacing the official sources they rely on.",
-    example: "Hey Markham: an AI assistant built on the City of Markham's official data.",
+    example: "Hey Markham: an AI assistant built on the City of Markham's publicly available data.",
   },
   {
     icon: "presentationChart",

@@ -43,7 +43,7 @@ const About = () => (
           <p>
             That work taught us what makes AI succeed in practice: answers grounded in real sources, a person reviewing
             every decision that matters, and results that can be explained. We now apply those lessons beyond education,
-            with an AI city-services assistant built on the City of Markham's official data and an options-analysis
+            with an AI city-services assistant built on the City of Markham's publicly available data and an options-analysis
             platform for financial research.
           </p>
         </div>

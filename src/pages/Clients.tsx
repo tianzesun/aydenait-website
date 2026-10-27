@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
-import Icon from "../components/Icon";
 import { projects } from "../data/projects";
-import { solutions } from "../data/solutions";
 
 const Clients = () => (
   <>
@@ -69,23 +67,6 @@ const Clients = () => (
                 ))}
               </ul>
             </article>
-          ))}
-        </div>
-
-        {/* Solutions */}
-        <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-8">What We Deliver</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {solutions.map((item) => (
-            <div
-              key={item.title}
-              className="bg-white/10 rounded-2xl p-8 border border-blue-700/50 hover:border-cyan-400 transition"
-            >
-              <div className="w-12 h-12 mb-5 rounded-xl bg-cyan-400/10 border border-cyan-400/30 flex items-center justify-center">
-                <Icon name={item.icon} className="w-6 h-6 text-cyan-300" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-              <p className="text-blue-100">{item.desc}</p>
-            </div>
           ))}
         </div>
 

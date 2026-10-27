@@ -35,9 +35,9 @@ export const projects: Project[] = [
   {
     title: "Hey Markham",
     sector: "Civic Services",
-    summary: "A conversational assistant that answers residents' questions from official city data.",
-    desc: "An AI city-services assistant built on the City of Markham's official data. Residents ask questions in plain language and get fast, accurate answers they can trace back to the source.",
-    highlights: ["Conversational access to city information", "Answers grounded in official municipal data", "Source citations for every answer"],
+    summary: "A conversational assistant that answers residents' questions from publicly available city data.",
+    desc: "An AI city-services assistant built on the City of Markham's publicly available data. Residents ask questions in plain language and get fast, accurate answers they can trace back to the source. An independent project, not affiliated with or endorsed by the City of Markham.",
+    highlights: ["Conversational access to city information", "Answers grounded in published municipal data", "Source citations for every answer"],
   },
   {
     title: "AlphOpt",

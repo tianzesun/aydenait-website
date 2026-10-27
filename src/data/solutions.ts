@@ -8,7 +8,7 @@ export const solutions: Solution[] = [
     icon: "chat",
     title: "AI Assistants & Chatbots",
     desc: "Assistants that answer questions from your documents, policies or data, and show the source for every answer.",
-    proof: "Hey Markham answers residents' questions from official city data.",
+    proof: "Hey Markham answers residents' questions from publicly available city data.",
   },
   {
     icon: "clipboardCheck",
