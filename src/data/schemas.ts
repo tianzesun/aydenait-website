@@ -16,6 +16,7 @@ export const organizationSchema = {
     "@type": "ContactPoint",
     "contactType": "customer service",
     "email": "contact@aydenait.com",
+    "telephone": "+1-289-859-9523",
     "availableLanguage": "English"
   }
 };
@@ -40,6 +41,7 @@ export const serviceSchema = {
     "addressCountry": "CA"
   },
   "email": "contact@aydenait.com",
+  "telephone": "+1-289-859-9523",
   "url": "https://aydenait.com",
   "priceRange": "$$",
   "serviceType": ["AI Assistants & Chatbots", "AI-Assisted Review & Scoring", "Detection & Risk Analysis", "Planning & Workflow Automation", "Analytics & Decision Support", "AI Integration"]

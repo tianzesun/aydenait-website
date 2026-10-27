@@ -24,6 +24,8 @@ const Contact = () => (
           {/* Direct contact details */}
           <div className="mt-8 text-center text-sm text-blue-200">
             Email: <a className="text-cyan-300 underline" href="mailto:contact@aydenait.com">contact@aydenait.com</a>
+            <span className="mx-2" aria-hidden="true">·</span>
+            Phone: <a className="text-cyan-300 underline" href="tel:+12898599523">(289) 859-9523</a>
           </div>
         </div>
       </section>
