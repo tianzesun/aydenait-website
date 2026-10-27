@@ -4,63 +4,55 @@ import { Link } from "react-router-dom";
 const faqs = [
   {
     q: "What services does AydenAIT provide?",
-    a: "We provide four core services: (1) AI Consulting & Strategy - helping you develop AI roadmaps and assess readiness, (2) IT Consulting & Solutions - infrastructure optimization, cloud migration, and enterprise architecture, (3) AI Software Development - custom AI applications, ML models, and LLM integration, and (4) AIOps - AI-powered IT operations including predictive monitoring and intelligent automation. We tailor our approach to your specific business needs and technology landscape."
+    a: "We design, build and support custom AI solutions, including AI assistants, AI-assisted review and scoring, detection and risk analysis, workflow automation, and analytics. We also provide AI strategy and readiness assessments, IT and cloud consulting, and AIOps. Most engagements combine advisory work with hands-on development."
   },
   {
-    q: "How long does a typical engagement take?",
-    a: "It depends on the scope. A focused AI readiness assessment might take 2-3 weeks, while a comprehensive AI implementation or infrastructure transformation could span 3-6 months. We typically start with a discovery phase (1-2 weeks) to assess your needs and create a detailed roadmap. Many clients see measurable improvements within the first 4-6 weeks of implementation. We're transparent about timelines from day one."
-  },
-  {
-    q: "What's your pricing model?",
-    a: "We offer flexible engagement models: (1) Project-based - fixed scope and price for defined deliverables, (2) Time & Materials - for evolving requirements with monthly billing, (3) Retainer - ongoing support and consulting at a monthly rate, and (4) Staff Augmentation - dedicated resources integrated with your team. Pricing varies based on project complexity, timeline, and team composition. We provide detailed estimates after our initial consultation and always work within your budget constraints."
+    q: "Which sectors do you work in?",
+    a: "Higher education is our primary focus: our grading, academic-integrity and faculty workload platforms are in use at the University of Toronto. We also build for civic services (an AI assistant built on the City of Markham's official data) and financial services (an options-strategy analysis platform), and we work with businesses that want AI integrated into their existing systems."
   },
   {
     q: "Do you work with organizations of all sizes?",
-    a: "Yes. We work with university departments, public-sector teams and businesses of different sizes. Many engagements start small, with one department or one process, and grow once the first system proves useful. We size the team and the scope to what you actually need."
+    a: "Yes. We work with university departments, public-sector teams and businesses of varying sizes. Many engagements begin with a single department or process and expand once the first system has proven its value. We size the team and scope to your actual needs."
   },
   {
-    q: "What industries do you specialize in?",
-    a: "Education is our main focus: our grading, academic-integrity and faculty workload platforms are in use at the University of Toronto. We also build for civic services (an AI assistant built on the City of Markham's official data) and financial services (an options-strategy analysis platform), and we consult for businesses that want AI working inside their existing systems."
+    q: "How does a typical engagement work?",
+    a: "Most projects follow four stages: an initial 30-minute consultation; an assessment and written proposal covering scope, timeline, cost and risks; a pilot on your own use case; and production launch with ongoing support. You decide at each stage whether to proceed."
   },
   {
-    q: "How quickly can we start?",
-    a: "We can typically begin initial consultations within 3-5 business days of your inquiry. For urgent projects, we can mobilize a team within 1-2 weeks. Our process: (1) Initial consultation call (30-60 minutes), (2) NDA signing if needed, (3) Discovery and scoping (1-2 weeks), (4) Proposal and SOW, (5) Team mobilization and kickoff. We're flexible and can accelerate timelines when business needs require it."
+    q: "How long does a project take?",
+    a: "It depends on scope. An assessment typically takes one to two weeks, and a pilot typically runs four to eight weeks. A full production build is scheduled in the proposal once requirements are clear. We confirm timelines in writing before work begins."
   },
   {
-    q: "Do you provide ongoing support after project completion?",
-    a: "Absolutely. We offer several post-project support options: (1) Managed Services - we handle ongoing operations, monitoring, and optimization, (2) Retainer Support - access to our team for questions, issues, and enhancements, (3) Training & Knowledge Transfer - ensuring your team can maintain and evolve the solution, and (4) Quarterly Health Checks - periodic reviews and optimization recommendations. Most clients choose a hybrid approach based on their internal capabilities."
+    q: "How is pricing structured?",
+    a: "The initial consultation and AI readiness assessment are complimentary. Pilots and full builds are quoted on a fixed-scope basis or on time and materials, depending on how well defined the requirements are. Ongoing support is billed monthly. You receive a detailed estimate before any paid work begins."
   },
   {
-    q: "What makes AydenAIT different from other consulting firms?",
-    a: "Three key differentiators: (1) Results-Focused - we measure success by business outcomes, not just deliverables. We tie our work to metrics like cost reduction, uptime improvement, and deployment velocity. (2) Hands-On Implementation - we don't just create PowerPoint strategies; we roll up our sleeves and build, deploy, and optimize. (3) Knowledge Transfer - we upskill your team throughout the engagement so you're not dependent on us long-term. Plus, we provide transparent pricing, clear communication, and NDA protection as standard."
+    q: "Can we start with a small pilot?",
+    a: "Yes, and we generally recommend it. A pilot applies the solution to one real use case with agreed success criteria, so you can evaluate results and build internal support before a larger investment."
   },
   {
-    q: "Can you work with our existing technology stack?",
-    a: "Yes. We're technology-agnostic and work with virtually any stack. Whether you're on AWS, Azure, GCP, or hybrid/on-premise infrastructure, using Python, Node.js, Java, .NET, or other languages, we adapt to your environment. We evaluate your existing investments and maximize them rather than pushing unnecessary technology changes. When migrations or upgrades are needed, we provide clear rationale and ROI analysis."
+    q: "Can you work with our existing systems?",
+    a: "Yes. We integrate with the platforms you already use, such as learning management systems, identity providers, CRMs, websites and internal applications, and we can deploy in the cloud or on premises. We recommend changes to your technology stack only where there is a clear reason."
   },
   {
-    q: "How do you ensure data security and confidentiality?",
-    a: "Security is paramount. We implement: (1) NDA signing before any detailed discussions, (2) Data handling designed around your privacy and retention requirements, (3) Role-based access controls - team members only access what they need, (4) Encrypted communications and data transfer, (5) Secure development practices following OWASP guidelines, and (6) Human review and audit trails for AI-assisted decisions. We can also work within your existing security frameworks and your institution's privacy and policy requirements."
+    q: "How do you handle data security and confidentiality?",
+    a: "We offer an NDA before detailed discussions, limit access to the people working on your project, and design data handling around your organization's privacy, security and retention requirements. AI-assisted decisions include human review and an audit trail. Where required, we work within your institution's existing security and policy frameworks."
   },
   {
-    q: "Do you offer remote or on-site services?",
-    a: "Both. We're fully equipped for remote collaboration with teams across time zones, using secure video conferencing, project management tools, and documentation platforms. For enterprise clients or complex implementations, we also provide on-site consulting - either part-time (key milestones and workshops) or full-time embedded teams. Most clients prefer a hybrid model: remote for day-to-day work with periodic on-site sessions for planning and stakeholder alignment."
+    q: "How do you keep AI results accurate and accountable?",
+    a: "Our systems are designed so that people make the final decision. Assistants cite the sources behind each answer, scores are accompanied by the reasoning behind them, and every system includes a clear point where a person reviews the result before it takes effect."
   },
   {
-    q: "What's included in your AI consulting services?",
-    a: "Our AI consulting includes: (1) AI Readiness Assessment - evaluating your data, infrastructure, and team capabilities, (2) Use Case Identification - finding high-ROI AI opportunities specific to your business, (3) Technology Roadmap - selecting the right AI tools, platforms, and approaches, (4) ROI Analysis - projecting costs, benefits, and timelines, (5) Governance Framework - establishing AI ethics, risk management, and compliance policies, and (6) Implementation Planning - detailed execution plan with milestones and resource requirements. We can also provide ongoing advisory as you execute the roadmap."
+    q: "Do you provide support after launch?",
+    a: "Yes. Ongoing support covers monitoring, improvements, new features and assistance for your staff. We also provide documentation and knowledge transfer so that your team can operate and extend the system independently if you prefer."
   },
   {
-    q: "How do you measure project success?",
-    a: "We establish clear, measurable KPIs at project kickoff, typically including: (1) Technical Metrics - uptime %, deployment frequency, incident resolution time, infrastructure costs, (2) Business Metrics - ROI, time-to-market, operational efficiency gains, (3) Quality Metrics - defect rates, security vulnerabilities, compliance scores, and (4) Team Metrics - knowledge transfer effectiveness, team satisfaction, documentation completeness. We provide regular reporting (weekly/bi-weekly) with dashboards showing progress against these metrics. Success means hitting your business objectives, not just completing tasks."
+    q: "Do you work remotely or on site?",
+    a: "Both. Day-to-day work is usually remote, with on-site sessions for workshops, key milestones and stakeholder meetings where they add value."
   },
   {
-    q: "Can we start with a small pilot project?",
-    a: "Definitely! We often recommend starting with a focused pilot or proof-of-concept. This approach allows you to: (1) Validate our capabilities with minimal risk, (2) Demonstrate ROI to stakeholders before larger investments, (3) Test team collaboration and communication, and (4) Refine requirements before scaling. Typical pilots run 4-8 weeks with clearly defined scope and success criteria. If successful, we seamlessly transition to broader implementation."
-  },
-  {
-    q: "What happens after I submit a consultation request?",
-    a: "Here's our process: (1) Within 24 hours - we'll send you a confirmation email and calendar invite for an initial call, (2) Initial Call (30-60 min) - we discuss your challenges, goals, and high-level requirements. No sales pitch, just exploration, (3) NDA Signing - if you want to share sensitive details (optional), (4) Discovery Phase - we may propose a brief assessment to understand your environment better, (5) Proposal - detailed scope, timeline, team, and pricing, (6) Agreement & Kickoff - once approved, we mobilize the team and begin work. The entire process from first contact to project start typically takes 2-4 weeks."
+    q: "What happens after I submit an enquiry?",
+    a: "We will reply by email to arrange an initial call. If you would like to share confidential details, we can sign an NDA first. Following the call, we propose next steps, typically an assessment or a pilot, with a clear scope and estimate."
   }
 ];
 
@@ -70,7 +62,7 @@ const FAQAccordion = () => {
     <section className="py-12 bg-gradient-to-b from-blue-950 to-[#10172a]">
       <div className="max-w-4xl mx-auto px-4">
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-3 text-center">Frequently Asked Questions</h1>
-        <p className="text-blue-200 text-center mb-8">Everything you need to know about working with AydenAIT</p>
+        <p className="text-blue-200 text-center mb-8">Answers to common questions about working with AydenAIT</p>
         {faqs.map((f, idx) => (
           <div key={f.q} className="mb-3">
             <button
@@ -89,7 +81,7 @@ const FAQAccordion = () => {
 
         <div className="mt-12 text-center bg-blue-900/40 rounded-2xl p-8 border border-blue-700">
           <h3 className="text-xl font-bold text-white mb-3">Still have questions?</h3>
-          <p className="text-blue-200 mb-6">We're here to help. Schedule a free consultation or send us a message.</p>
+          <p className="text-blue-200 mb-6">Schedule a complimentary consultation or send us a message.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact" className="px-6 py-3 bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold rounded-lg hover:scale-105 transition">
               Contact Us

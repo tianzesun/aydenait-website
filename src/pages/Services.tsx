@@ -19,17 +19,17 @@ const Services = () => (
         Services & Solutions
       </h1>
       <p className="text-blue-200 text-xl text-center mb-10">
-        Whatever AI project you have in mind, we can help you scope it, build it, launch it and keep it running. Most of
-        our work today is in education, and we bring the same approach to civic services, finance and business.
+        We help organizations scope, build, launch and operate AI solutions. Our core expertise is in higher education,
+        and we apply the same approach to civic services, finance and business.
       </p>
 
       {/* EDUCATION SOLUTIONS */}
       <div className="mb-12 rounded-2xl p-8 bg-gradient-to-br from-blue-900/60 to-cyan-900/30 border border-cyan-700/40">
-        <p className="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-2">Our focus</p>
+        <p className="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-2">Core expertise</p>
         <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Education Solutions</h2>
         <p className="text-blue-100 mb-6">
           Our grading, academic-integrity and workload platforms are in use at the University of Toronto. We can adapt
-          them to your institution or build something new with your faculty and staff.
+          them to your institution or develop new solutions with your faculty and staff.
         </p>
         <div className="grid md:grid-cols-2 gap-4 text-sm">
           {[
@@ -68,10 +68,10 @@ const Services = () => (
 
       {/* ENGAGEMENT OPTIONS */}
       <h2 className="text-2xl font-bold text-blue-200 mt-4 mb-2 text-center">Ways to Work With Us</h2>
-      <p className="text-blue-300 text-center mb-6 text-sm">Start small, see results, then decide how far to go.</p>
+      <p className="text-blue-300 text-center mb-6 text-sm">Begin with a focused engagement, evaluate the results, then decide on next steps.</p>
       <div className="grid md:grid-cols-2 gap-6 mb-12">
         {[
-          ["AI Readiness Assessment", "Free", "We review your goals, processes and data, and recommend where AI can help, with realistic effort, cost and risk for each option."],
+          ["AI Readiness Assessment", "Complimentary", "We review your goals, processes and data, and recommend where AI can help, with realistic effort, cost and risk for each option."],
           ["Pilot / Proof of Concept", "Typically 4–8 weeks", "A working prototype on one real use case, so you can measure the results before a larger investment."],
           ["Full Solution Build", "Scoped to your project", "Design, development, integration with your systems, testing and launch, with your team involved throughout."],
           ["Ongoing Support", "Monthly", "Monitoring, improvements, new features and help for your staff once the system is live."],
@@ -96,7 +96,7 @@ const Services = () => (
             </svg>
           </div>
           <b>Proven in Production</b>
-          <p className="text-blue-100 text-sm mt-2">We build and run our own products, so we know what it takes to keep AI working after launch.</p>
+          <p className="text-blue-100 text-sm mt-2">We build and operate our own products, so we understand what it takes to keep AI reliable after launch.</p>
         </div>
         <div className="bg-white/10 rounded-xl border border-blue-900 p-6 text-center shadow hover:bg-white/15 transition-colors">
           <div className="flex justify-center mb-3">
@@ -114,7 +114,7 @@ const Services = () => (
             </svg>
           </div>
           <b>Flexible Engagements</b>
-          <p className="text-blue-100 text-sm mt-2">Start with an assessment or a pilot, then scale. NDA standard, and you always own your roadmap.</p>
+          <p className="text-blue-100 text-sm mt-2">Begin with an assessment or pilot, then scale. NDAs are standard, and you retain control of your roadmap.</p>
         </div>
       </div>
 
@@ -188,7 +188,7 @@ const Services = () => (
           <li>• Predictive Incident Management</li>
           <li>• Intelligent Alerting & Anomaly Detection</li>
           <li>• Automated Root Cause Analysis</li>
-          <li>• Self-Healing Infrastructure & Auto-Remediation</li>
+          <li>• Automated Remediation & Runbooks</li>
           <li>• Performance Optimization & Capacity Planning</li>
         </ul>
       </div>
@@ -213,9 +213,9 @@ const Services = () => (
       </div>
 
       {/* PROJECT PROCESS */}
-      <h2 className="text-3xl font-bold text-blue-100 mt-16 mb-3 text-center">How We Work Together</h2>
+      <h2 className="text-3xl font-bold text-blue-100 mt-16 mb-3 text-center">Our Delivery Process</h2>
       <p className="text-blue-300 text-center mb-12 max-w-xl mx-auto text-sm">
-        Simple, transparent process from discovery to launch
+        A structured process from first conversation to production
       </p>
 
       <div className="relative max-w-5xl mx-auto">
@@ -232,12 +232,12 @@ const Services = () => (
                 </svg>
               </div>
             </div>
-            <h3 className="text-xl font-bold text-cyan-300 mb-2">Discovery</h3>
-            <p className="text-blue-400 text-xs font-semibold mb-3">1-2 weeks • Free</p>
+            <h3 className="text-xl font-bold text-cyan-300 mb-2">Consultation</h3>
+            <p className="text-blue-400 text-xs font-semibold mb-3">30 minutes • Complimentary</p>
             <ul className="text-blue-200 text-sm space-y-1.5">
-              <li>Consultation call</li>
-              <li>Requirements analysis</li>
-              <li>Success criteria</li>
+              <li>Objectives and constraints</li>
+              <li>Data and systems overview</li>
+              <li>Initial fit assessment</li>
             </ul>
           </div>
 
@@ -250,12 +250,12 @@ const Services = () => (
                 </svg>
               </div>
             </div>
-            <h3 className="text-xl font-bold text-blue-300 mb-2">Strategy</h3>
-            <p className="text-blue-400 text-xs font-semibold mb-3">2-4 weeks</p>
+            <h3 className="text-xl font-bold text-blue-300 mb-2">Assessment & Proposal</h3>
+            <p className="text-blue-400 text-xs font-semibold mb-3">1–2 weeks</p>
             <ul className="text-blue-200 text-sm space-y-1.5">
-              <li>Technical roadmap</li>
-              <li>Architecture design</li>
-              <li>ROI analysis</li>
+              <li>Requirements and success criteria</li>
+              <li>Solution architecture</li>
+              <li>Scope, timeline, cost and risks</li>
             </ul>
           </div>
 
@@ -268,12 +268,12 @@ const Services = () => (
                 </svg>
               </div>
             </div>
-            <h3 className="text-xl font-bold text-indigo-300 mb-2">Build</h3>
-            <p className="text-blue-400 text-xs font-semibold mb-3">4-12 weeks</p>
+            <h3 className="text-xl font-bold text-indigo-300 mb-2">Pilot</h3>
+            <p className="text-blue-400 text-xs font-semibold mb-3">Typically 4–8 weeks</p>
             <ul className="text-blue-200 text-sm space-y-1.5">
-              <li>Agile development</li>
-              <li>Testing & QA</li>
-              <li>Documentation</li>
+              <li>Working prototype on your use case</li>
+              <li>Evaluation against success criteria</li>
+              <li>Go / no-go decision</li>
             </ul>
           </div>
 
@@ -286,19 +286,19 @@ const Services = () => (
                 </svg>
               </div>
             </div>
-            <h3 className="text-xl font-bold text-purple-300 mb-2">Launch</h3>
+            <h3 className="text-xl font-bold text-purple-300 mb-2">Launch & Support</h3>
             <p className="text-blue-400 text-xs font-semibold mb-3">Ongoing</p>
             <ul className="text-blue-200 text-sm space-y-1.5">
-              <li>Deployment</li>
-              <li>Team training</li>
-              <li>Support & optimization</li>
+              <li>Production deployment</li>
+              <li>Staff training and documentation</li>
+              <li>Monitoring and improvement</li>
             </ul>
           </div>
         </div>
 
         {/* Simple CTA */}
         <div className="mt-12 text-center bg-gradient-to-r from-cyan-900/30 to-blue-900/30 rounded-2xl p-6 border border-cyan-700/20">
-          <p className="text-cyan-300 font-semibold mb-2">Transparent pricing • Flexible engagement models • NDA standard</p>
+          <p className="text-cyan-300 font-semibold mb-2">Transparent pricing · Flexible engagement models · NDA standard</p>
         </div>
       </div>
 
@@ -312,13 +312,13 @@ const Services = () => (
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            Schedule Free Consultation →
+            Schedule a Consultation
           </Link>
           <a href="mailto:contact@aydenait.com" className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full border-2 border-cyan-400 text-cyan-200 font-bold hover:bg-cyan-400/20 transition">
-            Or Email Us →
+            Email Us
           </a>
         </div>
-        <div className="mt-2 text-blue-200 text-xs">Confidential consultation • NDA provided</div>
+        <div className="mt-2 text-blue-200 text-xs">Confidential consultation · NDA available</div>
       </div>
     </div>
   </section>

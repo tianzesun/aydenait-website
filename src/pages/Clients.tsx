@@ -43,7 +43,7 @@ const Clients = () => (
         <div className="text-center mb-14">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Work</h1>
           <p className="text-xl text-blue-200 max-w-2xl mx-auto">
-            Production AI systems for teams that need results, not slide decks.
+            AI systems in production across higher education, civic services and financial services.
           </p>
         </div>
 
@@ -116,8 +116,8 @@ const Clients = () => (
         <div className="max-w-3xl mx-auto text-center bg-gradient-to-br from-blue-900/60 to-cyan-900/30 rounded-2xl p-10 border border-blue-700/50">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Want to See It in Action?</h2>
           <p className="text-blue-100 mb-8">
-            We're happy to demo these systems, walk you through how they were built, and talk about what a similar
-            project would look like for your team.
+            We would be pleased to demonstrate these systems, explain how they were built, and discuss what a similar
+            project could look like for your organization.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

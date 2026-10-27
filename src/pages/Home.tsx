@@ -73,10 +73,10 @@ const sectors: { icon: IconName; title: string; desc: string; example: string }[
 ];
 
 const steps = [
-  { title: "Free Consultation", desc: "A 30-minute call about your goal, your data and your constraints. No sales pitch." },
-  { title: "Assessment & Proposal", desc: "A clear recommendation: what to build, how long it will take, what it will cost and the risks." },
-  { title: "Pilot", desc: "A working prototype on your real use case, so you can judge the results before committing further." },
-  { title: "Launch & Support", desc: "Production deployment, training for your team, and ongoing monitoring and improvement." },
+  { title: "Free Consultation", desc: "A 30-minute conversation about your objectives, data and constraints." },
+  { title: "Assessment & Proposal", desc: "A written recommendation covering scope, timeline, cost and risks." },
+  { title: "Pilot", desc: "A working prototype on your own use case, so results can be evaluated before further investment." },
+  { title: "Launch & Support", desc: "Production deployment, staff training, and ongoing monitoring and improvement." },
 ];
 
 const principles = [
@@ -118,7 +118,7 @@ const Home = () => (
           </p>
 
           <p className="text-lg text-blue-200 max-w-2xl mx-auto mb-8">
-            Bring us the problem. We'll show you what AI can realistically do about it, then build it with you.
+            We assess what AI can realistically achieve for your organization, then design and deliver it with your team.
           </p>
 
           {/* Facts */}
@@ -182,11 +182,11 @@ const Home = () => (
           ))}
         </div>
         <p className="text-center text-blue-100">
-          Don't see your idea here?{" "}
+          Have a different use case in mind?{" "}
           <a href="#lead-capture" className="text-cyan-300 font-semibold hover:text-cyan-200 underline underline-offset-4">
-            Tell us about it
+            Contact us
           </a>{" "}
-          and we'll tell you honestly whether AI is the right fit.
+          for an objective assessment of whether AI is the right fit.
         </p>
       </div>
     </section>
@@ -198,8 +198,8 @@ const Home = () => (
           <h2 className="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-2">Our Strongest Track Record</h2>
           <p className="text-3xl md:text-4xl font-bold text-white mb-4">AI for Teaching, Learning and Academic Operations</p>
           <p className="text-blue-200 max-w-3xl mx-auto">
-            Universities face growing classes, AI-written assignments and complex workload rules. We build tools that take
-            the repetitive work off faculty and staff while leaving the judgement with them.
+            Universities face growing enrolments, AI-generated submissions and complex workload policies. Our tools reduce
+            repetitive work for faculty and staff while leaving academic judgement with them.
           </p>
         </div>
 
@@ -241,7 +241,7 @@ const Home = () => (
           <h2 className="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-2">Beyond the Classroom</h2>
           <p className="text-3xl md:text-4xl font-bold text-white mb-4">The Same Approach, Other Fields</p>
           <p className="text-blue-200 max-w-3xl mx-auto">
-            Grounded answers, human review and clear evidence work just as well outside education.
+            The principles behind our education work (grounded answers, human review and clear evidence) apply equally in other sectors.
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
@@ -266,7 +266,7 @@ const Home = () => (
           <h2 className="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-2">Getting Started</h2>
           <p className="text-3xl md:text-4xl font-bold text-white mb-4">How a Project Works</p>
           <p className="text-blue-200 max-w-3xl mx-auto">
-            You don't need an AI team or a detailed specification. You need a problem worth solving.
+            No in-house AI team or detailed specification is required. We start from the problem you need to solve.
           </p>
         </div>
         <ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -315,7 +315,7 @@ const Home = () => (
                 <svg className="w-5 h-5 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span className="text-sm font-semibold text-cyan-300">100% Free • No Obligation</span>
+                <span className="text-sm font-semibold text-cyan-300">Complimentary • No Obligation</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4 leading-tight">
                 Get Your Free
@@ -323,7 +323,7 @@ const Home = () => (
                 <span className="bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent">AI Readiness Assessment</span>
               </h2>
               <p className="text-blue-100 text-lg mb-6 leading-relaxed">
-                Tell us where you are today. We'll look at your processes and data and come back with practical places AI can help, and what it would take.
+                We review your current processes and data, then identify where AI can deliver practical value and what implementation would involve.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
@@ -342,7 +342,7 @@ const Home = () => (
                   <svg className="w-6 h-6 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span className="text-blue-100">A step-by-step plan you can act on, with or without us</span>
+                  <span className="text-blue-100">An actionable plan you can carry out with or without us</span>
                 </li>
               </ul>
             </div>
@@ -365,7 +365,7 @@ const Home = () => (
       <div className="max-w-4xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-white mb-4">Ready to Start Your AI Project?</h2>
         <p className="text-xl text-blue-50 mb-8">
-          Whether you run a department, a city service or a business, tell us what you want to achieve. The first conversation is free.
+          Whether you lead an academic department, a public service or a business, we would welcome a conversation about your objectives. The initial consultation is complimentary.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
@@ -375,14 +375,14 @@ const Home = () => (
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            Schedule Free Consultation
+            Schedule a Consultation
           </Link>
           <a href="mailto:contact@aydenait.com" className="px-8 py-4 rounded-full border-2 border-white text-white font-bold hover:bg-white hover:text-blue-600 transition text-lg">
             Email Us
           </a>
         </div>
         <p className="mt-6 text-blue-100 text-sm">
-          ✓ 30-minute free consultation  ✓ No commitment required  ✓ NDA provided
+          30-minute complimentary consultation · No commitment required · NDA available
         </p>
       </div>
     </section>

@@ -244,7 +244,7 @@ const Careers = () => {
             Join Our <span className="text-cyan-300">AI Consulting</span> Team
           </h1>
           <p className="text-xl text-blue-100 mb-6 max-w-3xl mx-auto">
-            Shape the future of AI & technology. Work on cutting-edge projects with enterprise clients. Full-time positions and remote internships available.
+            Build AI systems used in higher education, public services and business. Full-time positions and remote internships available.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-blue-100">
             <div className="flex items-center gap-2">
@@ -312,7 +312,7 @@ const Careers = () => {
                   <span>Impactful Work</span>
                 </h3>
                 <ul className="text-gray-700 space-y-2">
-                  <li>• Build real AI solutions that transform enterprise operations</li>
+                  <li>• Deliver AI solutions that improve how organizations operate</li>
                   <li>• Work on diverse projects across industries and technologies</li>
                   <li>• Contribute to open-source projects and thought leadership</li>
                   <li>• See the direct business impact of your technical contributions</li>
