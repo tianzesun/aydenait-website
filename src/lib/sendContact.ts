@@ -12,11 +12,11 @@ export interface ContactPayload {
 
 const FALLBACK_ERROR = "We couldn't send your message. Please try again or email contact@aydenait.com.";
 
-// Posts to the Netlify contact function. Throws an Error with a user-safe message on failure.
+// Posts to the Netlify contact function (netlify/functions/contact.ts). Throws an Error with a user-safe message on failure.
 export async function sendContact(payload: ContactPayload): Promise<void> {
   let response: Response;
   try {
-    response = await fetch("/.netlify/functions/contact", {
+    response = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
@@ -26,6 +26,10 @@ export async function sendContact(payload: ContactPayload): Promise<void> {
   }
 
   if (response.ok) return;
+  // Netlify's rate limit (set in the function config) answers 429 without a JSON body
+  if (response.status === 429) {
+    throw new Error("Too many messages in a short time. Please wait a minute and try again, or email contact@aydenait.com.");
+  }
 
   // The function returns JSON errors, but a proxy or 404 page may not
   const result = await response.json().catch(() => null);

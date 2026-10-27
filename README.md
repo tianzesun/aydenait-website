@@ -16,7 +16,7 @@ npm run preview   # serve the built site locally
 npm run lint      # run ESLint
 ```
 
-`npm run dev` serves the pages only. To test the contact form locally, run the site with the [Netlify CLI](https://docs.netlify.com/cli/get-started/) (`netlify dev`) so the function at `/.netlify/functions/contact` is available.
+`npm run dev` serves the pages only. To test the contact form locally, run the site with the [Netlify CLI](https://docs.netlify.com/cli/get-started/) (`netlify dev`) so the function at `/api/contact` is available.
 
 ## Project structure
 
@@ -43,7 +43,7 @@ Routes are defined in `src/App.tsx`. The Portfolio page lives in `src/pages/Clie
 
 ## Contact form email
 
-The Contact page and the Home page assessment section use the same form component (`src/components/ContactForm.tsx`) and post to `netlify/functions/contact.ts`. The email subject says which form was used. The function validates input, escapes it before building the email, and sends it to `ADMIN_EMAIL` using the first provider that is configured:
+The Contact page and the Home page assessment section use the same form component (`src/components/ContactForm.tsx`) and post to `/api/contact`, served by `netlify/functions/contact.ts`. The email subject says which form was used. The function validates input, escapes it before building the email, and sends it to `ADMIN_EMAIL` using the first provider that is configured:
 
 | Provider | Required variables | Optional |
 |----------|--------------------|----------|
@@ -55,6 +55,8 @@ The Contact page and the Home page assessment section use the same form componen
 
 Set these in **Netlify → Site configuration → Environment variables**, never in the repository. If no provider is configured, the form shows visitors an error with a reference ID instead of pretending the message was sent, and the same ID appears in the function logs.
 
+Spam protection: the form has a hidden honeypot field (`website`), and the function silently drops submissions that fill it in. The function's `config` also rate-limits each IP to 5 submissions per minute; Netlify answers further requests with 429.
+
 ## Deployment
 
-Netlify builds every push to `main` using `netlify.toml`: it runs `npm run build`, publishes `dist/`, deploys the functions in `netlify/functions/`, and rewrites all paths to `index.html` so client-side routes work on refresh.
+Netlify builds every push to `main` using `netlify.toml`: it runs `npm run build`, publishes `dist/`, and deploys the functions in `netlify/functions/`. Every route is prerendered to its own HTML file (`scripts/prerender.mjs`), so any other path gets the 404 page.

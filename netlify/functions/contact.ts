@@ -1,4 +1,4 @@
-import type { Handler, HandlerEvent } from "@netlify/functions";
+import type { Config } from "@netlify/functions";
 import { randomUUID } from "node:crypto";
 
 interface ContactFormData {
@@ -29,37 +29,34 @@ const escapeHtml = (value: string) =>
 
 const jsonHeaders = { "Content-Type": "application/json" };
 
-const handler: Handler = async (event: HandlerEvent) => {
+export default async (req: Request) => {
   // Only allow POST requests
-  if (event.httpMethod !== "POST") {
-    return {
-      statusCode: 405,
+  if (req.method !== "POST") {
+    return new Response(JSON.stringify({ error: "Method not allowed" }), {
+      status: 405,
       headers: { ...jsonHeaders, Allow: "POST" },
-      body: JSON.stringify({ error: "Method not allowed" }),
-    };
+    });
   }
 
   const correlationId = randomUUID();
 
   let data: ContactFormData;
   try {
-    data = JSON.parse(event.body || "{}");
+    data = JSON.parse((await req.text()) || "{}");
   } catch {
-    return {
-      statusCode: 400,
+    return new Response(JSON.stringify({ error: "Invalid request" }), {
+      status: 400,
       headers: jsonHeaders,
-      body: JSON.stringify({ error: "Invalid request" }),
-    };
+    });
   }
 
   // Honeypot filled in: almost certainly a bot. Report success so it doesn't retry, but send nothing.
   if (typeof data?.website === "string" && data.website.trim()) {
     console.warn(`[${correlationId}] Contact form honeypot triggered; message dropped.`);
-    return {
-      statusCode: 200,
+    return new Response(JSON.stringify({ success: true }), {
+      status: 200,
       headers: jsonHeaders,
-      body: JSON.stringify({ success: true }),
-    };
+    });
   }
 
   // Validate required fields
@@ -77,31 +74,28 @@ const handler: Handler = async (event: HandlerEvent) => {
     typeof fields.organization !== "string" ||
     typeof fields.phone !== "string"
   ) {
-    return {
-      statusCode: 400,
+    return new Response(JSON.stringify({ error: "Please fill in your name, email, and message." }), {
+      status: 400,
       headers: jsonHeaders,
-      body: JSON.stringify({ error: "Please fill in your name, email, and message." }),
-    };
+    });
   }
 
   for (const [key, max] of Object.entries(MAX_LENGTHS)) {
     if ((fields[key as keyof typeof fields] as string).length > max) {
-      return {
-        statusCode: 400,
+      return new Response(JSON.stringify({ error: `The ${key} field is too long.` }), {
+        status: 400,
         headers: jsonHeaders,
-        body: JSON.stringify({ error: `The ${key} field is too long.` }),
-      };
+      });
     }
   }
 
   // Validate email format
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(fields.email)) {
-    return {
-      statusCode: 400,
+    return new Response(JSON.stringify({ error: "Please enter a valid email address." }), {
+      status: 400,
       headers: jsonHeaders,
-      body: JSON.stringify({ error: "Please enter a valid email address." }),
-    };
+    });
   }
 
   const name = fields.name.trim();
@@ -191,34 +185,36 @@ const handler: Handler = async (event: HandlerEvent) => {
     // No provider configured: fail loudly instead of telling the visitor it was sent
     else {
       console.error(`[${correlationId}] No email service configured. Set SENDGRID_API_KEY, MAILGUN_API_KEY, or SMTP credentials.`);
-      return {
-        statusCode: 503,
+      const body = { error: `We couldn't send your message. Please email contact@aydenait.com. (Ref: ${correlationId})` };
+      return new Response(JSON.stringify(body), {
+        status: 503,
         headers: jsonHeaders,
-        body: JSON.stringify({
-          error: `We couldn't send your message. Please email contact@aydenait.com. (Ref: ${correlationId})`,
-        }),
-      };
+      });
     }
 
     // Return success response
-    return {
-      statusCode: 200,
+    const body = { message: "Thank you for contacting us! We'll respond within 1 business day.", success: true };
+    return new Response(JSON.stringify(body), {
+      status: 200,
       headers: jsonHeaders,
-      body: JSON.stringify({
-        message: "Thank you for contacting us! We'll respond within 1 business day.",
-        success: true,
-      }),
-    };
+    });
   } catch (error) {
     console.error(`[${correlationId}] Contact form error:`, error);
-    return {
-      statusCode: 500,
+    const body = { error: `Failed to send message. Please try again or email contact@aydenait.com. (Ref: ${correlationId})` };
+    return new Response(JSON.stringify(body), {
+      status: 500,
       headers: jsonHeaders,
-      body: JSON.stringify({
-        error: `Failed to send message. Please try again or email contact@aydenait.com. (Ref: ${correlationId})`,
-      }),
-    };
+    });
   }
 };
 
-export { handler };
+// Served at /api/contact (the custom path replaces /.netlify/functions/contact). A person sends one
+// enquiry at a time, so 5 per minute per IP is generous; beyond that Netlify returns 429.
+export const config: Config = {
+  path: "/api/contact",
+  rateLimit: {
+    windowLimit: 5,
+    windowSize: 60,
+    aggregateBy: ["ip", "domain"],
+  },
+};
