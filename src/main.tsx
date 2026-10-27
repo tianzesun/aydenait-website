@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
+// Inter is self-hosted (no request to Google Fonts); the body font is set in index.css
+import "@fontsource-variable/inter";
 import "./index.css";
 
 const app = (

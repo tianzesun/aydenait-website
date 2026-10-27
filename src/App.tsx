@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence, MotionConfig, motion } from "framer-motion";
+import { AnimatePresence, LazyMotion, MotionConfig, domAnimation, m } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
@@ -20,7 +20,7 @@ const AnimatedRoutes = () => {
   return (
     // initial={false}: show the prerendered page as-is on first load; animate later route changes
     <AnimatePresence mode="wait" initial={false}>
-      <motion.div
+      <m.div
         key={location.pathname}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -39,7 +39,7 @@ const AnimatedRoutes = () => {
           <Route path="/terms" element={<Terms />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </motion.div>
+      </m.div>
     </AnimatePresence>
   );
 };
@@ -47,7 +47,9 @@ const AnimatedRoutes = () => {
 // The router is supplied by main.tsx (BrowserRouter) or entry-server.tsx (StaticRouter)
 function App() {
   return (
+    // LazyMotion + m: ship only the animation features the page transitions use (smaller bundle)
     // reducedMotion="user": skip movement for visitors who set "reduce motion" in their OS
+    <LazyMotion features={domAnimation} strict>
     <MotionConfig reducedMotion="user">
       <ScrollToTop />
       <a
@@ -65,6 +67,7 @@ function App() {
         <Footer />
       </div>
     </MotionConfig>
+    </LazyMotion>
   );
 }
 export default App;

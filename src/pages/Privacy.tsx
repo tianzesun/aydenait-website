@@ -64,14 +64,6 @@ const Privacy = () => (
       <ul className="mb-4 list-disc ml-6">
         <li>Our website hosting provider (Netlify), which serves the site and processes form submissions</li>
         <li>Our email service provider, which delivers form submissions to our inbox</li>
-        <li>
-          Google Fonts, which supplies the typeface used on this site. Your browser connects to Google to load it, so
-          Google receives your IP address and browser information. See{" "}
-          <a className="underline text-blue-300" href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
-            Google's Privacy Policy
-          </a>
-          .
-        </li>
       </ul>
       <p className="mb-4">
         We may also disclose personal information where required by law.
