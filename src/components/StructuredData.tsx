@@ -41,7 +41,7 @@ export const organizationSchema = {
   "name": "AydenAIT Solution",
   "url": "https://aydenait.com",
   "logo": "https://aydenait.com/logo.svg",
-  "description": "AI solutions for education, civic services, finance and business: AI consulting, custom AI development, IT solutions and AIOps",
+  "description": "AI solutions for education, civic services, finance and business: AI assistants, AI-assisted review, detection and risk analysis, workflow automation, analytics and AI integration",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Toronto",
@@ -71,7 +71,7 @@ export const serviceSchema = {
   "@type": "ProfessionalService",
   "name": "AydenAIT Solution",
   "image": "https://aydenait.com/logo.svg",
-  "description": "AI solutions for education, civic services, finance and business: AI consulting, custom AI development, IT solutions and AIOps",
+  "description": "AI solutions for education, civic services, finance and business: AI assistants, AI-assisted review, detection and risk analysis, workflow automation, analytics and AI integration",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Toronto",
@@ -81,5 +81,5 @@ export const serviceSchema = {
   "email": "contact@aydenait.com",
   "url": "https://aydenait.com",
   "priceRange": "$$",
-  "serviceType": ["AI Consulting", "IT Consulting", "AI Software Development", "AIOps"]
+  "serviceType": ["AI Assistants & Chatbots", "AI-Assisted Review & Scoring", "Detection & Risk Analysis", "Planning & Workflow Automation", "Analytics & Decision Support", "AI Integration"]
 };

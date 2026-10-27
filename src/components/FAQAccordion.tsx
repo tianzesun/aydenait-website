@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const faqs = [
   {
     q: "What services does AydenAIT provide?",
-    a: "We design, build and support custom AI solutions, including AI assistants, AI-assisted review and scoring, detection and risk analysis, workflow automation, and analytics. We also provide AI strategy and readiness assessments, IT and cloud consulting, and AIOps. Most engagements combine advisory work with hands-on development."
+    a: "We design, build and support custom AI solutions: AI assistants and chatbots, AI-assisted review and scoring, detection and risk analysis, planning and workflow automation, analytics and decision support, and AI integration with your existing systems. Each engagement can begin with a complimentary AI readiness assessment."
   },
   {
     q: "Which sectors do you work in?",

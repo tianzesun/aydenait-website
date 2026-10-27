@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { solutions } from "../data/solutions";
 
 const Footer = () => {
   return (
@@ -46,18 +47,11 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-bold text-sm uppercase tracking-wider mb-4">Services</h3>
             <ul className="space-y-2 text-sm">
-              <li>
-                <Link to="/services" className="text-gray-400 hover:text-white transition-colors">AI Consulting & Strategy</Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-gray-400 hover:text-white transition-colors">IT Consulting & Solutions</Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-gray-400 hover:text-white transition-colors">AI Software Development</Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-gray-400 hover:text-white transition-colors">AIOps & Operations</Link>
-              </li>
+              {solutions.map((item) => (
+                <li key={item.title}>
+                  <Link to="/services" className="text-gray-400 hover:text-white transition-colors">{item.title}</Link>
+                </li>
+              ))}
             </ul>
           </div>
 

@@ -6,7 +6,7 @@ const Contact = () => (
       <SEO
         title="Contact AydenAIT - AI Solutions for Education and Beyond"
         description="Contact AydenAIT about AI solutions for education, civic services, finance or business. Confidential consultation, NDA provided. Email: contact@aydenait.com"
-        keywords="contact AI consultant, enterprise IT consulting, AIOps consultation, AI consulting inquiry, technology consulting contact"
+        keywords="contact AydenAIT, AI consultation, custom AI project inquiry, AI consulting Toronto"
         ogUrl="https://aydenait.com/contact"
         canonical="https://aydenait.com/contact"
       />

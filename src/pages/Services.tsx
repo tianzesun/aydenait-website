@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 import StructuredData, { serviceSchema } from "../components/StructuredData";
+import Icon from "../components/Icon";
+import { solutions } from "../data/solutions";
 
 const Services = () => (
   <>
     <SEO
       title="Services - AI Solutions for Education, Public Sector & Business | AydenAIT"
-      description="AI solutions for education (grading, academic integrity, workload planning), civic services, finance and business, plus AI consulting, custom AI development, IT solutions and AIOps."
-      keywords="AI consulting services, IT consulting, AIOps solutions, AI software development, enterprise AI, technology consulting, digital transformation, IT solutions, intelligent automation"
+      description="Custom AI solutions for education, civic services, finance and business: AI assistants, AI-assisted review, detection and risk analysis, workflow automation, analytics and AI integration."
+      keywords="custom AI solutions, AI chatbot development, AI-assisted grading, academic integrity software, AI workflow automation, AI analytics, AI integration, AI consulting Toronto"
       ogUrl="https://aydenait.com/services"
       canonical="https://aydenait.com/services"
     />
@@ -118,79 +120,21 @@ const Services = () => (
         </div>
       </div>
 
-      {/* CORE SERVICES */}
-      <h2 className="text-2xl font-bold text-blue-200 mt-12 mb-5 text-center">Core Capabilities</h2>
-
-      {/* AI Consulting */}
-      <div className="mb-8 bg-white/5 rounded-xl p-6 border border-blue-800 hover:border-cyan-600/50 transition-colors">
-        <div className="flex items-center gap-3 mb-4">
-          <svg className="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-          </svg>
-          <h3 className="text-xl font-bold text-cyan-300">AI Consulting & Strategy</h3>
-        </div>
-        <ul className="grid md:grid-cols-2 gap-3 text-blue-100 text-sm">
-          <li>• AI Readiness Assessment & Maturity Analysis</li>
-          <li>• AI Strategy Development & Roadmap Planning</li>
-          <li>• Use Case Identification & Feasibility Studies</li>
-          <li>• AI Governance & Ethics Framework</li>
-          <li>• ROI Analysis & Business Case Development</li>
-          <li>• Technology Stack Selection & Architecture Design</li>
-        </ul>
-      </div>
-
-      {/* IT Solutions */}
-      <div className="mb-8 bg-white/5 rounded-xl p-6 border border-blue-800 hover:border-cyan-600/50 transition-colors">
-        <div className="flex items-center gap-3 mb-4">
-          <svg className="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-          </svg>
-          <h3 className="text-xl font-bold text-cyan-300">IT Consulting & Solutions</h3>
-        </div>
-        <ul className="grid md:grid-cols-2 gap-3 text-blue-100 text-sm">
-          <li>• IT Infrastructure Assessment & Optimization</li>
-          <li>• Cloud Migration & Modernization (AWS, Azure, GCP)</li>
-          <li>• Enterprise Architecture Design & Implementation</li>
-          <li>• Technology Stack Evaluation & Selection</li>
-          <li>• Digital Transformation Consulting</li>
-          <li>• IT Security & Compliance Solutions</li>
-        </ul>
-      </div>
-
-      {/* AI Development */}
-      <div className="mb-8 bg-white/5 rounded-xl p-6 border border-blue-800 hover:border-cyan-600/50 transition-colors">
-        <div className="flex items-center gap-3 mb-4">
-          <svg className="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-          </svg>
-          <h3 className="text-xl font-bold text-cyan-300">AI Software Development</h3>
-        </div>
-        <ul className="grid md:grid-cols-2 gap-3 text-blue-100 text-sm">
-          <li>• Custom AI Application Development</li>
-          <li>• Machine Learning Model Development & Training</li>
-          <li>• LLM Integration & Fine-tuning</li>
-          <li>• Computer Vision & NLP Solutions</li>
-          <li>• Intelligent Automation & Workflow Optimization</li>
-          <li>• AI-Powered Analytics & Decision Support Systems</li>
-        </ul>
-      </div>
-
-      {/* AIOps */}
-      <div className="mb-8 bg-white/5 rounded-xl p-6 border border-blue-800 hover:border-cyan-600/50 transition-colors">
-        <div className="flex items-center gap-3 mb-4">
-          <svg className="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
-          <h3 className="text-xl font-bold text-cyan-300">AIOps & Intelligent Operations</h3>
-        </div>
-        <ul className="grid md:grid-cols-2 gap-3 text-blue-100 text-sm">
-          <li>• AI-Driven Monitoring & Observability</li>
-          <li>• Predictive Incident Management</li>
-          <li>• Intelligent Alerting & Anomaly Detection</li>
-          <li>• Automated Root Cause Analysis</li>
-          <li>• Automated Remediation & Runbooks</li>
-          <li>• Performance Optimization & Capacity Planning</li>
-        </ul>
+      {/* SOLUTIONS */}
+      <h2 className="text-2xl font-bold text-blue-200 mt-12 mb-2 text-center">What We Build</h2>
+      <p className="text-blue-300 text-center mb-6 text-sm">
+        Every engagement includes strategy, development, integration with your systems and ongoing support.
+      </p>
+      <div className="grid md:grid-cols-2 gap-6 mb-8">
+        {solutions.map((item) => (
+          <div key={item.title} className="bg-white/5 rounded-xl p-6 border border-blue-800 hover:border-cyan-600/50 transition-colors">
+            <div className="flex items-center gap-3 mb-3">
+              <Icon name={item.icon} className="w-7 h-7 text-cyan-400 flex-shrink-0" />
+              <h3 className="text-lg font-bold text-cyan-300">{item.title}</h3>
+            </div>
+            <p className="text-blue-100 text-sm">{item.desc}</p>
+          </div>
+        ))}
       </div>
 
       {/* TOOL STACK */}

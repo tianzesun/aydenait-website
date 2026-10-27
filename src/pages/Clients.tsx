@@ -1,31 +1,8 @@
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
-import Icon, { type IconName } from "../components/Icon";
+import Icon from "../components/Icon";
 import { projects } from "../data/projects";
-
-// Engagement types we deliver.
-const engagements: { icon: IconName; title: string; desc: string }[] = [
-  {
-    icon: "chat",
-    title: "LLM & Generative AI Applications",
-    desc: "Retrieval-augmented assistants, document understanding, and workflow automation built on your data and integrated with existing systems.",
-  },
-  {
-    icon: "presentationChart",
-    title: "Predictive Analytics & ML Models",
-    desc: "Forecasting, anomaly detection, and classification models taken from prototype to monitored production service.",
-  },
-  {
-    icon: "serverStack",
-    title: "AIOps & Intelligent Monitoring",
-    desc: "Observability pipelines, alert noise reduction, and automated remediation for cloud and hybrid infrastructure.",
-  },
-  {
-    icon: "cloud",
-    title: "Cloud & Platform Engineering",
-    desc: "CI/CD automation, Kubernetes platforms, infrastructure as code, and cost optimization across AWS and Azure.",
-  },
-];
+import { solutions } from "../data/solutions";
 
 const Clients = () => (
   <>
@@ -95,10 +72,10 @@ const Clients = () => (
           ))}
         </div>
 
-        {/* Engagement types */}
+        {/* Solutions */}
         <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-8">What We Deliver</h2>
-        <div className="grid md:grid-cols-2 gap-6 mb-16">
-          {engagements.map((item) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          {solutions.map((item) => (
             <div
               key={item.title}
               className="bg-white/10 rounded-2xl p-8 border border-blue-700/50 hover:border-cyan-400 transition"
