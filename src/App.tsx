@@ -3,6 +3,7 @@ import { AnimatePresence, LazyMotion, MotionConfig, domAnimation, m } from "fram
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import ErrorBoundary from "./components/ErrorBoundary";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import ServicePage from "./pages/ServicePage";
@@ -30,6 +31,8 @@ const AnimatedRoutes = () => {
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
       >
+        {/* Inside the keyed m.div, so it remounts (and clears any error) on every page change */}
+        <ErrorBoundary>
         <Routes location={location}>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
@@ -45,6 +48,7 @@ const AnimatedRoutes = () => {
           <Route path="/security" element={<Security />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </ErrorBoundary>
       </m.div>
     </AnimatePresence>
   );

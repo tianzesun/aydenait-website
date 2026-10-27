@@ -14,6 +14,7 @@ npm run dev       # start the dev server at http://localhost:5173
 npm run build     # type-check and build to dist/
 npm run preview   # serve the built site locally
 npm run lint      # run ESLint
+npm test          # run the tests (tests/)
 ```
 
 `npm run dev` serves the pages only. To test the contact form locally, run the site with the [Vercel CLI](https://vercel.com/docs/cli) (`vercel dev`) so the function at `/api/contact` is available.
@@ -57,6 +58,15 @@ The Contact page and the Home page assessment section use the same form componen
 Set these in **Vercel → Project → Settings → Environment Variables**, never in the repository. If no provider is configured, the form shows visitors an error with a reference ID instead of pretending the message was sent, and the same ID appears in the function logs.
 
 Spam protection: the form has a hidden honeypot field (`website`), and the function silently drops submissions that fill it in. Rate limiting is a Vercel Firewall rule (Project → Firewall → Configure → New Rule): requests whose path is `/api/contact`, rate-limited to 5 per 60 seconds per IP, answered with 429. Vercel functions don't share state between calls, so the limit can't live in the function itself.
+
+## Tests
+
+`npm test` runs the Vitest suite in `tests/`:
+
+- `site.test.tsx` renders every page in `public/sitemap.xml` and checks it has a title, canonical URL and heading, that unknown URLs get the 404 page, and that every product and service page is in the sitemap.
+- `contact.test.ts` checks the contact function's validation, honeypot, HTML escaping and error responses, with the email provider mocked.
+
+GitHub Actions (`.github/workflows/ci.yml`) runs lint, tests, the build and `npm audit` on every push and pull request, and Vercel runs the tests before every deploy. A failing test stops the deploy and the previous version stays live.
 
 ## Deployment
 
