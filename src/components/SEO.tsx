@@ -1,91 +1,37 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { HeadContext, resolveSEO, type SEOProps } from "../lib/head";
 
-interface SEOProps {
-  title?: string;
-  description?: string;
-  keywords?: string;
-  ogType?: string;
-  ogImage?: string;
-  ogUrl?: string;
-  twitterCard?: string;
-  canonical?: string;
-  noindex?: boolean;
-}
+const SEO = (props: SEOProps) => {
+  const seo = resolveSEO(props);
+  const head = useContext(HeadContext);
+  // Prerender only: hand the tags to entry-server, which writes them into the page's <head>
+  if (head) head.seo = seo;
 
-const SEO = ({
-  title = "AydenAIT - Custom AI Solutions, From Idea to Production",
-  description = "AI solutions for education and beyond: grading, academic integrity and workload platforms, plus AI consulting and development for civic services, finance and business.",
-  keywords = "custom AI solutions, AI development company Toronto, AI consulting, AI chatbot development, AI in education, AI automation",
-  ogType = "website",
-  ogImage = "https://aydenait.com/og-image.png",
-  ogUrl = "https://aydenait.com",
-  twitterCard = "summary_large_image",
-  canonical,
-  noindex = false,
-}: SEOProps) => {
+  const key = JSON.stringify(seo);
   useEffect(() => {
-    // Update title
+    const { title, canonical, meta } = JSON.parse(key) as typeof seo;
     document.title = title;
 
-    // Helper function to update or create meta tags
-    const updateMetaTag = (selector: string, _attribute: string, content: string) => {
-      let element = document.querySelector(selector);
-      if (element) {
-        element.setAttribute("content", content);
-      } else {
+    for (const tag of meta) {
+      let element = document.querySelector(`meta[${tag.attr}='${tag.key}']`);
+      if (!element) {
         element = document.createElement("meta");
-        const [attrName, attrValue] = selector.replace(/[[\]']/g, "").split("=");
-        element.setAttribute(attrName, attrValue);
-        element.setAttribute("content", content);
+        element.setAttribute(tag.attr, tag.key);
         document.head.appendChild(element);
       }
-    };
-
-    // Update description
-    updateMetaTag("meta[name='description']", "description", description);
-
-    // Update keywords
-    updateMetaTag("meta[name='keywords']", "keywords", keywords);
-
-    // Open Graph tags
-    updateMetaTag("meta[property='og:title']", "og:title", title);
-    updateMetaTag("meta[property='og:description']", "og:description", description);
-    updateMetaTag("meta[property='og:type']", "og:type", ogType);
-    updateMetaTag("meta[property='og:image']", "og:image", ogImage);
-    updateMetaTag("meta[property='og:url']", "og:url", ogUrl);
-    updateMetaTag("meta[property='og:site_name']", "og:site_name", "AydenAIT Solution");
-
-    // Twitter Card tags
-    updateMetaTag("meta[name='twitter:card']", "twitter:card", twitterCard);
-    updateMetaTag("meta[name='twitter:title']", "twitter:title", title);
-    updateMetaTag("meta[name='twitter:description']", "twitter:description", description);
-    updateMetaTag("meta[name='twitter:image']", "twitter:image", ogImage);
-
-    // Robots meta tag
-    if (noindex) {
-      updateMetaTag("meta[name='robots']", "robots", "noindex,nofollow");
-    } else {
-      updateMetaTag("meta[name='robots']", "robots", "index,follow");
+      element.setAttribute("content", tag.content);
     }
 
-    // Canonical URL
     if (canonical) {
       let linkElement = document.querySelector("link[rel='canonical']");
-      if (linkElement) {
-        linkElement.setAttribute("href", canonical);
-      } else {
+      if (!linkElement) {
         linkElement = document.createElement("link");
         linkElement.setAttribute("rel", "canonical");
-        linkElement.setAttribute("href", canonical);
         document.head.appendChild(linkElement);
       }
+      linkElement.setAttribute("href", canonical);
     }
-
-    // Additional SEO meta tags
-    updateMetaTag("meta[name='author']", "author", "AydenAIT Solution");
-    updateMetaTag("meta[name='viewport']", "viewport", "width=device-width, initial-scale=1.0");
-    updateMetaTag("meta[http-equiv='X-UA-Compatible']", "X-UA-Compatible", "IE=edge");
-  }, [title, description, keywords, ogType, ogImage, ogUrl, twitterCard, canonical, noindex]);
+  }, [key]);
 
   return null;
 };

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -20,7 +20,8 @@ const AnimatedRoutes = () => {
   const location = useLocation();
 
   return (
-    <AnimatePresence mode="wait">
+    // initial={false}: show the prerendered page as-is on first load; animate later route changes
+    <AnimatePresence mode="wait" initial={false}>
       <motion.div
         key={location.pathname}
         initial={{ opacity: 0, y: 20 }}
@@ -45,9 +46,10 @@ const AnimatedRoutes = () => {
   );
 };
 
+// The router is supplied by main.tsx (BrowserRouter) or entry-server.tsx (StaticRouter)
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
       <div className="min-h-screen flex flex-col bg-[#10172a] text-white">
         <div className="bg-noise" />
@@ -59,7 +61,7 @@ function App() {
         </main>
         <Footer />
       </div>
-    </BrowserRouter>
+    </>
   );
 }
 export default App;
