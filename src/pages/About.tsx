@@ -6,7 +6,7 @@ const About = () => (
   <>
     <SEO
       title="About AydenAIT - AI Solutions for Education and Beyond"
-      description="Toronto AI company with grading, integrity and workload platforms in use at the University of Toronto, plus AI for civic services, finance and business."
+      description="Toronto AI company with grading, academic-integrity and workload platforms in use in higher education, plus AI for civic services, finance and business."
       keywords="about AydenAIT, AI company Toronto, custom AI solutions, AI in education, AI consulting"
       ogUrl="https://aydenait.com/about"
       canonical="https://aydenait.com/about"
@@ -20,7 +20,7 @@ const About = () => (
           AydenAIT is a Toronto-based AI company that builds practical systems for education and the organizations that serve it.
         </p>
         <p className="text-lg text-blue-200">
-          Our grading, academic-integrity and workload platforms are in use at the University of Toronto, and we bring
+          Our grading, academic-integrity and workload platforms are in use in higher education, and we bring
           the same standards to civic services, finance and business.
         </p>
       </div>
@@ -38,7 +38,7 @@ const About = () => (
           </p>
           <p>
             Rather than producing reports on what AI might do, we built the tools. Faculty Workload Management, CodeProvenance
-            and DeepRubric are now in use at the University of Toronto, shaped by the people who use them.
+            and DeepRubric are now in use, shaped by the faculty and staff who use them.
           </p>
           <p>
             That work taught us what makes AI succeed in practice: answers grounded in real sources, a person reviewing

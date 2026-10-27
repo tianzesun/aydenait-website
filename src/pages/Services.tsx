@@ -31,7 +31,7 @@ const Services = () => (
         <p className="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-2">Core expertise</p>
         <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Education Solutions</h2>
         <p className="text-blue-100 mb-6">
-          Our grading, academic-integrity and workload platforms are in use at the University of Toronto. We can adapt
+          Our grading, academic-integrity and workload platforms are already in use in higher education. We can adapt
           them to your institution or develop new solutions with your faculty and staff.
         </p>
         <div className="grid md:grid-cols-2 gap-4 text-sm">

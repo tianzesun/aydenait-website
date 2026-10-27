@@ -29,9 +29,8 @@ export const projects: Project[] = [
     title: "Faculty Workload Management System",
     sector: "Higher Education",
     summary: "Course assignments, workload tracking and term planning for academic departments.",
-    desc: "A workload management platform for a department at the University of Toronto Scarborough, covering Computer Science, Mathematics, and Statistics.",
+    desc: "A workload management platform for academic departments, built for a department covering Computer Science, Mathematics and Statistics.",
     highlights: ["Course assignments and term planning", "Faculty workload and service-role tracking", "Policy-based workload calculations"],
-    deployment: "In use at the University of Toronto Scarborough",
     productPage: {
       slug: "faculty-workload",
       challenge: [
@@ -52,7 +51,6 @@ export const projects: Project[] = [
     summary: "Code similarity and AI-authorship detection that produces evidence, not just a score.",
     desc: "Code similarity and AI-authorship detection for schools and universities. The output isn't just a score: it's evidence a faculty member can act on and a committee can defend.",
     highlights: ["Multiple similarity engines combined by a learned fusion model", "AI-generated code detector", "Professor-facing review workspace"],
-    deployment: "In use at the University of Toronto",
     productPage: {
       slug: "codeprovenance",
       challenge: [
@@ -73,7 +71,6 @@ export const projects: Project[] = [
     summary: "AI-assisted, rubric-based grading for programming courses, with a human in the loop.",
     desc: "An AI-assisted grading platform for programming courses. Professors build rubrics, students submit code, and an AI pipeline scores each submission against the rubric criteria.",
     highlights: ["Human-in-the-loop review of every score", "Academic-integrity checks", "Course and rubric analytics"],
-    deployment: "In use at the University of Toronto",
     productPage: {
       slug: "deeprubric",
       challenge: [

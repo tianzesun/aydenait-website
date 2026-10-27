@@ -15,7 +15,7 @@ const Footer = () => {
               <span className="text-xl font-bold text-white">AydenAIT Solution</span>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
-              AI solutions for education and beyond. Platforms in use at the University of Toronto, built in Toronto.
+              AI solutions for education and beyond, built in Toronto.
             </p>
           </div>
 
@@ -43,6 +43,9 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link>
+              </li>
+              <li>
+                <Link to="/security" className="text-gray-400 hover:text-white transition-colors">Security &amp; Privacy</Link>
               </li>
               <li>
                 <Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link>
@@ -98,6 +101,9 @@ const Footer = () => {
               </Link>
               <Link to="/terms" className="inline-block py-1 text-gray-400 hover:text-white transition-colors">
                 Terms of Use
+              </Link>
+              <Link to="/security" className="inline-block py-1 text-gray-400 hover:text-white transition-colors">
+                Security
               </Link>
               <Link to="/faq" className="inline-block py-1 text-gray-400 hover:text-white transition-colors">
                 FAQ

@@ -8,7 +8,7 @@ const faqs = [
   },
   {
     q: "Which sectors do you work in?",
-    a: "Higher education is our primary focus: our grading, academic-integrity and faculty workload platforms are in use at the University of Toronto. We also build for civic services (an AI assistant built on the City of Markham's publicly available data) and financial services (an options-strategy analysis platform), and we work with businesses that want AI integrated into their existing systems."
+    a: "Higher education is our primary focus: our grading, academic-integrity and faculty workload platforms are in use in higher education. We also build for civic services (an AI assistant built on the City of Markham's publicly available data) and financial services (an options-strategy analysis platform), and we work with businesses that want AI integrated into their existing systems."
   },
   {
     q: "Do you work with organizations of all sizes?",

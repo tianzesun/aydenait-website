@@ -43,7 +43,7 @@ const steps = [
 ];
 
 const principles = [
-  { title: "Proven in production", desc: "Our own platforms are used every day at the University of Toronto. We know what it takes to keep AI working after launch." },
+  { title: "Proven in production", desc: "Our own platforms are used every day in higher education. We know what it takes to keep AI working after launch." },
   { title: "People stay in control", desc: "AI suggests, people decide. Every system we build has a clear point where a person reviews the result." },
   { title: "Evidence, not black boxes", desc: "Scores come with reasons and answers come with sources, so results can be checked and defended." },
   { title: "Privacy and policy first", desc: "We design around your organization's privacy, security and policy requirements from day one." },
@@ -55,7 +55,7 @@ const Home = () => (
   <>
     <SEO
       title="AydenAIT - Custom AI Solutions, From Idea to Production"
-      description="AydenAIT designs, builds and supports custom AI solutions. Our platforms are in use at the University of Toronto. Book a free consultation."
+      description="AydenAIT designs, builds and supports custom AI solutions. Our platforms are in use in higher education. Book a free consultation."
       keywords="custom AI solutions, AI development company Toronto, AI consulting, AI chatbot development, AI in education, AI grading, academic integrity software, AI automation, AI for municipalities"
       ogUrl="https://aydenait.com"
       canonical="https://aydenait.com"
@@ -77,7 +77,7 @@ const Home = () => (
 
           <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-4 leading-relaxed">
             AydenAIT designs, builds and supports custom AI solutions, from assistants and automation to analytics and
-            complete AI platforms. Our systems are already used every day at the <span className="text-cyan-300 font-bold">University of Toronto</span>.
+            complete AI platforms. Our systems are already used every day by faculty and staff in <span className="text-cyan-300 font-bold">higher education</span>.
           </p>
 
           <p className="text-lg text-blue-200 max-w-2xl mx-auto mb-8">
@@ -88,7 +88,7 @@ const Home = () => (
           <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-10">
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4">
               <div className="text-cyan-400 font-bold text-3xl mb-1">3</div>
-              <div className="text-blue-100 text-sm font-semibold">Platforms in use at the University of Toronto</div>
+              <div className="text-blue-100 text-sm font-semibold">Platforms in use in higher education</div>
             </div>
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4">
               <div className="text-cyan-400 font-bold text-3xl mb-1">5</div>
