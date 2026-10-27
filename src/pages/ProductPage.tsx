@@ -3,18 +3,18 @@ import SEO from "../components/SEO";
 import { projects } from "../data/projects";
 import NotFound from "./NotFound";
 
-// Detail page for any project with a caseStudy entry in src/data/projects.ts
-const CaseStudy = () => {
+// Product page for any project with a productPage entry in src/data/projects.ts
+const ProductPage = () => {
   const { slug } = useParams();
-  const project = projects.find((p) => p.caseStudy?.slug === slug);
-  if (!project?.caseStudy) return <NotFound />;
-  const study = project.caseStudy;
+  const project = projects.find((p) => p.productPage?.slug === slug);
+  if (!project?.productPage) return <NotFound />;
+  const study = project.productPage;
   const url = `https://aydenait.com/portfolio/${study.slug}`;
 
   return (
     <>
       <SEO
-        title={`${project.title} Case Study | AydenAIT`}
+        title={`${project.title} | AydenAIT`}
         description={project.summary}
         ogUrl={url}
         canonical={url}
@@ -28,7 +28,7 @@ const CaseStudy = () => {
 
           {/* Hero */}
           <header className="mb-14">
-            <span className="text-xs font-bold uppercase tracking-wider text-cyan-300">{project.sector} · Case Study</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-cyan-300">{project.sector} · Product</span>
             <h1 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-5">{project.title}</h1>
             <p className="text-xl text-blue-100 leading-relaxed">{project.desc}</p>
             {study.deployment && <p className="mt-4 text-blue-200">{study.deployment}</p>}
@@ -97,7 +97,7 @@ const CaseStudy = () => {
           <div className="text-center bg-white/5 rounded-2xl p-10 border border-blue-700/50">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">See {project.title} in Action</h2>
             <p className="text-blue-100 mb-8">
-              We would be pleased to give you a demonstration and discuss what a similar system could do for your organization.
+              We would be pleased to give you a demonstration and discuss how {project.title} could work at your institution.
             </p>
             <Link
               to="/contact"
@@ -112,4 +112,4 @@ const CaseStudy = () => {
   );
 };
 
-export default CaseStudy;
+export default ProductPage;

@@ -10,12 +10,12 @@ export type Project = {
   screenshots?: { src: string; alt: string }[];
   // Optional detail page at /portfolio/<slug> (also add the URL to public/sitemap.xml).
   // Sections left out are not shown, so only fill in what has been approved for publication.
-  caseStudy?: {
+  productPage?: {
     slug: string;
     challenge: string[];
     approach: { title: string; text: string }[];
     humanReview: string;
-    // Where it runs, e.g. "In use at ..." — only with the client's approval
+    // Where it is in use, e.g. "In use at ..." — only with that institution's approval
     deployment?: string;
     // Measured outcomes only, e.g. { value: "40%", label: "less time per review" }
     results?: { value: string; label: string }[];
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     summary: "Code similarity and AI-authorship detection that produces evidence, not just a score.",
     desc: "Code similarity and AI-authorship detection for schools and universities. The output isn't just a score: it's evidence a faculty member can act on and a committee can defend.",
     highlights: ["Multiple similarity engines combined by a learned fusion model", "AI-generated code detector", "Professor-facing review workspace"],
-    caseStudy: {
+    productPage: {
       slug: "codeprovenance",
       challenge: [
         "Programming courses now face two integrity questions at once: whether submissions were copied from each other, and whether they were written by AI.",
