@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { Link } from "react-router-dom";
 import { sendContact, type ContactSource } from "../lib/sendContact";
 
@@ -28,6 +28,10 @@ const ContactForm = ({
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // False in the prerendered HTML: until JavaScript loads, a submit would be a plain browser form post
+  // that never reaches us, so keep the button disabled until then
+  const [isReady, setIsReady] = useState(false);
+  useEffect(() => setIsReady(true), []);
 
   const id = (field: string) => `${source}-${field}`;
   const half = layout === "split" ? "" : "md:col-span-2";
@@ -65,7 +69,7 @@ const ContactForm = ({
           ✗ {error}
         </div>
       )}
-      <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-5">
+      <form method="post" onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-5">
         <div className={half}>
           <label htmlFor={id("name")} className={labelClass}>Name<span className="text-red-500">*</span></label>
           <input type="text" id={id("name")} name="name" autoComplete="name" maxLength={200}
@@ -104,7 +108,7 @@ const ContactForm = ({
           </p>
           <button
             type="submit"
-            disabled={isSubmitting}
+            disabled={isSubmitting || !isReady}
             className="shrink-0 whitespace-nowrap px-10 py-3 bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/25 transition text-lg disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? "Sending..." : submitLabel}
