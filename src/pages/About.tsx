@@ -64,7 +64,7 @@ const About = () => (
               Our own platforms for grading, academic integrity, workload planning, civic information and financial
               analysis. Each is designed, built and supported by our team.
             </p>
-            <Link to="/portfolio" className="text-cyan-300 font-semibold hover:text-cyan-200">See our projects →</Link>
+            <Link to="/products" className="text-cyan-300 font-semibold hover:text-cyan-200">See our products →</Link>
           </div>
           <div className="bg-white/5 p-8 rounded-xl border border-white/10">
             <h3 className="text-xl font-bold text-white mb-3">We consult and build for clients</h3>

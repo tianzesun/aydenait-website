@@ -36,7 +36,7 @@ const Footer = () => {
             <h2 className="text-white font-bold text-sm uppercase tracking-wider mb-4">Company</h2>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/portfolio" className="text-gray-400 hover:text-white transition-colors">Portfolio</Link>
+                <Link to="/products" className="text-gray-400 hover:text-white transition-colors">Products</Link>
               </li>
               <li>
                 <Link to="/careers" className="text-gray-400 hover:text-white transition-colors">Careers</Link>

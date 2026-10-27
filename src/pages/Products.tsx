@@ -2,23 +2,23 @@ import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 import { projects } from "../data/projects";
 
-const Clients = () => (
+const Products = () => (
   <>
     <SEO
-      title="Portfolio - AI Projects | AydenAIT"
+      title="Products - AI Platforms | AydenAIT"
       description="AI systems built by AydenAIT: CodeProvenance, DeepRubric and a faculty workload system for universities, the Hey Markham assistant and AlphOpt."
-      keywords="AI consulting portfolio, AI in higher education, code similarity detection, AI grading, AI city services assistant, options analysis AI"
-      ogUrl="https://aydenait.com/portfolio"
-      canonical="https://aydenait.com/portfolio"
+      keywords="AI products, AI in higher education, code similarity detection, AI grading, AI city services assistant, options analysis AI"
+      ogUrl="https://aydenait.com/products"
+      canonical="https://aydenait.com/products"
     />
 
     <section className="py-16 bg-gradient-to-t from-blue-950 to-[#10172a] min-h-screen">
       <div className="max-w-6xl mx-auto px-4">
         {/* Hero */}
         <div className="text-center mb-14">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Work</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Products</h1>
           <p className="text-xl text-blue-200 max-w-2xl mx-auto">
-            AI systems in production across higher education, civic services and financial services.
+            AI platforms designed, built and supported by AydenAIT, across higher education, civic services and financial services.
           </p>
         </div>
 
@@ -57,8 +57,13 @@ const Clients = () => (
               )}
               <span className="text-xs font-bold uppercase tracking-wider text-cyan-300 mb-3">{project.sector}</span>
               <h2 className="text-2xl font-bold text-white mb-3">{project.title}</h2>
+              {project.deployment && (
+                <p className="self-start mb-4 px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/30 text-sm font-semibold text-cyan-200">
+                  {project.deployment}
+                </p>
+              )}
               <p className="text-blue-100 mb-5">{project.desc}</p>
-              <ul className="space-y-2 text-sm text-blue-200">
+              <ul className="space-y-2 text-sm text-blue-200 mb-6">
                 {project.highlights.map((h) => (
                   <li key={h} className="flex gap-2">
                     <span className="text-cyan-400" aria-hidden="true">✓</span>
@@ -68,8 +73,8 @@ const Clients = () => (
               </ul>
               {project.productPage && (
                 <Link
-                  to={`/portfolio/${project.productPage.slug}`}
-                  className="mt-6 self-start py-1 font-semibold text-cyan-300 hover:text-white transition-colors"
+                  to={`/products/${project.productPage.slug}`}
+                  className="mt-auto self-start py-1 font-semibold text-cyan-300 hover:text-white transition-colors"
                 >
                   Learn more about {project.title} <span aria-hidden="true">→</span>
                 </Link>
@@ -105,4 +110,4 @@ const Clients = () => (
   </>
 );
 
-export default Clients;
+export default Products;

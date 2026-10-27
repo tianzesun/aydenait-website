@@ -112,10 +112,10 @@ const Home = () => (
               Start Your AI Project
             </Link>
             <Link
-              to="/portfolio"
+              to="/products"
               className="px-8 py-4 rounded-full text-white border-2 border-white/30 font-bold hover:bg-white/10 hover:border-white transition-all text-lg backdrop-blur-sm"
             >
-              See Our Work
+              See Our Products
             </Link>
           </div>
         </div>
@@ -170,7 +170,15 @@ const Home = () => (
           {educationProjects.map((project) => (
             <div key={project.title} className="flex flex-col bg-white/10 rounded-2xl p-7 border border-blue-700/50 hover:border-cyan-400 transition">
               <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-              <p className="text-blue-100 text-sm leading-relaxed">{project.summary}</p>
+              <p className="text-blue-100 text-sm leading-relaxed mb-5">{project.summary}</p>
+              {project.productPage && (
+                <Link
+                  to={`/products/${project.productPage.slug}`}
+                  className="mt-auto self-start py-1 text-sm font-semibold text-cyan-300 hover:text-white transition-colors"
+                >
+                  Learn more <span aria-hidden="true">→</span>
+                </Link>
+              )}
             </div>
           ))}
         </div>
@@ -187,8 +195,8 @@ const Home = () => (
         </div>
 
         <div className="text-center">
-          <Link to="/portfolio" className="inline-flex items-center gap-2 text-cyan-300 hover:text-cyan-200 font-semibold transition-all hover:gap-3">
-            <span>See the projects in detail</span>
+          <Link to="/products" className="inline-flex items-center gap-2 text-cyan-300 hover:text-cyan-200 font-semibold transition-all hover:gap-3">
+            <span>See the products in detail</span>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>

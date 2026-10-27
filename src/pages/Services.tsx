@@ -49,8 +49,8 @@ const Services = () => (
             </div>
           ))}
         </div>
-        <Link to="/portfolio" className="inline-block mt-6 text-cyan-300 font-semibold hover:text-cyan-200 underline underline-offset-4">
-          See our education projects →
+        <Link to="/products" className="inline-block mt-6 text-cyan-300 font-semibold hover:text-cyan-200 underline underline-offset-4">
+          See our education products →
         </Link>
       </div>
 

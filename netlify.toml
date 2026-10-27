@@ -3,6 +3,17 @@
   publish = "dist"
   functions = "netlify/functions"
 
+# The Portfolio section moved to /products
+[[redirects]]
+  from = "/portfolio"
+  to = "/products"
+  status = 301
+
+[[redirects]]
+  from = "/portfolio/*"
+  to = "/products/:splat"
+  status = 301
+
 # Every route is prerendered to its own .html file (scripts/prerender.mjs), so anything
 # else is a genuine 404. Netlify only applies this when no file matches the path.
 [[redirects]]
