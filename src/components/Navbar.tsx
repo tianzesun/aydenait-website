@@ -1,5 +1,5 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -27,6 +27,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { pathname } = useLocation();
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,6 +41,19 @@ const Navbar = () => {
   useEffect(() => {
     setIsMenuOpen(false);
   }, [pathname]);
+
+  // Escape closes the mobile menu and returns focus to the menu button
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsMenuOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isMenuOpen]);
 
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-500 ${isScrolled
@@ -66,6 +80,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
+          ref={menuButtonRef}
           className={`md:hidden p-2 -mr-2 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 transition-colors duration-300 ${isScrolled ? 'text-gray-800' : 'text-white'}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -88,12 +103,12 @@ const Navbar = () => {
           <ul className="flex flex-col py-5 px-4 space-y-2">
             {navLinks.map((link) => (
               <li key={link.to}>
-                <NavLink to={link.to} end={link.to === "/"} className={mobileLinkClass}>
+                <NavLink to={link.to} end={link.to === "/"} className={mobileLinkClass} onClick={() => setIsMenuOpen(false)}>
                   {link.label}
                 </NavLink>
               </li>
             ))}
-            <li className="pt-2"><Link to="/contact" className="block px-6 py-2.5 rounded-full bg-blue-600 text-white font-bold text-center hover:bg-blue-700 transition-all text-base shadow-lg hover:shadow-xl">Get in Touch</Link></li>
+            <li className="pt-2"><Link to="/contact" onClick={() => setIsMenuOpen(false)} className="block px-6 py-2.5 rounded-full bg-blue-600 text-white font-bold text-center hover:bg-blue-700 transition-all text-base shadow-lg hover:shadow-xl">Get in Touch</Link></li>
           </ul>
         </div>
       )}

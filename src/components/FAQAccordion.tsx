@@ -68,14 +68,14 @@ const FAQAccordion = () => {
             <button
               className="w-full bg-white/10 px-6 py-4 rounded-xl text-left text-blue-100 font-semibold hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 transition flex justify-between items-center"
               aria-expanded={open === idx}
+              aria-controls={`faq-answer-${idx}`}
               onClick={() => setOpen(open === idx ? null : idx)}
             >
               <span>{f.q}</span>
               <span className="text-cyan-400 text-xl ml-4">{open === idx ? '−' : '+'}</span>
             </button>
-            {open === idx && (
-              <div className="p-6 bg-white/5 rounded-b-xl text-blue-50 border-t border-blue-800/30 leading-relaxed">{f.a}</div>
-            )}
+            {/* Always rendered (hidden when closed) so answers are in the prerendered HTML for search and find-in-page */}
+            <div id={`faq-answer-${idx}`} hidden={open !== idx} className="p-6 bg-white/5 rounded-b-xl text-blue-50 border-t border-blue-800/30 leading-relaxed">{f.a}</div>
           </div>
         ))}
 
