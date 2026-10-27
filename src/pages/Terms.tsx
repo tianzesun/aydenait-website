@@ -16,7 +16,7 @@ const Terms = () => (
         <h1 className="text-3xl font-bold mb-6 text-blue-200">Terms of Use</h1>
       <p className="mb-4">
         These terms apply to your use of aydenait.com (the "website"), operated by{" "}
-        <span className="font-bold">AydenAIT Solution</span> ("AydenAIT", "we"). By using the website, you agree to
+        <span className="font-bold">AydenAIT Solution Inc.</span> ("AydenAIT", "we"). By using the website, you agree to
         these terms. If you do not agree, please do not use the website.
       </p>
 
@@ -102,7 +102,7 @@ const Terms = () => (
         For questions about these terms, email{" "}
         <a className="underline text-blue-300" href="mailto:contact@aydenait.com">contact@aydenait.com</a>.
         <br />
-        AydenAIT Solution, Toronto, Ontario, Canada
+        AydenAIT Solution Inc., Toronto, Ontario, Canada
       </p>
       <p className="text-xs mt-8 text-blue-400">Last updated: October 2026</p>
     </div>

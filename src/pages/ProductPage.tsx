@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import SEO from "../components/SEO";
+import StructuredData from "../components/StructuredData";
 import { projects } from "../data/projects";
 import NotFound from "./NotFound";
 
@@ -10,6 +11,27 @@ const ProductPage = () => {
   if (!project?.productPage) return <NotFound />;
   const page = project.productPage;
   const url = `https://aydenait.com/products/${page.slug}`;
+  const otherProducts = projects.filter((p) => p !== project && p.productPage);
+
+  // Tells search engines what the product is and who makes it, and gives the page a breadcrumb trail
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: project.title,
+    description: project.summary,
+    url,
+    applicationCategory: "BusinessApplication",
+    publisher: { "@type": "Organization", name: "AydenAIT Solution Inc.", url: "https://aydenait.com" },
+  };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://aydenait.com/" },
+      { "@type": "ListItem", position: 2, name: "Products", item: "https://aydenait.com/products" },
+      { "@type": "ListItem", position: 3, name: project.title, item: url },
+    ],
+  };
 
   return (
     <>
@@ -19,6 +41,8 @@ const ProductPage = () => {
         ogUrl={url}
         canonical={url}
       />
+      <StructuredData data={productSchema} />
+      <StructuredData data={breadcrumbSchema} />
 
       <section className="py-16 bg-gradient-to-t from-blue-950 to-[#10172a] min-h-screen">
         <div className="max-w-4xl mx-auto px-4">
@@ -101,7 +125,7 @@ const ProductPage = () => {
           <div className="text-center bg-white/5 rounded-2xl p-10 border border-blue-700/50">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">See {project.title} in Action</h2>
             <p className="text-blue-100 mb-8">
-              We would be pleased to give you a demonstration and discuss how {project.title} could work at your institution.
+              We would be pleased to give you a demonstration and discuss how {project.title} could work for your organization.
             </p>
             <Link
               to="/contact"
@@ -110,6 +134,26 @@ const ProductPage = () => {
               Request a Demo
             </Link>
           </div>
+
+          {/* Other products */}
+          {otherProducts.length > 0 && (
+            <section className="mt-16">
+              <h2 className="text-2xl font-bold text-white mb-6">Other Products</h2>
+              <div className="grid sm:grid-cols-2 gap-5">
+                {otherProducts.map((other) => (
+                  <Link
+                    key={other.title}
+                    to={`/products/${other.productPage!.slug}`}
+                    className="block bg-white/5 rounded-2xl p-6 border border-white/10 hover:border-cyan-400 transition"
+                  >
+                    <span className="text-xs font-bold uppercase tracking-wider text-cyan-300">{other.sector}</span>
+                    <h3 className="text-lg font-bold text-white mt-2 mb-2">{other.title}</h3>
+                    <p className="text-sm text-blue-200 leading-relaxed">{other.summary}</p>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
         </div>
       </section>
     </>

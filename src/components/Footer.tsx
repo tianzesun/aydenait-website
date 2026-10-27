@@ -93,7 +93,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Year is fixed at build time in the prerendered HTML and updated on hydration */}
             <div className="text-xs text-gray-400" suppressHydrationWarning>
-              © {new Date().getFullYear()} AydenAIT Solution. All rights reserved.
+              © {new Date().getFullYear()} AydenAIT Solution Inc. All rights reserved.
             </div>
             <div className="flex gap-6 text-xs">
               <Link to="/privacy" className="inline-block py-1 text-gray-400 hover:text-white transition-colors">

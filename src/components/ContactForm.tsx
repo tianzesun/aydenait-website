@@ -104,7 +104,7 @@ const ContactForm = ({
         </div>
         <div className="md:col-span-2 flex flex-col md:flex-row md:items-center md:justify-between gap-4 mt-1">
           <p className="text-xs text-blue-300">
-            Your information is kept confidential and an NDA is available on request. See our <Link to="/privacy" className="underline hover:text-blue-100">privacy policy</Link>.
+            Your information is kept confidential and an NDA is available on request. See our <Link to="/privacy" className="underline hover:text-blue-100">privacy policy</Link> and <Link to="/security" className="underline hover:text-blue-100">security practices</Link>.
           </p>
           <button
             type="submit"

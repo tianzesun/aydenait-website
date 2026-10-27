@@ -3,6 +3,7 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "AydenAIT Solution",
+  "legalName": "AydenAIT Solution Inc.",
   "url": "https://aydenait.com",
   "logo": "https://aydenait.com/logo.svg",
   "description": "AI solutions for education, civic services, finance and business: AI assistants, AI-assisted review, detection and risk analysis, workflow automation, analytics and AI integration",

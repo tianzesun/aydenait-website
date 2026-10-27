@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const faqs = [
+// `more` adds a link under the answer
+const faqs: { q: string; a: string; more?: { to: string; label: string } }[] = [
   {
     q: "What services does AydenAIT provide?",
     a: "We design, build and support custom AI solutions: AI assistants and chatbots, AI-assisted review and scoring, detection and risk analysis, planning and workflow automation, analytics and decision support, and AI integration with your existing systems. Each engagement can begin with a complimentary AI readiness assessment."
@@ -36,7 +37,8 @@ const faqs = [
   },
   {
     q: "How do you handle data security and confidentiality?",
-    a: "We offer an NDA before detailed discussions, limit access to the people working on your project, and design data handling around your organization's privacy, security and retention requirements. AI-assisted decisions include human review and an audit trail. Where required, we work within your institution's existing security and policy frameworks."
+    a: "We offer an NDA before detailed discussions, limit access to the people working on your project, and design data handling around your organization's privacy, security and retention requirements. AI-assisted decisions include human review and an audit trail. Where required, we work within your institution's existing security and policy frameworks.",
+    more: { to: "/security", label: "Read about our security and privacy practices" },
   },
   {
     q: "How do you keep AI results accurate and accountable?",
@@ -75,7 +77,14 @@ const FAQAccordion = () => {
               <span className="text-cyan-400 text-xl ml-4">{open === idx ? '−' : '+'}</span>
             </button>
             {/* Always rendered (hidden when closed) so answers are in the prerendered HTML for search and find-in-page */}
-            <div id={`faq-answer-${idx}`} hidden={open !== idx} className="p-6 bg-white/5 rounded-b-xl text-blue-50 border-t border-blue-800/30 leading-relaxed">{f.a}</div>
+            <div id={`faq-answer-${idx}`} hidden={open !== idx} className="p-6 bg-white/5 rounded-b-xl text-blue-50 border-t border-blue-800/30 leading-relaxed">
+              {f.a}
+              {f.more && (
+                <Link to={f.more.to} className="block mt-3 font-semibold text-cyan-300 hover:text-white transition-colors">
+                  {f.more.label} <span aria-hidden="true">→</span>
+                </Link>
+              )}
+            </div>
           </div>
         ))}
 

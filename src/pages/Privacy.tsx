@@ -15,7 +15,7 @@ const Privacy = () => (
       <div className="max-w-3xl mx-auto px-6 text-blue-100">
         <h1 className="text-3xl font-bold mb-6 text-blue-200">Privacy Policy</h1>
       <p className="mb-4 text-blue-200">
-        This policy explains how <span className="font-bold">AydenAIT Solution</span> ("AydenAIT", "we") collects, uses,
+        This policy explains how <span className="font-bold">AydenAIT Solution Inc.</span> ("AydenAIT", "we") collects, uses,
         shares and protects personal information through this website, aydenait.com. We handle personal information in
         accordance with Canada's <i>Personal Information Protection and Electronic Documents Act</i> (PIPEDA).
       </p>
@@ -111,7 +111,7 @@ const Privacy = () => (
         For privacy questions or requests, email{" "}
         <a className="underline text-blue-300" href="mailto:contact@aydenait.com">contact@aydenait.com</a>.
         <br />
-        AydenAIT Solution, Toronto, Ontario, Canada
+        AydenAIT Solution Inc., Toronto, Ontario, Canada
       </p>
       <p className="text-xs mt-8 text-blue-400">Last updated: October 2026</p>
     </div>
