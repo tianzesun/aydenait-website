@@ -269,63 +269,63 @@ const Careers = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-[#10172a]">
         <div className="max-w-6xl mx-auto px-4">
 
           {/* Why Join Us */}
-          <div className="mb-16 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 md:p-12 border border-blue-200">
-            <h2 className="text-3xl font-bold text-blue-900 mb-6 text-center">Why Join AydenAIT?</h2>
+          <div className="mb-16 bg-gradient-to-br from-blue-900/60 to-cyan-900/30 rounded-2xl p-8 md:p-12 border border-cyan-700/40">
+            <h2 className="text-3xl font-bold text-white mb-6 text-center">Why Join AydenAIT?</h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-blue-800 mb-3 flex items-center gap-2">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                <h3 className="text-lg font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                  <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   <span>Professional Growth</span>
                 </h3>
-                <ul className="text-gray-700 space-y-2">
+                <ul className="text-blue-100 space-y-2">
                   <li>• Build AI used by real universities, public services and businesses</li>
                   <li>• Annual learning budget for courses, certifications, and conferences</li>
                   <li>• Clear career progression paths with regular feedback and reviews</li>
                   <li>• Mentorship from experienced AI consultants and engineers</li>
                 </ul>
               </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-blue-800 mb-3 flex items-center gap-2">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                <h3 className="text-lg font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                  <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <span>Work-Life Balance</span>
                 </h3>
-                <ul className="text-gray-700 space-y-2">
+                <ul className="text-blue-100 space-y-2">
                   <li>• Flexible remote work or hybrid options (Toronto office available)</li>
                   <li>• Generous paid time off and flexible scheduling</li>
                   <li>• Comprehensive health, dental, and vision coverage</li>
                   <li>• Supportive, inclusive team culture that values your well-being</li>
                 </ul>
               </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-blue-800 mb-3 flex items-center gap-2">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                <h3 className="text-lg font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                  <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <span>Impactful Work</span>
                 </h3>
-                <ul className="text-gray-700 space-y-2">
+                <ul className="text-blue-100 space-y-2">
                   <li>• Deliver AI solutions that improve how organizations operate</li>
                   <li>• Work on diverse projects across industries and technologies</li>
                   <li>• Contribute to open-source projects and thought leadership</li>
                   <li>• See the direct business impact of your technical contributions</li>
                 </ul>
               </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-blue-800 mb-3 flex items-center gap-2">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                <h3 className="text-lg font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                  <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                   <span>Team Culture</span>
                 </h3>
-                <ul className="text-gray-700 space-y-2">
+                <ul className="text-blue-100 space-y-2">
                   <li>• Collaborative, transparent management with open communication</li>
                   <li>• Diverse, inclusive team that values different perspectives</li>
                   <li>• Regular team events, hackathons, and learning sessions</li>
@@ -337,8 +337,8 @@ const Careers = () => {
 
           {/* Open Positions */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-blue-900 mb-3 text-center">Open Positions</h2>
-            <p className="text-gray-600 text-center mb-6 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-white mb-3 text-center">Open Positions</h2>
+            <p className="text-blue-200 text-center mb-6 max-w-2xl mx-auto">
               We're looking for talented individuals who are passionate about AI and technology. Click any position to see full details.
             </p>
 
@@ -346,7 +346,7 @@ const Careers = () => {
             <div className="max-w-2xl mx-auto mb-10">
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                   </svg>
                 </div>
@@ -355,12 +355,12 @@ const Careers = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search by job title, skills, location, or keywords..."
-                  className="w-full pl-12 pr-4 py-4 text-gray-900 border-2 border-gray-300 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all shadow-sm"
+                  className="w-full pl-12 pr-4 py-4 bg-white/5 text-white placeholder-blue-300 border-2 border-white/15 rounded-xl focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/40 transition-all"
                 />
                 {searchQuery && (
                   <button
                     onClick={() => setSearchQuery("")}
-                    className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600"
+                    className="absolute inset-y-0 right-0 pr-4 flex items-center text-blue-300 hover:text-white"
                     aria-label="Clear search"
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -370,7 +370,7 @@ const Careers = () => {
                 )}
               </div>
               {searchQuery && (
-                <p className="mt-2 text-sm text-gray-600 text-center">
+                <p className="mt-2 text-sm text-blue-200 text-center">
                   Found {filteredJobs.length} position{filteredJobs.length !== 1 ? 's' : ''} matching "{searchQuery}"
                 </p>
               )}
@@ -382,29 +382,29 @@ const Careers = () => {
                 {filteredJobs.map((job, i) => (
                 <div
                   key={i}
-                  className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow"
+                  className="bg-white/5 rounded-2xl border border-white/10 overflow-hidden hover:border-cyan-400/50 transition-colors"
                 >
                   {/* Job Header */}
                   <button
                     onClick={() => setExpandedJob(expandedJob === i ? null : i)}
                     aria-expanded={expandedJob === i}
-                    className="w-full text-left p-6 hover:bg-gray-50 transition-colors"
+                    className="w-full text-left p-6 hover:bg-white/5 transition-colors"
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-3">
                           <span className={`px-4 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wide ${
                             job.type === 'Full-time'
-                              ? 'bg-blue-600 text-white'
-                              : 'bg-purple-600 text-white'
+                              ? 'bg-cyan-400/10 border border-cyan-400/30 text-cyan-200'
+                              : 'bg-blue-400/10 border border-blue-400/30 text-blue-200'
                           }`}>
                             {job.type}
                           </span>
                         </div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">{job.title}</h3>
-                        <p className="text-gray-600 mb-3">{job.summary}</p>
+                        <h3 className="text-xl font-bold text-white mb-2">{job.title}</h3>
+                        <p className="text-blue-200 mb-3">{job.summary}</p>
                         <div className="flex flex-wrap gap-3">
-                          <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium flex items-center gap-1.5">
+                          <span className="px-3 py-1 bg-white/5 border border-white/10 text-blue-100 rounded-full text-sm font-medium flex items-center gap-1.5">
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -413,7 +413,7 @@ const Careers = () => {
                           </span>
                         </div>
                       </div>
-                      <span className="text-2xl text-blue-600 flex-shrink-0">
+                      <span className="text-2xl text-cyan-300 flex-shrink-0">
                         {expandedJob === i ? '−' : '+'}
                       </span>
                     </div>
@@ -421,20 +421,20 @@ const Careers = () => {
 
                   {/* Expanded Details */}
                   {expandedJob === i && (
-                    <div className="px-6 pb-6 border-t border-gray-100 pt-6 bg-gradient-to-br from-gray-50 to-blue-50">
+                    <div className="px-6 pb-6 border-t border-white/10 pt-6 bg-white/[0.03]">
                       <div className="grid md:grid-cols-2 gap-6">
                         {/* Responsibilities */}
                         <div>
-                          <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                            <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <h4 className="font-bold text-white mb-3 flex items-center gap-2">
+                            <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                             </svg>
                             <span>Responsibilities</span>
                           </h4>
-                          <ul className="space-y-2 text-gray-700">
+                          <ul className="space-y-2 text-blue-100">
                             {job.responsibilities.map((resp, idx) => (
                               <li key={idx} className="flex items-start gap-2">
-                                <span className="text-blue-500 mt-1">•</span>
+                                <span className="text-cyan-400 mt-1">•</span>
                                 <span className="text-sm">{resp}</span>
                               </li>
                             ))}
@@ -443,16 +443,16 @@ const Careers = () => {
 
                         {/* Requirements */}
                         <div>
-                          <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                            <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <h4 className="font-bold text-white mb-3 flex items-center gap-2">
+                            <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             <span>Requirements</span>
                           </h4>
-                          <ul className="space-y-2 text-gray-700">
+                          <ul className="space-y-2 text-blue-100">
                             {job.requirements.map((req, idx) => (
                               <li key={idx} className="flex items-start gap-2">
-                                <span className="text-blue-500 mt-1">•</span>
+                                <span className="text-cyan-400 mt-1">•</span>
                                 <span className="text-sm">{req}</span>
                               </li>
                             ))}
@@ -462,16 +462,16 @@ const Careers = () => {
                         {/* Nice to Have or What You'll Learn */}
                         {job.niceToHave && (
                           <div className="md:col-span-2">
-                            <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                              <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <h4 className="font-bold text-white mb-3 flex items-center gap-2">
+                              <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                               </svg>
                               <span>Nice to Have</span>
                             </h4>
-                            <ul className="grid md:grid-cols-2 gap-2 text-gray-700">
+                            <ul className="grid md:grid-cols-2 gap-2 text-blue-100">
                               {job.niceToHave.map((item, idx) => (
                                 <li key={idx} className="flex items-start gap-2">
-                                  <span className="text-blue-500 mt-1">•</span>
+                                  <span className="text-cyan-400 mt-1">•</span>
                                   <span className="text-sm">{item}</span>
                                 </li>
                               ))}
@@ -481,16 +481,16 @@ const Careers = () => {
 
                         {job.whatYouWillLearn && (
                           <div className="md:col-span-2">
-                            <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                              <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <h4 className="font-bold text-white mb-3 flex items-center gap-2">
+                              <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                               </svg>
                               <span>What You'll Learn</span>
                             </h4>
-                            <ul className="grid md:grid-cols-2 gap-2 text-gray-700">
+                            <ul className="grid md:grid-cols-2 gap-2 text-blue-100">
                               {job.whatYouWillLearn.map((item, idx) => (
                                 <li key={idx} className="flex items-start gap-2">
-                                  <span className="text-blue-500 mt-1">•</span>
+                                  <span className="text-cyan-400 mt-1">•</span>
                                   <span className="text-sm">{item}</span>
                                 </li>
                               ))}
@@ -500,7 +500,7 @@ const Careers = () => {
                       </div>
 
                       {/* Apply Button */}
-                      <div className="mt-6 pt-4 border-t border-gray-200">
+                      <div className="mt-6 pt-4 border-t border-white/10">
                         <a
                           href={applyHref(job.title)}
                           className="inline-block px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold rounded-lg hover:from-blue-700 hover:to-cyan-600 transition shadow-lg hover:shadow-xl"
@@ -515,11 +515,11 @@ const Careers = () => {
               </div>
             ) : (
               <div className="text-center py-16 px-4">
-                <svg className="w-20 h-20 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-20 h-20 text-blue-400/50 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <h3 className="text-xl font-bold text-gray-700 mb-2">No positions found</h3>
-                <p className="text-gray-600 mb-4">
+                <h3 className="text-xl font-bold text-white mb-2">No positions found</h3>
+                <p className="text-blue-200 mb-4">
                   We couldn't find any positions matching "{searchQuery}"
                 </p>
                 <button
