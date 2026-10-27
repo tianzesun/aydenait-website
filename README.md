@@ -37,6 +37,7 @@ Routes are defined in `src/App.tsx`. The product list lives in `src/pages/Produc
 ## Common edits
 
 - **Products:** edit `src/data/projects.ts`. Each entry has a sector, a short summary (used on Home), a full description and highlights (used on Products), an optional deployment badge and screenshots, and an optional `productPage` for its detail page. When you add a product page, add its URL to `public/sitemap.xml`. Only publish what has been approved for public use.
+- **Services:** edit `src/data/solutions.ts`. Each service has a summary and proof line (Home, Services and footer) and use cases for its page at `/services/<slug>`, rendered by `src/pages/ServicePage.tsx`. `relatedProduct` links the page to a product. When you add a service, add its URL to `public/sitemap.xml`.
 - **Page text:** edit the matching file in `src/pages/`.
 - **FAQ:** edit the `faqs` array in `src/components/FAQAccordion.tsx`.
 - **Search and sharing:** each page sets its title and description through the `SEO` component. Site-wide defaults are in `index.html` and `src/components/SEO.tsx`, and organization details for search engines are in `src/components/StructuredData.tsx`. When you add or rename a page, update `public/sitemap.xml`.

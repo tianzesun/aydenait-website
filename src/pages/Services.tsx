@@ -128,13 +128,20 @@ const Services = () => (
       </p>
       <div className="grid md:grid-cols-2 gap-6 mb-8">
         {solutions.map((item) => (
-          <div key={item.title} className="bg-white/5 rounded-xl p-6 border border-blue-800 hover:border-cyan-600/50 transition-colors">
+          <Link
+            key={item.title}
+            to={`/services/${item.slug}`}
+            className="flex flex-col bg-white/5 rounded-xl p-6 border border-blue-800 hover:border-cyan-400 transition-colors"
+          >
             <div className="flex items-center gap-3 mb-3">
               <Icon name={item.icon} className="w-7 h-7 text-cyan-400 flex-shrink-0" />
               <h3 className="text-lg font-bold text-cyan-300">{item.title}</h3>
             </div>
-            <p className="text-blue-100 text-sm">{item.desc}</p>
-          </div>
+            <p className="text-blue-100 text-sm mb-4">{item.desc}</p>
+            <span className="mt-auto text-sm font-semibold text-cyan-300">
+              Learn more <span aria-hidden="true">→</span>
+            </span>
+          </Link>
         ))}
       </div>
 

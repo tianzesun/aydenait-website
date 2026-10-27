@@ -5,7 +5,7 @@ import { organizationSchema, websiteSchema } from "../data/schemas";
 import ContactForm from "../components/ContactForm";
 import Icon, { type IconName } from "../components/Icon";
 import { projects } from "../data/projects";
-import { solutions } from "../data/solutions";
+import { engagementSteps, solutions } from "../data/solutions";
 
 const educationNeeds: { icon: IconName; title: string; desc: string }[] = [
   { icon: "clipboardCheck", title: "Grading & Feedback", desc: "Rubric-based, AI-assisted scoring that keeps instructors in charge of every final mark." },
@@ -35,12 +35,6 @@ const sectors: { icon: IconName; title: string; desc: string; example: string }[
   },
 ];
 
-const steps = [
-  { title: "Free Consultation", desc: "A 30-minute conversation about your objectives, data and constraints." },
-  { title: "Assessment & Proposal", desc: "A written recommendation covering scope, timeline, cost and risks." },
-  { title: "Pilot", desc: "A working prototype on your own use case, so results can be evaluated before further investment." },
-  { title: "Launch & Support", desc: "Production deployment, staff training, and ongoing monitoring and improvement." },
-];
 
 const principles = [
   { title: "Proven in production", desc: "Our own platforms are used every day in higher education. We know what it takes to keep AI working after launch." },
@@ -141,6 +135,12 @@ const Home = () => (
               <h3 className="font-bold text-xl mb-3 text-white">{item.title}</h3>
               <p className="text-blue-100 text-sm leading-relaxed mb-5">{item.desc}</p>
               <p className="mt-auto pt-4 border-t border-white/10 text-sm text-cyan-200">{item.proof}</p>
+              <Link
+                to={`/services/${item.slug}`}
+                className="mt-4 self-start py-1 text-sm font-semibold text-cyan-300 hover:text-white transition-colors"
+              >
+                Learn more <span aria-hidden="true">→</span>
+              </Link>
             </div>
           ))}
         </div>
@@ -241,7 +241,7 @@ const Home = () => (
           </p>
         </div>
         <ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((step, index) => (
+          {engagementSteps.map((step, index) => (
             <li key={step.title} className="rounded-2xl p-6 bg-white/5 border border-white/10">
               <div className="w-10 h-10 mb-4 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center font-bold text-blue-950">
                 {index + 1}

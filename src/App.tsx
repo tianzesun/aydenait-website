@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
+import ServicePage from "./pages/ServicePage";
 import Products from "./pages/Products";
 import ProductPage from "./pages/ProductPage";
 import Contact from "./pages/Contact";
@@ -32,6 +33,7 @@ const AnimatedRoutes = () => {
         <Routes location={location}>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/services/:slug" element={<ServicePage />} />
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:slug" element={<ProductPage />} />
