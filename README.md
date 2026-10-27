@@ -2,7 +2,7 @@
 
 Marketing website for [AydenAIT Solution](https://aydenait.com), a Toronto-based AI company building solutions for education, civic services, finance and business.
 
-Built with React 19, TypeScript, Vite and Tailwind CSS, and deployed on Netlify. The contact and assessment forms send email through a Netlify serverless function.
+Built with React 19, TypeScript, Vite and Tailwind CSS, and deployed on Vercel. The contact and assessment forms send email through a Vercel serverless function.
 
 ## Getting started
 
@@ -16,34 +16,34 @@ npm run preview   # serve the built site locally
 npm run lint      # run ESLint
 ```
 
-`npm run dev` serves the pages only. To test the contact form locally, run the site with the [Netlify CLI](https://docs.netlify.com/cli/get-started/) (`netlify dev`) so the function at `/api/contact` is available.
+`npm run dev` serves the pages only. To test the contact form locally, run the site with the [Vercel CLI](https://vercel.com/docs/cli) (`vercel dev`) so the function at `/api/contact` is available.
 
 ## Project structure
 
 ```
 src/
-  pages/            One file per route (Home, Services, About, Portfolio, Careers, FAQ, Contact, Privacy, Terms)
+  pages/            One file per route (Home, Services, About, Products, ProductPage, Careers, FAQ, Contact, Privacy, Terms)
   components/       Navbar, Footer, SEO, StructuredData, FAQAccordion and animation helpers
-  data/projects.ts  Project list shown on the Home and Portfolio pages
+  data/projects.ts  Product list shown on the Home and Products pages
   lib/              Client-side helpers (sendContact posts to the contact function)
-netlify/functions/
+api/
   contact.ts        Validates form submissions and sends them by email
 public/             Static assets: logo, og-image.png, robots.txt, sitemap.xml
 docs/nda/           NDA templates for client engagements (not part of the website)
 ```
 
-Routes are defined in `src/App.tsx`. The Portfolio page lives in `src/pages/Clients.tsx` and is served at `/portfolio`.
+Routes are defined in `src/App.tsx`. The product list lives in `src/pages/Products.tsx` (served at `/products`), and each product's page is rendered by `src/pages/ProductPage.tsx` at `/products/<slug>`. Old `/portfolio` URLs redirect there (see `vercel.json`).
 
 ## Common edits
 
-- **Projects:** edit `src/data/projects.ts`. Each entry has a sector, an optional status badge, a short summary (used on Home), a full description and highlights (used on Portfolio), and an optional link. Only publish what the client has approved for public use.
+- **Products:** edit `src/data/projects.ts`. Each entry has a sector, a short summary (used on Home), a full description and highlights (used on Products), an optional deployment badge and screenshots, and an optional `productPage` for its detail page. When you add a product page, add its URL to `public/sitemap.xml`. Only publish what has been approved for public use.
 - **Page text:** edit the matching file in `src/pages/`.
 - **FAQ:** edit the `faqs` array in `src/components/FAQAccordion.tsx`.
 - **Search and sharing:** each page sets its title and description through the `SEO` component. Site-wide defaults are in `index.html` and `src/components/SEO.tsx`, and organization details for search engines are in `src/components/StructuredData.tsx`. When you add or rename a page, update `public/sitemap.xml`.
 
 ## Contact form email
 
-The Contact page and the Home page assessment section use the same form component (`src/components/ContactForm.tsx`) and post to `/api/contact`, served by `netlify/functions/contact.ts`. The email subject says which form was used. The function validates input, escapes it before building the email, and sends it to `ADMIN_EMAIL` using the first provider that is configured:
+The Contact page and the Home page assessment section use the same form component (`src/components/ContactForm.tsx`) and post to `/api/contact`, served by `api/contact.ts`. The email subject says which form was used. The function validates input, escapes it before building the email, and sends it to `ADMIN_EMAIL` using the first provider that is configured:
 
 | Provider | Required variables | Optional |
 |----------|--------------------|----------|
@@ -53,10 +53,12 @@ The Contact page and the Home page assessment section use the same form componen
 
 `ADMIN_EMAIL` defaults to `contact@aydenait.com`.
 
-Set these in **Netlify → Site configuration → Environment variables**, never in the repository. If no provider is configured, the form shows visitors an error with a reference ID instead of pretending the message was sent, and the same ID appears in the function logs.
+Set these in **Vercel → Project → Settings → Environment Variables**, never in the repository. If no provider is configured, the form shows visitors an error with a reference ID instead of pretending the message was sent, and the same ID appears in the function logs.
 
-Spam protection: the form has a hidden honeypot field (`website`), and the function silently drops submissions that fill it in. The function's `config` also rate-limits each IP to 5 submissions per minute; Netlify answers further requests with 429.
+Spam protection: the form has a hidden honeypot field (`website`), and the function silently drops submissions that fill it in. Rate limiting is a Vercel Firewall rule (Project → Firewall → Configure → New Rule): requests whose path is `/api/contact`, rate-limited to 5 per 60 seconds per IP, answered with 429. Vercel functions don't share state between calls, so the limit can't live in the function itself.
 
 ## Deployment
 
-Netlify builds every push to `main` using `netlify.toml`: it runs `npm run build`, publishes `dist/`, and deploys the functions in `netlify/functions/`. Every route is prerendered to its own HTML file (`scripts/prerender.mjs`), so any other path gets the 404 page.
+Vercel builds every push to `main` using `vercel.json`: it runs `npm run build`, publishes `dist/`, and deploys the functions in `api/`. Every route is prerendered to its own HTML file (`scripts/prerender.mjs`); `cleanUrls` serves `/services` from `services.html`, and any other path gets `404.html`.
+
+`vercel.json` also sets the security headers. Before loading any new third-party script, font, image or API, add its source to the Content-Security-Policy there.

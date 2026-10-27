@@ -1,4 +1,3 @@
-import type { Config } from "@netlify/functions";
 import { randomUUID } from "node:crypto";
 
 interface ContactFormData {
@@ -29,7 +28,7 @@ const escapeHtml = (value: string) =>
 
 const jsonHeaders = { "Content-Type": "application/json" };
 
-export default async (req: Request) => {
+const handler = async (req: Request) => {
   // Only allow POST requests
   if (req.method !== "POST") {
     return new Response(JSON.stringify({ error: "Method not allowed" }), {
@@ -208,13 +207,6 @@ export default async (req: Request) => {
   }
 };
 
-// Served at /api/contact (the custom path replaces /.netlify/functions/contact). A person sends one
-// enquiry at a time, so 5 per minute per IP is generous; beyond that Netlify returns 429.
-export const config: Config = {
-  path: "/api/contact",
-  rateLimit: {
-    windowLimit: 5,
-    windowSize: 60,
-    aggregateBy: ["ip", "domain"],
-  },
-};
+// Vercel serves this file at /api/contact. Rate limiting (5 per minute per IP) is a Vercel Firewall
+// rule, set in the dashboard, because each function call runs on its own with no shared state.
+export default { fetch: handler };

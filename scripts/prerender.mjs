@@ -1,5 +1,5 @@
 // Writes a static HTML file per route after `vite build` (client) and `vite build --ssr` (server).
-// Routes come from public/sitemap.xml, plus 404.html for unknown URLs (see netlify.toml).
+// Routes come from public/sitemap.xml, plus 404.html, which Vercel serves for unknown URLs.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
@@ -15,7 +15,7 @@ const sitemap = await fs.readFile(path.join(root, "public", "sitemap.xml"), "utf
 const routes = [...sitemap.matchAll(/<loc>https:\/\/aydenait\.com([^<]*)<\/loc>/g)].map((m) => m[1] || "/");
 if (routes.length === 0) throw new Error("No routes found in public/sitemap.xml");
 
-// "/" -> index.html, "/services" -> services.html (Netlify serves /services from services.html)
+// "/" -> index.html, "/services" -> services.html (vercel.json cleanUrls serves /services from services.html)
 const pages = routes.map((route) => [route, route === "/" ? "index.html" : `${route.slice(1)}.html`]);
 pages.push(["/404", "404.html"]);
 

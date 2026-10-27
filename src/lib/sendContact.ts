@@ -12,7 +12,7 @@ export interface ContactPayload {
 
 const FALLBACK_ERROR = "We couldn't send your message. Please try again or email contact@aydenait.com.";
 
-// Posts to the Netlify contact function (netlify/functions/contact.ts). Throws an Error with a user-safe message on failure.
+// Posts to the contact function (api/contact.ts). Throws an Error with a user-safe message on failure.
 export async function sendContact(payload: ContactPayload): Promise<void> {
   let response: Response;
   try {
@@ -26,7 +26,7 @@ export async function sendContact(payload: ContactPayload): Promise<void> {
   }
 
   if (response.ok) return;
-  // Netlify's rate limit (set in the function config) answers 429 without a JSON body
+  // The Vercel Firewall rate limit answers 429 without a JSON body
   if (response.status === 429) {
     throw new Error("Too many messages in a short time. Please wait a minute and try again, or email contact@aydenait.com.");
   }
