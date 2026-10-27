@@ -230,7 +230,7 @@ const Careers = () => {
     <>
       <SEO
         title="Careers at AydenAIT - Join Our Consulting Team"
-        description="Join our team of AI consultants, IT experts, and technology professionals. Full-time positions and remote internships in AI development, software engineering, and AIOps. Mentorship, real projects, competitive compensation."
+        description="Join our team of AI consultants, IT experts, and technology professionals. Full-time positions and remote internships in AI development, software engineering, and AIOps. Mentorship and real client projects."
         keywords="AI consultant jobs, IT consulting careers, AI internships, software development internship, ML engineering intern, remote tech internships, AIOps jobs, AI software developer"
         ogUrl="https://aydenait.com/careers"
         canonical="https://aydenait.com/careers"
@@ -285,8 +285,7 @@ const Careers = () => {
                 </h3>
                 <ul className="text-blue-100 space-y-2">
                   <li>• Build AI used by real universities, public services and businesses</li>
-                  <li>• Annual learning budget for courses, certifications, and conferences</li>
-                  <li>• Clear career progression paths with regular feedback and reviews</li>
+                  <li>• Work across the full project lifecycle, from scoping to production support</li>
                   <li>• Mentorship from experienced AI consultants and engineers</li>
                 </ul>
               </div>
@@ -295,12 +294,10 @@ const Careers = () => {
                   <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span>Work-Life Balance</span>
+                  <span>Flexible Work</span>
                 </h3>
                 <ul className="text-blue-100 space-y-2">
-                  <li>• Flexible remote work or hybrid options (Toronto office available)</li>
-                  <li>• Generous paid time off and flexible scheduling</li>
-                  <li>• Comprehensive health, dental, and vision coverage</li>
+                  <li>• Remote work with flexible scheduling</li>
                   <li>• Supportive, inclusive team culture that values your well-being</li>
                 </ul>
               </div>
@@ -314,7 +311,6 @@ const Careers = () => {
                 <ul className="text-blue-100 space-y-2">
                   <li>• Deliver AI solutions that improve how organizations operate</li>
                   <li>• Work on diverse projects across industries and technologies</li>
-                  <li>• Contribute to open-source projects and thought leadership</li>
                   <li>• See the direct business impact of your technical contributions</li>
                 </ul>
               </div>
@@ -328,8 +324,7 @@ const Careers = () => {
                 <ul className="text-blue-100 space-y-2">
                   <li>• Collaborative, transparent management with open communication</li>
                   <li>• Diverse, inclusive team that values different perspectives</li>
-                  <li>• Regular team events, hackathons, and learning sessions</li>
-                  <li>• No bureaucracy—fast decision-making and innovation</li>
+                  <li>• Small team with fast, direct decision-making</li>
                 </ul>
               </div>
             </div>
