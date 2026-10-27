@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
-import StructuredData, { organizationSchema, websiteSchema } from "../components/StructuredData";
+import StructuredData from "../components/StructuredData";
+import { organizationSchema, websiteSchema } from "../data/schemas";
 import ContactForm from "../components/ContactForm";
 import Icon, { type IconName } from "../components/Icon";
 import { projects } from "../data/projects";

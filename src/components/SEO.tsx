@@ -34,7 +34,7 @@ const SEO = ({
         element.setAttribute("content", content);
       } else {
         element = document.createElement("meta");
-        const [attrName, attrValue] = selector.replace(/[\[\]']/g, "").split("=");
+        const [attrName, attrValue] = selector.replace(/[[\]']/g, "").split("=");
         element.setAttribute(attrName, attrValue);
         element.setAttribute("content", content);
         document.head.appendChild(element);

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
-import StructuredData, { serviceSchema } from "../components/StructuredData";
+import StructuredData from "../components/StructuredData";
+import { serviceSchema } from "../data/schemas";
 import Icon from "../components/Icon";
 import { solutions } from "../data/solutions";
 
