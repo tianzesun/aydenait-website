@@ -230,7 +230,7 @@ const Careers = () => {
     <>
       <SEO
         title="Careers at AydenAIT - Join Our Consulting Team"
-        description="Join our team of AI consultants, IT experts, and technology professionals. Full-time positions and remote internships in AI development, software engineering, and AIOps. Mentorship and real client projects."
+        description="Full-time roles and remote internships in AI development, software engineering and AIOps. Work on real client projects with experienced mentors."
         keywords="AI consultant jobs, IT consulting careers, AI internships, software development internship, ML engineering intern, remote tech internships, AIOps jobs, AI software developer"
         ogUrl="https://aydenait.com/careers"
         canonical="https://aydenait.com/careers"

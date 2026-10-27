@@ -10,7 +10,8 @@ interface ContactFormProps {
   layout?: "split" | "stacked";
 }
 
-const emptyForm = { name: "", email: "", organization: "", phone: "", message: "" };
+// "website" is a honeypot: hidden from people, but spam bots tend to fill it in
+const emptyForm = { name: "", email: "", organization: "", phone: "", message: "", website: "" };
 
 const inputClass =
   "w-full border bg-white/5 px-3 py-2.5 text-blue-50 placeholder-blue-300/60 border-blue-400/60 rounded-lg focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/30 transition";
@@ -85,6 +86,11 @@ const ContactForm = ({
           <label htmlFor={id("phone")} className={labelClass}>Phone <span className="font-normal text-blue-300">(optional)</span></label>
           <input type="tel" id={id("phone")} name="phone" autoComplete="tel" maxLength={50}
             value={formData.phone} onChange={handleChange} className={inputClass} />
+        </div>
+        <div className="sr-only" aria-hidden="true">
+          <label htmlFor={id("website")}>Leave this field empty</label>
+          <input type="text" id={id("website")} name="website" tabIndex={-1} autoComplete="off"
+            value={formData.website} onChange={handleChange} />
         </div>
         <div className="md:col-span-2">
           <label htmlFor={id("message")} className={labelClass}>Message<span className="text-red-500">*</span></label>

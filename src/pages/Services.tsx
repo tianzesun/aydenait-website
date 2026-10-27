@@ -8,8 +8,8 @@ import { solutions } from "../data/solutions";
 const Services = () => (
   <>
     <SEO
-      title="Services - AI Solutions for Education, Public Sector & Business | AydenAIT"
-      description="Custom AI solutions for education, civic services, finance and business: AI assistants, AI-assisted review, detection and risk analysis, workflow automation, analytics and AI integration."
+      title="AI Services for Education, Public Sector & Business | AydenAIT"
+      description="Custom AI for education, civic services, finance and business: assistants, AI-assisted review, risk detection, workflow automation, analytics and integration."
       keywords="custom AI solutions, AI chatbot development, AI-assisted grading, academic integrity software, AI workflow automation, AI analytics, AI integration, AI consulting Toronto"
       ogUrl="https://aydenait.com/services"
       canonical="https://aydenait.com/services"

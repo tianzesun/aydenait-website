@@ -17,10 +17,7 @@ export const organizationSchema = {
     "contactType": "customer service",
     "email": "contact@aydenait.com",
     "availableLanguage": "English"
-  },
-  "sameAs": [
-    "https://linkedin.com/company/aydenait"
-  ]
+  }
 };
 
 export const websiteSchema = {

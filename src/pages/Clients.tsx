@@ -6,7 +6,7 @@ const Clients = () => (
   <>
     <SEO
       title="Portfolio - AI Projects | AydenAIT"
-      description="AI systems built by AydenAIT: CodeProvenance, DeepRubric and a faculty workload system for higher education, the Hey Markham city-services assistant, and the AlphOpt options-analysis platform."
+      description="AI systems built by AydenAIT: CodeProvenance, DeepRubric and a faculty workload system for universities, the Hey Markham assistant and AlphOpt."
       keywords="AI consulting portfolio, AI in higher education, code similarity detection, AI grading, AI city services assistant, options analysis AI"
       ogUrl="https://aydenait.com/portfolio"
       canonical="https://aydenait.com/portfolio"

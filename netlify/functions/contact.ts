@@ -8,6 +8,7 @@ interface ContactFormData {
   phone?: string;
   message: string;
   source?: string;
+  website?: string;
 }
 
 const MAX_LENGTHS = { name: 200, email: 254, organization: 200, phone: 50, message: 5000 };
@@ -48,6 +49,16 @@ const handler: Handler = async (event: HandlerEvent) => {
       statusCode: 400,
       headers: jsonHeaders,
       body: JSON.stringify({ error: "Invalid request" }),
+    };
+  }
+
+  // Honeypot filled in: almost certainly a bot. Report success so it doesn't retry, but send nothing.
+  if (typeof data?.website === "string" && data.website.trim()) {
+    console.warn(`[${correlationId}] Contact form honeypot triggered; message dropped.`);
+    return {
+      statusCode: 200,
+      headers: jsonHeaders,
+      body: JSON.stringify({ success: true }),
     };
   }
 

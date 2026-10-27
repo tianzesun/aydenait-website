@@ -6,6 +6,7 @@ export interface ContactPayload {
   organization?: string;
   phone?: string;
   message: string;
+  website?: string;
   source: ContactSource;
 }
 

@@ -6,7 +6,7 @@ const About = () => (
   <>
     <SEO
       title="About AydenAIT - AI Solutions for Education and Beyond"
-      description="AydenAIT is a Toronto-based AI company. Our grading, academic-integrity and workload platforms are in use at the University of Toronto, and we build AI for civic services, finance and business."
+      description="Toronto AI company with grading, integrity and workload platforms in use at the University of Toronto, plus AI for civic services, finance and business."
       keywords="about AydenAIT, AI company Toronto, custom AI solutions, AI in education, AI consulting"
       ogUrl="https://aydenait.com/about"
       canonical="https://aydenait.com/about"

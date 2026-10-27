@@ -55,7 +55,7 @@ const Home = () => (
   <>
     <SEO
       title="AydenAIT - Custom AI Solutions, From Idea to Production"
-      description="AydenAIT designs, builds and supports custom AI solutions: assistants, AI-assisted review, automation and analytics. Our platforms are in use at the University of Toronto. Book a free consultation."
+      description="AydenAIT designs, builds and supports custom AI solutions. Our platforms are in use at the University of Toronto. Book a free consultation."
       keywords="custom AI solutions, AI development company Toronto, AI consulting, AI chatbot development, AI in education, AI grading, academic integrity software, AI automation, AI for municipalities"
       ogUrl="https://aydenait.com"
       canonical="https://aydenait.com"
