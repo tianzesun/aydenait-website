@@ -60,7 +60,12 @@ const ProductPage = () => {
 
             <div className="grid lg:grid-cols-12 gap-10 items-end">
               <div className="lg:col-span-7">
-                <p className="text-sm font-medium text-cyan-300 mb-4">{project.sector}</p>
+                <p className="text-sm font-medium text-cyan-300 mb-4">
+                  {project.sector}
+                  {project.stage && (
+                    <span className="ml-3 text-xs font-semibold px-2 py-0.5 rounded-full border border-amber-300/40 bg-amber-300/10 text-amber-100">{project.stage}</span>
+                  )}
+                </p>
                 <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6">{project.title}</h1>
                 <p className="text-2xl md:text-[1.7rem] leading-snug text-white/90">{project.summary}</p>
               </div>
@@ -146,9 +151,10 @@ const ProductPage = () => {
                 <h2 className="lg:col-span-4 text-sm font-medium uppercase tracking-widest text-blue-300/80">Results</h2>
                 <dl className="lg:col-span-8 grid sm:grid-cols-3 gap-8">
                   {page.results.map((result) => (
-                    <div key={result.label} className="flex flex-col-reverse">
+                    // Long values such as "21.3% → 2.3%" get two columns so they stay on one line
+                    <div key={result.label} className={`flex flex-col-reverse ${result.value.length > 6 ? "sm:col-span-2" : ""}`}>
                       <dt className="text-sm text-blue-200 mt-2">{result.label}</dt>
-                      <dd className="text-5xl font-bold tracking-tight text-white">{result.value}</dd>
+                      <dd className="text-5xl font-bold tracking-tight text-white whitespace-nowrap">{result.value}</dd>
                     </div>
                   ))}
                 </dl>

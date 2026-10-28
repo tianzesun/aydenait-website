@@ -37,6 +37,7 @@ Routes are defined in `src/App.tsx`. The product list lives in `src/pages/Produc
 
 ## Common edits
 
+- **Team:** add people to `src/data/team.ts` (photos in `public/team/`). The About page's "Our Team" section stays hidden until the list has entries. Only add people who have agreed to appear.
 - **Products:** edit `src/data/projects.ts`. Each entry has a sector, a short summary (used on Home), a full description and highlights (used on Products), an optional deployment badge and screenshots, and an optional `productPage` for its detail page. When you add a product page, add its URL to `public/sitemap.xml`. Only publish what has been approved for public use.
 - **Services:** edit `src/data/solutions.ts`. Each service has a summary and proof line (Home, Services and footer) and use cases for its page at `/services/<slug>`, rendered by `src/pages/ServicePage.tsx`. `relatedProduct` links the page to a product. When you add a service, add its URL to `public/sitemap.xml`.
 - **Page text:** edit the matching file in `src/pages/`.

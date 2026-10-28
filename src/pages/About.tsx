@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 import Icon from "../components/Icon";
+import { team } from "../data/team";
 
 const About = () => (
   <>
@@ -49,6 +50,32 @@ const About = () => (
         </div>
       </div>
     </section>
+
+    {/* Our Team (hidden until src/data/team.ts has entries) */}
+    {team.length > 0 && (
+      <section className="py-16 bg-[#10172a]">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">Our Team</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {team.map((person) => (
+              <div key={person.name} className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+                {person.photo && (
+                  <img src={person.photo} alt="" loading="lazy" className="w-28 h-28 mx-auto mb-4 rounded-full object-cover border border-white/10" />
+                )}
+                <h3 className="text-xl font-bold text-white">{person.name}</h3>
+                <p className="text-cyan-300 text-sm font-semibold mb-3">{person.role}</p>
+                <p className="text-blue-200 text-sm leading-relaxed">{person.bio}</p>
+                {person.linkedin && (
+                  <a href={person.linkedin} target="_blank" rel="noopener noreferrer" className="inline-block mt-4 text-sm text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                    {person.name} on LinkedIn
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
 
     {/* What We Do */}
     <section className="py-16 bg-blue-950">

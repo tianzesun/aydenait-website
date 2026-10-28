@@ -55,7 +55,12 @@ const Products = () => (
                   )}
                 </div>
               )}
-              <span className="text-xs font-bold uppercase tracking-wider text-cyan-300 mb-3">{project.sector}</span>
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <span className="text-xs font-bold uppercase tracking-wider text-cyan-300">{project.sector}</span>
+                {project.stage && (
+                  <span className="text-xs font-semibold px-2 py-0.5 rounded-full border border-amber-300/40 bg-amber-300/10 text-amber-100">{project.stage}</span>
+                )}
+              </div>
               <h2 className="text-2xl font-bold text-white mb-3">{project.title}</h2>
               {project.deployment && (
                 <p className="self-start mb-4 px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/30 text-sm font-semibold text-cyan-200">
