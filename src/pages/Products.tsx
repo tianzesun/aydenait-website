@@ -71,14 +71,26 @@ const Products = () => (
                   </li>
                 ))}
               </ul>
-              {project.productPage && (
-                <Link
-                  to={`/products/${project.productPage.slug}`}
-                  className="mt-auto self-start py-1 font-semibold text-cyan-300 hover:text-white transition-colors"
-                >
-                  Learn more about {project.title} <span aria-hidden="true">→</span>
-                </Link>
-              )}
+              <div className="mt-auto flex flex-wrap gap-x-6 gap-y-2">
+                {project.productPage && (
+                  <Link
+                    to={`/products/${project.productPage.slug}`}
+                    className="py-1 font-semibold text-cyan-300 hover:text-white transition-colors"
+                  >
+                    Learn more about {project.title} <span aria-hidden="true">→</span>
+                  </Link>
+                )}
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="py-1 font-semibold text-cyan-300 hover:text-white transition-colors"
+                  >
+                    Visit the live site <span aria-hidden="true">↗</span>
+                  </a>
+                )}
+              </div>
             </article>
           ))}
         </div>

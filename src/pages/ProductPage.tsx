@@ -60,6 +60,18 @@ const ProductPage = () => {
                 {project.deployment}
               </p>
             )}
+            {project.liveUrl && (
+              <p className="mt-5">
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-2 rounded-full border-2 border-cyan-400 text-cyan-200 font-bold hover:bg-cyan-400/20 transition"
+                >
+                  Visit the live site <span aria-hidden="true">↗</span>
+                </a>
+              </p>
+            )}
           </header>
 
           {project.screenshots && project.screenshots.length > 0 && (

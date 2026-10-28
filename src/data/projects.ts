@@ -8,6 +8,8 @@ export type Project = {
   highlights: string[];
   // Where it is in use, shown on the card and product page. Only with that institution's approval.
   deployment?: string;
+  // Public live site or demo, linked from the card and product page
+  liveUrl?: string;
   // Images live in public/projects/. Use demo data only: no real student, staff or client details.
   screenshots?: { src: string; alt: string }[];
   // Optional detail page at /products/<slug> (also add the URL to public/sitemap.xml).
@@ -91,6 +93,8 @@ export const projects: Project[] = [
     summary: "A conversational assistant that answers residents' questions from publicly available city data.",
     desc: "An AI city-services assistant built on the City of Markham's publicly available data. Residents ask questions in plain language and get fast, accurate answers they can trace back to the source. An independent project, not affiliated with or endorsed by the City of Markham.",
     highlights: ["Conversational access to city information", "Answers grounded in published municipal data", "Source citations for every answer"],
+    liveUrl: "https://heymarkham.vercel.app/",
+    screenshots: [{ src: "/projects/hey-markham.png", alt: "Hey Markham home page with the assistant chat window" }],
     productPage: {
       slug: "hey-markham",
       challenge: [
