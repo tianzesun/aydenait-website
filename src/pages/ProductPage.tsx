@@ -33,6 +33,9 @@ const ProductPage = () => {
     ],
   };
 
+  const liveHost = project.liveUrl ? new URL(project.liveUrl).host : undefined;
+  const screenshot = project.screenshots?.[0];
+
   return (
     <>
       <SEO
@@ -44,130 +47,172 @@ const ProductPage = () => {
       <StructuredData data={productSchema} />
       <StructuredData data={breadcrumbSchema} />
 
-      <section className="py-16 bg-gradient-to-t from-blue-950 to-[#10172a] min-h-screen">
-        <div className="max-w-4xl mx-auto px-4">
-          <Link to="/products" className="inline-block py-1 text-sm text-blue-300 hover:text-white transition-colors mb-8">
-            ← All products
-          </Link>
+      <article className="bg-[#0b1120] text-blue-100">
+        {/* Hero */}
+        <header className="relative overflow-hidden">
+          <div className="absolute inset-x-0 top-0 h-[36rem] bg-[radial-gradient(ellipse_at_top,rgba(34,211,238,0.14),transparent_65%)]" aria-hidden="true" />
+          <div className="relative max-w-6xl mx-auto px-4 pt-14 pb-16">
+            <nav className="text-sm text-blue-300/80 mb-12" aria-label="Breadcrumb">
+              <Link to="/products" className="hover:text-white transition-colors">Products</Link>
+              <span className="mx-2" aria-hidden="true">/</span>
+              <span className="text-blue-100">{project.title}</span>
+            </nav>
 
-          {/* Hero */}
-          <header className="mb-14">
-            <span className="text-xs font-bold uppercase tracking-wider text-cyan-300">{project.sector} · Product</span>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-5">{project.title}</h1>
-            <p className="text-xl text-blue-100 leading-relaxed">{project.desc}</p>
-            {project.deployment && (
-              <p className="inline-block mt-5 px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/30 text-sm font-semibold text-cyan-200">
-                {project.deployment}
-              </p>
-            )}
-            {project.liveUrl && (
-              <p className="mt-5">
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-6 py-2 rounded-full border-2 border-cyan-400 text-cyan-200 font-bold hover:bg-cyan-400/20 transition"
-                >
-                  Visit the live site <span aria-hidden="true">↗</span>
-                </a>
-              </p>
-            )}
-          </header>
-
-          {project.screenshots && project.screenshots.length > 0 && (
-            <img
-              src={project.screenshots[0].src}
-              alt={project.screenshots[0].alt}
-              className="w-full aspect-[16/10] object-cover object-top rounded-2xl border border-white/10 bg-white/5 mb-14"
-            />
-          )}
-
-          {/* The challenge */}
-          <section className="mb-14">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">The Challenge</h2>
-            {page.challenge.map((paragraph) => (
-              <p key={paragraph} className="text-blue-100 leading-relaxed mb-4">{paragraph}</p>
-            ))}
-          </section>
-
-          {/* How it works */}
-          <section className="mb-14">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">How It Works</h2>
-            <div className="grid md:grid-cols-3 gap-5">
-              {page.approach.map((step, idx) => (
-                <div key={step.title} className="bg-white/10 rounded-2xl p-6 border border-blue-700/50">
-                  <span className="text-sm font-bold text-cyan-300">{idx + 1}</span>
-                  <h3 className="text-lg font-bold text-white mt-2 mb-2">{step.title}</h3>
-                  <p className="text-sm text-blue-200 leading-relaxed">{step.text}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Human review */}
-          <section className="mb-14 bg-gradient-to-br from-blue-900/60 to-cyan-900/30 rounded-2xl p-8 border border-blue-700/50">
-            <h2 className="text-2xl font-bold text-white mb-3">People Stay in Control</h2>
-            <p className="text-blue-100 leading-relaxed">{page.humanReview}</p>
-          </section>
-
-          {page.results && page.results.length > 0 && (
-            <section className="mb-14">
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Results</h2>
-              <div className="grid sm:grid-cols-3 gap-5">
-                {page.results.map((result) => (
-                  <div key={result.label} className="bg-white/10 rounded-2xl p-6 border border-blue-700/50 text-center">
-                    <div className="text-3xl font-extrabold text-cyan-300 mb-1">{result.value}</div>
-                    <div className="text-sm text-blue-200">{result.label}</div>
-                  </div>
-                ))}
+            <div className="grid lg:grid-cols-12 gap-10 items-end">
+              <div className="lg:col-span-7">
+                <p className="text-sm font-medium text-cyan-300 mb-4">{project.sector}</p>
+                <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6">{project.title}</h1>
+                <p className="text-2xl md:text-[1.7rem] leading-snug text-white/90">{project.summary}</p>
               </div>
-            </section>
-          )}
-
-          {page.quote && (
-            <figure className="mb-14 border-l-4 border-cyan-400 pl-6">
-              <blockquote className="text-xl text-white leading-relaxed">“{page.quote.text}”</blockquote>
-              <figcaption className="mt-3 text-sm text-blue-300">
-                {page.quote.name}, {page.quote.role}
-              </figcaption>
-            </figure>
-          )}
-
-          {/* Call to action */}
-          <div className="text-center bg-white/5 rounded-2xl p-10 border border-blue-700/50">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">See {project.title} in Action</h2>
-            <p className="text-blue-100 mb-8">
-              We would be pleased to give you a demonstration and discuss how {project.title} could work for your organization.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-block px-8 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-bold shadow-lg hover:scale-105 transition"
-            >
-              Request a Demo
-            </Link>
+              <div className="lg:col-span-5">
+                <p className="text-blue-200 leading-relaxed mb-8">{project.desc}</p>
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+                  {project.liveUrl ? (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-3 rounded-full bg-white text-[#0b1120] font-semibold hover:bg-cyan-200 transition-colors"
+                    >
+                      Visit the live site <span aria-hidden="true">↗</span>
+                    </a>
+                  ) : null}
+                  <Link
+                    to="/contact"
+                    className={
+                      project.liveUrl
+                        ? "font-semibold text-white hover:text-cyan-300 transition-colors"
+                        : "px-6 py-3 rounded-full bg-white text-[#0b1120] font-semibold hover:bg-cyan-200 transition-colors"
+                    }
+                  >
+                    Request a demo <span aria-hidden="true">→</span>
+                  </Link>
+                </div>
+                {project.deployment && <p className="mt-6 text-sm text-cyan-200">{project.deployment}</p>}
+              </div>
+            </div>
           </div>
 
-          {/* Other products */}
-          {otherProducts.length > 0 && (
-            <section className="mt-16">
-              <h2 className="text-2xl font-bold text-white mb-6">Other Products</h2>
-              <div className="grid sm:grid-cols-2 gap-5">
-                {otherProducts.map((other) => (
-                  <Link
-                    key={other.title}
-                    to={`/products/${other.productPage!.slug}`}
-                    className="block bg-white/5 rounded-2xl p-6 border border-white/10 hover:border-cyan-400 transition"
-                  >
-                    <span className="text-xs font-bold uppercase tracking-wider text-cyan-300">{other.sector}</span>
-                    <h3 className="text-lg font-bold text-white mt-2 mb-2">{other.title}</h3>
-                    <p className="text-sm text-blue-200 leading-relaxed">{other.summary}</p>
-                  </Link>
+          {/* Screenshot in a browser window */}
+          {screenshot && (
+            <div className="relative max-w-6xl mx-auto px-4">
+              <figure className="rounded-t-xl overflow-hidden border border-b-0 border-white/10 bg-[#111a2e] shadow-[0_-20px_80px_-20px_rgba(34,211,238,0.25)]">
+                <div className="flex items-center gap-2 px-4 h-10 border-b border-white/10">
+                  <span className="w-3 h-3 rounded-full bg-white/15" />
+                  <span className="w-3 h-3 rounded-full bg-white/15" />
+                  <span className="w-3 h-3 rounded-full bg-white/15" />
+                  {liveHost && (
+                    <span className="mx-auto px-4 py-0.5 rounded-md bg-white/5 text-xs text-blue-300">{liveHost}</span>
+                  )}
+                </div>
+                <img src={screenshot.src} alt={screenshot.alt} className="w-full aspect-[16/9] object-cover object-top" />
+              </figure>
+            </div>
+          )}
+        </header>
+
+        <div className="border-t border-white/10">
+          <div className="max-w-6xl mx-auto px-4">
+            {/* The challenge */}
+            <section className="grid lg:grid-cols-12 gap-6 py-20">
+              <h2 className="lg:col-span-4 text-sm font-medium uppercase tracking-widest text-blue-300/80">The challenge</h2>
+              <div className="lg:col-span-8 space-y-5">
+                {page.challenge.map((paragraph, idx) => (
+                  <p key={paragraph} className={idx === 0 ? "text-2xl leading-relaxed text-white" : "text-lg leading-relaxed text-blue-200"}>
+                    {paragraph}
+                  </p>
                 ))}
               </div>
             </section>
-          )}
+
+            {/* How it works */}
+            <section className="grid lg:grid-cols-12 gap-6 py-20 border-t border-white/10">
+              <h2 className="lg:col-span-4 text-sm font-medium uppercase tracking-widest text-blue-300/80">How it works</h2>
+              <ol className="lg:col-span-8 divide-y divide-white/10">
+                {page.approach.map((step, idx) => (
+                  <li key={step.title} className="grid sm:grid-cols-[4rem_1fr] gap-2 py-7 first:pt-0">
+                    <span className="font-mono text-sm text-cyan-300 pt-1">{String(idx + 1).padStart(2, "0")}</span>
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-2">{step.title}</h3>
+                      <p className="text-blue-200 leading-relaxed">{step.text}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </section>
+
+            {page.results && page.results.length > 0 && (
+              <section className="grid lg:grid-cols-12 gap-6 py-20 border-t border-white/10">
+                <h2 className="lg:col-span-4 text-sm font-medium uppercase tracking-widest text-blue-300/80">Results</h2>
+                <dl className="lg:col-span-8 grid sm:grid-cols-3 gap-8">
+                  {page.results.map((result) => (
+                    <div key={result.label} className="flex flex-col-reverse">
+                      <dt className="text-sm text-blue-200 mt-2">{result.label}</dt>
+                      <dd className="text-5xl font-bold tracking-tight text-white">{result.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </section>
+            )}
+
+            {/* Human review */}
+            <section className="grid lg:grid-cols-12 gap-6 py-20 border-t border-white/10">
+              <h2 className="lg:col-span-4 text-sm font-medium uppercase tracking-widest text-blue-300/80">People stay in control</h2>
+              <p className="lg:col-span-8 text-2xl md:text-3xl leading-snug text-white border-l-2 border-cyan-400 pl-6">
+                {page.humanReview}
+              </p>
+            </section>
+
+            {page.quote && (
+              <figure className="py-20 border-t border-white/10 max-w-4xl">
+                <blockquote className="text-3xl leading-snug text-white">“{page.quote.text}”</blockquote>
+                <figcaption className="mt-6 text-blue-300">
+                  {page.quote.name}, {page.quote.role}
+                </figcaption>
+              </figure>
+            )}
+
+            {/* Call to action */}
+            <section className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 py-16 border-t border-white/10">
+              <div>
+                <h2 className="text-3xl font-bold text-white mb-2">See {project.title} in action</h2>
+                <p className="text-blue-200">We'd be glad to walk you through it and talk about how it could work for your organization.</p>
+              </div>
+              <Link
+                to="/contact"
+                className="shrink-0 self-start md:self-auto px-6 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold hover:opacity-90 transition-opacity"
+              >
+                Request a demo
+              </Link>
+            </section>
+
+            {/* Other products */}
+            {otherProducts.length > 0 && (
+              <section className="py-16 border-t border-white/10">
+                <h2 className="text-sm font-medium uppercase tracking-widest text-blue-300/80 mb-6">More products</h2>
+                <ul className="divide-y divide-white/10">
+                  {otherProducts.map((other) => (
+                    <li key={other.title}>
+                      <Link
+                        to={`/products/${other.productPage!.slug}`}
+                        className="group grid md:grid-cols-12 gap-2 items-baseline py-5"
+                      >
+                        <span className="md:col-span-4 text-lg font-semibold text-white group-hover:text-cyan-300 transition-colors">
+                          {other.title}
+                        </span>
+                        <span className="md:col-span-7 text-blue-200">{other.summary}</span>
+                        <span className="hidden md:block md:col-span-1 text-right text-blue-300 group-hover:text-cyan-300 group-hover:translate-x-1 transition" aria-hidden="true">
+                          →
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+          </div>
         </div>
-      </section>
+      </article>
     </>
   );
 };
