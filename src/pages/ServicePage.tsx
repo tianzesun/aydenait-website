@@ -45,104 +45,128 @@ const ServicePage = () => {
       <StructuredData data={serviceSchema} />
       <StructuredData data={breadcrumbSchema} />
 
-      <section className="py-16 bg-gradient-to-t from-blue-950 to-[#10172a] min-h-screen">
-        <div className="max-w-4xl mx-auto px-4">
-          <Link to="/services" className="inline-block py-1 text-sm text-blue-300 hover:text-white transition-colors mb-8">
-            ← All services
-          </Link>
+      <article className="bg-[#0b1120] text-blue-100">
+        {/* Hero */}
+        <header className="relative overflow-hidden">
+          <div className="absolute inset-x-0 top-0 h-[36rem] bg-[radial-gradient(ellipse_at_top,rgba(34,211,238,0.14),transparent_65%)]" aria-hidden="true" />
+          <div className="relative max-w-6xl mx-auto px-4 pt-14 pb-20">
+            <nav className="text-sm text-blue-300/80 mb-12" aria-label="Breadcrumb">
+              <Link to="/services" className="hover:text-white transition-colors">Services</Link>
+              <span className="mx-2" aria-hidden="true">/</span>
+              <span className="text-blue-100">{service.title}</span>
+            </nav>
 
-          {/* Hero */}
-          <header className="mb-14">
-            <div className="w-14 h-14 mb-5 rounded-xl bg-cyan-400/10 border border-cyan-400/30 flex items-center justify-center">
-              <Icon name={service.icon} className="w-7 h-7 text-cyan-300" />
-            </div>
-            <span className="text-xs font-bold uppercase tracking-wider text-cyan-300">Service</span>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-5">{service.title}</h1>
-            <p className="text-xl text-blue-100 leading-relaxed">{service.desc}</p>
-          </header>
-
-          {/* What we can build */}
-          <section className="mb-14">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">What We Can Build</h2>
-            <div className="grid sm:grid-cols-2 gap-5">
-              {service.useCases.map((useCase) => (
-                <div key={useCase.title} className="bg-white/10 rounded-2xl p-6 border border-blue-700/50">
-                  <h3 className="text-lg font-bold text-white mb-2">{useCase.title}</h3>
-                  <p className="text-sm text-blue-200 leading-relaxed">{useCase.text}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Proof */}
-          <section className="mb-14 bg-gradient-to-br from-blue-900/60 to-cyan-900/30 rounded-2xl p-8 border border-blue-700/50">
-            <h2 className="text-2xl font-bold text-white mb-3">{product ? "Proven in Our Own Products" : "Built to Fit"}</h2>
-            <p className="text-blue-100 leading-relaxed">{service.proof}</p>
-            {product && (
-              <Link
-                to={`/products/${product.productPage!.slug}`}
-                className="inline-block mt-4 py-1 font-semibold text-cyan-300 hover:text-white transition-colors"
-              >
-                See how {product.title} works <span aria-hidden="true">→</span>
-              </Link>
-            )}
-          </section>
-
-          {/* How we work */}
-          <section className="mb-14">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">How We Work</h2>
-            <ol className="grid sm:grid-cols-2 gap-5">
-              {engagementSteps.map((step, idx) => (
-                <li key={step.title} className="bg-white/5 rounded-2xl p-6 border border-white/10">
-                  <span className="text-sm font-bold text-cyan-300">{idx + 1}</span>
-                  <h3 className="text-lg font-bold text-white mt-2 mb-2">{step.title}</h3>
-                  <p className="text-sm text-blue-200 leading-relaxed">{step.desc}</p>
-                </li>
-              ))}
-            </ol>
-            <p className="mt-6 text-sm text-blue-200">
-              People stay in control: every system has a clear point where a person reviews the result.{" "}
-              <Link to="/security" className="font-semibold text-cyan-300 hover:text-white transition-colors">
-                How we protect your data <span aria-hidden="true">→</span>
-              </Link>
-            </p>
-          </section>
-
-          {/* Call to action */}
-          <div className="text-center bg-white/5 rounded-2xl p-10 border border-blue-700/50">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Talk to Us About Your Project</h2>
-            <p className="text-blue-100 mb-8">
-              Start with a free consultation. We will tell you honestly whether AI is the right fit and what it would take.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-block px-8 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-bold shadow-lg hover:scale-105 transition"
-            >
-              Book a Free Consultation
-            </Link>
-          </div>
-
-          {/* Other services */}
-          <section className="mt-16">
-            <h2 className="text-2xl font-bold text-white mb-6">Other Services</h2>
-            <div className="grid sm:grid-cols-2 gap-5">
-              {otherServices.map((other) => (
-                <Link
-                  key={other.slug}
-                  to={`/services/${other.slug}`}
-                  className="flex gap-4 bg-white/5 rounded-2xl p-6 border border-white/10 hover:border-cyan-400 transition"
-                >
-                  <Icon name={other.icon} className="w-6 h-6 text-cyan-300 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h3 className="font-bold text-white mb-1">{other.title}</h3>
-                    <p className="text-sm text-blue-200 leading-relaxed">{other.desc}</p>
-                  </div>
+            <div className="grid lg:grid-cols-12 gap-10 items-end">
+              <div className="lg:col-span-7">
+                <p className="flex items-center gap-2 text-sm font-medium text-cyan-300 mb-4">
+                  <Icon name={service.icon} className="w-5 h-5" />
+                  Service
+                </p>
+                <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white">{service.title}</h1>
+              </div>
+              <div className="lg:col-span-5">
+                <p className="text-xl leading-relaxed text-white/90 mb-8">{service.desc}</p>
+                <Link to="/contact" className="inline-block px-6 py-3 rounded-full bg-white text-[#0b1120] font-semibold hover:bg-cyan-200 transition-colors">
+                  Book a free consultation <span aria-hidden="true">→</span>
                 </Link>
-              ))}
+              </div>
             </div>
-          </section>
+          </div>
+        </header>
+
+        <div className="border-t border-white/10">
+          <div className="max-w-6xl mx-auto px-4">
+            {/* What we can build */}
+            <section className="grid lg:grid-cols-12 gap-6 py-20">
+              <h2 className="lg:col-span-4 text-sm font-medium uppercase tracking-widest text-blue-300/80">What we can build</h2>
+              <dl className="lg:col-span-8 grid sm:grid-cols-2 gap-x-10 gap-y-10">
+                {service.useCases.map((useCase) => (
+                  <div key={useCase.title} className="border-t border-white/10 pt-5">
+                    <dt className="text-xl font-semibold text-white mb-2">{useCase.title}</dt>
+                    <dd className="text-blue-200 leading-relaxed">{useCase.text}</dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+
+            {/* Proof */}
+            <section className="grid lg:grid-cols-12 gap-6 py-20 border-t border-white/10">
+              <h2 className="lg:col-span-4 text-sm font-medium uppercase tracking-widest text-blue-300/80">
+                {product ? "Proven in our own products" : "Built to fit"}
+              </h2>
+              <div className="lg:col-span-8 border-l-2 border-cyan-400 pl-6">
+                <p className="text-2xl md:text-3xl leading-snug text-white">{service.proof}</p>
+                {product && (
+                  <Link
+                    to={`/products/${product.productPage!.slug}`}
+                    className="inline-block mt-6 font-semibold text-cyan-300 hover:text-white transition-colors"
+                  >
+                    See how {product.title} works <span aria-hidden="true">→</span>
+                  </Link>
+                )}
+              </div>
+            </section>
+
+            {/* How we work */}
+            <section className="grid lg:grid-cols-12 gap-6 py-20 border-t border-white/10">
+              <h2 className="lg:col-span-4 text-sm font-medium uppercase tracking-widest text-blue-300/80">How we work</h2>
+              <div className="lg:col-span-8">
+                <ol className="divide-y divide-white/10">
+                  {engagementSteps.map((step, idx) => (
+                    <li key={step.title} className="grid sm:grid-cols-[4rem_1fr] gap-2 py-7 first:pt-0">
+                      <span className="font-mono text-sm text-cyan-300 pt-1">{String(idx + 1).padStart(2, "0")}</span>
+                      <div>
+                        <h3 className="text-xl font-semibold text-white mb-2">{step.title}</h3>
+                        <p className="text-blue-200 leading-relaxed">{step.desc}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+                <p className="mt-6 text-blue-200">
+                  People stay in control: every system has a clear point where a person reviews the result.{" "}
+                  <Link to="/security" className="font-semibold text-cyan-300 hover:text-white transition-colors">
+                    How we protect your data <span aria-hidden="true">→</span>
+                  </Link>
+                </p>
+              </div>
+            </section>
+
+            {/* Call to action */}
+            <section className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 py-16 border-t border-white/10">
+              <div>
+                <h2 className="text-3xl font-bold text-white mb-2">Talk to us about your project</h2>
+                <p className="text-blue-200">Start with a free consultation. We will tell you honestly whether AI is the right fit and what it would take.</p>
+              </div>
+              <Link
+                to="/contact"
+                className="shrink-0 self-start md:self-auto px-6 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold hover:opacity-90 transition-opacity"
+              >
+                Book a free consultation
+              </Link>
+            </section>
+
+            {/* Other services */}
+            <section className="py-16 border-t border-white/10">
+              <h2 className="text-sm font-medium uppercase tracking-widest text-blue-300/80 mb-6">Other services</h2>
+              <ul className="divide-y divide-white/10">
+                {otherServices.map((other) => (
+                  <li key={other.slug}>
+                    <Link to={`/services/${other.slug}`} className="group grid md:grid-cols-12 gap-2 items-baseline py-5">
+                      <span className="md:col-span-4 text-lg font-semibold text-white group-hover:text-cyan-300 transition-colors">
+                        {other.title}
+                      </span>
+                      <span className="md:col-span-7 text-blue-200">{other.desc}</span>
+                      <span className="hidden md:block md:col-span-1 text-right text-blue-300 group-hover:text-cyan-300 group-hover:translate-x-1 transition" aria-hidden="true">
+                        →
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </div>
         </div>
-      </section>
+      </article>
     </>
   );
 };
