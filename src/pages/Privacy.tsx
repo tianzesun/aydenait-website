@@ -1,4 +1,5 @@
 import SEO from "../components/SEO";
+import LegalPage from "../components/LegalPage";
 
 // Keep this accurate to what the site actually does. Update it before adding analytics,
 // cookies, a mailing list or any new third-party service (see also the CSP in vercel.json).
@@ -11,9 +12,7 @@ const Privacy = () => (
       ogUrl="https://aydenait.com/privacy"
       canonical="https://aydenait.com/privacy"
     />
-    <section className="py-12 bg-gradient-to-b from-blue-950 to-[#10172a] min-h-screen">
-      <div className="max-w-3xl mx-auto px-6 text-blue-100">
-        <h1 className="text-3xl font-bold mb-6 text-blue-200">Privacy Policy</h1>
+    <LegalPage label="Legal" title="Privacy Policy" updated="October 2026">
       <p className="mb-4 text-blue-200">
         This policy explains how <span className="font-bold">AydenAIT Solution Inc.</span> ("AydenAIT", "we") collects, uses,
         shares and protects personal information through this website, aydenait.com. We handle personal information in
@@ -113,9 +112,7 @@ const Privacy = () => (
         <br />
         AydenAIT Solution Inc., Toronto, Ontario, Canada
       </p>
-      <p className="text-xs mt-8 text-blue-400">Last updated: October 2026</p>
-    </div>
-  </section>
+    </LegalPage>
   </>
 );
 export default Privacy;

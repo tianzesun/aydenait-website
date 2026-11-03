@@ -61,47 +61,68 @@ const faqs: { q: string; a: string; more?: { to: string; label: string } }[] = [
 const FAQAccordion = () => {
   const [open, setOpen] = useState<number | null>(null);
   return (
-    <section className="py-12 bg-gradient-to-b from-blue-950 to-[#10172a]">
-      <div className="max-w-4xl mx-auto px-4">
-        <h1 className="text-3xl md:text-4xl font-bold text-white mb-3 text-center">Frequently Asked Questions</h1>
-        <p className="text-blue-200 text-center mb-8">Answers to common questions about working with AydenAIT</p>
-        {faqs.map((f, idx) => (
-          <div key={f.q} className="mb-3">
-            <button
-              className="w-full bg-white/10 px-6 py-4 rounded-xl text-left text-blue-100 font-semibold hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 transition flex justify-between items-center"
-              aria-expanded={open === idx}
-              aria-controls={`faq-answer-${idx}`}
-              onClick={() => setOpen(open === idx ? null : idx)}
-            >
-              <span>{f.q}</span>
-              <span className="text-cyan-400 text-xl ml-4">{open === idx ? '−' : '+'}</span>
-            </button>
-            {/* Always rendered (hidden when closed) so answers are in the prerendered HTML for search and find-in-page */}
-            <div id={`faq-answer-${idx}`} hidden={open !== idx} className="p-6 bg-white/5 rounded-b-xl text-blue-50 border-t border-blue-800/30 leading-relaxed">
-              {f.a}
-              {f.more && (
-                <Link to={f.more.to} className="block mt-3 font-semibold text-cyan-300 hover:text-white transition-colors">
-                  {f.more.label} <span aria-hidden="true">→</span>
-                </Link>
-              )}
-            </div>
-          </div>
-        ))}
+    <article className="bg-[#0b1120] text-blue-100">
+      {/* Hero */}
+      <header className="relative overflow-hidden">
+        <div className="absolute inset-x-0 top-0 h-[28rem] bg-[radial-gradient(ellipse_at_top,rgba(34,211,238,0.12),transparent_65%)]" aria-hidden="true" />
+        <div className="relative max-w-6xl mx-auto px-4 pt-20 pb-16">
+          <p className="text-sm font-medium text-cyan-300 mb-4">FAQ</p>
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6">Frequently Asked Questions</h1>
+          <p className="text-2xl leading-snug text-white/90">Answers to common questions about working with AydenAIT</p>
+        </div>
+      </header>
 
-        <div className="mt-12 text-center bg-blue-900/40 rounded-2xl p-8 border border-blue-700">
-          <h2 className="text-xl font-bold text-white mb-3">Still have questions?</h2>
-          <p className="text-blue-200 mb-6">Schedule a complimentary consultation or send us a message.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact" className="px-6 py-3 bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold rounded-lg hover:scale-105 transition">
-              Contact Us
-            </Link>
-            <a href="mailto:contact@aydenait.com" className="px-6 py-3 border-2 border-blue-400 text-blue-100 font-semibold rounded-lg hover:bg-white/10 transition">
-              Email Us Directly
-            </a>
-          </div>
+      <div className="border-t border-white/10">
+        <div className="max-w-6xl mx-auto px-4">
+          <section className="grid lg:grid-cols-12 gap-6 py-16">
+            <h2 className="lg:col-span-4 text-sm font-medium uppercase tracking-widest text-blue-300/80">Common questions</h2>
+            <ul className="lg:col-span-8 divide-y divide-white/10 border-y border-white/10">
+              {faqs.map((f, idx) => (
+                <li key={f.q}>
+                  <button
+                    className="group w-full grid grid-cols-[1fr_auto] gap-4 py-6 text-left text-lg font-semibold text-white hover:text-cyan-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 transition-colors"
+                    aria-expanded={open === idx}
+                    aria-controls={`faq-answer-${idx}`}
+                    onClick={() => setOpen(open === idx ? null : idx)}
+                  >
+                    <span>{f.q}</span>
+                    <span className="text-2xl leading-none text-cyan-300" aria-hidden="true">{open === idx ? "−" : "+"}</span>
+                  </button>
+                  {/* Always rendered (hidden when closed) so answers are in the prerendered HTML for search and find-in-page */}
+                  <div id={`faq-answer-${idx}`} hidden={open !== idx} className="pb-7 pr-10 text-blue-200 leading-relaxed">
+                    {f.a}
+                    {f.more && (
+                      <Link to={f.more.to} className="block mt-3 font-semibold text-cyan-300 hover:text-white transition-colors">
+                        {f.more.label} <span aria-hidden="true">→</span>
+                      </Link>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          {/* Call to action */}
+          <section className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 py-16 border-t border-white/10">
+            <div>
+              <h2 className="text-3xl font-bold text-white mb-2">Still have questions?</h2>
+              <p className="text-blue-200">Schedule a complimentary consultation or send us a message.</p>
+            </div>
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+              <a href="mailto:contact@aydenait.com" className="font-semibold text-white hover:text-cyan-300 transition-colors">
+                Email us directly
+              </a>
+              <Link
+                to="/contact"
+                className="px-6 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold hover:opacity-90 transition-opacity"
+              >
+                Contact us
+              </Link>
+            </div>
+          </section>
         </div>
       </div>
-    </section>
+    </article>
   );
 };
 

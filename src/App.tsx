@@ -68,7 +68,7 @@ function App() {
       >
         Skip to main content
       </a>
-      <div className="min-h-screen flex flex-col bg-[#10172a] text-white">
+      <div className="min-h-screen flex flex-col bg-[#0b1120] text-white">
         <div className="bg-noise" />
         <Navbar />
         <main id="main-content" tabIndex={-1} className="flex-1 relative z-10 focus:outline-none">

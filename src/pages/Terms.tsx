@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
+import LegalPage from "../components/LegalPage";
 
 // Website terms only. Client work is governed by separate written agreements (see "Client Services").
 const Terms = () => (
@@ -11,9 +12,7 @@ const Terms = () => (
       ogUrl="https://aydenait.com/terms"
       canonical="https://aydenait.com/terms"
     />
-    <section className="py-12 bg-gradient-to-b from-blue-950 to-[#10172a] min-h-screen">
-      <div className="max-w-3xl mx-auto px-6 text-blue-100">
-        <h1 className="text-3xl font-bold mb-6 text-blue-200">Terms of Use</h1>
+    <LegalPage label="Legal" title="Terms of Use" updated="October 2026">
       <p className="mb-4">
         These terms apply to your use of aydenait.com (the "website"), operated by{" "}
         <span className="font-bold">AydenAIT Solution Inc.</span> ("AydenAIT", "we"). By using the website, you agree to
@@ -104,9 +103,7 @@ const Terms = () => (
         <br />
         AydenAIT Solution Inc., Toronto, Ontario, Canada
       </p>
-      <p className="text-xs mt-8 text-blue-400">Last updated: October 2026</p>
-    </div>
-  </section>
+    </LegalPage>
   </>
 );
 export default Terms;

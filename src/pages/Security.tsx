@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
+import LegalPage from "../components/LegalPage";
 
 // Only state practices we actually follow. Keep the website section in step with vercel.json and the Privacy Policy.
 const Security = () => (
@@ -11,9 +12,7 @@ const Security = () => (
       ogUrl="https://aydenait.com/security"
       canonical="https://aydenait.com/security"
     />
-    <section className="py-12 bg-gradient-to-b from-blue-950 to-[#10172a] min-h-screen">
-      <div className="max-w-3xl mx-auto px-6 text-blue-100">
-        <h1 className="text-3xl font-bold mb-6 text-blue-200">Security &amp; Privacy</h1>
+    <LegalPage label="Trust" title="Security & Privacy" updated="October 2026">
       <p className="mb-4 text-blue-200">
         Our clients trust us with student work, staff records and confidential business information. This page explains
         how we protect that information, from the first conversation through to the systems we build and support.
@@ -71,9 +70,7 @@ const Security = () => (
         you. To ask a question or report a security concern, email{" "}
         <a className="underline text-blue-300" href="mailto:contact@aydenait.com">contact@aydenait.com</a>.
       </p>
-      <p className="text-xs mt-8 text-blue-400">Last updated: October 2026</p>
-      </div>
-    </section>
+    </LegalPage>
   </>
 );
 
