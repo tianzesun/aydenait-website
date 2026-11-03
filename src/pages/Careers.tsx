@@ -200,8 +200,61 @@ const openJobs = [
   }
 ];
 
+const perks = ["Remote-first culture", "Real enterprise projects", "Career growth"];
+
+const reasons = [
+  {
+    title: "Professional Growth",
+    points: [
+      "Build AI used by real universities, public services and businesses",
+      "Work across the full project lifecycle, from scoping to production support",
+      "Mentorship from experienced AI consultants and engineers",
+    ],
+  },
+  {
+    title: "Flexible Work",
+    points: ["Remote work with flexible scheduling", "Supportive, inclusive team culture that values your well-being"],
+  },
+  {
+    title: "Impactful Work",
+    points: [
+      "Deliver AI solutions that improve how organizations operate",
+      "Work on diverse projects across industries and technologies",
+      "See the direct business impact of your technical contributions",
+    ],
+  },
+  {
+    title: "Team Culture",
+    points: [
+      "Collaborative, transparent management with open communication",
+      "Diverse, inclusive team that values different perspectives",
+      "Small team with fast, direct decision-making",
+    ],
+  },
+];
+
+const applySteps = [
+  "Put the position title in the subject line",
+  "Attach your resume (PDF preferred)",
+  "Add a link to your portfolio or GitHub, if you have one",
+];
+
+const JobList = ({ title, items }: { title: string; items: string[] }) => (
+  <div>
+    <h4 className="text-sm font-medium uppercase tracking-widest text-blue-300/80 mb-3">{title}</h4>
+    <ul className="space-y-2">
+      {items.map((item) => (
+        <li key={item} className="flex gap-3 text-blue-100 leading-relaxed">
+          <span className="text-cyan-400" aria-hidden="true">–</span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
 const Careers = () => {
-  const [expandedJob, setExpandedJob] = useState<number | null>(null);
+  const [expandedJob, setExpandedJob] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
 
   const applyHref = (position?: string) =>
@@ -236,330 +289,174 @@ const Careers = () => {
         canonical="https://aydenait.com/careers"
       />
 
-      {/* Hero Section */}
-      <section className="relative pt-20 pb-16 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-700 overflow-hidden">
-        <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:20px_20px]"></div>
-        <div className="relative max-w-5xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
-            Join Our <span className="text-cyan-300">AI Consulting</span> Team
-          </h1>
-          <p className="text-xl text-blue-100 mb-6 max-w-3xl mx-auto">
-            Build AI systems used in higher education, public services and business. Full-time positions and remote internships available.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-blue-100">
-            <div className="flex items-center gap-2">
-              <svg className="w-6 h-6 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span className="font-semibold">Remote-First Culture</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <svg className="w-6 h-6 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              <span className="font-semibold">Real Enterprise Projects</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <svg className="w-6 h-6 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-              </svg>
-              <span className="font-semibold">Career Growth</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-[#10172a]">
-        <div className="max-w-6xl mx-auto px-4">
-
-          {/* Why Join Us */}
-          <div className="mb-16 bg-gradient-to-br from-blue-900/60 to-cyan-900/30 rounded-2xl p-8 md:p-12 border border-cyan-700/40">
-            <h2 className="text-3xl font-bold text-white mb-6 text-center">Why Join AydenAIT?</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-                <h3 className="text-lg font-bold text-cyan-300 mb-3 flex items-center gap-2">
-                  <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <span>Professional Growth</span>
-                </h3>
-                <ul className="text-blue-100 space-y-2">
-                  <li>• Build AI used by real universities, public services and businesses</li>
-                  <li>• Work across the full project lifecycle, from scoping to production support</li>
-                  <li>• Mentorship from experienced AI consultants and engineers</li>
-                </ul>
+      <article className="bg-[#0b1120] text-blue-100">
+        {/* Hero */}
+        <header className="relative overflow-hidden">
+          <div className="absolute inset-x-0 top-0 h-[36rem] bg-[radial-gradient(ellipse_at_top,rgba(34,211,238,0.14),transparent_65%)]" aria-hidden="true" />
+          <div className="relative max-w-6xl mx-auto px-4 pt-20 pb-20">
+            <div className="grid lg:grid-cols-12 gap-10 items-end">
+              <div className="lg:col-span-7">
+                <p className="text-sm font-medium text-cyan-300 mb-4">Careers</p>
+                <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6">Join Our AI Consulting Team</h1>
+                <p className="text-2xl md:text-[1.7rem] leading-snug text-white/90">
+                  Build AI systems used in higher education, public services and business.
+                </p>
               </div>
-              <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-                <h3 className="text-lg font-bold text-cyan-300 mb-3 flex items-center gap-2">
-                  <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span>Flexible Work</span>
-                </h3>
-                <ul className="text-blue-100 space-y-2">
-                  <li>• Remote work with flexible scheduling</li>
-                  <li>• Supportive, inclusive team culture that values your well-being</li>
+              <div className="lg:col-span-5">
+                <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-cyan-200 mb-6">
+                  {perks.map((perk) => <li key={perk}>{perk}</li>)}
                 </ul>
-              </div>
-              <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-                <h3 className="text-lg font-bold text-cyan-300 mb-3 flex items-center gap-2">
-                  <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span>Impactful Work</span>
-                </h3>
-                <ul className="text-blue-100 space-y-2">
-                  <li>• Deliver AI solutions that improve how organizations operate</li>
-                  <li>• Work on diverse projects across industries and technologies</li>
-                  <li>• See the direct business impact of your technical contributions</li>
-                </ul>
-              </div>
-              <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-                <h3 className="text-lg font-bold text-cyan-300 mb-3 flex items-center gap-2">
-                  <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                  <span>Team Culture</span>
-                </h3>
-                <ul className="text-blue-100 space-y-2">
-                  <li>• Collaborative, transparent management with open communication</li>
-                  <li>• Diverse, inclusive team that values different perspectives</li>
-                  <li>• Small team with fast, direct decision-making</li>
-                </ul>
+                <p className="text-blue-200 leading-relaxed mb-8">Full-time positions and remote internships available.</p>
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+                  <a href="#positions" className="px-6 py-3 rounded-full bg-white text-[#0b1120] font-semibold hover:bg-cyan-200 transition-colors">
+                    See open positions <span aria-hidden="true">→</span>
+                  </a>
+                  <a href="#apply" className="font-semibold text-white hover:text-cyan-300 transition-colors">
+                    How to apply
+                  </a>
+                </div>
               </div>
             </div>
           </div>
+        </header>
 
-          {/* Open Positions */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-white mb-3 text-center">Open Positions</h2>
-            <p className="text-blue-200 text-center mb-6 max-w-2xl mx-auto">
-              We're looking for talented individuals who are passionate about AI and technology. Click any position to see full details.
-            </p>
+        <div className="border-t border-white/10">
+          <div className="max-w-6xl mx-auto px-4">
+            {/* Why join us */}
+            <section className="grid lg:grid-cols-12 gap-6 py-20">
+              <h2 className="lg:col-span-4 text-sm font-medium uppercase tracking-widest text-blue-300/80">Why join AydenAIT</h2>
+              <dl className="lg:col-span-8 grid sm:grid-cols-2 gap-x-10 gap-y-10">
+                {reasons.map(({ title, points }) => (
+                  <div key={title} className="border-t border-white/10 pt-5">
+                    <dt className="text-xl font-semibold text-white mb-3">{title}</dt>
+                    {points.map((point) => (
+                      <dd key={point} className="text-blue-200 leading-relaxed mb-2">{point}</dd>
+                    ))}
+                  </div>
+                ))}
+              </dl>
+            </section>
 
-            {/* Search Bar */}
-            <div className="max-w-2xl mx-auto mb-10">
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <svg className="w-5 h-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {/* Open positions */}
+            <section id="positions" className="scroll-mt-20 grid lg:grid-cols-12 gap-6 py-20 border-t border-white/10">
+              <div className="lg:col-span-4">
+                <h2 className="text-sm font-medium uppercase tracking-widest text-blue-300/80 mb-2">Open positions</h2>
+                <p className="text-blue-200">
+                  We're looking for talented individuals who are passionate about AI and technology. Select any position to see full details.
+                </p>
+              </div>
+              <div className="lg:col-span-8">
+                {/* Search */}
+                <div className="relative mb-2">
+                  <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-blue-300 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                   </svg>
-                </div>
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search by job title, skills, location, or keywords..."
-                  className="w-full pl-12 pr-4 py-4 bg-white/5 text-white placeholder-blue-300 border-2 border-white/15 rounded-xl focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/40 transition-all"
-                />
-                {searchQuery && (
-                  <button
-                    onClick={() => setSearchQuery("")}
-                    className="absolute inset-y-0 right-0 pr-4 flex items-center text-blue-300 hover:text-white"
-                    aria-label="Clear search"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                )}
-              </div>
-              {searchQuery && (
-                <p className="mt-2 text-sm text-blue-200 text-center">
-                  Found {filteredJobs.length} position{filteredJobs.length !== 1 ? 's' : ''} matching "{searchQuery}"
-                </p>
-              )}
-            </div>
-
-            {/* Job Listings */}
-            {filteredJobs.length > 0 ? (
-              <div className="space-y-6">
-                {filteredJobs.map((job, i) => (
-                <div
-                  key={i}
-                  className="bg-white/5 rounded-2xl border border-white/10 overflow-hidden hover:border-cyan-400/50 transition-colors"
-                >
-                  {/* Job Header */}
-                  <button
-                    onClick={() => setExpandedJob(expandedJob === i ? null : i)}
-                    aria-expanded={expandedJob === i}
-                    className="w-full text-left p-6 hover:bg-white/5 transition-colors"
-                  >
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-3">
-                          <span className={`px-4 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wide ${
-                            job.type === 'Full-time'
-                              ? 'bg-cyan-400/10 border border-cyan-400/30 text-cyan-200'
-                              : 'bg-blue-400/10 border border-blue-400/30 text-blue-200'
-                          }`}>
-                            {job.type}
-                          </span>
-                        </div>
-                        <h3 className="text-xl font-bold text-white mb-2">{job.title}</h3>
-                        <p className="text-blue-200 mb-3">{job.summary}</p>
-                        <div className="flex flex-wrap gap-3">
-                          <span className="px-3 py-1 bg-white/5 border border-white/10 text-blue-100 rounded-full text-sm font-medium flex items-center gap-1.5">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                            {job.location}
-                          </span>
-                        </div>
-                      </div>
-                      <span className="text-2xl text-cyan-300 flex-shrink-0">
-                        {expandedJob === i ? '−' : '+'}
-                      </span>
-                    </div>
-                  </button>
-
-                  {/* Expanded Details */}
-                  {expandedJob === i && (
-                    <div className="px-6 pb-6 border-t border-white/10 pt-6 bg-white/[0.03]">
-                      <div className="grid md:grid-cols-2 gap-6">
-                        {/* Responsibilities */}
-                        <div>
-                          <h4 className="font-bold text-white mb-3 flex items-center gap-2">
-                            <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                            </svg>
-                            <span>Responsibilities</span>
-                          </h4>
-                          <ul className="space-y-2 text-blue-100">
-                            {job.responsibilities.map((resp, idx) => (
-                              <li key={idx} className="flex items-start gap-2">
-                                <span className="text-cyan-400 mt-1">•</span>
-                                <span className="text-sm">{resp}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {/* Requirements */}
-                        <div>
-                          <h4 className="font-bold text-white mb-3 flex items-center gap-2">
-                            <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span>Requirements</span>
-                          </h4>
-                          <ul className="space-y-2 text-blue-100">
-                            {job.requirements.map((req, idx) => (
-                              <li key={idx} className="flex items-start gap-2">
-                                <span className="text-cyan-400 mt-1">•</span>
-                                <span className="text-sm">{req}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {/* Nice to Have or What You'll Learn */}
-                        {job.niceToHave && (
-                          <div className="md:col-span-2">
-                            <h4 className="font-bold text-white mb-3 flex items-center gap-2">
-                              <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                              </svg>
-                              <span>Nice to Have</span>
-                            </h4>
-                            <ul className="grid md:grid-cols-2 gap-2 text-blue-100">
-                              {job.niceToHave.map((item, idx) => (
-                                <li key={idx} className="flex items-start gap-2">
-                                  <span className="text-cyan-400 mt-1">•</span>
-                                  <span className="text-sm">{item}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        )}
-
-                        {job.whatYouWillLearn && (
-                          <div className="md:col-span-2">
-                            <h4 className="font-bold text-white mb-3 flex items-center gap-2">
-                              <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                              </svg>
-                              <span>What You'll Learn</span>
-                            </h4>
-                            <ul className="grid md:grid-cols-2 gap-2 text-blue-100">
-                              {job.whatYouWillLearn.map((item, idx) => (
-                                <li key={idx} className="flex items-start gap-2">
-                                  <span className="text-cyan-400 mt-1">•</span>
-                                  <span className="text-sm">{item}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        )}
-                      </div>
-
-                      {/* Apply Button */}
-                      <div className="mt-6 pt-4 border-t border-white/10">
-                        <a
-                          href={applyHref(job.title)}
-                          className="inline-block px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold rounded-lg hover:from-blue-700 hover:to-cyan-600 transition shadow-lg hover:shadow-xl"
-                        >
-                          Apply for this Position →
-                        </a>
-                      </div>
-                    </div>
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Search by job title, skills, location, or keywords..."
+                    aria-label="Search positions"
+                    className="w-full pl-12 pr-12 py-3 bg-white/[0.03] text-white placeholder-blue-300/70 border border-white/15 rounded-full focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/40 transition-colors"
+                  />
+                  {searchQuery && (
+                    <button
+                      onClick={() => setSearchQuery("")}
+                      className="absolute inset-y-0 right-0 pr-4 flex items-center text-blue-300 hover:text-white"
+                      aria-label="Clear search"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
                   )}
                 </div>
-              ))}
-              </div>
-            ) : (
-              <div className="text-center py-16 px-4">
-                <svg className="w-20 h-20 text-blue-400/50 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <h3 className="text-xl font-bold text-white mb-2">No positions found</h3>
-                <p className="text-blue-200 mb-4">
-                  We couldn't find any positions matching "{searchQuery}"
+                <p className="text-sm text-blue-300 mb-6" aria-live="polite">
+                  {searchQuery
+                    ? `Found ${filteredJobs.length} position${filteredJobs.length !== 1 ? "s" : ""} matching "${searchQuery}"`
+                    : `${openJobs.length} open positions`}
                 </p>
-                <button
-                  onClick={() => setSearchQuery("")}
-                  className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
-                >
-                  Clear search and view all positions
-                </button>
+
+                {filteredJobs.length > 0 ? (
+                  <ul className="divide-y divide-white/10 border-y border-white/10">
+                    {filteredJobs.map((job) => {
+                      const expanded = expandedJob === job.title;
+                      return (
+                        <li key={job.title}>
+                          <button
+                            onClick={() => setExpandedJob(expanded ? null : job.title)}
+                            aria-expanded={expanded}
+                            className="group w-full text-left grid grid-cols-[1fr_auto] gap-4 py-7"
+                          >
+                            <span>
+                              <span className="block text-sm text-cyan-300 mb-2">{job.type} · {job.location}</span>
+                              <span className="block text-xl font-semibold text-white group-hover:text-cyan-300 transition-colors mb-2">{job.title}</span>
+                              <span className="block text-blue-200 leading-relaxed">{job.summary}</span>
+                            </span>
+                            <span className="text-2xl leading-none text-cyan-300" aria-hidden="true">{expanded ? "−" : "+"}</span>
+                          </button>
+
+                          {expanded && (
+                            <div className="pb-8">
+                              <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
+                                <JobList title="Responsibilities" items={job.responsibilities} />
+                                <JobList title="Requirements" items={job.requirements} />
+                                {job.niceToHave && <JobList title="Nice to have" items={job.niceToHave} />}
+                                {job.whatYouWillLearn && <JobList title="What you'll learn" items={job.whatYouWillLearn} />}
+                              </div>
+                              <a
+                                href={applyHref(job.title)}
+                                className="inline-block mt-8 px-6 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold hover:opacity-90 transition-opacity"
+                              >
+                                Apply for this position <span aria-hidden="true">→</span>
+                              </a>
+                            </div>
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                ) : (
+                  <div className="py-12 border-y border-white/10">
+                    <h3 className="text-xl font-semibold text-white mb-2">No positions found</h3>
+                    <p className="text-blue-200 mb-4">We couldn't find any positions matching "{searchQuery}"</p>
+                    <button onClick={() => setSearchQuery("")} className="font-semibold text-cyan-300 hover:text-white transition-colors">
+                      Clear search and view all positions
+                    </button>
+                  </div>
+                )}
               </div>
-            )}
-          </div>
+            </section>
 
-          {/* Application Form */}
-          <div id="apply" className="bg-gradient-to-br from-blue-900 to-cyan-800 rounded-2xl p-8 md:p-12 shadow-2xl max-w-2xl mx-auto">
-            <h3 className="text-white font-bold mb-2 text-3xl text-center">Ready to Join Us?</h3>
-            <p className="text-blue-100 text-center mb-8">Email your resume and a short note about yourself. We'll get back to you within 2-3 business days.</p>
-
-            <ol className="text-blue-100 space-y-3 mb-8 max-w-md mx-auto list-decimal list-inside">
-              <li>Put the position title in the subject line</li>
-              <li>Attach your resume (PDF preferred)</li>
-              <li>Add a link to your portfolio or GitHub, if you have one</li>
-            </ol>
-            <div className="text-center">
-              <a
-                href={applyHref()}
-                className="inline-block py-4 px-10 bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-blue-900 font-bold rounded-lg transition text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
-              >
-                Email Your Application
-              </a>
-              <p className="mt-3 text-blue-200 text-sm">
-                Or send it directly to <a href={`mailto:${CAREERS_EMAIL}`} className="underline hover:text-white">{CAREERS_EMAIL}</a>
-              </p>
-            </div>
-
-            <div className="mt-6 text-center">
-              <p className="text-blue-100 text-sm flex items-center justify-center gap-2">
-                <svg className="w-4 h-4 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-                <span>All applications are confidential. We review every application and respond to qualified candidates within 2-3 business days.</span>
-              </p>
-            </div>
+            {/* How to apply */}
+            <section id="apply" className="scroll-mt-20 grid lg:grid-cols-12 gap-6 py-20 border-t border-white/10">
+              <h2 className="lg:col-span-4 text-sm font-medium uppercase tracking-widest text-blue-300/80">How to apply</h2>
+              <div className="lg:col-span-8">
+                <p className="text-2xl leading-relaxed text-white mb-8">
+                  Email your resume and a short note about yourself. We'll get back to you within 2-3 business days.
+                </p>
+                <ol className="divide-y divide-white/10 mb-10">
+                  {applySteps.map((step, idx) => (
+                    <li key={step} className="grid grid-cols-[4rem_1fr] gap-2 py-4 first:pt-0">
+                      <span className="font-mono text-sm text-cyan-300 pt-1">{String(idx + 1).padStart(2, "0")}</span>
+                      <span className="text-lg text-blue-100">{step}</span>
+                    </li>
+                  ))}
+                </ol>
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-4 mb-6">
+                  <a href={applyHref()} className="px-6 py-3 rounded-full bg-white text-[#0b1120] font-semibold hover:bg-cyan-200 transition-colors">
+                    Email your application <span aria-hidden="true">→</span>
+                  </a>
+                  <a href={`mailto:${CAREERS_EMAIL}`} className="font-semibold text-white hover:text-cyan-300 transition-colors">{CAREERS_EMAIL}</a>
+                </div>
+                <p className="text-sm text-blue-300">
+                  All applications are confidential. We review every application and respond to qualified candidates within 2-3 business days.
+                </p>
+              </div>
+            </section>
           </div>
         </div>
-      </section>
+      </article>
     </>
   );
 };
