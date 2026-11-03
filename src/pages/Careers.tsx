@@ -3,204 +3,205 @@ import SEO from "../components/SEO";
 
 const CAREERS_EMAIL = "contact@aydenait.com";
 
+// Keep listings in step with the products and services described elsewhere on the site
 const openJobs = [
   {
     title: "Senior DevOps Engineer",
     location: "Remote / Toronto, ON",
     type: "Full-time",
-    summary: "Lead automation, CI/CD, and cloud operations for enterprise SaaS customers. Drive infrastructure excellence and operational efficiency.",
+    summary: "Own the infrastructure behind our AI platforms, from deployment pipelines to monitoring, for products used every day in higher education.",
     responsibilities: [
-      "Design and implement CI/CD pipelines for multi-cloud environments",
-      "Lead infrastructure automation using Terraform, Ansible, or CloudFormation",
-      "Architect and manage Kubernetes clusters for production workloads",
-      "Implement monitoring, logging, and alerting solutions",
-      "Mentor junior engineers and establish DevOps best practices",
-      "Collaborate with development teams on deployment strategies"
+      "Design and run CI/CD pipelines for our products and client systems",
+      "Manage infrastructure as code for cloud and on-premises deployments",
+      "Run containerized production workloads reliably and securely",
+      "Build monitoring, logging and alerting so issues are caught before users notice",
+      "Support deployments inside institutions' own security and policy frameworks",
+      "Mentor other engineers and set operational practices for the team"
     ],
     requirements: [
-      "4+ years of DevOps/SRE experience in production environments",
-      "Expert knowledge of AWS, Azure, or GCP cloud platforms",
-      "Strong proficiency in Infrastructure as Code (Terraform, Ansible)",
-      "Experience with container orchestration (Kubernetes, Docker)",
-      "Proficiency in scripting languages (Python, Bash, Go)",
-      "Understanding of security best practices and compliance"
+      "4+ years of DevOps or SRE experience in production environments",
+      "Strong experience with at least one major cloud platform",
+      "Infrastructure as code (Terraform, Ansible or similar)",
+      "Containers and orchestration (Docker, Kubernetes)",
+      "Scripting in Python, Bash or Go",
+      "Practical understanding of security, access control and audit logging"
     ],
     niceToHave: [
-      "Certifications: AWS Solutions Architect, CKA, or similar",
-      "Experience with GitOps workflows (ArgoCD, Flux)",
-      "Knowledge of service mesh technologies (Istio, Linkerd)"
+      "Experience deploying into university or public-sector environments",
+      "Single sign-on and identity provider integration",
+      "GitOps workflows (Argo CD, Flux)"
     ]
   },
   {
     title: "AI / ML Engineer",
     location: "Remote",
     type: "Full-time",
-    summary: "Build and deploy production-grade AI/ML solutions for enterprise clients. Integrate cutting-edge models into scalable cloud architectures.",
+    summary: "Build the AI behind our products: grounded assistants, rubric-based scoring and detection models whose results people can check.",
     responsibilities: [
-      "Design and develop machine learning models for business applications",
-      "Integrate LLMs (GPT-4, Claude) into production systems",
-      "Build data pipelines and feature engineering workflows",
-      "Deploy and monitor ML models in cloud environments",
-      "Optimize model performance and inference latency",
-      "Collaborate with clients to understand AI requirements"
+      "Build retrieval-based assistants that answer from official sources and cite them",
+      "Develop and evaluate models for scoring, similarity and AI-authorship detection",
+      "Design evaluations that measure accuracy and false positives on real-world data",
+      "Make model output explainable, so reviewers can see why a result was produced",
+      "Deploy and monitor models in production",
+      "Work with faculty, staff and clients to turn their criteria into working systems"
     ],
     requirements: [
-      "3+ years of ML engineering or data science experience",
-      "Strong Python skills with ML frameworks (PyTorch, TensorFlow, scikit-learn)",
-      "Experience with LLM APIs and prompt engineering",
-      "Knowledge of MLOps practices and model deployment",
-      "Proficiency in cloud platforms (AWS SageMaker, Azure ML, GCP AI)",
-      "Strong understanding of data structures and algorithms"
+      "3+ years of ML engineering or applied data science experience",
+      "Strong Python with PyTorch, scikit-learn or similar",
+      "Experience building applications on large language models",
+      "Experience designing evaluations and benchmarks, not just training models",
+      "Model deployment and monitoring in production",
+      "Clear communication with people who aren't ML specialists"
     ],
     niceToHave: [
-      "Experience with vector databases (Pinecone, Weaviate, Chroma)",
-      "Knowledge of LangChain, LlamaIndex, or similar frameworks",
-      "Publications or contributions to ML open-source projects"
+      "Retrieval systems and vector search",
+      "Code analysis, plagiarism or authorship detection",
+      "Experience in education technology"
     ]
   },
   {
     title: "AI Software Development Intern",
     location: "Remote",
     type: "Internship",
-    summary: "Build AI-powered applications using LLMs, RAG systems, and modern frameworks. Work on real client projects with experienced mentors.",
+    summary: "Help build AI assistants and tools that answer from real sources, working on our products alongside experienced engineers.",
     responsibilities: [
-      "Develop AI chatbots and intelligent automation systems",
-      "Implement RAG (Retrieval-Augmented Generation) pipelines",
-      "Build frontend interfaces with React and TypeScript",
-      "Integrate LLM APIs (OpenAI, Anthropic) into applications",
-      "Write clean, maintainable code following best practices",
-      "Participate in code reviews and team discussions"
+      "Build features for AI assistants that answer questions with citations",
+      "Work on retrieval pipelines that ground answers in official documents",
+      "Build interfaces with React and TypeScript",
+      "Test how assistants behave when they don't know an answer",
+      "Write clean, tested code and take part in code reviews",
+      "Document what you build for the rest of the team"
     ],
     requirements: [
-      "Currently pursuing Computer Science or related degree (or bootcamp graduate)",
-      "Strong proficiency in Python programming",
-      "Experience with React and TypeScript",
+      "Studying Computer Science or a related field (or a recent bootcamp graduate)",
+      "Good Python skills",
+      "Some experience with React and TypeScript",
       "Understanding of REST APIs and web development",
-      "Familiarity with Git and version control",
-      "Passion for AI and eagerness to learn"
+      "Familiarity with Git",
+      "Curiosity about how AI systems succeed and fail"
     ],
     whatYouWillLearn: [
-      "Production LLM application development and prompt engineering",
-      "Enterprise software development practices and workflows",
-      "Cloud deployment and DevOps fundamentals",
-      "Client communication and project management skills"
+      "How to build AI applications on large language models that people can trust",
+      "Retrieval, citation and evaluation techniques",
+      "Shipping and supporting software that people use every day",
+      "Working directly with the people who use what you build"
     ]
   },
   {
     title: "Machine Learning Engineering Intern",
     location: "Remote",
     type: "Internship",
-    summary: "Develop and deploy ML models for classification, prediction, and NLP tasks. Gain hands-on experience with modern ML tools and production systems.",
+    summary: "Train and evaluate models for scoring, similarity and detection, and learn to measure whether a model is good enough to use.",
     responsibilities: [
-      "Train and evaluate ML models using PyTorch or TensorFlow",
-      "Perform data preprocessing, feature engineering, and analysis",
-      "Implement model evaluation metrics and A/B testing",
-      "Deploy models to cloud environments with monitoring",
-      "Optimize model performance for production workloads",
-      "Document experiments and present findings to the team"
+      "Train and evaluate models with PyTorch or scikit-learn",
+      "Prepare datasets and engineer features",
+      "Measure accuracy, false positives and bias on held-out data",
+      "Run experiments and compare approaches fairly",
+      "Help move models that pass evaluation into production",
+      "Write up experiments and present findings to the team"
     ],
     requirements: [
-      "Currently pursuing Computer Science, Statistics, or related field",
-      "Strong foundation in machine learning fundamentals",
-      "Proficiency in Python and ML libraries (scikit-learn, pandas, numpy)",
-      "Basic understanding of neural networks and deep learning",
+      "Studying Computer Science, Statistics or a related field",
+      "Solid grounding in machine learning fundamentals",
+      "Python with pandas, NumPy and scikit-learn",
+      "Basic understanding of neural networks",
       "Experience with Jupyter notebooks and data visualization",
-      "Strong analytical and problem-solving skills"
+      "Careful, analytical approach to results"
     ],
     whatYouWillLearn: [
-      "End-to-end ML model development and deployment (MLOps)",
-      "Production-grade model serving and monitoring",
-      "Feature engineering and model optimization techniques",
-      "Working with real-world datasets and business problems"
+      "End-to-end model development, from data to deployment",
+      "How to design evaluations that reflect real use",
+      "Reducing false positives where mistakes affect real people",
+      "Working with real-world data under privacy constraints"
     ]
   },
   {
     title: "Full-Stack Software Development Intern",
     location: "Remote",
     type: "Internship",
-    summary: "Build modern web applications with React, TypeScript, Node.js, and cloud platforms. Contribute to enterprise client projects and learn industry best practices.",
+    summary: "Build the web applications faculty and staff use every day, from grading and review workspaces to planning and reporting tools.",
     responsibilities: [
-      "Develop responsive web applications using React and TypeScript",
-      "Build RESTful APIs with Node.js and Express",
-      "Implement database schemas and queries (SQL/NoSQL)",
-      "Write unit tests and integration tests",
-      "Deploy applications to cloud platforms (AWS, Azure, GCP)",
-      "Collaborate with designers and product managers"
+      "Build web features with React and TypeScript",
+      "Develop APIs and database schemas",
+      "Build role-based access and audit trails into features",
+      "Write unit and integration tests",
+      "Help deploy and support the applications you work on",
+      "Work with users to understand what they need from a feature"
     ],
     requirements: [
-      "Currently pursuing Computer Science or related degree (or bootcamp graduate)",
-      "Strong foundation in JavaScript/TypeScript",
+      "Studying Computer Science or a related field (or a recent bootcamp graduate)",
+      "Good JavaScript or TypeScript skills",
       "Experience building web applications with React",
-      "Understanding of Node.js and backend development",
-      "Familiarity with databases (PostgreSQL, MongoDB)",
-      "Knowledge of Git and GitHub workflows"
+      "Some backend experience (Node.js, Python or similar)",
+      "Familiarity with SQL databases",
+      "Familiarity with Git and GitHub"
     ],
     whatYouWillLearn: [
-      "Enterprise-grade full-stack development patterns",
-      "Cloud architecture and deployment strategies",
-      "Agile development and professional team collaboration",
-      "Code quality, testing, and CI/CD practices"
+      "Building production applications for real users",
+      "Designing for privacy, access control and accountability",
+      "Testing, code review and CI/CD in practice",
+      "Turning user feedback into working features"
     ]
   },
   {
     title: "AI Solutions Consulting Intern",
     location: "Remote",
     type: "Internship",
-    summary: "Support AI consulting projects from research to implementation. Learn how to identify AI opportunities and create business value for enterprise clients.",
+    summary: "Help organizations work out where AI can realistically help, from first conversation to written proposal.",
     responsibilities: [
-      "Research AI use cases and feasibility for client projects",
-      "Analyze business requirements and technical constraints",
-      "Create technical documentation and architecture diagrams",
-      "Assist in client presentations and proposal development",
-      "Conduct competitive analysis and market research",
-      "Support implementation teams with requirements gathering"
+      "Research how AI could help with a client's processes, and where it shouldn't be used",
+      "Gather requirements, constraints and policy considerations",
+      "Help prepare AI readiness assessments and written proposals",
+      "Prepare documentation and diagrams that explain how a system will work",
+      "Support client meetings and product demonstrations",
+      "Track what clients ask for to inform our products and services"
     ],
     requirements: [
-      "Currently pursuing Business, Computer Science, or related field",
-      "Strong interest in AI strategy and business applications",
-      "Excellent written and verbal communication skills",
-      "Ability to understand technical concepts and explain to non-technical audiences",
-      "Proficiency in Microsoft Office, Google Suite, and presentation tools",
-      "Strong analytical and research skills"
+      "Studying Business, Computer Science or a related field",
+      "Strong interest in how organizations adopt AI",
+      "Excellent written and spoken communication",
+      "Ability to explain technical ideas to non-technical audiences",
+      "Strong research and analytical skills",
+      "Comfortable with presentation and document tools"
     ],
     whatYouWillLearn: [
-      "AI strategy and roadmap development for enterprises",
-      "Client engagement and stakeholder management",
-      "Technical writing and business case development",
-      "How to bridge business needs with AI capabilities"
+      "How AI projects are scoped, assessed and proposed",
+      "Working with universities, public-sector teams and businesses",
+      "Writing clear assessments and business cases",
+      "Balancing what AI can do with privacy, policy and risk"
     ]
   },
   {
     title: "AIOps & DevOps Intern",
     location: "Remote",
     type: "Internship",
-    summary: "Learn AI-powered IT operations, infrastructure automation, and cloud technologies. Work with Kubernetes, CI/CD pipelines, and observability tools.",
+    summary: "Learn how AI systems are deployed, monitored and kept reliable after launch, working on our production infrastructure.",
     responsibilities: [
-      "Assist in building CI/CD pipelines for client projects",
-      "Learn infrastructure automation with Terraform and Ansible",
-      "Monitor application performance and system health",
-      "Help implement logging and alerting solutions",
-      "Support Kubernetes cluster management and troubleshooting",
-      "Document operational procedures and runbooks"
+      "Help build and maintain CI/CD pipelines",
+      "Work on infrastructure automation with Terraform and Ansible",
+      "Monitor application and model health",
+      "Help set up logging and alerting",
+      "Support container deployments and troubleshooting",
+      "Write runbooks and operational documentation"
     ],
     requirements: [
-      "Currently pursuing Computer Science or IT-related degree",
-      "Basic understanding of Linux/Unix systems",
-      "Familiarity with scripting (Python, Bash, or similar)",
-      "Interest in cloud platforms (AWS, Azure, GCP)",
-      "Understanding of networking and system administration basics",
-      "Willingness to learn new technologies quickly"
+      "Studying Computer Science or an IT-related program",
+      "Basic Linux experience",
+      "Scripting in Python, Bash or similar",
+      "Interest in cloud platforms",
+      "Basic networking and system administration knowledge",
+      "Willingness to learn quickly"
     ],
     whatYouWillLearn: [
-      "Production DevOps practices and infrastructure automation",
-      "Kubernetes and container orchestration",
-      "Cloud architecture and deployment strategies",
-      "Monitoring, observability, and incident response"
+      "Running production systems that people depend on",
+      "Monitoring AI models as well as infrastructure",
+      "Containers, infrastructure as code and cloud deployment",
+      "Incident response and writing useful runbooks"
     ]
   }
 ];
 
-const perks = ["Remote-first culture", "Real enterprise projects", "Career growth"];
+const perks = ["Remote-first culture", "Products in real use", "Mentorship"];
 
 const reasons = [
   {
@@ -208,7 +209,7 @@ const reasons = [
     points: [
       "Build AI used by real universities, public services and businesses",
       "Work across the full project lifecycle, from scoping to production support",
-      "Mentorship from experienced AI consultants and engineers",
+      "Mentorship from the engineers who built our products",
     ],
   },
   {
@@ -218,9 +219,9 @@ const reasons = [
   {
     title: "Impactful Work",
     points: [
-      "Deliver AI solutions that improve how organizations operate",
-      "Work on diverse projects across industries and technologies",
-      "See the direct business impact of your technical contributions",
+      "Build AI that keeps people in control of the decisions that matter",
+      "Work across education, civic services and finance",
+      "See your work used by the people it was built for",
     ],
   },
   {
@@ -282,9 +283,9 @@ const Careers = () => {
   return (
     <>
       <SEO
-        title="Careers at AydenAIT - Join Our Consulting Team"
-        description="Full-time roles and remote internships in AI development, software engineering and AIOps. Work on real client projects with experienced mentors."
-        keywords="AI consultant jobs, IT consulting careers, AI internships, software development internship, ML engineering intern, remote tech internships, AIOps jobs, AI software developer"
+        title="Careers at AydenAIT - Build AI People Can Trust"
+        description="Full-time roles and remote internships in AI, machine learning, software engineering and DevOps, building AI products used in higher education."
+        keywords="AI jobs Toronto, AI internships, machine learning engineer, ML engineering intern, software development internship, remote tech internships, DevOps jobs, AI software developer"
         ogUrl="https://aydenait.com/careers"
         canonical="https://aydenait.com/careers"
       />
@@ -297,9 +298,9 @@ const Careers = () => {
             <div className="grid lg:grid-cols-12 gap-10 items-end">
               <div className="lg:col-span-7">
                 <p className="text-sm font-medium text-cyan-300 mb-4">Careers</p>
-                <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6">Join Our AI Consulting Team</h1>
+                <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6">Build AI People Can Trust</h1>
                 <p className="text-2xl md:text-[1.7rem] leading-snug text-white/90">
-                  Build AI systems used in higher education, public services and business.
+                  Work on AI systems used in higher education, public services and business.
                 </p>
               </div>
               <div className="lg:col-span-5">
