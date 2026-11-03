@@ -3,38 +3,9 @@ import SEO from "../components/SEO";
 import StructuredData from "../components/StructuredData";
 import { organizationSchema, websiteSchema } from "../data/schemas";
 import ContactForm from "../components/ContactForm";
-import Icon, { type IconName } from "../components/Icon";
-import { projects } from "../data/projects";
+import Icon from "../components/Icon";
+import { projects, type Project } from "../data/projects";
 import { engagementSteps, solutions } from "../data/solutions";
-
-const educationNeeds: { icon: IconName; title: string; desc: string }[] = [
-  { icon: "clipboardCheck", title: "Grading & Feedback", desc: "Rubric-based, AI-assisted scoring that keeps instructors in charge of every final mark." },
-  { icon: "search", title: "Academic Integrity", desc: "Similarity and AI-authorship analysis that produces evidence a committee can review." },
-  { icon: "calendar", title: "Workload & Planning", desc: "Course assignments, service roles and term planning driven by your own policies." },
-  { icon: "chat", title: "Student & Staff Assistants", desc: "Assistants that answer from your official documents and show where each answer came from." },
-];
-
-const sectors: { icon: IconName; title: string; desc: string; example: string }[] = [
-  {
-    icon: "library",
-    title: "Public Sector & Civic Services",
-    desc: "Help residents find accurate information quickly, without replacing the official sources they rely on.",
-    example: "Hey Markham: an AI assistant built on the City of Markham's publicly available data.",
-  },
-  {
-    icon: "presentationChart",
-    title: "Financial Services",
-    desc: "Turn news, market data and sentiment into analysis that supports decisions, with risk visible at every step.",
-    example: "AlphOpt: options-strategy analysis with news and sentiment AI.",
-  },
-  {
-    icon: "office",
-    title: "Businesses & Organizations",
-    desc: "AI strategy, custom development and integration with the systems your team already uses.",
-    example: "From a first assessment to a production system and ongoing support.",
-  },
-];
-
 
 const principles = [
   { title: "Proven in production", desc: "Our own platforms are used every day in higher education. We know what it takes to keep AI working after launch." },
@@ -43,7 +14,14 @@ const principles = [
   { title: "Privacy and policy first", desc: "We design around your organization's privacy, security and policy requirements from day one." },
 ];
 
-const educationProjects = projects.filter((p) => p.sector === "Higher Education");
+// Counts and results come from src/data/projects.ts so the hero stays in step with the product list
+const sectorOrder: Project["sector"][] = ["Higher Education", "Civic Services", "Financial Services"];
+const inProduction = projects.filter((p) => p.sector === "Higher Education" && !p.stage).length;
+const featured = projects.find((p) => p.screenshots?.length && p.liveUrl);
+const featuredHost = featured?.liveUrl ? new URL(featured.liveUrl).host : undefined;
+const measuredResults = projects.flatMap((p) =>
+  (p.productPage?.results ?? []).map((r) => ({ ...r, product: p.title, slug: p.productPage!.slug })),
+);
 
 const Home = () => (
   <>
@@ -56,63 +34,129 @@ const Home = () => (
     />
     <StructuredData data={organizationSchema} />
     <StructuredData data={websiteSchema} />
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-950 via-blue-900 to-indigo-900">
-      <div className="absolute -top-32 -left-40 w-96 h-96 bg-blue-500 rounded-full filter blur-3xl opacity-25 animate-[pulse_8s_cubic-bezier(0.4,0,0.6,1)_infinite]" />
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyan-400 rounded-full filter blur-3xl opacity-20 animate-[pulse_8s_cubic-bezier(0.4,0,0.6,1)_infinite] delay-1000" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-400 rounded-full filter blur-3xl opacity-10 animate-[pulse_12s_cubic-bezier(0.4,0,0.6,1)_infinite] delay-500" />
-
-      <div className="relative z-10 max-w-6xl mx-auto px-4 py-20">
-        <div className="text-center mb-12 animate-[fadeInUp_0.8s_ease-out]">
-          <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6">
-            Turn Your AI Idea
-            <br />
-            <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 bg-clip-text text-transparent">Into a Working Solution</span>
-          </h1>
-
-          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-4 leading-relaxed">
-            AydenAIT designs, builds and supports custom AI solutions, from assistants and automation to analytics and
-            complete AI platforms. Our systems are already used every day by faculty and staff in <span className="text-cyan-300 font-bold">higher education</span>.
-          </p>
-
-          <p className="text-lg text-blue-200 max-w-2xl mx-auto mb-8">
-            We assess what AI can realistically achieve for your organization, then design and deliver it with your team.
-          </p>
-
-          {/* Facts */}
-          <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-10">
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4">
-              <div className="text-cyan-400 font-bold text-3xl mb-1">3</div>
-              <div className="text-blue-100 text-sm font-semibold">Platforms in use in higher education</div>
+    {/* Hero */}
+    <section className="relative overflow-hidden bg-[#0b1120]">
+      <div className="absolute inset-x-0 top-0 h-[40rem] bg-[radial-gradient(ellipse_at_top,rgba(34,211,238,0.16),transparent_65%)]" aria-hidden="true" />
+      <div className="relative max-w-6xl mx-auto px-4 pt-20 pb-16">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-6">
+            <p className="text-sm font-medium text-cyan-300 mb-5">AI products and custom AI solutions · Toronto</p>
+            <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white leading-[1.05] mb-6">
+              AI that people can check, built to run every day
+            </h1>
+            <p className="text-xl text-blue-100 leading-relaxed mb-8">
+              AydenAIT designs, builds and supports AI systems for education, civic services and finance. Our grading,
+              academic-integrity and workload platforms are used by faculty and staff in higher education, and we build
+              the same kind of system for your organization.
+            </p>
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-4 mb-12">
+              <Link to="/contact" className="px-6 py-3 rounded-full bg-white text-[#0b1120] font-semibold hover:bg-cyan-200 transition-colors">
+                Start your AI project <span aria-hidden="true">→</span>
+              </Link>
+              <a href="#products" className="font-semibold text-white hover:text-cyan-300 transition-colors">
+                See what we've built
+              </a>
             </div>
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4">
-              <div className="text-cyan-400 font-bold text-3xl mb-1">5</div>
-              <div className="text-blue-100 text-sm font-semibold">AI products designed and built</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4">
-              <div className="text-cyan-400 font-bold text-3xl mb-1">3</div>
-              <div className="text-blue-100 text-sm font-semibold">Sectors: education, civic services, finance</div>
-            </div>
+            <dl className="grid grid-cols-3 gap-6 border-t border-white/10 pt-6">
+              <div>
+                <dt className="sr-only">Products</dt>
+                <dd className="text-3xl font-bold text-white">{projects.length}</dd>
+                <dd className="text-sm text-blue-300">AI products designed and built</dd>
+              </div>
+              <div>
+                <dt className="sr-only">In production</dt>
+                <dd className="text-3xl font-bold text-white">{inProduction}</dd>
+                <dd className="text-sm text-blue-300">platforms in use in higher education</dd>
+              </div>
+              <div>
+                <dt className="sr-only">Sectors</dt>
+                <dd className="text-3xl font-bold text-white">{sectorOrder.length}</dd>
+                <dd className="text-sm text-blue-300">sectors: education, civic, finance</dd>
+              </div>
+            </dl>
           </div>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <Link
-              to="/contact"
-              className="group px-8 py-4 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-blue-900 font-bold shadow-2xl hover:shadow-cyan-400/50 hover:scale-105 transition-all text-lg inline-flex items-center justify-center gap-2"
-            >
-              <svg className="w-5 h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              Start Your AI Project
-            </Link>
-            <Link
-              to="/products"
-              className="px-8 py-4 rounded-full text-white border-2 border-white/30 font-bold hover:bg-white/10 hover:border-white transition-all text-lg backdrop-blur-sm"
-            >
-              See Our Products
-            </Link>
+          {/* Live product in a browser window */}
+          {featured?.screenshots && (
+            <div className="lg:col-span-6">
+              <figure className="rounded-xl overflow-hidden border border-white/10 bg-[#111a2e] shadow-[0_20px_80px_-20px_rgba(34,211,238,0.35)]">
+                <div className="flex items-center gap-2 px-4 h-9 border-b border-white/10">
+                  <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
+                  <span className="mx-auto px-4 py-0.5 rounded-md bg-white/5 text-xs text-blue-300">{featuredHost}</span>
+                </div>
+                <img src={featured.screenshots[0].src} alt={featured.screenshots[0].alt} className="w-full aspect-[16/10] object-cover object-top" />
+              </figure>
+              <p className="mt-4 text-sm text-blue-300">
+                <span className="text-white font-semibold">{featured.title}</span>, {featured.summary.charAt(0).toLowerCase() + featured.summary.slice(1, -1)}.{" "}
+                <a href={featured.liveUrl} target="_blank" rel="noopener noreferrer" className="text-cyan-300 hover:text-white transition-colors">
+                  Try it live <span aria-hidden="true">↗</span>
+                </a>
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+
+    {/* Products */}
+    <section id="products" className="scroll-mt-20 py-20 bg-[#0b1120] border-t border-white/10">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="grid lg:grid-cols-12 gap-6 mb-12">
+          <h2 className="lg:col-span-4 text-sm font-medium uppercase tracking-wider text-cyan-300">Our products</h2>
+          <div className="lg:col-span-8">
+            <p className="text-3xl md:text-4xl font-bold text-white mb-4">We build our own AI platforms first</p>
+            <p className="text-blue-200 max-w-2xl">
+              Every product below was designed, built and is supported by our team. The lessons from running them are
+              what we bring to client projects.
+            </p>
           </div>
         </div>
+
+        {sectorOrder.map((sector) => (
+          <div key={sector} className="grid lg:grid-cols-12 gap-6 py-8 border-t border-white/10">
+            <h3 className="lg:col-span-4 text-lg font-semibold text-white">{sector}</h3>
+            <ul className="lg:col-span-8 grid sm:grid-cols-2 gap-4">
+              {projects.filter((p) => p.sector === sector).map((project) => (
+                <li key={project.title}>
+                  <Link
+                    to={project.productPage ? `/products/${project.productPage.slug}` : "/products"}
+                    className="group flex flex-col h-full rounded-xl p-6 bg-white/[0.03] border border-white/10 hover:border-cyan-400/50 hover:bg-white/[0.06] transition-colors"
+                  >
+                    <span className="flex items-center gap-2 mb-2">
+                      <span className="text-lg font-bold text-white">{project.title}</span>
+                      {project.stage && (
+                        <span className="text-xs font-semibold px-2 py-0.5 rounded-full border border-amber-300/40 bg-amber-300/10 text-amber-100">{project.stage}</span>
+                      )}
+                    </span>
+                    <span className="text-sm text-blue-200 leading-relaxed mb-4">{project.summary}</span>
+                    <span className="mt-auto text-sm font-semibold text-cyan-300 group-hover:text-white transition-colors">
+                      Learn more <span aria-hidden="true">→</span>
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+
+        {measuredResults.length > 0 && (
+          <div className="grid lg:grid-cols-12 gap-6 pt-10 border-t border-white/10">
+            <h3 className="lg:col-span-4 text-sm font-medium uppercase tracking-wider text-cyan-300">Measured results</h3>
+            <ul className="lg:col-span-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {measuredResults.map((r) => (
+                <li key={r.product + r.label}>
+                  <p className="text-3xl font-bold tracking-tight text-white mb-2">{r.value}</p>
+                  <p className="text-sm text-blue-200 leading-relaxed">
+                    {r.label}.{" "}
+                    <Link to={`/products/${r.slug}`} className="text-cyan-300 hover:text-white transition-colors">{r.product}</Link>
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </section>
 
@@ -151,82 +195,6 @@ const Home = () => (
           </a>{" "}
           for an objective assessment of whether AI is the right fit.
         </p>
-      </div>
-    </section>
-
-    {/* Education */}
-    <section className="py-20 bg-gradient-to-b from-[#10172a] to-blue-950">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-2">Our Strongest Track Record</h2>
-          <p className="text-3xl md:text-4xl font-bold text-white mb-4">AI for Teaching, Learning and Academic Operations</p>
-          <p className="text-blue-200 max-w-3xl mx-auto">
-            Universities face growing enrolments, AI-generated submissions and complex workload policies. Our tools reduce
-            repetitive work for faculty and staff while leaving academic judgement with them.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          {educationProjects.map((project) => (
-            <div key={project.title} className="flex flex-col bg-white/10 rounded-2xl p-7 border border-blue-700/50 hover:border-cyan-400 transition">
-              <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-              <p className="text-blue-100 text-sm leading-relaxed mb-5">{project.summary}</p>
-              {project.productPage && (
-                <Link
-                  to={`/products/${project.productPage.slug}`}
-                  className="mt-auto self-start py-1 text-sm font-semibold text-cyan-300 hover:text-white transition-colors"
-                >
-                  Learn more <span aria-hidden="true">→</span>
-                </Link>
-              )}
-            </div>
-          ))}
-        </div>
-
-        <h3 className="text-xl font-bold text-white text-center mb-6">Where we help schools and universities</h3>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
-          {educationNeeds.map((need) => (
-            <div key={need.title} className="rounded-xl p-6 bg-white/5 border border-white/10">
-              <Icon name={need.icon} className="w-7 h-7 text-cyan-300 mb-3" />
-              <h4 className="font-bold text-white mb-2">{need.title}</h4>
-              <p className="text-blue-200 text-sm leading-relaxed">{need.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="text-center">
-          <Link to="/products" className="inline-flex items-center gap-2 text-cyan-300 hover:text-cyan-200 font-semibold transition-all hover:gap-3">
-            <span>See the products in detail</span>
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </Link>
-        </div>
-      </div>
-    </section>
-
-    {/* Other sectors */}
-    <section className="py-20 bg-[#0c1222] border-y border-blue-900/50">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-2">Beyond the Classroom</h2>
-          <p className="text-3xl md:text-4xl font-bold text-white mb-4">The Same Approach, Other Fields</p>
-          <p className="text-blue-200 max-w-3xl mx-auto">
-            The principles behind our education work (grounded answers, human review and clear evidence) apply equally in other sectors.
-          </p>
-        </div>
-        <div className="grid md:grid-cols-3 gap-6">
-          {sectors.map((sector) => (
-            <div key={sector.title} className="flex flex-col rounded-2xl p-8 bg-white/5 border border-white/10 hover:border-cyan-400/50 transition-all duration-300">
-              <div className="w-12 h-12 mb-5 rounded-xl bg-cyan-400/10 border border-cyan-400/30 flex items-center justify-center">
-                <Icon name={sector.icon} className="w-6 h-6 text-cyan-300" />
-              </div>
-              <h3 className="font-bold text-xl mb-3 text-white">{sector.title}</h3>
-              <p className="text-blue-100 text-sm leading-relaxed mb-5">{sector.desc}</p>
-              <p className="mt-auto pt-4 border-t border-white/10 text-sm text-cyan-200">{sector.example}</p>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
 
