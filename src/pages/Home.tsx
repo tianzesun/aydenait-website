@@ -104,7 +104,7 @@ const Home = () => (
     <section id="products" className="scroll-mt-20 py-20 bg-[#0b1120] border-t border-white/10">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid lg:grid-cols-12 gap-6 mb-12">
-          <h2 className="lg:col-span-4 text-sm font-medium uppercase tracking-wider text-cyan-300">Our products</h2>
+          <h2 className="lg:col-span-4 text-sm font-medium uppercase tracking-widest text-blue-300/80">Our products</h2>
           <div className="lg:col-span-8">
             <p className="text-3xl md:text-4xl font-bold text-white mb-4">We build our own AI platforms first</p>
             <p className="text-blue-200 max-w-2xl">
@@ -143,7 +143,7 @@ const Home = () => (
 
         {measuredResults.length > 0 && (
           <div className="grid lg:grid-cols-12 gap-6 pt-10 border-t border-white/10">
-            <h3 className="lg:col-span-4 text-sm font-medium uppercase tracking-wider text-cyan-300">Measured results</h3>
+            <h3 className="lg:col-span-4 text-sm font-medium uppercase tracking-widest text-blue-300/80">Measured results</h3>
             <ul className="lg:col-span-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {measuredResults.map((r) => (
                 <li key={r.product + r.label}>
@@ -164,7 +164,7 @@ const Home = () => (
     <section className="py-20 bg-[#0b1120] border-t border-white/10">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid lg:grid-cols-12 gap-6 mb-12">
-          <h2 className="lg:col-span-4 text-sm font-medium uppercase tracking-wider text-cyan-300">Services</h2>
+          <h2 className="lg:col-span-4 text-sm font-medium uppercase tracking-widest text-blue-300/80">Services</h2>
           <div className="lg:col-span-8">
             <p className="text-3xl md:text-4xl font-bold text-white mb-4">What we can build for you</p>
             <p className="text-blue-200 max-w-2xl">
@@ -208,7 +208,7 @@ const Home = () => (
     <section className="py-20 bg-[#0b1120] border-t border-white/10">
       <div className="max-w-6xl mx-auto px-4 grid lg:grid-cols-12 gap-6">
         <div className="lg:col-span-4">
-          <h2 className="text-sm font-medium uppercase tracking-wider text-cyan-300 mb-4">How a project works</h2>
+          <h2 className="text-sm font-medium uppercase tracking-widest text-blue-300/80 mb-4">How a project works</h2>
           <p className="text-blue-200 max-w-sm">
             No in-house AI team or detailed specification is required. We start from the problem you need to solve.
           </p>
@@ -230,7 +230,7 @@ const Home = () => (
     {/* Why clients choose us */}
     <section className="py-20 bg-[#0b1120] border-t border-white/10">
       <div className="max-w-6xl mx-auto px-4 grid lg:grid-cols-12 gap-6">
-        <h2 className="lg:col-span-4 text-sm font-medium uppercase tracking-wider text-cyan-300">Why clients choose AydenAIT</h2>
+        <h2 className="lg:col-span-4 text-sm font-medium uppercase tracking-widest text-blue-300/80">Why clients choose AydenAIT</h2>
         <div className="lg:col-span-8">
           <dl className="grid sm:grid-cols-2 gap-x-10 gap-y-8 mb-10">
             {principles.map((item) => (

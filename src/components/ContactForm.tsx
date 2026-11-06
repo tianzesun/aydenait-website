@@ -14,7 +14,7 @@ interface ContactFormProps {
 const emptyForm = { name: "", email: "", organization: "", phone: "", message: "", website: "" };
 
 const inputClass =
-  "w-full border bg-white/5 px-3 py-2.5 text-blue-50 placeholder-blue-300/60 border-blue-400/60 rounded-lg focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/30 transition";
+  "w-full border bg-white/5 px-3 py-2.5 text-blue-50 placeholder-blue-200/70 border-white/15 hover:border-white/25 rounded-lg focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/30 transition";
 const labelClass = "block mb-1 font-semibold text-blue-200";
 
 // The single enquiry form used on the Contact page and the Home page assessment section.
@@ -60,23 +60,23 @@ const ContactForm = ({
   return (
     <>
       {submitted && (
-        <div role="status" className="mb-6 p-3 bg-green-500/20 border border-green-500 rounded text-green-100">
+        <div role="status" className="mb-6 p-3 bg-green-500/10 border border-green-400/50 rounded-lg text-green-100">
           ✓ Thank you! We'll be in touch within 1 business day.
         </div>
       )}
       {error && (
-        <div role="alert" className="mb-6 p-3 bg-red-500/20 border border-red-500 rounded text-red-100">
+        <div role="alert" className="mb-6 p-3 bg-red-500/10 border border-red-400/50 rounded-lg text-red-100">
           ✗ {error}
         </div>
       )}
       <form method="post" onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-5">
         <div className={half}>
-          <label htmlFor={id("name")} className={labelClass}>Name<span className="text-red-500">*</span></label>
+          <label htmlFor={id("name")} className={labelClass}>Name<span className="text-red-400">*</span></label>
           <input type="text" id={id("name")} name="name" autoComplete="name" maxLength={200}
             value={formData.name} onChange={handleChange} required className={inputClass} />
         </div>
         <div className={half}>
-          <label htmlFor={id("email")} className={labelClass}>Email<span className="text-red-500">*</span></label>
+          <label htmlFor={id("email")} className={labelClass}>Email<span className="text-red-400">*</span></label>
           <input type="email" id={id("email")} name="email" autoComplete="email" maxLength={254}
             value={formData.email} onChange={handleChange} required className={inputClass} />
         </div>
@@ -97,7 +97,7 @@ const ContactForm = ({
             value={formData.website} onChange={handleChange} />
         </div>
         <div className="md:col-span-2">
-          <label htmlFor={id("message")} className={labelClass}>Message<span className="text-red-500">*</span></label>
+          <label htmlFor={id("message")} className={labelClass}>Message<span className="text-red-400">*</span></label>
           <textarea id={id("message")} name="message" rows={layout === "split" ? 7 : 5} maxLength={5000}
             placeholder={messagePlaceholder}
             value={formData.message} onChange={handleChange} required className={inputClass}></textarea>
@@ -109,7 +109,7 @@ const ContactForm = ({
           <button
             type="submit"
             disabled={isSubmitting || !isReady}
-            className="shrink-0 whitespace-nowrap px-10 py-3 bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/25 transition text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+            className="shrink-0 whitespace-nowrap px-8 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? "Sending..." : submitLabel}
           </button>

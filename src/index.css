@@ -8,57 +8,10 @@
     outline: 2px solid #22d3ee;
     outline-offset: 2px;
   }
-}
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-}
-
-@layer utilities {
-  .animate-fadeInUp {
-    animation: fadeInUp 0.8s ease-out forwards;
-  }
-  .animate-fadeIn {
-    animation: fadeIn 0.6s ease-out forwards;
-  }
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-  .bg-animate-gradient {
-    background-size: 200% 200%;
-    animation: gradient 15s ease infinite;
-  }
-  .scroll-smooth {
-    scroll-behavior: smooth;
-  }
-  .text-shadow {
-    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-  .text-shadow-lg {
-    text-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  /* Even line lengths in headings, so a title never ends on a single orphaned word */
+  h1, h2, h3 {
+    text-wrap: balance;
   }
 }
 
@@ -84,69 +37,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e293b;
+  background: #0b1120;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3b82f6;
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #60a5fa;
-}
-
-@layer utilities {
-  .bg-grid {
-    background-size: 40px 40px;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  }
-
-  .bg-dot {
-    background-size: 20px 20px;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  }
-
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .text-gradient {
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .perspective-1000 {
-    perspective: 1000px;
-  }
-
-  .preserve-3d {
-    transform-style: preserve-3d;
-  }
-
-  .backface-hidden {
-    backface-visibility: hidden;
-  }
-}
-
-::view-transition-old(root) {
-  animation: fade-out 0.3s ease-out;
-}
-
-::view-transition-new(root) {
-  animation: fade-in 0.3s ease-out;
-}
-
-@keyframes fade-out {
-  from { opacity: 1; transform: translateY(0); }
-  to { opacity: 0; transform: translateY(-20px); }
-}
-
-@keyframes fade-in {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .bg-noise {
@@ -168,10 +68,5 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  }
-
-  ::view-transition-old(root),
-  ::view-transition-new(root) {
-    animation: none !important;
   }
 }

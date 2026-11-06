@@ -33,12 +33,12 @@ class ErrorBoundary extends Component<{ children: ReactNode }, State> {
             <button
               type="button"
               onClick={() => window.location.reload()}
-              className="px-8 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-bold shadow-lg hover:scale-105 transition"
+              className="px-6 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold hover:opacity-90 transition-opacity"
             >
               Reload the Page
             </button>
             {/* Plain link, not <Link>: a full page load starts the app fresh */}
-            <a href="/" className="px-8 py-3 rounded-full border-2 border-cyan-400 text-cyan-200 font-bold hover:bg-cyan-400/20 transition">
+            <a href="/" className="px-6 py-3 rounded-full border border-white/20 text-white font-semibold hover:bg-white/5 transition-colors">
               Go to Home
             </a>
           </div>
