@@ -161,61 +161,66 @@ const Home = () => (
     </section>
 
     {/* What we can build */}
-    <section className="py-20 bg-[#10172a]">
+    <section className="py-20 bg-[#0b1120] border-t border-white/10">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-2">AI Solutions</h2>
-          <p className="text-3xl md:text-4xl font-bold text-white mb-4">What We Can Build for You</p>
-          <p className="text-blue-200 max-w-3xl mx-auto">
-            Each solution below is based on systems we have already built, and can be adapted to your organization.
+        <div className="grid lg:grid-cols-12 gap-6 mb-12">
+          <h2 className="lg:col-span-4 text-sm font-medium uppercase tracking-wider text-cyan-300">Services</h2>
+          <div className="lg:col-span-8">
+            <p className="text-3xl md:text-4xl font-bold text-white mb-4">What we can build for you</p>
+            <p className="text-blue-200 max-w-2xl">
+              Each solution below is based on systems we have already built, and can be adapted to your organization.
+            </p>
+          </div>
+        </div>
+        <div className="grid lg:grid-cols-12 gap-6">
+          <ul className="lg:col-start-5 lg:col-span-8 grid sm:grid-cols-2 gap-4">
+            {solutions.map((item) => (
+              <li key={item.title}>
+                <Link
+                  to={`/services/${item.slug}`}
+                  className="group flex flex-col h-full rounded-xl p-6 bg-white/[0.03] border border-white/10 hover:border-cyan-400/50 hover:bg-white/[0.06] transition-colors"
+                >
+                  <span className="flex items-center gap-3 mb-3">
+                    <Icon name={item.icon} className="w-5 h-5 text-cyan-300 flex-shrink-0" />
+                    <span className="text-lg font-bold text-white">{item.title}</span>
+                  </span>
+                  <span className="text-sm text-blue-200 leading-relaxed mb-4">{item.desc}</span>
+                  <span className="mt-auto pt-4 border-t border-white/10 text-sm text-blue-300">{item.proof}</span>
+                  <span className="mt-4 text-sm font-semibold text-cyan-300 group-hover:text-white transition-colors">
+                    Learn more <span aria-hidden="true">→</span>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p className="lg:col-start-5 lg:col-span-8 text-blue-200">
+            Have a different use case in mind?{" "}
+            <a href="#lead-capture" className="text-cyan-300 font-semibold hover:text-white transition-colors">
+              Contact us
+            </a>{" "}
+            for an objective assessment of whether AI is the right fit.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-          {solutions.map((item) => (
-            <div key={item.title} className="flex flex-col rounded-2xl p-7 bg-white/5 border border-white/10 hover:border-cyan-400/50 hover:bg-white/10 transition-all duration-300">
-              <div className="w-12 h-12 mb-5 rounded-xl bg-cyan-400/10 border border-cyan-400/30 flex items-center justify-center">
-                <Icon name={item.icon} className="w-6 h-6 text-cyan-300" />
-              </div>
-              <h3 className="font-bold text-xl mb-3 text-white">{item.title}</h3>
-              <p className="text-blue-100 text-sm leading-relaxed mb-5">{item.desc}</p>
-              <p className="mt-auto pt-4 border-t border-white/10 text-sm text-cyan-200">{item.proof}</p>
-              <Link
-                to={`/services/${item.slug}`}
-                className="mt-4 self-start py-1 text-sm font-semibold text-cyan-300 hover:text-white transition-colors"
-              >
-                Learn more <span aria-hidden="true">→</span>
-              </Link>
-            </div>
-          ))}
-        </div>
-        <p className="text-center text-blue-100">
-          Have a different use case in mind?{" "}
-          <a href="#lead-capture" className="text-cyan-300 font-semibold hover:text-cyan-200 underline underline-offset-4">
-            Contact us
-          </a>{" "}
-          for an objective assessment of whether AI is the right fit.
-        </p>
       </div>
     </section>
 
     {/* How a project works */}
-    <section className="py-20 bg-blue-950">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-2">Getting Started</h2>
-          <p className="text-3xl md:text-4xl font-bold text-white mb-4">How a Project Works</p>
-          <p className="text-blue-200 max-w-3xl mx-auto">
+    <section className="py-20 bg-[#0b1120] border-t border-white/10">
+      <div className="max-w-6xl mx-auto px-4 grid lg:grid-cols-12 gap-6">
+        <div className="lg:col-span-4">
+          <h2 className="text-sm font-medium uppercase tracking-wider text-cyan-300 mb-4">How a project works</h2>
+          <p className="text-blue-200 max-w-sm">
             No in-house AI team or detailed specification is required. We start from the problem you need to solve.
           </p>
         </div>
-        <ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <ol className="lg:col-span-8 divide-y divide-white/10">
           {engagementSteps.map((step, index) => (
-            <li key={step.title} className="rounded-2xl p-6 bg-white/5 border border-white/10">
-              <div className="w-10 h-10 mb-4 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center font-bold text-blue-950">
-                {index + 1}
+            <li key={step.title} className="grid sm:grid-cols-[4rem_1fr] gap-2 py-7 first:pt-0">
+              <span className="font-mono text-sm text-cyan-300 pt-1">{String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <h3 className="text-xl font-semibold text-white mb-2">{step.title}</h3>
+                <p className="text-blue-200 leading-relaxed">{step.desc}</p>
               </div>
-              <h3 className="font-bold text-lg text-white mb-2">{step.title}</h3>
-              <p className="text-blue-200 text-sm leading-relaxed">{step.desc}</p>
             </li>
           ))}
         </ol>
@@ -223,114 +228,66 @@ const Home = () => (
     </section>
 
     {/* Why clients choose us */}
-    <section className="py-20 bg-gradient-to-b from-blue-950 to-[#10172a]">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">Why Clients Choose AydenAIT</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          {principles.map((item) => (
-            <div key={item.title} className="flex gap-4 rounded-2xl p-6 bg-white/5 border border-white/10">
-              <svg className="w-7 h-7 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <div>
-                <h3 className="font-bold text-lg text-white mb-1">{item.title}</h3>
-                <p className="text-blue-200 text-sm leading-relaxed">{item.desc}</p>
+    <section className="py-20 bg-[#0b1120] border-t border-white/10">
+      <div className="max-w-6xl mx-auto px-4 grid lg:grid-cols-12 gap-6">
+        <h2 className="lg:col-span-4 text-sm font-medium uppercase tracking-wider text-cyan-300">Why clients choose AydenAIT</h2>
+        <div className="lg:col-span-8">
+          <dl className="grid sm:grid-cols-2 gap-x-10 gap-y-8 mb-10">
+            {principles.map((item) => (
+              <div key={item.title} className="border-l-2 border-cyan-400/60 pl-5">
+                <dt className="text-lg font-semibold text-white mb-2">{item.title}</dt>
+                <dd className="text-blue-200 leading-relaxed">{item.desc}</dd>
               </div>
-            </div>
-          ))}
-        </div>
-        <div className="text-center mt-10">
-          <Link to="/security" className="inline-flex items-center gap-2 text-cyan-300 hover:text-cyan-200 font-semibold transition-all hover:gap-3">
-            <span>How we protect your data</span>
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
+            ))}
+          </dl>
+          <Link to="/security" className="font-semibold text-cyan-300 hover:text-white transition-colors">
+            How we protect your data <span aria-hidden="true">→</span>
           </Link>
         </div>
       </div>
     </section>
 
-    {/* Lead Capture Form - Free AI Readiness Assessment */}
-    <section id="lead-capture" className="scroll-mt-24 py-20 bg-gradient-to-br from-blue-900 via-indigo-900 to-blue-800 relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:30px_30px]"></div>
-      <div className="relative max-w-6xl mx-auto px-4">
-        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 md:p-12 shadow-2xl">
-          <div className="grid lg:grid-cols-5 gap-8 items-center">
-            {/* Left: Value Proposition */}
-            <div className="lg:col-span-2 text-white">
-              <div className="inline-flex items-center gap-2 bg-cyan-500/20 border border-cyan-400/50 rounded-full px-4 py-2 mb-4">
-                <svg className="w-5 h-5 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span className="text-sm font-semibold text-cyan-300">Complimentary • No Obligation</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-extrabold mb-4 leading-tight">
-                Get Your Free
-                <br />
-                <span className="bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent">AI Readiness Assessment</span>
-              </h2>
-              <p className="text-blue-100 text-lg mb-6 leading-relaxed">
-                We review your current processes and data, then identify where AI can deliver practical value and what implementation would involve.
-              </p>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span className="text-blue-100">AI opportunities specific to your institution or business</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span className="text-blue-100">Realistic effort, cost and risk for each option</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span className="text-blue-100">An actionable plan you can carry out with or without us</span>
-                </li>
-              </ul>
-            </div>
+    {/* Lead capture: free AI readiness assessment */}
+    <section id="lead-capture" className="scroll-mt-24 relative overflow-hidden py-20 bg-[#0b1120] border-t border-white/10">
+      <div className="absolute inset-x-0 bottom-0 h-[32rem] bg-[radial-gradient(ellipse_at_bottom,rgba(34,211,238,0.12),transparent_65%)]" aria-hidden="true" />
+      <div className="relative max-w-6xl mx-auto px-4 grid lg:grid-cols-12 gap-12">
+        <div className="lg:col-span-5">
+          <p className="text-sm font-medium text-cyan-300 mb-4">Complimentary · No obligation</p>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">Get a free AI readiness assessment</h2>
+          <p className="text-lg text-blue-100 leading-relaxed mb-8">
+            We review your current processes and data, then identify where AI can deliver practical value and what
+            implementation would involve.
+          </p>
+          <ul className="divide-y divide-white/10 border-y border-white/10 mb-8">
+            {[
+              "AI opportunities specific to your institution or business",
+              "Realistic effort, cost and risk for each option",
+              "An actionable plan you can carry out with or without us",
+            ].map((point) => (
+              <li key={point} className="flex gap-3 py-3 text-blue-100">
+                <span className="text-cyan-300" aria-hidden="true">→</span>
+                {point}
+              </li>
+            ))}
+          </ul>
+          <p className="text-blue-200">
+            Prefer to talk first? Email{" "}
+            <a href="mailto:contact@aydenait.com" className="text-white hover:text-cyan-300 transition-colors">contact@aydenait.com</a>{" "}
+            or call{" "}
+            <a href="tel:+12898599523" className="text-white hover:text-cyan-300 transition-colors whitespace-nowrap">(289) 859-9523</a>.
+          </p>
+          <p className="mt-6 text-sm text-blue-300">30-minute consultation · No commitment required · NDA available</p>
+        </div>
 
-            {/* Right: Form */}
-            <div className="lg:col-span-3 bg-[#10172a]/60 border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl">
-              <ContactForm
-                source="assessment"
-                submitLabel="Request Assessment"
-                messagePlaceholder="What would you like AI to help with? For example, grading, integrity reviews, scheduling or answering questions."
-              />
-            </div>
+        <div className="lg:col-span-7">
+          <div className="rounded-2xl p-6 md:p-10 bg-white/[0.03] border border-white/10 shadow-[0_20px_80px_-30px_rgba(34,211,238,0.3)]">
+            <ContactForm
+              source="assessment"
+              submitLabel="Request Assessment"
+              messagePlaceholder="What would you like AI to help with? For example, grading, integrity reviews, scheduling or answering questions."
+            />
           </div>
         </div>
-      </div>
-    </section>
-
-    {/* Final CTA Section */}
-    <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-500">
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold text-white mb-4">Ready to Start Your AI Project?</h2>
-        <p className="text-xl text-blue-50 mb-8">
-          Whether you lead an academic department, a public service or a business, we would welcome a conversation about your objectives. The initial consultation is complimentary.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            to="/contact"
-            className="px-8 py-4 rounded-full bg-white text-blue-600 font-bold shadow-lg hover:scale-105 transition text-lg inline-flex items-center justify-center gap-2"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            Schedule a Consultation
-          </Link>
-          <a href="mailto:contact@aydenait.com" className="px-8 py-4 rounded-full border-2 border-white text-white font-bold hover:bg-white hover:text-blue-600 transition text-lg">
-            Email Us
-          </a>
-        </div>
-        <p className="mt-6 text-blue-100 text-sm">
-          30-minute complimentary consultation · No commitment required · NDA available
-        </p>
       </div>
     </section>
   </>

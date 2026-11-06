@@ -3,7 +3,7 @@ import { solutions } from "../data/solutions";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-blue-950 to-gray-900 text-gray-300 border-t border-gray-800">
+    <footer className="bg-[#080d1a] text-gray-300 border-t border-white/10">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -88,7 +88,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-800">
+      <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Year is fixed at build time in the prerendered HTML and updated on hydration */}

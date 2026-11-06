@@ -9,18 +9,14 @@ const navLinks = [
   { to: "/about", label: "About" },
 ];
 
-const desktopLinkClass = (isScrolled: boolean) => ({ isActive }: { isActive: boolean }) => {
-  const colours = isScrolled
-    ? `hover:text-blue-600 after:bg-blue-600 ${isActive ? "text-blue-600" : "text-gray-800"}`
-    : `hover:text-cyan-300 after:bg-cyan-300 ${isActive ? "text-cyan-300" : "text-white"}`;
-  return `relative transition-all duration-200 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:transition-all after:duration-200 hover:after:w-full ${
-    isActive ? "after:w-full" : "after:w-0"
-  } ${colours}`;
-};
+const desktopLinkClass = ({ isActive }: { isActive: boolean }) =>
+  `relative transition-all duration-200 hover:text-cyan-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-cyan-300 after:transition-all after:duration-200 hover:after:w-full ${
+    isActive ? "text-cyan-300 after:w-full" : "text-white after:w-0"
+  }`;
 
 const mobileLinkClass = ({ isActive }: { isActive: boolean }) =>
-  `block hover:text-blue-600 font-semibold text-base transition-all hover:translate-x-2 hover:bg-blue-50 p-2 rounded-lg ${
-    isActive ? "text-blue-600 bg-blue-50" : "text-gray-800"
+  `block hover:text-cyan-300 font-semibold text-base transition-colors hover:bg-white/5 p-2 rounded-lg ${
+    isActive ? "text-cyan-300 bg-white/5" : "text-white"
   }`;
 
 const Navbar = () => {
@@ -57,31 +53,31 @@ const Navbar = () => {
 
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-500 ${isScrolled
-      ? 'bg-white/95 backdrop-blur-xl shadow-lg shadow-blue-500/10 border-b border-blue-100/50 py-3'
-      : 'bg-transparent border-transparent py-5'}`}>
-      <div className="max-w-7xl mx-auto flex items-center justify-between py-5 px-4">
+      ? 'bg-[#0b1120]/85 backdrop-blur-xl border-b border-white/10 py-3'
+      : 'bg-transparent border-b border-transparent py-5'}`}>
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-3">
           <img src="/logo.svg" className="h-10 w-10" alt="" />
-          <span className={`font-bold text-xl tracking-tight transition-colors duration-300 ${isScrolled ? 'text-blue-800' : 'text-white'}`}>AydenAIT Solution</span>
+          <span className="font-bold text-xl tracking-tight text-white">AydenAIT Solution</span>
         </Link>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-6 lg:gap-8 font-semibold items-center text-base">
           {navLinks.map((link) => (
             <li key={link.to}>
-              <NavLink to={link.to} end={link.to === "/"} className={desktopLinkClass(isScrolled)}>
+              <NavLink to={link.to} end={link.to === "/"} className={desktopLinkClass}>
                 {link.label}
               </NavLink>
             </li>
           ))}
         </ul>
 
-        <Link to="/contact" className="hidden md:block px-6 py-2.5 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold shadow-lg hover:shadow-xl hover:shadow-cyan-500/25 transition-all duration-300 text-base hover:scale-105 active:scale-95">Get in Touch</Link>
+        <Link to="/contact" className="hidden md:block px-5 py-2.5 rounded-full bg-white text-[#0b1120] font-semibold hover:bg-cyan-200 transition-colors text-base">Get in Touch</Link>
 
         {/* Mobile Menu Button */}
         <button
           ref={menuButtonRef}
-          className={`md:hidden p-2 -mr-2 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 transition-colors duration-300 ${isScrolled ? 'text-gray-800' : 'text-white'}`}
+          className="md:hidden p-2 -mr-2 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 text-white"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
@@ -99,7 +95,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div id="mobile-menu" className="md:hidden bg-white border-t">
+        <div id="mobile-menu" className="md:hidden bg-[#0b1120] border-t border-white/10">
           <ul className="flex flex-col py-5 px-4 space-y-2">
             {navLinks.map((link) => (
               <li key={link.to}>
@@ -108,7 +104,7 @@ const Navbar = () => {
                 </NavLink>
               </li>
             ))}
-            <li className="pt-2"><Link to="/contact" onClick={() => setIsMenuOpen(false)} className="block px-6 py-2.5 rounded-full bg-blue-600 text-white font-bold text-center hover:bg-blue-700 transition-all text-base shadow-lg hover:shadow-xl">Get in Touch</Link></li>
+            <li className="pt-2"><Link to="/contact" onClick={() => setIsMenuOpen(false)} className="block px-6 py-2.5 rounded-full bg-white text-[#0b1120] font-semibold text-center hover:bg-cyan-200 transition-colors text-base">Get in Touch</Link></li>
           </ul>
         </div>
       )}
