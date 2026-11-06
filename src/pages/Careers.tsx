@@ -434,7 +434,7 @@ const Careers = () => {
               <h2 className="lg:col-span-4 text-sm font-medium uppercase tracking-widest text-blue-300/80">How to apply</h2>
               <div className="lg:col-span-8">
                 <p className="text-2xl leading-relaxed text-white mb-8">
-                  Email your resume and a short note about yourself. We'll get back to you within 2-3 business days.
+                  Email your resume and a short note about yourself.
                 </p>
                 <ol className="divide-y divide-white/10 mb-10">
                   {applySteps.map((step, idx) => (
@@ -451,7 +451,7 @@ const Careers = () => {
                   <a href={`mailto:${CAREERS_EMAIL}`} className="font-semibold text-white hover:text-cyan-300 transition-colors">{CAREERS_EMAIL}</a>
                 </div>
                 <p className="text-sm text-blue-300">
-                  All applications are confidential. We review every application and respond to qualified candidates within 2-3 business days.
+                  All applications are confidential. We review every application and respond to qualified candidates within 2–3 business days.
                 </p>
               </div>
             </section>
