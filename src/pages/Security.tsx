@@ -52,7 +52,7 @@ const Security = () => (
       <h2 className="text-xl font-semibold mt-8 mb-2">This website</h2>
       <ul className="mb-4 list-disc ml-6">
         <li>The website and its forms are served only over encrypted HTTPS connections</li>
-        <li>It does not use analytics tools, advertising trackers or cookies</li>
+        <li>It does not use advertising trackers or cookies; visit counts come from cookieless analytics that don't store IP addresses</li>
         <li>A strict content security policy means the site loads scripts only from its own address</li>
         <li>Form submissions are used only to respond to your enquiry</li>
       </ul>

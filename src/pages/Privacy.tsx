@@ -13,7 +13,7 @@ const Privacy = () => (
       ogUrl="https://aydenait.com/privacy"
       canonical="https://aydenait.com/privacy"
     />
-    <LegalPage label="Legal" title="Privacy policy" updated="October 2026">
+    <LegalPage label="Legal" title="Privacy policy" updated="November 2026">
       <p className="mb-4 text-blue-200">
         This policy explains how <span className="font-bold">AydenAIT Solution Inc.</span> ("AydenAIT", "we") collects, uses,
         shares and protects personal information through this website, aydenait.com. We handle personal information in
@@ -37,7 +37,14 @@ const Privacy = () => (
         type, the page requested and the time of the request. This is used to deliver and secure the website.
       </p>
       <p className="mb-4">
-        This website does not use analytics tools, advertising trackers or cookies.
+        <span className="font-semibold">Website analytics.</span> We use Vercel Web Analytics to count visits and see
+        which pages are useful. It records the page viewed, the referring website, your browser, operating system and
+        device type, and your country. It does not use cookies, does not store your IP address, and recognizes a
+        returning visit only within the same day, using an anonymous identifier that is discarded after 24 hours. We
+        cannot identify you from this data.
+      </p>
+      <p className="mb-4">
+        This website does not use advertising trackers or cookies.
       </p>
 
       <h2 className="text-xl font-semibold mt-8 mb-2">How we use your information</h2>
@@ -45,6 +52,7 @@ const Privacy = () => (
         <li>To respond to your enquiry and arrange a consultation</li>
         <li>To prepare assessments, proposals and services you request</li>
         <li>To operate, maintain and protect the website</li>
+        <li>To understand, in aggregate, how the website is used so we can improve it</li>
       </ul>
       <p className="mb-4">
         We do not use your information for marketing without your consent, and we do not sell personal information.
@@ -62,7 +70,7 @@ const Privacy = () => (
         them to provide their services:
       </p>
       <ul className="mb-4 list-disc ml-6">
-        <li>Our website hosting provider (Vercel), which serves the site and processes form submissions</li>
+        <li>Our website hosting provider (Vercel), which serves the site, processes form submissions and provides our website analytics</li>
         <li>Our email service provider, which delivers form submissions to our inbox</li>
         {BOOKING_URL && (
           <li>Our scheduling service (Calendly), which receives your name, email and any notes when you book a consultation</li>
