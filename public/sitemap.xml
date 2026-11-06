@@ -124,6 +124,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://aydenait.com/accessibility</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://aydenait.com/privacy</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>yearly</changefreq>

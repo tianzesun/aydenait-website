@@ -95,7 +95,7 @@ const Footer = () => {
             <div className="text-xs text-gray-400" suppressHydrationWarning>
               © {new Date().getFullYear()} AydenAIT Solution Inc. All rights reserved.
             </div>
-            <div className="flex gap-6 text-xs">
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-xs">
               <Link to="/privacy" className="inline-block py-1 text-gray-400 hover:text-white transition-colors">
                 Privacy policy
               </Link>
@@ -104,6 +104,9 @@ const Footer = () => {
               </Link>
               <Link to="/security" className="inline-block py-1 text-gray-400 hover:text-white transition-colors">
                 Security
+              </Link>
+              <Link to="/accessibility" className="inline-block py-1 text-gray-400 hover:text-white transition-colors">
+                Accessibility
               </Link>
               <Link to="/faq" className="inline-block py-1 text-gray-400 hover:text-white transition-colors">
                 FAQ

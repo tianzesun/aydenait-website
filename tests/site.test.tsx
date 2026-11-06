@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { render } from "../src/entry-server";
 import { projects } from "../src/data/projects";
@@ -22,6 +22,14 @@ describe("pages", () => {
   it("gives every page a different title", () => {
     const titles = routes.map((route) => titleOf(render(route).headTags));
     expect(new Set(titles).size).toBe(titles.length);
+  });
+
+  it("points every page's share image at a file that exists", () => {
+    for (const route of routes) {
+      const image = render(route).headTags.match(/property="og:image" content="https:\/\/aydenait\.com([^"]+)"/)?.[1];
+      expect(image, route).toBeDefined();
+      expect(existsSync(new URL(`../public${image}`, import.meta.url)), `${route} -> ${image}`).toBe(true);
+    }
   });
 
   it.each(["/nope", "/products/nope", "/services/nope"])("%s shows the 404 page", (route) => {

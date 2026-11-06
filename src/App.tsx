@@ -16,6 +16,7 @@ import Careers from "./pages/Careers";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Security from "./pages/Security";
+import Accessibility from "./pages/Accessibility";
 import NotFound from "./pages/NotFound";
 
 const AnimatedRoutes = () => {
@@ -43,6 +44,7 @@ const AnimatedRoutes = () => {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/security" element={<Security />} />
+        <Route path="/accessibility" element={<Accessibility />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       </ErrorBoundary>
