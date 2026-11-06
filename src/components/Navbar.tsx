@@ -72,7 +72,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <Link to="/contact" className="hidden md:block px-5 py-2.5 rounded-full bg-white text-[#0b1120] font-semibold hover:bg-cyan-200 transition-colors text-base">Get in Touch</Link>
+        <Link to="/contact" className="hidden md:block px-5 py-2.5 rounded-full bg-white text-[#0b1120] font-semibold hover:bg-cyan-200 transition-colors text-base">Get in touch</Link>
 
         {/* Mobile Menu Button */}
         <button
@@ -104,7 +104,7 @@ const Navbar = () => {
                 </NavLink>
               </li>
             ))}
-            <li className="pt-2"><Link to="/contact" onClick={() => setIsMenuOpen(false)} className="block px-6 py-2.5 rounded-full bg-white text-[#0b1120] font-semibold text-center hover:bg-cyan-200 transition-colors text-base">Get in Touch</Link></li>
+            <li className="pt-2"><Link to="/contact" onClick={() => setIsMenuOpen(false)} className="block px-6 py-2.5 rounded-full bg-white text-[#0b1120] font-semibold text-center hover:bg-cyan-200 transition-colors text-base">Get in touch</Link></li>
           </ul>
         </div>
       )}

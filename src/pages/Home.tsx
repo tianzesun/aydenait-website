@@ -15,8 +15,8 @@ const principles = [
 ];
 
 // Counts and results come from src/data/projects.ts so the hero stays in step with the product list
-const sectorOrder: Project["sector"][] = ["Higher Education", "Civic Services", "Financial Services"];
-const inProduction = projects.filter((p) => p.sector === "Higher Education" && !p.stage).length;
+const sectorOrder: Project["sector"][] = ["Higher education", "Civic services", "Financial services"];
+const inProduction = projects.filter((p) => p.sector === "Higher education" && !p.stage).length;
 const featured = projects.find((p) => p.screenshots?.length && p.liveUrl);
 const featuredHost = featured?.liveUrl ? new URL(featured.liveUrl).host : undefined;
 const measuredResults = projects.flatMap((p) =>
@@ -26,7 +26,7 @@ const measuredResults = projects.flatMap((p) =>
 const Home = () => (
   <>
     <SEO
-      title="AydenAIT - Custom AI Solutions, From Idea to Production"
+      title="AydenAIT - Custom AI solutions, from idea to production"
       description="AydenAIT designs, builds and supports custom AI solutions. Our platforms are in use in higher education. Book a free consultation."
       keywords="custom AI solutions, AI development company Toronto, AI consulting, AI chatbot development, AI in education, AI grading, academic integrity software, AI automation, AI for municipalities"
       ogUrl="https://aydenait.com"
@@ -283,7 +283,7 @@ const Home = () => (
           <div className="rounded-2xl p-6 md:p-10 bg-white/[0.03] border border-white/10 shadow-[0_20px_80px_-30px_rgba(34,211,238,0.3)]">
             <ContactForm
               source="assessment"
-              submitLabel="Request Assessment"
+              submitLabel="Request assessment"
               messagePlaceholder="What would you like AI to help with? For example, grading, integrity reviews, scheduling or answering questions."
             />
           </div>

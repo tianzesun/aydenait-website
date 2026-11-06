@@ -45,5 +45,5 @@ export const serviceSchema = {
   "telephone": "+1-289-859-9523",
   "url": "https://aydenait.com",
   "priceRange": "$$",
-  "serviceType": ["AI Assistants & Chatbots", "AI-Assisted Review & Scoring", "Detection & Risk Analysis", "Planning & Workflow Automation", "Analytics & Decision Support", "AI Integration"]
+  "serviceType": ["AI assistants & chatbots", "AI-assisted review & scoring", "Detection & risk analysis", "Planning & workflow automation", "Analytics & decision support", "AI integration"]
 };

@@ -2,7 +2,7 @@
 // Keep claims here to what has been approved for public use.
 export type Project = {
   title: string;
-  sector: "Higher Education" | "Civic Services" | "Financial Services";
+  sector: "Higher education" | "Civic services" | "Financial services";
   summary: string;
   desc: string;
   highlights: string[];
@@ -31,7 +31,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: "Faculty Workload Management System",
-    sector: "Higher Education",
+    sector: "Higher education",
     summary: "Course assignments, workload tracking and term planning for academic departments.",
     desc: "A workload management platform for academic departments, built for a department covering Computer Science, Mathematics and Statistics.",
     highlights: ["Course assignments and term planning", "Faculty workload and service-role tracking", "Policy-based workload calculations"],
@@ -53,7 +53,7 @@ export const projects: Project[] = [
   },
   {
     title: "CodeProvenance",
-    sector: "Higher Education",
+    sector: "Higher education",
     summary: "Code similarity and AI-authorship detection that produces evidence, not just a score.",
     desc: "Code similarity and AI-authorship detection for schools and universities. The output isn't just a score: it's evidence a faculty member can act on and a committee can defend.",
     highlights: ["Multiple similarity engines combined by a learned fusion model", "AI-generated code detector", "Professor-facing review workspace"],
@@ -78,7 +78,7 @@ export const projects: Project[] = [
   },
   {
     title: "DeepRubric",
-    sector: "Higher Education",
+    sector: "Higher education",
     summary: "AI-assisted, rubric-based grading for programming courses, with a human in the loop.",
     desc: "An AI-assisted grading platform for programming courses. Professors build rubrics, students submit code, and an AI pipeline scores each submission against the rubric criteria.",
     highlights: ["Human-in-the-loop review of every score", "Academic-integrity checks", "Course and rubric analytics"],
@@ -99,7 +99,7 @@ export const projects: Project[] = [
   },
   {
     title: "ExamFlow",
-    sector: "Higher Education",
+    sector: "Higher education",
     stage: "Pilot",
     summary: "Exam administration: rosters, seating and personalized exam documents.",
     desc: "An exam administration system that simplifies exam preparation, seating assignment and personalized exam documents. It works alongside Crowdmark rather than replacing it.",
@@ -120,7 +120,7 @@ export const projects: Project[] = [
   },
   {
     title: "Hey Markham",
-    sector: "Civic Services",
+    sector: "Civic services",
     summary: "A conversational assistant that answers residents' questions from publicly available city data.",
     desc: "An AI city-services assistant built on the City of Markham's publicly available data. Residents ask questions in plain language and get fast, accurate answers they can trace back to the source. An independent project, not affiliated with or endorsed by the City of Markham.",
     highlights: ["Conversational access to city information", "Answers grounded in published municipal data", "Source citations for every answer"],
@@ -148,7 +148,7 @@ export const projects: Project[] = [
   },
   {
     title: "AlphOpt",
-    sector: "Financial Services",
+    sector: "Financial services",
     summary: "Options-strategy analysis and risk management with news and sentiment AI.",
     desc: "An AI options-strategy analysis and risk-management system built on a modern stack. It provides intelligent signal analysis for research and decision support; it does not execute trades.",
     highlights: ["News-analysis AI agent", "Multimodal market-sentiment analyzer", "Real-time sentiment quantification for strategy analysis"],

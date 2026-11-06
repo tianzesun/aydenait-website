@@ -6,7 +6,7 @@ const CAREERS_EMAIL = "contact@aydenait.com";
 // Keep listings in step with the products and services described elsewhere on the site
 const openJobs = [
   {
-    title: "Senior DevOps Engineer",
+    title: "Senior DevOps engineer",
     location: "Remote / Toronto, ON",
     type: "Full-time",
     summary: "Own the infrastructure behind our AI platforms, from deployment pipelines to monitoring, for products used every day in higher education.",
@@ -33,7 +33,7 @@ const openJobs = [
     ]
   },
   {
-    title: "AI / ML Engineer",
+    title: "AI / ML engineer",
     location: "Remote",
     type: "Full-time",
     summary: "Build the AI behind our products: grounded assistants, rubric-based scoring and detection models whose results people can check.",
@@ -60,7 +60,7 @@ const openJobs = [
     ]
   },
   {
-    title: "AI Software Development Intern",
+    title: "AI software development intern",
     location: "Remote",
     type: "Internship",
     summary: "Help build AI assistants and tools that answer from real sources, working on our products alongside experienced engineers.",
@@ -88,7 +88,7 @@ const openJobs = [
     ]
   },
   {
-    title: "Machine Learning Engineering Intern",
+    title: "Machine learning engineering intern",
     location: "Remote",
     type: "Internship",
     summary: "Train and evaluate models for scoring, similarity and detection, and learn to measure whether a model is good enough to use.",
@@ -116,7 +116,7 @@ const openJobs = [
     ]
   },
   {
-    title: "Full-Stack Software Development Intern",
+    title: "Full-stack software development intern",
     location: "Remote",
     type: "Internship",
     summary: "Build the web applications faculty and staff use every day, from grading and review workspaces to planning and reporting tools.",
@@ -144,7 +144,7 @@ const openJobs = [
     ]
   },
   {
-    title: "AI Solutions Consulting Intern",
+    title: "AI solutions consulting intern",
     location: "Remote",
     type: "Internship",
     summary: "Help organizations work out where AI can realistically help, from first conversation to written proposal.",
@@ -172,7 +172,7 @@ const openJobs = [
     ]
   },
   {
-    title: "AIOps & DevOps Intern",
+    title: "AIOps & DevOps intern",
     location: "Remote",
     type: "Internship",
     summary: "Learn how AI systems are deployed, monitored and kept reliable after launch, working on our production infrastructure.",
@@ -205,7 +205,7 @@ const perks = ["Remote-first culture", "Products in real use", "Mentorship"];
 
 const reasons = [
   {
-    title: "Professional Growth",
+    title: "Professional growth",
     points: [
       "Build AI used by real universities, public services and businesses",
       "Work across the full project lifecycle, from scoping to production support",
@@ -213,11 +213,11 @@ const reasons = [
     ],
   },
   {
-    title: "Flexible Work",
+    title: "Flexible work",
     points: ["Remote work with flexible scheduling", "Supportive, inclusive team culture that values your well-being"],
   },
   {
-    title: "Impactful Work",
+    title: "Impactful work",
     points: [
       "Build AI that keeps people in control of the decisions that matter",
       "Work across education, civic services and finance",
@@ -225,7 +225,7 @@ const reasons = [
     ],
   },
   {
-    title: "Team Culture",
+    title: "Team culture",
     points: [
       "Collaborative, transparent management with open communication",
       "Diverse, inclusive team that values different perspectives",
@@ -283,7 +283,7 @@ const Careers = () => {
   return (
     <>
       <SEO
-        title="Careers at AydenAIT - Build AI People Can Trust"
+        title="Careers at AydenAIT - Build AI people can trust"
         description="Full-time roles and remote internships in AI, machine learning, software engineering and DevOps, building AI products used in higher education."
         keywords="AI jobs Toronto, AI internships, machine learning engineer, ML engineering intern, software development internship, remote tech internships, DevOps jobs, AI software developer"
         ogUrl="https://aydenait.com/careers"
@@ -298,7 +298,7 @@ const Careers = () => {
             <div className="grid lg:grid-cols-12 gap-10 items-end">
               <div className="lg:col-span-7">
                 <p className="text-sm font-medium text-cyan-300 mb-4">Careers</p>
-                <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6">Build AI People Can Trust</h1>
+                <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6">Build AI people can trust</h1>
                 <p className="text-2xl md:text-[1.7rem] leading-snug text-white/90">
                   Work on AI systems used in higher education, public services and business.
                 </p>

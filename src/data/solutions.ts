@@ -16,7 +16,7 @@ export type Solution = {
 export const solutions: Solution[] = [
   {
     icon: "chat",
-    title: "AI Assistants & Chatbots",
+    title: "AI assistants & chatbots",
     desc: "Assistants that answer questions from your documents, policies or data, and show the source for every answer.",
     proof: "Hey Markham answers residents' questions from publicly available city data.",
     slug: "ai-assistants",
@@ -30,7 +30,7 @@ export const solutions: Solution[] = [
   },
   {
     icon: "clipboardCheck",
-    title: "AI-Assisted Review & Scoring",
+    title: "AI-assisted review & scoring",
     desc: "Score, grade or triage submissions against your own criteria, with a person approving every result.",
     proof: "DeepRubric grades programming assignments against professors' rubrics.",
     slug: "ai-review-scoring",
@@ -44,7 +44,7 @@ export const solutions: Solution[] = [
   },
   {
     icon: "search",
-    title: "Detection & Risk Analysis",
+    title: "Detection & risk analysis",
     desc: "Find similarities, anomalies and risks hidden in large volumes of documents, code or records.",
     proof: "CodeProvenance detects code similarity and AI-written code.",
     slug: "detection-risk-analysis",
@@ -58,7 +58,7 @@ export const solutions: Solution[] = [
   },
   {
     icon: "automation",
-    title: "Planning & Workflow Automation",
+    title: "Planning & workflow automation",
     desc: "Replace spreadsheets and manual steps with rule-driven systems your staff can trust.",
     proof: "Our workload platform runs course assignments and term planning.",
     slug: "workflow-automation",
@@ -72,7 +72,7 @@ export const solutions: Solution[] = [
   },
   {
     icon: "chartBar",
-    title: "Analytics & Decision Support",
+    title: "Analytics & decision support",
     desc: "Turn data, news and signals into analysis your team can act on, with the reasoning visible.",
     proof: "AlphOpt combines market data, news and sentiment for strategy analysis.",
     slug: "analytics-decision-support",
@@ -86,7 +86,7 @@ export const solutions: Solution[] = [
   },
   {
     icon: "puzzle",
-    title: "AI Inside Your Existing Systems",
+    title: "AI inside your existing systems",
     desc: "Add AI to the tools you already use, such as your website, learning platform, CRM or internal apps.",
     proof: "Cloud or on-premises, built to fit your stack and your policies.",
     slug: "ai-integration",
@@ -101,8 +101,8 @@ export const solutions: Solution[] = [
 
 // How an engagement runs. Shared by the Home page and the service pages.
 export const engagementSteps = [
-  { title: "Free Consultation", desc: "A 30-minute conversation about your objectives, data and constraints." },
-  { title: "Assessment & Proposal", desc: "A written recommendation covering scope, timeline, cost and risks." },
+  { title: "Free consultation", desc: "A 30-minute conversation about your objectives, data and constraints." },
+  { title: "Assessment & proposal", desc: "A written recommendation covering scope, timeline, cost and risks." },
   { title: "Pilot", desc: "A working prototype on your own use case, so results can be evaluated before further investment." },
-  { title: "Launch & Support", desc: "Production deployment, staff training, and ongoing monitoring and improvement." },
+  { title: "Launch & support", desc: "Production deployment, staff training, and ongoing monitoring and improvement." },
 ];

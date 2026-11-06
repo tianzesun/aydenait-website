@@ -11,7 +11,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <img src="/logo.svg" className="h-8 w-8" alt="AydenAIT Logo"/>
+              <img src="/logo.svg" className="h-8 w-8" alt=""/>
               <span className="text-xl font-bold text-white">AydenAIT Solution</span>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
@@ -42,7 +42,7 @@ const Footer = () => {
                 <Link to="/careers" className="text-gray-400 hover:text-white transition-colors">Careers</Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link>
+                <Link to="/about" className="text-gray-400 hover:text-white transition-colors">About us</Link>
               </li>
               <li>
                 <Link to="/security" className="text-gray-400 hover:text-white transition-colors">Security &amp; Privacy</Link>
@@ -97,10 +97,10 @@ const Footer = () => {
             </div>
             <div className="flex gap-6 text-xs">
               <Link to="/privacy" className="inline-block py-1 text-gray-400 hover:text-white transition-colors">
-                Privacy Policy
+                Privacy policy
               </Link>
               <Link to="/terms" className="inline-block py-1 text-gray-400 hover:text-white transition-colors">
-                Terms of Use
+                Terms of use
               </Link>
               <Link to="/security" className="inline-block py-1 text-gray-400 hover:text-white transition-colors">
                 Security

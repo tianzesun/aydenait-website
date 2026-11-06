@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 import { projects, type Project } from "../data/projects";
 
-const sectorOrder: Project["sector"][] = ["Higher Education", "Civic Services", "Financial Services"];
+const sectorOrder: Project["sector"][] = ["Higher education", "Civic services", "Financial services"];
 
 const Products = () => (
   <>
     <SEO
-      title="Products - AI Platforms | AydenAIT"
+      title="Products - AI platforms | AydenAIT"
       description="AI systems built by AydenAIT: CodeProvenance, DeepRubric and a faculty workload system for universities, the Hey Markham assistant and AlphOpt."
       keywords="AI products, AI in higher education, code similarity detection, AI grading, AI city services assistant, options analysis AI"
       ogUrl="https://aydenait.com/products"
@@ -22,7 +22,7 @@ const Products = () => (
           <div className="grid lg:grid-cols-12 gap-10 items-end">
             <div className="lg:col-span-7">
               <p className="text-sm font-medium text-cyan-300 mb-4">Products</p>
-              <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6">Our Products</h1>
+              <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6">Our products</h1>
               <p className="text-2xl md:text-[1.7rem] leading-snug text-white/90">
                 AI platforms designed, built and supported by AydenAIT.
               </p>

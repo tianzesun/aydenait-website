@@ -6,20 +6,20 @@ import LegalPage from "../components/LegalPage";
 const Privacy = () => (
   <>
     <SEO
-      title="Privacy Policy - AydenAIT Solution"
+      title="Privacy policy - AydenAIT Solution"
       description="How AydenAIT Solution collects, uses, shares and protects personal information submitted through aydenait.com, and how to exercise your privacy rights."
       keywords="AydenAIT privacy policy, personal information, PIPEDA, data protection"
       ogUrl="https://aydenait.com/privacy"
       canonical="https://aydenait.com/privacy"
     />
-    <LegalPage label="Legal" title="Privacy Policy" updated="October 2026">
+    <LegalPage label="Legal" title="Privacy policy" updated="October 2026">
       <p className="mb-4 text-blue-200">
         This policy explains how <span className="font-bold">AydenAIT Solution Inc.</span> ("AydenAIT", "we") collects, uses,
         shares and protects personal information through this website, aydenait.com. We handle personal information in
         accordance with Canada's <i>Personal Information Protection and Electronic Documents Act</i> (PIPEDA).
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">Information We Collect</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">Information we collect</h2>
       <p className="mb-2">
         <span className="font-semibold">Information you provide.</span> When you use our contact or assessment request
         forms, we collect:
@@ -39,7 +39,7 @@ const Privacy = () => (
         This website does not use analytics tools, advertising trackers or cookies.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">How We Use Your Information</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">How we use your information</h2>
       <ul className="mb-4 list-disc ml-6">
         <li>To respond to your enquiry and arrange a consultation</li>
         <li>To prepare assessments, proposals and services you request</li>
@@ -55,7 +55,7 @@ const Privacy = () => (
         withdraw your consent at any time by contacting us, subject to any legal or contractual obligations.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">Service Providers</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">Service providers</h2>
       <p className="mb-2">
         We share personal information only with service providers that process it on our behalf, and only as needed for
         them to provide their services:
@@ -68,7 +68,7 @@ const Privacy = () => (
         We may also disclose personal information where required by law.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">Storage Outside Canada</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">Storage outside Canada</h2>
       <p className="mb-4">
         Our service providers may store or process personal information outside Canada, including in the United States.
         Information held in another country is subject to that country's laws and may be accessible to its authorities.
@@ -80,14 +80,14 @@ const Privacy = () => (
         relationship, or as required by law. We then delete it.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">How We Protect Your Information</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">How we protect your information</h2>
       <ul className="mb-4 list-disc ml-6">
         <li>The website and its forms are served only over encrypted HTTPS connections</li>
         <li>Access to personal information is limited to the people who need it to respond to you</li>
         <li>We are happy to sign a non-disclosure agreement before you share confidential details</li>
       </ul>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">Your Rights</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">Your rights</h2>
       <p className="mb-4">
         You may ask to access the personal information we hold about you, correct it, or have it deleted. To make a
         request, email us at the address below. We will respond within 30 days.
@@ -100,7 +100,7 @@ const Privacy = () => (
         .
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">Changes to This Policy</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">Changes to this policy</h2>
       <p className="mb-4">
         We may update this policy from time to time. The date below shows when it was last revised.
       </p>

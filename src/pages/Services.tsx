@@ -6,37 +6,37 @@ import Icon from "../components/Icon";
 import { solutions } from "../data/solutions";
 
 const educationSolutions = [
-  ["AI-Assisted Grading", "Rubric-based scoring for programming and written work, with instructor review before any mark is released."],
-  ["Academic Integrity", "Code similarity and AI-authorship detection that produces reviewable evidence, not just a percentage."],
-  ["Workload & Term Planning", "Course assignments, service roles and policy-based workload calculations in one place."],
-  ["Student & Staff Assistants", "Assistants that answer from your official policies and course material, with sources shown."],
-  ["Learning Analytics", "Course and rubric analytics that show where students struggle and where grading is inconsistent."],
+  ["AI-assisted grading", "Rubric-based scoring for programming and written work, with instructor review before any mark is released."],
+  ["Academic integrity", "Code similarity and AI-authorship detection that produces reviewable evidence, not just a percentage."],
+  ["Workload & term planning", "Course assignments, service roles and policy-based workload calculations in one place."],
+  ["Student & staff assistants", "Assistants that answer from your official policies and course material, with sources shown."],
+  ["Learning analytics", "Course and rubric analytics that show where students struggle and where grading is inconsistent."],
   ["Integration", "Connects with the learning management, identity and student systems you already run."],
 ];
 
 const otherSectors = [
-  ["Public Sector & Civic Services", "Assistants that answer residents' questions from official data, with sources, like our Hey Markham project."],
-  ["Financial Services", "Analysis and decision-support tools that combine market data, news and sentiment, like our AlphOpt platform."],
-  ["Businesses & Organizations", "AI strategy, custom applications and integration with your existing systems and data."],
+  ["Public sector & civic services", "Assistants that answer residents' questions from official data, with sources, like our Hey Markham project."],
+  ["Financial services", "Analysis and decision-support tools that combine market data, news and sentiment, like our AlphOpt platform."],
+  ["Businesses & organizations", "AI strategy, custom applications and integration with your existing systems and data."],
 ];
 
 const engagements = [
-  ["AI Readiness Assessment", "Complimentary", "We review your goals, processes and data, and recommend where AI can help, with realistic effort, cost and risk for each option."],
-  ["Pilot / Proof of Concept", "Typically 4–8 weeks", "A working prototype on one real use case, so you can measure the results before a larger investment."],
-  ["Full Solution Build", "Scoped to your project", "Design, development, integration with your systems, testing and launch, with your team involved throughout."],
-  ["Ongoing Support", "Monthly", "Monitoring, improvements, new features and help for your staff once the system is live."],
+  ["AI readiness assessment", "Complimentary", "We review your goals, processes and data, and recommend where AI can help, with realistic effort, cost and risk for each option."],
+  ["Pilot / proof of concept", "Typically 4–8 weeks", "A working prototype on one real use case, so you can measure the results before a larger investment."],
+  ["Full solution build", "Scoped to your project", "Design, development, integration with your systems, testing and launch, with your team involved throughout."],
+  ["Ongoing support", "Monthly", "Monitoring, improvements, new features and help for your staff once the system is live."],
 ];
 
 const reasons = [
-  ["Proven in Production", "We build and operate our own products, so we understand what it takes to keep AI reliable after launch."],
-  ["Privacy & Responsible AI", "Human review, audit trails and data handling designed around your privacy and policy requirements."],
-  ["Flexible Engagements", "Begin with an assessment or pilot, then scale. NDAs are standard, and you retain control of your roadmap."],
+  ["Proven in production", "We build and operate our own products, so we understand what it takes to keep AI reliable after launch."],
+  ["Privacy & responsible AI", "Human review, audit trails and data handling designed around your privacy and policy requirements."],
+  ["Flexible engagements", "Begin with an assessment or pilot, then scale. NDAs are standard, and you retain control of your roadmap."],
 ];
 
 const Services = () => (
   <>
     <SEO
-      title="AI Services for Education, Public Sector & Business | AydenAIT"
+      title="AI services for education, public sector & business | AydenAIT"
       description="Custom AI for education, civic services, finance and business: assistants, AI-assisted review, risk detection, workflow automation, analytics and integration."
       keywords="custom AI solutions, AI chatbot development, AI-assisted grading, academic integrity software, AI workflow automation, AI analytics, AI integration, AI consulting Toronto"
       ogUrl="https://aydenait.com/services"
@@ -51,7 +51,7 @@ const Services = () => (
           <div className="grid lg:grid-cols-12 gap-10 items-end">
             <div className="lg:col-span-7">
               <p className="text-sm font-medium text-cyan-300 mb-4">Services</p>
-              <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6">Services & Solutions</h1>
+              <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6">Services & solutions</h1>
               <p className="text-2xl md:text-[1.7rem] leading-snug text-white/90">
                 We help organizations scope, build, launch and operate AI solutions.
               </p>
@@ -102,7 +102,7 @@ const Services = () => (
           <section className="grid lg:grid-cols-12 gap-6 py-20 border-t border-white/10">
             <div className="lg:col-span-4">
               <h2 className="text-sm font-medium uppercase tracking-widest text-blue-300/80 mb-2">Core expertise</h2>
-              <p className="text-lg font-semibold text-white">Education Solutions</p>
+              <p className="text-lg font-semibold text-white">Education solutions</p>
             </div>
             <div className="lg:col-span-8">
               <p className="text-2xl leading-relaxed text-white mb-10">

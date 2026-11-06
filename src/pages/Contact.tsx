@@ -5,7 +5,7 @@ import { engagementSteps } from "../data/solutions";
 const Contact = () => (
     <>
       <SEO
-        title="Contact AydenAIT - AI Solutions for Education and Beyond"
+        title="Contact AydenAIT - AI solutions for education and beyond"
         description="Contact AydenAIT about AI solutions for education, civic services, finance or business. Confidential consultation, NDA provided. Email: contact@aydenait.com"
         keywords="contact AydenAIT, AI consultation, custom AI project inquiry, AI consulting Toronto"
         ogUrl="https://aydenait.com/contact"
@@ -17,7 +17,7 @@ const Contact = () => (
           <div className="grid lg:grid-cols-12 gap-12">
             <div className="lg:col-span-5">
               <p className="text-sm font-medium text-cyan-300 mb-4">Contact</p>
-              <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6">Contact Us</h1>
+              <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6">Contact us</h1>
               <p className="text-2xl leading-snug text-white/90 mb-10">
                 Tell us what you'd like AI to help with. The first consultation is complimentary.
               </p>

@@ -20,7 +20,7 @@ const labelClass = "block mb-1 font-semibold text-blue-200";
 // The single enquiry form used on the Contact page and the Home page assessment section.
 const ContactForm = ({
   source,
-  submitLabel = "Send Message",
+  submitLabel = "Send message",
   messagePlaceholder = "What are you looking to build or improve?",
   layout = "split",
 }: ContactFormProps) => {

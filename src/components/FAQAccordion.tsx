@@ -67,7 +67,7 @@ const FAQAccordion = () => {
         <div className="absolute inset-x-0 top-0 h-[28rem] bg-[radial-gradient(ellipse_at_top,rgba(34,211,238,0.12),transparent_65%)]" aria-hidden="true" />
         <div className="relative max-w-6xl mx-auto px-4 pt-20 pb-16">
           <p className="text-sm font-medium text-cyan-300 mb-4">FAQ</p>
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6">Frequently Asked Questions</h1>
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6">Frequently asked questions</h1>
           <p className="text-2xl leading-snug text-white/90">Answers to common questions about working with AydenAIT</p>
         </div>
       </header>

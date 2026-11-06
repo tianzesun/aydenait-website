@@ -24,7 +24,7 @@ export const HeadContext = createContext<HeadData | null>(null);
 
 // Shared by the SEO component (browser) and the prerender step (build) so both emit the same tags.
 export function resolveSEO({
-  title = "AydenAIT - Custom AI Solutions, From Idea to Production",
+  title = "AydenAIT - Custom AI solutions, from idea to production",
   description = "AI solutions for education and beyond: grading, academic integrity and workload platforms, plus AI consulting and development for civic services, finance and business.",
   keywords = "custom AI solutions, AI development company Toronto, AI consulting, AI chatbot development, AI in education, AI automation",
   ogType = "website",

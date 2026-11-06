@@ -2,31 +2,31 @@ import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 import LegalPage from "../components/LegalPage";
 
-// Website terms only. Client work is governed by separate written agreements (see "Client Services").
+// Website terms only. Client work is governed by separate written agreements (see "Client services").
 const Terms = () => (
   <>
     <SEO
-      title="Terms of Use - AydenAIT Solution"
+      title="Terms of use - AydenAIT Solution"
       description="The terms that apply to your use of aydenait.com, including website content, enquiries, intellectual property, liability and governing law."
       keywords="AydenAIT terms of use, website terms, terms and conditions"
       ogUrl="https://aydenait.com/terms"
       canonical="https://aydenait.com/terms"
     />
-    <LegalPage label="Legal" title="Terms of Use" updated="October 2026">
+    <LegalPage label="Legal" title="Terms of use" updated="October 2026">
       <p className="mb-4">
         These terms apply to your use of aydenait.com (the "website"), operated by{" "}
         <span className="font-bold">AydenAIT Solution Inc.</span> ("AydenAIT", "we"). By using the website, you agree to
         these terms. If you do not agree, please do not use the website.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">Client Services</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">Client services</h2>
       <p className="mb-4">
         These terms cover the website only. Consulting, development and support services are provided under a separate
         written agreement, such as a proposal, statement of work or services agreement. Where that agreement conflicts
         with these terms, the agreement applies.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">Use of the Website</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">Use of the website</h2>
       <p className="mb-2">You agree to use the website lawfully and not to:</p>
       <ul className="mb-4 list-disc ml-6">
         <li>Interfere with, disrupt or attempt to gain unauthorized access to the website or its systems</li>
@@ -34,21 +34,21 @@ const Terms = () => (
         <li>Use automated means to submit forms or to copy the website's content in bulk</li>
       </ul>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">Website Content</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">Website content</h2>
       <p className="mb-4">
         Content on the website is provided for general information. It is not professional advice and is not an offer
         or commitment to provide services. Descriptions of projects, timelines and engagement options are indicative;
         the scope, schedule and fees for any engagement are set out in a written proposal.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">Enquiries and Confidential Information</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">Enquiries and confidential information</h2>
       <p className="mb-4">
         Contacting us does not create a client relationship or oblige either party to proceed. Please do not send
         confidential information through the website or by email until a non-disclosure agreement is in place. We are
         happy to sign one before detailed discussions.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">Intellectual Property</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">Intellectual property</h2>
       <p className="mb-4">
         The website's content, design, and the names and logos of AydenAIT and its products are owned by AydenAIT or
         its licensors. You may view and print pages for your own reference, but you may not copy, modify or distribute
@@ -59,13 +59,13 @@ const Terms = () => (
         for identification only and does not imply endorsement.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">Third-Party Links</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">Third-party links</h2>
       <p className="mb-4">
         The website may link to websites operated by others. We are not responsible for their content or privacy
         practices.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">Disclaimer and Limitation of Liability</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">Disclaimer and limitation of liability</h2>
       <p className="mb-4">
         The website is provided "as is" and "as available", without warranties of any kind, to the extent permitted
         by law. We do not guarantee that it will be uninterrupted, error-free or free of harmful components.
@@ -79,18 +79,18 @@ const Terms = () => (
       <p className="mb-4">
         Our{" "}
         <Link to="/privacy" className="underline text-blue-300">
-          Privacy Policy
+          privacy policy
         </Link>{" "}
         explains how we handle personal information submitted through the website.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">Changes to These Terms</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">Changes to these terms</h2>
       <p className="mb-4">
         We may update these terms from time to time. The date below shows when they were last revised. Continued use
         of the website after a change means you accept the revised terms.
       </p>
 
-      <h2 className="text-xl font-semibold mt-8 mb-2">Governing Law</h2>
+      <h2 className="text-xl font-semibold mt-8 mb-2">Governing law</h2>
       <p className="mb-4">
         These terms are governed by the laws of the Province of Ontario and the federal laws of Canada that apply
         there.

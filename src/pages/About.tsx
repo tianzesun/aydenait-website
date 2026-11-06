@@ -12,15 +12,15 @@ const workingPrinciples = [
 ];
 
 const values: { icon: IconName; title: string; desc: string }[] = [
-  { icon: "flag", title: "Results-Driven", desc: "We measure success by whether people actually use what we build, and whether it makes their work easier." },
-  { icon: "eye", title: "Transparency First", desc: "Clear pricing and plain language. We explain what we are doing, why it matters and what you can expect." },
-  { icon: "lightBulb", title: "Pragmatic Innovation", desc: "We follow AI research closely and adopt new techniques once they are proven, with a clear view of what belongs in production." },
+  { icon: "flag", title: "Results-driven", desc: "We measure success by whether people actually use what we build, and whether it makes their work easier." },
+  { icon: "eye", title: "Transparency first", desc: "Clear pricing and plain language. We explain what we are doing, why it matters and what you can expect." },
+  { icon: "lightBulb", title: "Pragmatic innovation", desc: "We follow AI research closely and adopt new techniques once they are proven, with a clear view of what belongs in production." },
 ];
 
 const About = () => (
   <>
     <SEO
-      title="About AydenAIT - AI Solutions for Education and Beyond"
+      title="About AydenAIT - AI solutions for education and beyond"
       description="Toronto AI company with grading, academic-integrity and workload platforms in use in higher education, plus AI for civic services, finance and business."
       keywords="about AydenAIT, AI company Toronto, custom AI solutions, AI in education, AI consulting"
       ogUrl="https://aydenait.com/about"

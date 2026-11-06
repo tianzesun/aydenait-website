@@ -4,7 +4,7 @@ import SEO from "../components/SEO";
 const NotFound = () => (
   <>
     <SEO
-      title="404 - Page Not Found - AydenAIT Solution"
+      title="404 - Page not found - AydenAIT Solution"
       description="The page you're looking for doesn't exist or has been moved."
       noindex={true}
     />
@@ -12,7 +12,7 @@ const NotFound = () => (
       <div className="absolute inset-x-0 top-0 h-[36rem] bg-[radial-gradient(ellipse_at_top,rgba(34,211,238,0.14),transparent_65%)]" aria-hidden="true" />
       <div className="relative max-w-6xl mx-auto px-4 pt-24 pb-28">
         <p className="font-mono text-sm text-cyan-300 mb-4">404</p>
-        <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6">Page Not Found</h1>
+        <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6">Page not found</h1>
         <p className="text-2xl leading-snug text-white/90 max-w-2xl mb-10">
           The page you requested does not exist or has been moved.
         </p>
