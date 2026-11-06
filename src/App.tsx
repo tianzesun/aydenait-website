@@ -1,5 +1,5 @@
+import { useEffect, useRef } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence, LazyMotion, MotionConfig, domAnimation, m } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
@@ -20,47 +20,40 @@ import NotFound from "./pages/NotFound";
 
 const AnimatedRoutes = () => {
   const location = useLocation();
+  // Show the prerendered page as-is on first load; fade in later route changes (CSS, see index.css)
+  const isFirstPage = useRef(true);
+  useEffect(() => {
+    isFirstPage.current = false;
+  }, []);
 
   return (
-    // initial={false}: show the prerendered page as-is on first load; animate later route changes
-    <AnimatePresence mode="wait" initial={false}>
-      <m.div
-        key={location.pathname}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
-        transition={{ duration: 0.3, ease: "easeOut" }}
-      >
-        {/* Inside the keyed m.div, so it remounts (and clears any error) on every page change */}
-        <ErrorBoundary>
-        <Routes location={location}>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/:slug" element={<ServicePage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/products/:slug" element={<ProductPage />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/security" element={<Security />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        </ErrorBoundary>
-      </m.div>
-    </AnimatePresence>
+    <div key={location.pathname} className={isFirstPage.current ? undefined : "animate-page-in"}>
+      {/* Inside the keyed div, so it remounts (and clears any error) on every page change */}
+      <ErrorBoundary>
+      <Routes location={location}>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/services/:slug" element={<ServicePage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/:slug" element={<ProductPage />} />
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/security" element={<Security />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      </ErrorBoundary>
+    </div>
   );
 };
 
 // The router is supplied by main.tsx (BrowserRouter) or entry-server.tsx (StaticRouter)
 function App() {
   return (
-    // LazyMotion + m: ship only the animation features the page transitions use (smaller bundle)
-    // reducedMotion="user": skip movement for visitors who set "reduce motion" in their OS
-    <LazyMotion features={domAnimation} strict>
-    <MotionConfig reducedMotion="user">
+    <>
       <ScrollToTop />
       <a
         href="#main-content"
@@ -76,8 +69,7 @@ function App() {
         </main>
         <Footer />
       </div>
-    </MotionConfig>
-    </LazyMotion>
+    </>
   );
 }
 export default App;

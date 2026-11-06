@@ -8,7 +8,23 @@ const root = path.resolve(import.meta.dirname, "..");
 const dist = path.join(root, "dist");
 const ssrDir = path.join(root, "dist-ssr");
 
-const template = await fs.readFile(path.join(dist, "index.html"), "utf8");
+let template = await fs.readFile(path.join(dist, "index.html"), "utf8");
+
+// Inline the stylesheet (about 7 KB gzipped) so the first paint doesn't wait for a separate CSS request.
+// CSP allows it (style-src 'unsafe-inline'). Font URLs in the CSS are absolute, so they still resolve.
+const STYLESHEET = /<link rel="stylesheet"[^>]*href="(\/assets\/[^"]+\.css)"[^>]*>/;
+const cssHref = template.match(STYLESHEET)?.[1];
+if (!cssHref) throw new Error("dist/index.html has no stylesheet link to inline");
+const css = await fs.readFile(path.join(dist, cssHref), "utf8");
+template = template.replace(STYLESHEET, () => `<style>${css}</style>`);
+
+// Preload the Latin Inter font, which every page uses; otherwise the browser finds it only after parsing the CSS
+const latinFont = (await fs.readdir(path.join(dist, "assets"))).find((f) => /^inter-latin-wght-normal-.*\.woff2$/.test(f));
+if (!latinFont) throw new Error("Inter Latin font not found in dist/assets");
+template = template.replace(
+  "</head>",
+  `<link rel="preload" href="/assets/${latinFont}" as="font" type="font/woff2" crossorigin>\n</head>`,
+);
 const { render } = await import(pathToFileURL(path.join(ssrDir, "entry-server.js")).href);
 
 const sitemap = await fs.readFile(path.join(root, "public", "sitemap.xml"), "utf8");

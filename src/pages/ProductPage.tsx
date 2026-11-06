@@ -110,7 +110,7 @@ const ProductPage = () => {
                     <span className="mx-auto px-4 py-0.5 rounded-md bg-white/5 text-xs text-blue-300">{liveHost}</span>
                   )}
                 </div>
-                <img src={screenshot.src} alt={screenshot.alt} className="w-full aspect-[16/9] object-cover object-top" />
+                <img src={screenshot.src} srcSet={screenshot.srcSet} sizes="(min-width: 1024px) 560px, 100vw" width={1440} height={900} alt={screenshot.alt} className="w-full aspect-[16/9] object-cover object-top" />
               </figure>
             </div>
           )}

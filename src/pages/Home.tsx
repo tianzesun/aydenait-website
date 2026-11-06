@@ -86,11 +86,11 @@ const Home = () => (
                   <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
                   <span className="mx-auto px-4 py-0.5 rounded-md bg-white/5 text-xs text-blue-300">{featuredHost}</span>
                 </div>
-                <img src={featured.screenshots[0].src} alt={featured.screenshots[0].alt} className="w-full aspect-[16/10] object-cover object-top" />
+                <img src={featured.screenshots[0].src} srcSet={featured.screenshots[0].srcSet} sizes="(min-width: 1024px) 540px, 100vw" width={1440} height={900} alt={featured.screenshots[0].alt} className="w-full aspect-[16/10] object-cover object-top" />
               </figure>
               <p className="mt-4 text-sm text-blue-300">
                 <span className="text-white font-semibold">{featured.title}</span>, {featured.summary.charAt(0).toLowerCase() + featured.summary.slice(1, -1)}.{" "}
-                <a href={featured.liveUrl} target="_blank" rel="noopener noreferrer" className="text-cyan-300 hover:text-white transition-colors">
+                <a href={featured.liveUrl} target="_blank" rel="noopener noreferrer" className="underline decoration-cyan-300/40 underline-offset-4 hover:decoration-current text-cyan-300 hover:text-white transition-colors">
                   Try it live <span aria-hidden="true">↗</span>
                 </a>
               </p>
@@ -150,7 +150,7 @@ const Home = () => (
                   <p className="text-3xl font-bold tracking-tight text-white mb-2">{r.value}</p>
                   <p className="text-sm text-blue-200 leading-relaxed">
                     {r.label}.{" "}
-                    <Link to={`/products/${r.slug}`} className="text-cyan-300 hover:text-white transition-colors">{r.product}</Link>
+                    <Link to={`/products/${r.slug}`} className="underline decoration-cyan-300/40 underline-offset-4 hover:decoration-current text-cyan-300 hover:text-white transition-colors">{r.product}</Link>
                   </p>
                 </li>
               ))}
@@ -195,7 +195,7 @@ const Home = () => (
           </ul>
           <p className="lg:col-start-5 lg:col-span-8 text-blue-200">
             Have a different use case in mind?{" "}
-            <a href="#lead-capture" className="text-cyan-300 font-semibold hover:text-white transition-colors">
+            <a href="#lead-capture" className="underline decoration-cyan-300/40 underline-offset-4 hover:decoration-current text-cyan-300 font-semibold hover:text-white transition-colors">
               Contact us
             </a>{" "}
             for an objective assessment of whether AI is the right fit.
@@ -272,9 +272,9 @@ const Home = () => (
           </ul>
           <p className="text-blue-200">
             Prefer to talk first? Email{" "}
-            <a href="mailto:contact@aydenait.com" className="text-white hover:text-cyan-300 transition-colors">contact@aydenait.com</a>{" "}
+            <a href="mailto:contact@aydenait.com" className="underline decoration-cyan-300/40 underline-offset-4 hover:decoration-current text-white hover:text-cyan-300 transition-colors">contact@aydenait.com</a>{" "}
             or call{" "}
-            <a href="tel:+12898599523" className="text-white hover:text-cyan-300 transition-colors whitespace-nowrap">(289) 859-9523</a>.
+            <a href="tel:+12898599523" className="underline decoration-cyan-300/40 underline-offset-4 hover:decoration-current text-white hover:text-cyan-300 transition-colors whitespace-nowrap">(289) 859-9523</a>.
           </p>
           <p className="mt-6 text-sm text-blue-300">30-minute consultation · No commitment required · NDA available</p>
         </div>

@@ -14,10 +14,11 @@ export default defineConfig(({ isSsrBuild }) => ({
     },
     rollupOptions: isSsrBuild ? {} : {
       output: {
-        manualChunks: {
-          'vendor-react': ['react', 'react-dom'],
-          'vendor-router': ['react-router-dom'],
-          'vendor-motion': ['framer-motion']
+        // Libraries in their own chunks, so a content change doesn't make visitors re-download them.
+        // Function form: React ships as CommonJS, and the object form left its chunk empty.
+        manualChunks(id) {
+          if (/node_modules\/(react|react-dom|scheduler)\//.test(id)) return 'vendor-react'
+          if (/node_modules\/(react-router|react-router-dom|cookie|set-cookie-parser)\//.test(id)) return 'vendor-router'
         },
         format: 'esm'
       },

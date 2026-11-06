@@ -13,7 +13,8 @@ export type Project = {
   // Public live site or demo, linked from the card and product page
   liveUrl?: string;
   // Images live in public/projects/. Use demo data only: no real student, staff or client details.
-  screenshots?: { src: string; alt: string }[];
+  // srcSet: the same image at other widths (WebP in public/projects/), so phones download a smaller file
+  screenshots?: { src: string; srcSet?: string; alt: string }[];
   // Optional detail page at /products/<slug> (also add the URL to public/sitemap.xml).
   // Sections left out are not shown, so only fill in what has been approved for publication.
   productPage?: {
@@ -126,7 +127,7 @@ export const projects: Project[] = [
     highlights: ["Conversational access to city information", "Answers grounded in published municipal data", "Source citations for every answer"],
     stage: "Beta",
     liveUrl: "https://heymarkham.vercel.app/",
-    screenshots: [{ src: "/projects/hey-markham.png", alt: "Hey Markham home page with the assistant chat window" }],
+    screenshots: [{ src: "/projects/hey-markham-1440.webp", srcSet: "/projects/hey-markham-800.webp 800w, /projects/hey-markham-1440.webp 1440w", alt: "Hey Markham home page with the assistant chat window" }],
     productPage: {
       slug: "hey-markham",
       challenge: [
