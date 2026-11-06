@@ -4,6 +4,7 @@ import StructuredData from "../components/StructuredData";
 import { serviceSchema } from "../data/schemas";
 import Icon from "../components/Icon";
 import { solutions } from "../data/solutions";
+import BookingLink from "../components/BookingLink";
 
 const educationSolutions = [
   ["AI-assisted grading", "Rubric-based scoring for programming and written work, with instructor review before any mark is released."],
@@ -62,9 +63,9 @@ const Services = () => (
                 Every engagement includes strategy, development, integration with your systems and ongoing support.
               </p>
               <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
-                <Link to="/contact" className="px-6 py-3 rounded-full bg-white text-[#0b1120] font-semibold hover:bg-cyan-200 transition-colors">
-                  Schedule a consultation <span aria-hidden="true">→</span>
-                </Link>
+                <BookingLink arrow className="px-6 py-3 rounded-full bg-white text-[#0b1120] font-semibold hover:bg-cyan-200 transition-colors">
+                  Book a consultation
+                </BookingLink>
                 <a href="mailto:contact@aydenait.com" className="font-semibold text-white hover:text-cyan-300 transition-colors">
                   Email us
                 </a>
@@ -177,12 +178,9 @@ const Services = () => (
               <h2 className="text-3xl font-bold text-white mb-2">Start with a free consultation</h2>
               <p className="text-blue-200">Confidential consultation · NDA available</p>
             </div>
-            <Link
-              to="/contact"
-              className="shrink-0 self-start md:self-auto px-6 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold hover:opacity-90 transition-opacity"
-            >
-              Schedule a consultation
-            </Link>
+            <BookingLink className="shrink-0 self-start md:self-auto px-6 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold hover:opacity-90 transition-opacity">
+              Book a consultation
+            </BookingLink>
           </section>
         </div>
       </div>

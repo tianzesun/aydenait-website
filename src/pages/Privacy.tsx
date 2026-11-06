@@ -1,5 +1,6 @@
 import SEO from "../components/SEO";
 import LegalPage from "../components/LegalPage";
+import { BOOKING_URL } from "../data/booking";
 
 // Keep this accurate to what the site actually does. Update it before adding analytics,
 // cookies, a mailing list or any new third-party service (see also the CSP in vercel.json).
@@ -63,6 +64,9 @@ const Privacy = () => (
       <ul className="mb-4 list-disc ml-6">
         <li>Our website hosting provider (Vercel), which serves the site and processes form submissions</li>
         <li>Our email service provider, which delivers form submissions to our inbox</li>
+        {BOOKING_URL && (
+          <li>Our scheduling service (Calendly), which receives your name, email and any notes when you book a consultation</li>
+        )}
       </ul>
       <p className="mb-4">
         We may also disclose personal information where required by law.

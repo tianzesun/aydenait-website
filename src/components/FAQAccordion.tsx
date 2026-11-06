@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import BookingLink from "./BookingLink";
 
 // `more` adds a link under the answer
 const faqs: { q: string; a: string; more?: { to: string; label: string } }[] = [
@@ -106,18 +107,15 @@ const FAQAccordion = () => {
           <section className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 py-16 border-t border-white/10">
             <div>
               <h2 className="text-3xl font-bold text-white mb-2">Still have questions?</h2>
-              <p className="text-blue-200">Schedule a complimentary consultation or send us a message.</p>
+              <p className="text-blue-200">Book a complimentary consultation or send us a message.</p>
             </div>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
-              <a href="mailto:contact@aydenait.com" className="font-semibold text-white hover:text-cyan-300 transition-colors">
-                Email us directly
-              </a>
-              <Link
-                to="/contact"
-                className="px-6 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold hover:opacity-90 transition-opacity"
-              >
-                Contact us
+              <Link to="/contact" className="font-semibold text-white hover:text-cyan-300 transition-colors">
+                Send a message
               </Link>
+              <BookingLink className="px-6 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold hover:opacity-90 transition-opacity">
+                Book a consultation
+              </BookingLink>
             </div>
           </section>
         </div>

@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import SEO from "../components/SEO";
 import StructuredData from "../components/StructuredData";
 import Icon from "../components/Icon";
+import BookingLink from "../components/BookingLink";
 import { engagementSteps, solutions } from "../data/solutions";
 import { projects } from "../data/projects";
 import NotFound from "./NotFound";
@@ -66,9 +67,9 @@ const ServicePage = () => {
               </div>
               <div className="lg:col-span-5">
                 <p className="text-xl leading-relaxed text-white/90 mb-8">{service.desc}</p>
-                <Link to="/contact" className="inline-block px-6 py-3 rounded-full bg-white text-[#0b1120] font-semibold hover:bg-cyan-200 transition-colors">
-                  Book a free consultation <span aria-hidden="true">→</span>
-                </Link>
+                <BookingLink arrow className="inline-block px-6 py-3 rounded-full bg-white text-[#0b1120] font-semibold hover:bg-cyan-200 transition-colors">
+                  Book a free consultation
+                </BookingLink>
               </div>
             </div>
           </div>
@@ -137,12 +138,9 @@ const ServicePage = () => {
                 <h2 className="text-3xl font-bold text-white mb-2">Talk to us about your project</h2>
                 <p className="text-blue-200">Start with a free consultation. We will tell you honestly whether AI is the right fit and what it would take.</p>
               </div>
-              <Link
-                to="/contact"
-                className="shrink-0 self-start md:self-auto px-6 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold hover:opacity-90 transition-opacity"
-              >
+              <BookingLink className="shrink-0 self-start md:self-auto px-6 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold hover:opacity-90 transition-opacity">
                 Book a free consultation
-              </Link>
+              </BookingLink>
             </section>
 
             {/* Other services */}

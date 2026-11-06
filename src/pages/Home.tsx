@@ -6,6 +6,7 @@ import ContactForm from "../components/ContactForm";
 import Icon from "../components/Icon";
 import { projects, type Project } from "../data/projects";
 import { engagementSteps, solutions } from "../data/solutions";
+import { BOOKING_URL } from "../data/booking";
 
 const principles = [
   { title: "Proven in production", desc: "Our own platforms are used every day in higher education. We know what it takes to keep AI working after launch." },
@@ -275,6 +276,15 @@ const Home = () => (
             <a href="mailto:contact@aydenait.com" className="underline decoration-cyan-300/40 underline-offset-4 hover:decoration-current text-white hover:text-cyan-300 transition-colors">contact@aydenait.com</a>{" "}
             or call{" "}
             <a href="tel:+12898599523" className="underline decoration-cyan-300/40 underline-offset-4 hover:decoration-current text-white hover:text-cyan-300 transition-colors whitespace-nowrap">(289) 859-9523</a>.
+            {BOOKING_URL && (
+              <>
+                {" "}You can also{" "}
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="underline decoration-cyan-300/40 underline-offset-4 hover:decoration-current text-white hover:text-cyan-300 transition-colors">
+                  book a call<span className="sr-only"> (opens Calendly in a new tab)</span>
+                </a>
+                .
+              </>
+            )}
           </p>
           <p className="mt-6 text-sm text-blue-300">30-minute consultation · No commitment required · NDA available</p>
         </div>

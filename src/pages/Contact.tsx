@@ -1,6 +1,8 @@
 import SEO from "../components/SEO";
 import ContactForm from "../components/ContactForm";
 import { engagementSteps } from "../data/solutions";
+import { BOOKING_URL } from "../data/booking";
+import BookingLink from "../components/BookingLink";
 
 const Contact = () => (
     <>
@@ -21,6 +23,15 @@ const Contact = () => (
               <p className="text-2xl leading-snug text-white/90 mb-10">
                 Tell us what you'd like AI to help with. The first consultation is complimentary.
               </p>
+
+              {BOOKING_URL && (
+                <div className="mb-10">
+                  <BookingLink className="inline-block px-6 py-3 rounded-full bg-white text-[#0b1120] font-semibold hover:bg-cyan-200 transition-colors">
+                    Book a 30-minute call
+                  </BookingLink>
+                  <p className="mt-3 text-sm text-blue-300">Pick a time that suits you, or send us a message.</p>
+                </div>
+              )}
 
               <dl className="divide-y divide-white/10 border-y border-white/10 mb-10">
                 <div className="grid grid-cols-[6rem_1fr] gap-4 py-4">
