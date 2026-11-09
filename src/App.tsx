@@ -17,7 +17,6 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Security from "./pages/Security";
 import Accessibility from "./pages/Accessibility";
-import { HeyMarkhamDeleteAccount, HeyMarkhamPrivacy, HeyMarkhamSupport, HeyMarkhamTerms } from "./pages/HeyMarkhamLegal";
 import NotFound from "./pages/NotFound";
 
 const AnimatedRoutes = () => {
@@ -46,10 +45,6 @@ const AnimatedRoutes = () => {
         <Route path="/terms" element={<Terms />} />
         <Route path="/security" element={<Security />} />
         <Route path="/accessibility" element={<Accessibility />} />
-        <Route path="/heymarkham/privacy" element={<HeyMarkhamPrivacy />} />
-        <Route path="/heymarkham/terms" element={<HeyMarkhamTerms />} />
-        <Route path="/heymarkham/delete-account" element={<HeyMarkhamDeleteAccount />} />
-        <Route path="/heymarkham/support" element={<HeyMarkhamSupport />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       </ErrorBoundary>
