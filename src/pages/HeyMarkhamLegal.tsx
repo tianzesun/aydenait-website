@@ -9,7 +9,10 @@ import LegalPage from "../components/LegalPage";
 // - how long question logs that aren't linked to an account are kept
 // - how long deleted data can remain in backups
 
+// Canonical/share URLs follow the site-wide aydenait.com convention; links between the pages are
+// relative, so they also work on the Vercel address the app uses until aydenait.com has DNS.
 const BASE = "https://aydenait.com/heymarkham";
+const PATH = "/heymarkham";
 const EMAIL = "contact@aydenait.com";
 const UPDATED = "November 2026";
 
@@ -142,7 +145,7 @@ export const HeyMarkhamPrivacy = () => (
         <li>Delete single questions or your whole history in Your questions</li>
         <li>
           Delete your account in the app (Settings, Manage account) or by request, as explained on the{" "}
-          <a href={`${BASE}/delete-account`}>account deletion page</a>
+          <a href={`${PATH}/delete-account`}>account deletion page</a>
         </li>
         <li>Ask to access or correct the personal information we hold, by emailing <Mail /></li>
       </ul>
@@ -230,7 +233,7 @@ export const HeyMarkhamTerms = () => (
 
       <h2>Privacy</h2>
       <p>
-        Our <a href={`${BASE}/privacy`}>privacy policy</a> explains what the app collects and how to access or delete it.
+        Our <a href={`${PATH}/privacy`}>privacy policy</a> explains what the app collects and how to access or delete it.
       </p>
 
       <h2>Changes and law</h2>
@@ -295,7 +298,7 @@ export const HeyMarkhamDeleteAccount = () => (
 
       <h2>Questions</h2>
       <p>
-        Email <Mail />. See also our <a href={`${BASE}/privacy`}>privacy policy</a>.
+        Email <Mail />. See also our <a href={`${PATH}/privacy`}>privacy policy</a>.
       </p>
     </LegalPage>
   </>
@@ -347,13 +350,13 @@ export const HeyMarkhamSupport = () => (
         <b>I forgot my password.</b> On the sign-in screen, enter your email and tap Forgot password?
       </p>
       <p>
-        <b>How do I delete my account?</b> See <a href={`${BASE}/delete-account`}>Delete your account</a>.
+        <b>How do I delete my account?</b> See <a href={`${PATH}/delete-account`}>Delete your account</a>.
       </p>
 
       <h2>About Hey Markham</h2>
       <Notice />
       <p>
-        <a href={`${BASE}/privacy`}>Privacy policy</a> · <a href={`${BASE}/terms`}>Terms of use</a>
+        <a href={`${PATH}/privacy`}>Privacy policy</a> · <a href={`${PATH}/terms`}>Terms of use</a>
       </p>
     </LegalPage>
   </>
