@@ -22,10 +22,10 @@ const Footer = () => {
           {/* Services */}
           <div>
             <h2 className="text-white font-bold text-sm uppercase tracking-wider mb-4">Services</h2>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-0.5 text-sm">
               {solutions.map((item) => (
                 <li key={item.title}>
-                  <Link to={`/services/${item.slug}`} className="text-gray-400 hover:text-white transition-colors">{item.title}</Link>
+                  <Link to={`/services/${item.slug}`} className="inline-block py-1 text-gray-400 hover:text-white transition-colors">{item.title}</Link>
                 </li>
               ))}
             </ul>
@@ -34,21 +34,21 @@ const Footer = () => {
           {/* Company */}
           <div>
             <h2 className="text-white font-bold text-sm uppercase tracking-wider mb-4">Company</h2>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-0.5 text-sm">
               <li>
-                <Link to="/products" className="text-gray-400 hover:text-white transition-colors">Products</Link>
+                <Link to="/products" className="inline-block py-1 text-gray-400 hover:text-white transition-colors">Products</Link>
               </li>
               <li>
-                <Link to="/careers" className="text-gray-400 hover:text-white transition-colors">Careers</Link>
+                <Link to="/careers" className="inline-block py-1 text-gray-400 hover:text-white transition-colors">Careers</Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-400 hover:text-white transition-colors">About us</Link>
+                <Link to="/about" className="inline-block py-1 text-gray-400 hover:text-white transition-colors">About us</Link>
               </li>
               <li>
-                <Link to="/security" className="text-gray-400 hover:text-white transition-colors">Security &amp; Privacy</Link>
+                <Link to="/security" className="inline-block py-1 text-gray-400 hover:text-white transition-colors">Security &amp; Privacy</Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link>
+                <Link to="/contact" className="inline-block py-1 text-gray-400 hover:text-white transition-colors">Contact</Link>
               </li>
             </ul>
           </div>
@@ -56,7 +56,7 @@ const Footer = () => {
           {/* Contact Info */}
           <div>
             <h2 className="text-white font-bold text-sm uppercase tracking-wider mb-4">Contact</h2>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-2 text-sm">
               <li className="flex items-start gap-2">
                 <svg className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -70,7 +70,7 @@ const Footer = () => {
                 <svg className="w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <a href="mailto:contact@aydenait.com" className="text-gray-400 hover:text-white transition-colors">
+                <a href="mailto:contact@aydenait.com" className="inline-block py-1 text-gray-400 hover:text-white transition-colors">
                   contact@aydenait.com
                 </a>
               </li>
@@ -78,7 +78,7 @@ const Footer = () => {
                 <svg className="w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <a href="tel:+12898599523" className="text-gray-400 hover:text-white transition-colors">
+                <a href="tel:+12898599523" className="inline-block py-1 text-gray-400 hover:text-white transition-colors">
                   (289) 859-9523
                 </a>
               </li>
@@ -95,20 +95,20 @@ const Footer = () => {
             <div className="text-xs text-gray-400" suppressHydrationWarning>
               © {new Date().getFullYear()} AydenAIT Solution Inc. All rights reserved.
             </div>
-            <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-xs">
-              <Link to="/privacy" className="inline-block py-1 text-gray-400 hover:text-white transition-colors">
+            <div className="flex flex-wrap justify-center gap-x-6 text-sm">
+              <Link to="/privacy" className="inline-block py-2 text-gray-400 hover:text-white transition-colors">
                 Privacy policy
               </Link>
-              <Link to="/terms" className="inline-block py-1 text-gray-400 hover:text-white transition-colors">
+              <Link to="/terms" className="inline-block py-2 text-gray-400 hover:text-white transition-colors">
                 Terms of use
               </Link>
-              <Link to="/security" className="inline-block py-1 text-gray-400 hover:text-white transition-colors">
+              <Link to="/security" className="inline-block py-2 text-gray-400 hover:text-white transition-colors">
                 Security
               </Link>
-              <Link to="/accessibility" className="inline-block py-1 text-gray-400 hover:text-white transition-colors">
+              <Link to="/accessibility" className="inline-block py-2 text-gray-400 hover:text-white transition-colors">
                 Accessibility
               </Link>
-              <Link to="/faq" className="inline-block py-1 text-gray-400 hover:text-white transition-colors">
+              <Link to="/faq" className="inline-block py-2 text-gray-400 hover:text-white transition-colors">
                 FAQ
               </Link>
             </div>
