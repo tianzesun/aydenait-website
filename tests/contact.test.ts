@@ -14,8 +14,6 @@ const valid = { name: "Alex Example", email: "alex@example.com", message: "We'd 
 describe("contact function", () => {
   beforeEach(() => {
     vi.stubEnv("SENDGRID_API_KEY", "test-key");
-    vi.stubEnv("MAILGUN_API_KEY", "");
-    vi.stubEnv("SMTP_HOST", "");
     send.mockReset();
     vi.spyOn(console, "error").mockImplementation(() => {});
     vi.spyOn(console, "warn").mockImplementation(() => {});

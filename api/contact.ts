@@ -117,79 +117,29 @@ const handler = async (req: Request) => {
         `;
 
   try {
-    // Here you would integrate with your email service
-    // Options: SendGrid, Mailgun, AWS SES, Nodemailer with SMTP, etc.
-
-    // For now, we'll use environment variables for email configuration
     const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "contact@aydenait.com";
 
-    // If using SendGrid (recommended for production)
-    if (process.env.SENDGRID_API_KEY) {
-      const { default: sgMail } = await import("@sendgrid/mail");
-      sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-
-      const msg = {
-        to: ADMIN_EMAIL,
-        from: process.env.SENDGRID_FROM_EMAIL || ADMIN_EMAIL,
-        replyTo: email,
-        subject,
-        text,
-        html,
-      };
-
-      await sgMail.send(msg);
-    }
-    // If using Mailgun
-    else if (process.env.MAILGUN_API_KEY && process.env.MAILGUN_DOMAIN) {
-      const { default: formData } = await import("form-data");
-      const { default: Mailgun } = await import("mailgun.js");
-      const mailgun = new Mailgun(formData);
-      const mg = mailgun.client({
-        username: "api",
-        key: process.env.MAILGUN_API_KEY,
-      });
-
-      await mg.messages.create(process.env.MAILGUN_DOMAIN, {
-        from: `AydenAIT Contact <noreply@${process.env.MAILGUN_DOMAIN}>`,
-        to: [ADMIN_EMAIL],
-        "h:Reply-To": email,
-        subject,
-        text,
-        html,
-      });
-    }
-    // If using Nodemailer with SMTP
-    else if (process.env.SMTP_HOST && process.env.SMTP_USER) {
-      const { default: nodemailer } = await import("nodemailer");
-
-      const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_HOST,
-        port: parseInt(process.env.SMTP_PORT || "587"),
-        secure: process.env.SMTP_PORT === "465",
-        auth: {
-          user: process.env.SMTP_USER,
-          pass: process.env.SMTP_PASS,
-        },
-      });
-
-      await transporter.sendMail({
-        from: process.env.SMTP_FROM || ADMIN_EMAIL,
-        to: ADMIN_EMAIL,
-        replyTo: email,
-        subject,
-        text,
-        html,
-      });
-    }
-    // No provider configured: fail loudly instead of telling the visitor it was sent
-    else {
-      console.error(`[${correlationId}] No email service configured. Set SENDGRID_API_KEY, MAILGUN_API_KEY, or SMTP credentials.`);
+    // No email service configured: fail loudly instead of telling the visitor it was sent
+    if (!process.env.SENDGRID_API_KEY) {
+      console.error(`[${correlationId}] No email service configured. Set SENDGRID_API_KEY.`);
       const body = { error: `We couldn't send your message. Please email contact@aydenait.com. (Ref: ${correlationId})` };
       return new Response(JSON.stringify(body), {
         status: 503,
         headers: jsonHeaders,
       });
     }
+
+    const { default: sgMail } = await import("@sendgrid/mail");
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
+    await sgMail.send({
+      to: ADMIN_EMAIL,
+      from: process.env.SENDGRID_FROM_EMAIL || ADMIN_EMAIL,
+      replyTo: email,
+      subject,
+      text,
+      html,
+    });
 
     // Return success response
     const body = { message: "Thank you for contacting us! We'll respond within 1 business day.", success: true };

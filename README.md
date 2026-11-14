@@ -46,17 +46,15 @@ Routes are defined in `src/App.tsx`. The product list lives in `src/pages/Produc
 
 ## Contact form email
 
-The Contact page and the Home page assessment section use the same form component (`src/components/ContactForm.tsx`) and post to `/api/contact`, served by `api/contact.ts`. The email subject says which form was used. The function validates input, escapes it before building the email, and sends it to `ADMIN_EMAIL` using the first provider that is configured:
+The Contact page and the Home page assessment section use the same form component (`src/components/ContactForm.tsx`) and post to `/api/contact`, served by `api/contact.ts`. The email subject says which form was used. The function validates input, escapes it before building the email, and sends it to `ADMIN_EMAIL` through SendGrid:
 
-| Provider | Required variables | Optional |
-|----------|--------------------|----------|
-| SendGrid | `SENDGRID_API_KEY` | `SENDGRID_FROM_EMAIL` (must be a verified sender) |
-| Mailgun  | `MAILGUN_API_KEY`, `MAILGUN_DOMAIN` | |
-| SMTP     | `SMTP_HOST`, `SMTP_USER`, `SMTP_PASS` | `SMTP_PORT` (default 587), `SMTP_FROM` |
+| Variable | Required | Notes |
+|----------|----------|-------|
+| `SENDGRID_API_KEY` | Yes | |
+| `SENDGRID_FROM_EMAIL` | No | Must be a verified sender; defaults to `ADMIN_EMAIL` |
+| `ADMIN_EMAIL` | No | Defaults to `contact@aydenait.com` |
 
-`ADMIN_EMAIL` defaults to `contact@aydenait.com`.
-
-Set these in **Vercel → Project → Settings → Environment Variables**, never in the repository. If no provider is configured, the form shows visitors an error with a reference ID instead of pretending the message was sent, and the same ID appears in the function logs.
+Set these in **Vercel → Project → Settings → Environment Variables**, never in the repository. If `SENDGRID_API_KEY` isn't set, the form shows visitors an error with a reference ID instead of pretending the message was sent, and the same ID appears in the function logs.
 
 Spam protection: the form has a hidden honeypot field (`website`), and the function silently drops submissions that fill it in. Rate limiting is a Vercel Firewall rule (Project → Firewall → Configure → New Rule): requests whose path is `/api/contact`, rate-limited to 5 per 60 seconds per IP, answered with 429. Vercel functions don't share state between calls, so the limit can't live in the function itself.
 
