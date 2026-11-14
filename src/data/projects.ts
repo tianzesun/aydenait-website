@@ -34,7 +34,7 @@ export const projects: Project[] = [
     title: "Faculty Workload Management System",
     sector: "Higher education",
     summary: "Course assignments, workload tracking and term planning for academic departments.",
-    desc: "A workload management platform for academic departments, built for a department covering Computer Science, Mathematics and Statistics.",
+    desc: "Built for a department covering Computer Science, Mathematics and Statistics, it replaces spreadsheets and manual steps with one system, from planning next term to the dean's office paperwork.",
     highlights: ["Course assignments and term planning", "Faculty workload and service-role tracking", "Policy-based workload calculations"],
     productPage: {
       slug: "faculty-workload",
@@ -56,7 +56,7 @@ export const projects: Project[] = [
     title: "CodeProvenance",
     sector: "Higher education",
     summary: "Code similarity and AI-authorship detection that produces evidence, not just a score.",
-    desc: "Code similarity and AI-authorship detection for schools and universities. The output isn't just a score: it's evidence a faculty member can act on and a committee can defend.",
+    desc: "Built for programming courses at schools and universities. Faculty review the riskiest cases first, and each case comes with the evidence an academic-integrity committee needs.",
     highlights: ["Multiple similarity engines combined by a learned fusion model", "AI-generated code detector", "Professor-facing review workspace"],
     productPage: {
       slug: "codeprovenance",
@@ -81,7 +81,7 @@ export const projects: Project[] = [
     title: "DeepRubric",
     sector: "Higher education",
     summary: "AI-assisted, rubric-based grading for programming courses, with a human in the loop.",
-    desc: "An AI-assisted grading platform for programming courses. Professors build rubrics, students submit code, and an AI pipeline scores each submission against the rubric criteria.",
+    desc: "Professors build the rubric, students submit code, and an AI pipeline scores each submission against the professor's own criteria. The whole teaching team grades together, each in their own role.",
     highlights: ["Human-in-the-loop review of every score", "Academic-integrity checks", "Course and rubric analytics"],
     productPage: {
       slug: "deeprubric",
@@ -103,7 +103,7 @@ export const projects: Project[] = [
     sector: "Higher education",
     stage: "Pilot",
     summary: "Exam administration: rosters, seating and personalized exam documents.",
-    desc: "An exam administration system that simplifies exam preparation, seating assignment and personalized exam documents. It works alongside Crowdmark rather than replacing it.",
+    desc: "Built for courses large enough that preparing an exam by hand takes days. It handles everything from the roster to the exam-day package, and works alongside Crowdmark rather than replacing it.",
     highlights: ["Roster import and automatic seating", "Personalized exam PDFs with QR verification", "Seating maps, signature lists and exam-day packages"],
     productPage: {
       slug: "examflow",
@@ -123,7 +123,7 @@ export const projects: Project[] = [
     title: "Hey Markham",
     sector: "Civic services",
     summary: "A conversational assistant that answers residents' questions from publicly available city data.",
-    desc: "An AI city-services assistant built on the City of Markham's publicly available data. Residents ask questions in plain language and get fast, accurate answers they can trace back to the source. An independent project, not affiliated with or endorsed by the City of Markham.",
+    desc: "Residents ask by typing or by voice, on a phone or computer. When the assistant doesn't know an answer, it says so instead of guessing. An independent project, not affiliated with or endorsed by the City of Markham.",
     highlights: ["Conversational access to city information", "Answers grounded in published municipal data", "Source citations for every answer"],
     stage: "Beta",
     liveUrl: "https://heymarkham.vercel.app/",
@@ -151,7 +151,7 @@ export const projects: Project[] = [
     title: "AlphOpt",
     sector: "Financial services",
     summary: "Options-strategy analysis and risk management with news and sentiment AI.",
-    desc: "An AI options-strategy analysis and risk-management system built on a modern stack. It provides intelligent signal analysis for research and decision support; it does not execute trades.",
+    desc: "Built for research and decision support. It combines market data, news and sentiment, and keeps the analysis behind each signal visible. It does not execute trades.",
     highlights: ["News-analysis AI agent", "Multimodal market-sentiment analyzer", "Real-time sentiment quantification for strategy analysis"],
     productPage: {
       slug: "alphopt",

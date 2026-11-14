@@ -94,7 +94,7 @@ export const solutions: Solution[] = [
       { title: "Websites and learning platforms", text: "Add AI features to your website or learning management system." },
       { title: "Identity and student systems", text: "Connect with the identity provider and student systems you already run, so staff sign in the way they do today." },
       { title: "CRMs and internal applications", text: "Bring AI into the CRM and internal tools your team already uses every day." },
-      { title: "Cloud or on premises", text: "Deploy where your policies require, built to fit your technology stack." },
+      { title: "Privacy and policy first", text: "Designed around your organization's privacy, security and policy requirements from day one." },
     ],
   },
 ];
