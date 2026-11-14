@@ -7,10 +7,12 @@ interface ContactFormData {
   phone?: string;
   message: string;
   source?: string;
+  // What the enquiry is about, e.g. "CodeProvenance demo", when the visitor came from a product or service page
+  topic?: string;
   website?: string;
 }
 
-const MAX_LENGTHS = { name: 200, email: 254, organization: 200, phone: 50, message: 5000 };
+const MAX_LENGTHS = { name: 200, email: 254, organization: 200, phone: 50, message: 5000, topic: 100 };
 
 // Which form the enquiry came from; shown in the email subject
 const SOURCES: Record<string, string> = {
@@ -65,13 +67,15 @@ const handler = async (req: Request) => {
     organization: data?.organization ?? "",
     phone: data?.phone ?? "",
     message: data?.message,
+    topic: data?.topic ?? "",
   };
   if (
     typeof fields.name !== "string" || !fields.name.trim() ||
     typeof fields.email !== "string" || !fields.email.trim() ||
     typeof fields.message !== "string" || !fields.message.trim() ||
     typeof fields.organization !== "string" ||
-    typeof fields.phone !== "string"
+    typeof fields.phone !== "string" ||
+    typeof fields.topic !== "string"
   ) {
     return new Response(JSON.stringify({ error: "Please fill in your name, email, and message." }), {
       status: 400,
@@ -102,12 +106,14 @@ const handler = async (req: Request) => {
   const organization = fields.organization.trim() || "Not provided";
   const phone = fields.phone.trim() || "Not provided";
   const message = fields.message.trim();
+  const topic = fields.topic.replace(/[\r\n]+/g, " ").trim();
   const formName = SOURCES[typeof data.source === "string" ? data.source : ""] ?? SOURCES.contact;
   // Header-safe subject: no line breaks from user input
-  const subject = `New ${formName} from ${name.replace(/[\r\n]+/g, " ")}`;
-  const text = `Form: ${formName}\nName: ${name}\nEmail: ${email}\nOrganization: ${organization}\nPhone: ${phone}\n\nMessage:\n${message}\n`;
+  const subject = `New ${formName}${topic ? ` (${topic})` : ""} from ${name.replace(/[\r\n]+/g, " ")}`;
+  const text = `Form: ${formName}\n${topic ? `Topic: ${topic}\n` : ""}Name: ${name}\nEmail: ${email}\nOrganization: ${organization}\nPhone: ${phone}\n\nMessage:\n${message}\n`;
   const html = `
           <h2>New ${formName}</h2>
+          ${topic ? `<p><strong>Topic:</strong> ${escapeHtml(topic)}</p>` : ""}
           <p><strong>Name:</strong> ${escapeHtml(name)}</p>
           <p><strong>Email:</strong> ${escapeHtml(email)}</p>
           <p><strong>Organization:</strong> ${escapeHtml(organization)}</p>

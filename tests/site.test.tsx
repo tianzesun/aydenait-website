@@ -50,6 +50,13 @@ describe("content data", () => {
     expect(new Set(routes).size).toBe(routes.length);
   });
 
+  it("sends demo and message links to the Contact page with the page's topic", () => {
+    for (const p of projects) {
+      if (p.productPage) expect(render(`/products/${p.productPage.slug}`).html).toContain(`href="/contact?topic=${p.productPage.slug}"`);
+    }
+    for (const s of solutions) expect(render(`/services/${s.slug}`).html).toContain(`href="/contact?topic=${s.slug}"`);
+  });
+
   it("links each service only to products that exist", () => {
     const productSlugs = projects.map((p) => p.productPage?.slug);
     for (const s of solutions) {

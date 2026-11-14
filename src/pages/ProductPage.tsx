@@ -86,7 +86,7 @@ const ProductPage = () => {
                     </a>
                   ) : null}
                   <Link
-                    to="/contact"
+                    to={`/contact?topic=${page.slug}`}
                     className={
                       project.liveUrl
                         ? "font-semibold text-white hover:text-cyan-300 transition-colors"
@@ -188,7 +188,7 @@ const ProductPage = () => {
                 <p className="text-blue-200">We'd be glad to walk you through it and talk about how it could work for your organization.</p>
               </div>
               <Link
-                to="/contact"
+                to={`/contact?topic=${page.slug}`}
                 className="shrink-0 self-start md:self-auto px-6 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold hover:opacity-90 transition-opacity"
               >
                 Request a demo

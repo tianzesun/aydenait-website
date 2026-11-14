@@ -62,12 +62,26 @@ describe("contact function", () => {
     expect(msg.subject).toBe("New Contact Form from Alex Example");
   });
 
+  it("puts the enquiry topic in the subject when there is one", async () => {
+    await post({ ...valid, topic: "CodeProvenance demo" });
+    const msg = send.mock.calls[0][0];
+    expect(msg.subject).toBe("New Contact Form (CodeProvenance demo) from Alex Example");
+    expect(msg.text).toContain("Topic: CodeProvenance demo");
+  });
+
+  it("rejects a non-string or over-long topic", async () => {
+    expect((await post({ ...valid, topic: 42 })).status).toBe(400);
+    expect((await post({ ...valid, topic: "x".repeat(101) })).status).toBe(400);
+    expect(send).not.toHaveBeenCalled();
+  });
+
   it("escapes HTML and strips line breaks from the subject", async () => {
-    await post({ ...valid, name: "Eve\r\nBcc: x@example.com", message: "<script>alert(1)</script>" });
+    await post({ ...valid, name: "Eve\r\nBcc: x@example.com", topic: "<b>\r\nBcc: y@example.com", message: "<script>alert(1)</script>" });
     const msg = send.mock.calls[0][0];
     expect(msg.subject).not.toMatch(/[\r\n]/);
     expect(msg.html).not.toContain("<script>");
     expect(msg.html).toContain("&lt;script&gt;");
+    expect(msg.html).not.toContain("<b>");
   });
 
   it("returns a generic error with a reference ID when sending fails", async () => {

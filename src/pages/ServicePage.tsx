@@ -138,9 +138,14 @@ const ServicePage = () => {
                 <h2 className="text-3xl font-bold text-white mb-2">Talk to us about your project</h2>
                 <p className="text-blue-200">Start with a free consultation. We will tell you honestly whether AI is the right fit and what it would take.</p>
               </div>
-              <BookingLink className="shrink-0 self-start md:self-auto px-6 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold hover:opacity-90 transition-opacity">
-                Book a free consultation
-              </BookingLink>
+              <div className="shrink-0 flex flex-wrap items-center gap-x-6 gap-y-4">
+                <BookingLink className="px-6 py-3 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white font-semibold hover:opacity-90 transition-opacity">
+                  Book a free consultation
+                </BookingLink>
+                <Link to={`/contact?topic=${service.slug}`} className="font-semibold text-white hover:text-cyan-300 transition-colors">
+                  Send us a message <span aria-hidden="true">→</span>
+                </Link>
+              </div>
             </section>
 
             {/* Other services */}

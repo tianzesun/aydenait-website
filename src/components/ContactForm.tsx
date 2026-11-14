@@ -8,6 +8,8 @@ interface ContactFormProps {
   messagePlaceholder?: string;
   // "split" puts name/email and organization/phone side by side on wider screens
   layout?: "split" | "stacked";
+  // What the enquiry is about, added to the email subject (see Contact page)
+  topic?: string;
 }
 
 // "website" is a honeypot: hidden from people, but spam bots tend to fill it in
@@ -23,6 +25,7 @@ const ContactForm = ({
   submitLabel = "Send message",
   messagePlaceholder = "What are you looking to build or improve?",
   layout = "split",
+  topic,
 }: ContactFormProps) => {
   const [formData, setFormData] = useState(emptyForm);
   const [submitted, setSubmitted] = useState(false);
@@ -43,7 +46,7 @@ const ContactForm = ({
     setSubmitted(false);
 
     try {
-      await sendContact({ ...formData, source });
+      await sendContact({ ...formData, source, topic });
       setSubmitted(true);
       setFormData(emptyForm);
     } catch (err) {

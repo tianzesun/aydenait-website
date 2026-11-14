@@ -1,10 +1,27 @@
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import SEO from "../components/SEO";
 import ContactForm from "../components/ContactForm";
-import { engagementSteps } from "../data/solutions";
+import { engagementSteps, solutions } from "../data/solutions";
+import { projects } from "../data/projects";
 import { BOOKING_URL } from "../data/booking";
 import BookingLink from "../components/BookingLink";
 
-const Contact = () => (
+// Product and service pages link to /contact?topic=<slug>, so the enquiry says what the visitor was looking at
+const topicLabel = (slug: string | null) => {
+  if (!slug) return undefined;
+  const product = projects.find((p) => p.productPage?.slug === slug);
+  if (product) return `${product.title} demo`;
+  return solutions.find((s) => s.slug === slug)?.title;
+};
+
+const Contact = () => {
+  const [searchParams] = useSearchParams();
+  // Read after hydration: the prerendered page has no query string, so the first render must match it
+  const [topic, setTopic] = useState<string>();
+  useEffect(() => setTopic(topicLabel(searchParams.get("topic"))), [searchParams]);
+
+  return (
     <>
       <SEO
         title="Contact AydenAIT - AI solutions for education and beyond"
@@ -66,13 +83,23 @@ const Contact = () => (
             {/* Contact form */}
             <div className="lg:col-span-7">
               <div className="rounded-2xl p-6 md:p-10 bg-white/[0.03] border border-white/10 shadow-[0_20px_80px_-30px_rgba(34,211,238,0.3)]">
-                <ContactForm source="contact" />
+                {topic && (
+                  <p className="mb-6 text-sm text-blue-200">
+                    Enquiry about: <span className="font-semibold text-white">{topic}</span>
+                  </p>
+                )}
+                <ContactForm
+                  source="contact"
+                  topic={topic}
+                  messagePlaceholder={topic ? "Tell us a little about your organization and what you'd like to see." : undefined}
+                />
               </div>
             </div>
           </div>
         </div>
       </article>
     </>
-);
+  );
+};
 
 export default Contact;

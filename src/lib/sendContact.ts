@@ -8,6 +8,7 @@ export interface ContactPayload {
   message: string;
   website?: string;
   source: ContactSource;
+  topic?: string;
 }
 
 const FALLBACK_ERROR = "We couldn't send your message. Please try again or email contact@aydenait.com.";

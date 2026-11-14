@@ -46,7 +46,7 @@ Routes are defined in `src/App.tsx`. The product list lives in `src/pages/Produc
 
 ## Contact form email
 
-The Contact page and the Home page assessment section use the same form component (`src/components/ContactForm.tsx`) and post to `/api/contact`, served by `api/contact.ts`. The email subject says which form was used. The function validates input, escapes it before building the email, and sends it to `ADMIN_EMAIL` through SendGrid:
+The Contact page and the Home page assessment section use the same form component (`src/components/ContactForm.tsx`) and post to `/api/contact`, served by `api/contact.ts`. The email subject says which form was used. Product and service pages link to `/contact?topic=<slug>`; the Contact page shows what the enquiry is about and adds it to the subject (for example "CodeProvenance demo"). Unknown slugs are ignored. The function validates input, escapes it before building the email, and sends it to `ADMIN_EMAIL` through SendGrid:
 
 | Variable | Required | Notes |
 |----------|----------|-------|
