@@ -11,7 +11,7 @@ export interface ContactPayload {
   topic?: string;
 }
 
-const FALLBACK_ERROR = "We couldn't send your message. Please try again or email contact@aydenait.com.";
+const FALLBACK_ERROR = "We couldn't send your message. Please try again, email contact@aydenait.com or call (289) 859-9523.";
 
 // Posts to the contact function (api/contact.ts). Throws an Error with a user-safe message on failure.
 export async function sendContact(payload: ContactPayload): Promise<void> {
@@ -29,7 +29,7 @@ export async function sendContact(payload: ContactPayload): Promise<void> {
   if (response.ok) return;
   // The Vercel Firewall rate limit answers 429 without a JSON body
   if (response.status === 429) {
-    throw new Error("Too many messages in a short time. Please wait a minute and try again, or email contact@aydenait.com.");
+    throw new Error("Too many messages in a short time. Please wait a minute and try again, email contact@aydenait.com or call (289) 859-9523.");
   }
 
   // The function returns JSON errors, but a proxy or 404 page may not

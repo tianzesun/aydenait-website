@@ -50,7 +50,7 @@ const ContactForm = ({
       setSubmitted(true);
       setFormData(emptyForm);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "We couldn't send your message. Please email contact@aydenait.com.");
+      setError(err instanceof Error ? err.message : "We couldn't send your message. Please email contact@aydenait.com or call (289) 859-9523.");
     } finally {
       setIsSubmitting(false);
     }

@@ -128,7 +128,7 @@ const handler = async (req: Request) => {
     // No email service configured: fail loudly instead of telling the visitor it was sent
     if (!process.env.SENDGRID_API_KEY) {
       console.error(`[${correlationId}] No email service configured. Set SENDGRID_API_KEY.`);
-      const body = { error: `We couldn't send your message. Please email contact@aydenait.com. (Ref: ${correlationId})` };
+      const body = { error: `We couldn't send your message. Please email contact@aydenait.com or call (289) 859-9523. (Ref: ${correlationId})` };
       return new Response(JSON.stringify(body), {
         status: 503,
         headers: jsonHeaders,
@@ -155,7 +155,7 @@ const handler = async (req: Request) => {
     });
   } catch (error) {
     console.error(`[${correlationId}] Contact form error:`, error);
-    const body = { error: `Failed to send message. Please try again or email contact@aydenait.com. (Ref: ${correlationId})` };
+    const body = { error: `Failed to send message. Please try again, email contact@aydenait.com or call (289) 859-9523. (Ref: ${correlationId})` };
     return new Response(JSON.stringify(body), {
       status: 500,
       headers: jsonHeaders,

@@ -91,6 +91,8 @@ describe("contact function", () => {
     const body = await res.json();
     expect(body.error).toMatch(/Ref: [0-9a-f-]{36}/);
     expect(body.error).not.toContain("provider down");
+    // The fallback can't rely only on email: if the domain is down, so is contact@aydenait.com
+    expect(body.error).toContain("(289) 859-9523");
   });
 
   it("fails loudly when no email provider is configured", async () => {

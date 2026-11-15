@@ -1,0 +1,78 @@
+# Weekly check that aydenait.com is registered, resolves, receives email and has a valid certificate.
+# Opens a GitHub issue when something fails (or is close to expiring), so a lapse is caught before visitors notice.
+name: Domain check
+
+on:
+  schedule:
+    - cron: "0 13 * * 1" # Mondays, 8 or 9 a.m. Toronto time
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+env:
+  DOMAIN: aydenait.com
+  REGISTRATION_WARN_DAYS: 45
+  CERT_WARN_DAYS: 14
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check registration, DNS, email and certificate
+        id: check
+        run: |
+          problems=()
+          days_until() { echo $(( ($(date -d "$1" +%s) - $(date +%s)) / 86400 )); }
+
+          # Registration, from the .com registry (RDAP). 404 means the domain isn't registered.
+          rdap=$(curl -s -w '\n%{http_code}' "https://rdap.verisign.com/com/v1/domain/$DOMAIN")
+          if [ "$(tail -n1 <<<"$rdap")" != "200" ]; then
+            problems+=("$DOMAIN is not registered (the .com registry has no record of it). Renew or re-register it at the registrar now.")
+          else
+            expiry=$(head -n -1 <<<"$rdap" | jq -r '.events[] | select(.eventAction == "expiration") | .eventDate')
+            left=$(days_until "$expiry")
+            echo "Registration expires $expiry ($left days)" >> "$GITHUB_STEP_SUMMARY"
+            if [ "$left" -lt "$REGISTRATION_WARN_DAYS" ]; then
+              problems+=("Registration expires in $left days ($expiry). Renew it, and turn on auto-renew at the registrar.")
+            fi
+          fi
+
+          # The website and email both need DNS records
+          [ -n "$(dig +short A "$DOMAIN")" ] || problems+=("$DOMAIN has no A record, so the website won't load. Check the domain in Vercel (Project → Settings → Domains).")
+          [ -n "$(dig +short MX "$DOMAIN")" ] || problems+=("$DOMAIN has no MX record, so email to contact@$DOMAIN will bounce.")
+
+          # Certificate (Vercel renews it automatically; failing here means the domain setup is broken)
+          cert_end=$(echo | timeout 15 openssl s_client -connect "$DOMAIN:443" -servername "$DOMAIN" 2>/dev/null | openssl x509 -noout -enddate 2>/dev/null | cut -d= -f2)
+          if [ -z "$cert_end" ]; then
+            problems+=("Couldn't get a TLS certificate from https://$DOMAIN.")
+          else
+            left=$(days_until "$cert_end")
+            echo "Certificate expires $cert_end ($left days)" >> "$GITHUB_STEP_SUMMARY"
+            [ "$left" -ge "$CERT_WARN_DAYS" ] || problems+=("The TLS certificate expires in $left days ($cert_end). Check the domain in Vercel.")
+          fi
+
+          if [ ${#problems[@]} -eq 0 ]; then
+            echo "All checks passed." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          printf -- '- %s\n' "${problems[@]}" | tee -a "$GITHUB_STEP_SUMMARY" > problems.md
+          echo "failed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Open an issue (or comment on the open one)
+        if: steps.check.outputs.failed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title="Domain check failed for $DOMAIN"
+          { cat problems.md; echo; echo "From the [weekly domain check]($RUN_URL)."; } > body.md
+          existing=$(gh issue list --state open --search "in:title \"$title\"" --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body-file body.md
+          else
+            gh issue create --title "$title" --body-file body.md
+          fi
+          exit 1
