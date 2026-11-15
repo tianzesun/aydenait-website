@@ -206,8 +206,11 @@ const ProductPage = () => {
                         to={`/products/${other.productPage!.slug}`}
                         className="group grid md:grid-cols-12 gap-2 items-baseline py-5"
                       >
-                        <span className="md:col-span-4 text-lg font-semibold text-white group-hover:text-cyan-300 transition-colors">
-                          {other.title}
+                        <span className="md:col-span-4 flex flex-wrap items-center gap-2">
+                          <span className="text-lg font-semibold text-white group-hover:text-cyan-300 transition-colors">{other.title}</span>
+                          {other.stage && (
+                            <span className="text-xs font-semibold px-2 py-0.5 rounded-full border border-amber-300/40 bg-amber-300/10 text-amber-100">{other.stage}</span>
+                          )}
                         </span>
                         <span className="md:col-span-7 text-blue-200">{other.summary}</span>
                         <span className="hidden md:block md:col-span-1 text-right text-blue-300 group-hover:text-cyan-300 group-hover:translate-x-1 transition" aria-hidden="true">

@@ -18,6 +18,11 @@ const principles = [
 // Counts and results come from src/data/projects.ts so the hero stays in step with the product list
 const sectorOrder: Project["sector"][] = ["Higher education", "Civic services", "Financial services"];
 const inProduction = projects.filter((p) => p.sector === "Higher education" && !p.stage).length;
+// Civic and finance have one product each, so they share a row instead of leaving half of each row empty
+const productRows = [
+  { heading: "Higher education", items: projects.filter((p) => p.sector === "Higher education") },
+  { heading: "Beyond education", items: projects.filter((p) => p.sector !== "Higher education") },
+];
 const featured = projects.find((p) => p.screenshots?.length && p.liveUrl);
 const featuredHost = featured?.liveUrl ? new URL(featured.liveUrl).host : undefined;
 const measuredResults = projects.flatMap((p) =>
@@ -115,16 +120,19 @@ const Home = () => (
           </div>
         </div>
 
-        {sectorOrder.map((sector) => (
-          <div key={sector} className="grid lg:grid-cols-12 gap-6 py-8 border-t border-white/10">
-            <h3 className="lg:col-span-4 text-lg font-semibold text-white">{sector}</h3>
+        {productRows.map((row) => (
+          <div key={row.heading} className="grid lg:grid-cols-12 gap-6 py-8 border-t border-white/10">
+            <h3 className="lg:col-span-4 text-lg font-semibold text-white">{row.heading}</h3>
             <ul className="lg:col-span-8 grid sm:grid-cols-2 gap-4">
-              {projects.filter((p) => p.sector === sector).map((project) => (
+              {row.items.map((project) => (
                 <li key={project.title}>
                   <Link
                     to={project.productPage ? `/products/${project.productPage.slug}` : "/products"}
                     className="group flex flex-col h-full rounded-xl p-6 bg-white/[0.03] border border-white/10 hover:border-cyan-400/50 hover:bg-white/[0.06] transition-colors"
                   >
+                    {row.heading !== project.sector && (
+                      <span className="text-xs font-medium uppercase tracking-widest text-blue-300/80 mb-2">{project.sector}</span>
+                    )}
                     <span className="flex items-center gap-2 mb-2">
                       <span className="text-lg font-bold text-white">{project.title}</span>
                       {project.stage && (
